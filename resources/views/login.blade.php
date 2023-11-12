@@ -2,6 +2,7 @@
 <html lang="en">
 <!--begin::Head-->
 <head>
+
     <base href="../../../"/>
     <title>Metronic - The World's #1 Selling Bootstrap Admin Template by Keenthemes</title>
     <meta charset="utf-8"/>
