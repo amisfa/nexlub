@@ -18,6 +18,7 @@
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8"/>
     <link rel="shortcut icon" href="assets/media/logos/favicon.ico"/>
     <link href="assets/css/login.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <section><span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
