@@ -2,7 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Helper;
+use App\Http\Resources\Resource;
+use App\Models\Desk\Meeting\Meeting;
+use App\Models\User;
+use App\Notifications\System\NotificationTemplate;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -12,21 +20,34 @@ class AuthController extends Controller
         return view('login');
     }
 
-    public function login()
+    public function login(Request $request): JsonResponse
     {
-        return response()->json('valid', 201);
+        request()->validate([
+            'username' => 'required',
+            'password' => 'required',
+        ]);
+        $user = User::where('username', $request->input('username'))->first();
+        if (!$user || !Hash::check($request->input('password'), $user->password)) {
+            return response()->json([
+                'message' => 'The provided credentials are incorrect.',
+            ], 401);
+        }
+        $plainTextToken = $user->createToken($request->input('username'))->plainTextToken;
+        return response()->json(['jwt' => $plainTextToken], 200);
     }
-//
-//    public function register()
-//    {
-//        if (auth()->id())
-//            return redirect()->route('panel.dashboard');
-//        return view('login');
-//    }
-//    public function logout()
-//    {
-//        auth()->logout();
-//        return redirect()->route('home');
-//    }
+
+
+    public function register()
+    {
+        if (auth()->id())
+            return redirect()->route('panel.dashboard');
+        return view('login');
+    }
+
+    public function logout()
+    {
+        auth()->user()->tokens()->delete();
+        return redirect()->route('home');
+    }
 
 }
