@@ -52,7 +52,6 @@
     <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
     <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
     <span></span> <span></span> <span></span> <span></span>
-
     <div class="signin">
         <div class="content">
             <h2>Sign In</h2>
@@ -72,7 +71,6 @@
         </div>
     </div>
 </section>
-
 </body>
 </div>
 <script src="assets/js/custom/authentication/sign-in/general.js"></script>
