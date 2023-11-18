@@ -37,11 +37,18 @@ class AuthController extends Controller
     }
 
 
-    public function register()
+    public function registerView()
     {
         if (auth()->id())
             return redirect()->route('panel.dashboard');
-        return view('login');
+        return view('register');
+    }
+
+    public function forgetPasswordView()
+    {
+        if (auth()->id())
+            return redirect()->route('panel.dashboard');
+        return view('forgetPassword');
     }
 
     public function logout()
