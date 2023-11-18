@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="../../../"/>
     <title>MMPK Power Web Site</title>
     <meta charset="utf-8"/>
     <meta name="description"
