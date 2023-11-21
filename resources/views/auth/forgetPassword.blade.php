@@ -62,7 +62,7 @@
                     <input type="text" required> <i>Email</i>
                 </div>
                 <div class="inputBox">
-                    <input type="submit" value="Login">
+                    <input type="submit" value="Submit">
                 </div>
             </div>
         </div>

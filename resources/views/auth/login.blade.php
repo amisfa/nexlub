@@ -64,7 +64,7 @@
                 <div class="inputBox">
                     <input type="password" required> <i>Password</i>
                 </div>
-                <div class="links"><a href="#">Forgot Password</a> <a href="#">Signup</a>
+                <div class="links"><a href="{{route('forgot-pass')}}">Forgot Password</a> <a href="{{route('signup')}}">Signup</a>
                 </div>
                 <div class="inputBox">
                     <input type="submit" value="Login">

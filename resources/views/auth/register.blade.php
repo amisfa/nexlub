@@ -70,7 +70,7 @@
                 <div class="inputBox">
                     <input type="password" required> <i>Confirm Password</i>
                 </div>
-                <div class="links"><a href="#">Forgot Password</a> <a href="#">Sign in</a>
+                <div class="links"><a href="{{route('forgot-pass')}}">Forgot Password</a> <a href="{{route('login')}}">Sign in</a>
                 </div>
                 <div class="inputBox">
                     <input type="submit" value="Create your account">

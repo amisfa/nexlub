@@ -61,10 +61,11 @@
                 <div class="inputBox">
                     <input type="password" required> <i>Password</i>
                 </div>
-                <input type="password" required> <i>Confrim password</i>
-            </div>
                 <div class="inputBox">
-                    <input type="submit" value="Login">
+                    <input type="password" required> <i>Confirm password</i>
+                </div>
+                <div class="inputBox">
+                    <input type="submit" value="Submit">
                 </div>
             </div>
         </div>
