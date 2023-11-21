@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordLinkController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\AuthController;
@@ -22,6 +23,9 @@ Route::prefix('auth')->group(function () {
     Route::get('/register', [RegisterController::class, 'create']);
     Route::post('/register', [RegisterController::class, 'store'])
         ->name('register');
+    Route::get('/login', [LoginController::class, 'create']);
+    Route::post('/login', [LoginController::class, 'store'])
+        ->name('login');
     Route::post('/logout', [Logoutcontroller::class, 'destroy'])
         ->middleware('auth');
     Route::post('/forgot-password', [ForgotPasswordLinkController::class, 'store']);
