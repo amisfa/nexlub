@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -15,15 +15,15 @@ class LoginController extends Controller
 {
     $request->validate([
         'username' => 'required',
-        'email' => 'required|email|unique:users',
         'password' => 'required|confirmed|min:8',
     ]);
 
-    $user = User::create([
-        'username' => $request->username,
-        'email' => $request->email,
-        'password' => Hash::make($request->password),
-    ]);
+    $user = User::where('username', $request->input('username'))->first();
+    if (!$user || !Hash::check($request->input('password'), $user->password)) {
+        return response()->json([
+            'message' => 'The provided credentials are incorrect.',
+        ], 401);
+    }
 
     Auth::login($user);
 
@@ -32,6 +32,6 @@ class LoginController extends Controller
 
     public function create()
     {
-        return view('auth.register');
+        return view('auth.login');
     }
 }
