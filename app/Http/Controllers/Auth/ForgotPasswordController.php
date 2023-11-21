@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class ForgotPasswordController extends Controller
 {
@@ -18,7 +18,7 @@ class ForgotPasswordController extends Controller
         $status = Password::reset(
             $request->only('email', 'password', 'password_confirmation', 'token'),
             function ($user) use ($request) {
-                $user->forceFill(
+                $user->forceFill([
                     'password' => Hash::make($request->password),
                     'remember_token' => Str::random(60)
                 ])->save();
