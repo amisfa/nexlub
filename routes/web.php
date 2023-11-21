@@ -25,5 +25,8 @@ Route::prefix('auth')->group(function () {
     Route::post('/logout', [Logoutcontroller::class, 'destroy'])
         ->middleware('auth');
     Route::post('/forgot-password', [ForgotPasswordLinkController::class, 'store']);
-    Route::post('/forgot-password/{token}', [ForgotPasswordController::class, 'reset']);
+    Route::post('/reset-password/{token}', [ForgotPasswordController::class, 'reset']);
+    Route::get('/forgot-password', [ForgotPasswordLinkController::class, 'create']);
+    Route::get('/reset-password', [ForgotPasswordController::class, 'create']);
+
 });

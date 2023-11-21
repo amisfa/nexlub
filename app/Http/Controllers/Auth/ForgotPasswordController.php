@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class ForgotPasswordController extends Controller
 {
@@ -28,5 +30,9 @@ class ForgotPasswordController extends Controller
         return $status == Password::PASSWORD_RESET
             ? redirect()->route('login')->with('status', __($status))
             : back()->withInput($request->only('email'))->withErrors(['email' => __($status)]);
+    }
+    public function create()
+    {
+        return view('auth.resetPassword');
     }
 }
