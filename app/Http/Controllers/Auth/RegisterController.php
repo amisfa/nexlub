@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
-use illuminate\Htpp\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
