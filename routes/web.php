@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('auth')->group(function () {
-    Route::get('/login', [AuthController::class, 'loginView']);
-    Route::post('/login', [AuthController::class, 'login'])->name('login');
-    Route::get('/register', [AuthController::class, 'registerView']);
-    Route::get('/forget-password', [AuthController::class, 'forgetPasswordView']);
-
+    Route::get('/register', [RegisterController::class, 'create']);
+    Route::post('/register', [RegisterController::class, 'store']);
 });
