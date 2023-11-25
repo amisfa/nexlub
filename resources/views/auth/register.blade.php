@@ -57,27 +57,41 @@
     <div class="signin">
         <div class="content">
             <h2>Register</h2>
-            <form class="form">
+            <form class="form" action="{{ route('register-form') }}" method="post" onsubmit="return registerValidation();">
+                @csrf
                 <div class="inputBox">
-                    <input type="text" required> <i>Email</i>
+                    <input type="text" name="email" required> <i>Email</i>
                 </div>
                 <div class="inputBox">
-                    <input type="text" required> <i>Username</i>
+                    <input type="text" name="username" required> <i>Username</i>
                 </div>
                 <div class="inputBox">
-                    <input type="password" required> <i>Password</i>
+                    <input type="password" name="password" required min="8"> <i>Password</i>
                 </div>
                 <div class="inputBox">
-                    <input type="password" required> <i>Confirm Password</i>
+                    <input type="password" name="password_confirmation" min="8" required> <i>Confirm Password</i>
                 </div>
                 <div class="inputBox">
-                    <input type="text" required> <i>wallet_no</i>
+                    <input type="text" name="wallet_no" required> <i>Wallet No.</i>
                 </div>
-                <div class="links"><a href="{{route('forgot-pass')}}">Forgot Password</a> <a href="{{route('login')}}">Sign in</a>
+                <div class="links"><a href="{{route('forgot-pass')}}">Forgot Password</a> <a href="{{route('login')}}">Sign
+                        in</a>
                 </div>
                 <div class="inputBox">
                     <input type="submit" value="Create your account">
                 </div>
+                <br/>
+                @if(count($errors->all()))
+                @foreach($errors->all() as $error)
+                        <div class="notification-container">
+                            <div class="notification-rectangle">
+                                <div class="notification-text">
+                                   <li>{{$error}}</li>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
             </form>
         </div>
     </div>
