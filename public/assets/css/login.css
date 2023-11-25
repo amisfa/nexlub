@@ -110,7 +110,11 @@ section .signin .content .form .inputBox input:-webkit-autofill:active {
     -webkit-transition: "color 3500s ease-out, background-color 3500s ease-out";
     -webkit-transition-delay: 350s;
 }
-
+.captcha-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
 section .signin .content .form .inputBox i {
     position: absolute;
     left: 0;

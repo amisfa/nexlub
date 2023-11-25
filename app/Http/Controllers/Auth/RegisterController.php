@@ -21,6 +21,8 @@ class RegisterController extends Controller
     {
         $messages = [
             'password_confirmation.same' => 'Password Confirmation should match the Password',
+            'g-recaptcha-response.recaptcha' => 'Captcha verification failed',
+            'g-recaptcha-response.required' => 'Please complete the captcha'
         ];
         $validator = Validator::make($request->all(), [
             'username' => 'required|unique:auth_user',
@@ -28,6 +30,7 @@ class RegisterController extends Controller
             'wallet_no' => 'required',
             'password' => 'required|min:8',
             'password_confirmation' => 'required|min:8|same:password',
+            'g-recaptcha-response' => 'required|recaptcha'
         ], $messages);
         if ($validator->fails()) {
             return redirect('auth/register')->withErrors($validator->messages())->withInput();

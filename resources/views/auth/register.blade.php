@@ -19,6 +19,7 @@
     <link rel="shortcut icon" href="assets/media/logos/favicon.ico"/>
     <link href="assets/css/login.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css"/>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 <section><span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
@@ -67,10 +68,11 @@
                     <input type="text" name="username" value="{{old('username')}}" required> <i>Username</i>
                 </div>
                 <div class="inputBox">
-                    <input type="password" name="password" required min="8"> <i>Password</i>
+                    <input id="password" type="password" name="password" required> <i>Password</i>
                 </div>
                 <div class="inputBox">
-                    <input type="password" name="password_confirmation" min="8" required> <i>Confirm Password</i>
+                    <input id="password_confirmation" type="password" name="password_confirmation" required> <i>Confirm
+                        Password</i>
                 </div>
                 <div class="inputBox">
                     <input type="text" name="wallet_no" value="{{old('wallet_no')}}" required> <i>Wallet No.</i>
@@ -78,6 +80,13 @@
                 <div class="links"><a href="{{route('forgot-pass')}}">Forgot Password</a> <a href="{{route('login')}}">Sign
                         in</a>
                 </div>
+                @if(config('services.recaptcha.key'))
+                    <div class="captcha-container">
+                    <div class="g-recaptcha" data-theme="dark"
+                         data-sitekey="{{config('services.recaptcha.key')}}">
+                    </div>
+                    </div>
+                @endif
                 <div class="inputBox">
                     <input type="submit" value="Create your account">
                 </div>
@@ -99,6 +108,11 @@
 </section>
 </body>
 </div>
-<script src="assets/js/custom/authentication/sign-in/general.js"></script>
+<script>
+    function registerValidation() {
+        let e = document.querySelector("#password").value, r = document.querySelector("#password_confirmation").value;
+        return !(e.length < 8) && !(r.length < 8) || (alert("Your password must be at least 8 characters long"), !1)
+    }
+</script>
 </body>
 </html>
