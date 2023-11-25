@@ -64,6 +64,7 @@
                 <div class="inputBox">
                     <input type="submit" value="Submit">
                 </div>
+            </form>
             </div>
         </div>
     </div>
