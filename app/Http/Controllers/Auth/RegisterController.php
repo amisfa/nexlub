@@ -30,7 +30,7 @@ class RegisterController extends Controller
             'password_confirmation' => 'required|min:8|same:password',
         ], $messages);
         if ($validator->fails()) {
-            return redirect('auth/register')->withErrors($validator->messages());
+            return redirect('auth/register')->withErrors($validator->messages())->withInput();
         }
         $user = User::query()->create([
             'username' => $request->username,

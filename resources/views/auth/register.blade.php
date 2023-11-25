@@ -57,13 +57,14 @@
     <div class="signin">
         <div class="content">
             <h2>Register</h2>
-            <form class="form" action="{{ route('register-form') }}" method="post" onsubmit="return registerValidation();">
+            <form class="form" action="{{ route('register-form') }}" method="post"
+                  onsubmit="return registerValidation();">
                 @csrf
                 <div class="inputBox">
-                    <input type="text" name="email" required> <i>Email</i>
+                    <input type="text" name="email" value="{{old('email')}}" required> <i>Email</i>
                 </div>
                 <div class="inputBox">
-                    <input type="text" name="username" required> <i>Username</i>
+                    <input type="text" name="username" value="{{old('username')}}" required> <i>Username</i>
                 </div>
                 <div class="inputBox">
                     <input type="password" name="password" required min="8"> <i>Password</i>
@@ -72,7 +73,7 @@
                     <input type="password" name="password_confirmation" min="8" required> <i>Confirm Password</i>
                 </div>
                 <div class="inputBox">
-                    <input type="text" name="wallet_no" required> <i>Wallet No.</i>
+                    <input type="text" name="wallet_no" value="{{old('wallet_no')}}" required> <i>Wallet No.</i>
                 </div>
                 <div class="links"><a href="{{route('forgot-pass')}}">Forgot Password</a> <a href="{{route('login')}}">Sign
                         in</a>
@@ -82,11 +83,11 @@
                 </div>
                 <br/>
                 @if(count($errors->all()))
-                @foreach($errors->all() as $error)
+                    @foreach($errors->all() as $error)
                         <div class="notification-container">
                             <div class="notification-rectangle">
                                 <div class="notification-text">
-                                   <li>{{$error}}</li>
+                                    <li>{{$error}}</li>
                                 </div>
                             </div>
                         </div>
