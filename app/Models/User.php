@@ -21,7 +21,8 @@ class User extends Authenticatable
         'email',
         'password',
         'username',
-        'phone_no'
+        'phone_no',
+        'wallet_no'
     ];
     protected $table = 'auth_user';
 

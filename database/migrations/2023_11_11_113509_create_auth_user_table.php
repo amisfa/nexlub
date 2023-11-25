@@ -16,6 +16,7 @@ return new class extends Migration
             $table->boolean('status')->default(1)->index();
             $table->string('username')->unique();
             $table->string('password');
+            $table->string('wallet_no')->index();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
