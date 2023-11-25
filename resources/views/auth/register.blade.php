@@ -57,7 +57,7 @@
     <div class="signin">
         <div class="content">
             <h2>Register</h2>
-            <div class="form">
+            <form class="form">
                 <div class="inputBox">
                     <input type="text" required> <i>Email</i>
                 </div>
@@ -75,7 +75,7 @@
                 <div class="inputBox">
                     <input type="submit" value="Create your account">
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </section>

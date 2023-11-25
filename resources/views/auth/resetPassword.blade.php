@@ -57,7 +57,7 @@
     <div class="signin">
         <div class="content">
             <h2>Reset password</h2>
-            <div class="form">
+            <form class="form">
                 <div class="inputBox">
                     <input type="password" required> <i>Password</i>
                 </div>
@@ -67,7 +67,7 @@
                 <div class="inputBox">
                     <input type="submit" value="Submit">
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </section>

@@ -57,7 +57,7 @@
     <div class="signin">
         <div class="content">
             <h2>Forgot password</h2>
-            <div class="form">
+            <form class="form">
                 <div class="inputBox">
                     <input type="text" required> <i>Email</i>
                 </div>
