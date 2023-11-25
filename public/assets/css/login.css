@@ -93,17 +93,22 @@ section .signin .content .form .inputBox {
     width: 100%;
 }
 
-section .signin .content .form .inputBox input {
+section .signin .content .form .inputBox input, section .signin .content .form .inputBox input:-webkit-autofill,
+section .signin .content .form .inputBox input:-webkit-autofill:hover,
+section .signin .content .form .inputBox input:-webkit-autofill:focus,
+section .signin .content .form .inputBox input:-webkit-autofill:active {
     position: relative;
     width: 100%;
-    background: #333;
+    background: #333 !important;
     border: none;
     outline: none;
     padding: 25px 10px 7.5px;
     border-radius: 4px;
-    color: #fff;
+    color: #fff !important;
     font-weight: 500;
     font-size: 1em;
+    -webkit-transition: "color 3500s ease-out, background-color 3500s ease-out";
+    -webkit-transition-delay: 350s;
 }
 
 section .signin .content .form .inputBox i {
