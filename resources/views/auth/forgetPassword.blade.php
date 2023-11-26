@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-{{--@include('../partials/head')--}}
 @yield('head', view('../partials.head'))
 <body>
 <section><span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
