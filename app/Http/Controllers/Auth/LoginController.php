@@ -8,10 +8,12 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+
 
 class LoginController extends Controller
 {
-    public function create()
+    public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         return view('auth.login');
     }
@@ -35,14 +37,15 @@ class LoginController extends Controller
 
     $user = User::where('username', $request->input('username'))->first();
     if (!$user || !Hash::check($request->input('password'), $user->password)) {
-        return response()->json([
-            'message' => 'The provided credentials are incorrect.',
-        ], 401);
+
+        return redirect('auth/login')->withErrors($validator->messages());
     }
 
-    Auth::login($user);
+//    Auth::login($user);
+        Auth::loginUsingId($user->id);
 
-    return redirect(RouteServiceProvider::HOME);
+
+        return redirect(RouteServiceProvider::HOME);
 }
 
 

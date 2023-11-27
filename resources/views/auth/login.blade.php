@@ -38,7 +38,7 @@
     <div class="signin">
         <div class="content">
             <h2>Sign In</h2>
-            <form class="form" name="myForm" action="{{ route('login') }}" method="post">
+            <form class="form" name="myForm" action="{{ route('login-form') }}" method="post">
                 <div class="inputBox">
                     <input type="text" name="username" required> <i>Username</i>
                 </div>
@@ -47,9 +47,6 @@
                 </div>
                 <div class="links"><a href="{{route('forgot-pass')}}">Forgot Password</a> <a href="{{route('signup')}}">Signup</a>
                 </div>
-                <div class="inputBox">
-                    <input type="submit" value="Login">
-                </div>
                 @if(config('services.recaptcha.key'))
                     <div class="captcha-container">
                         <div class="g-recaptcha" data-theme="dark"
@@ -57,6 +54,9 @@
                         </div>
                     </div>
                 @endif
+                <div class="inputBox">
+                    <input type="submit" value="Login">
+                </div>
                 <br/>
                 @if(count($errors->all()))
                     @foreach($errors->all() as $error)
