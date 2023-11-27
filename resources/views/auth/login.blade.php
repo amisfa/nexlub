@@ -38,24 +38,42 @@
     <div class="signin">
         <div class="content">
             <h2>Sign In</h2>
-            <form class="form" name="myForm">
-                <div class="inputBox" id="errorResponse">
-                    <input type="text" required name="uname" onblur="validate()"> <i>Username</i>
+            <form class="form" name="myForm" action="{{ route('login') }}" method="post">
+                <div class="inputBox">
+                    <input type="text" name="username" required> <i>Username</i>
                 </div>
-                <div class="inputBox" id="errorResponse">
-                    <input type="password" required> <i>Password</i>
+                <div class="inputBox">
+                    <input type="password" name="password" required> <i>Password</i>
                 </div>
                 <div class="links"><a href="{{route('forgot-pass')}}">Forgot Password</a> <a href="{{route('signup')}}">Signup</a>
                 </div>
-                <div class="inputBox" id="errorResponse">
+                <div class="inputBox">
                     <input type="submit" value="Login">
                 </div>
+                @if(config('services.recaptcha.key'))
+                    <div class="captcha-container">
+                        <div class="g-recaptcha" data-theme="dark"
+                             data-sitekey="{{config('services.recaptcha.key')}}">
+                        </div>
+                    </div>
+                @endif
+                <br/>
+                @if(count($errors->all()))
+                    @foreach($errors->all() as $error)
+                        <div class="notification-container">
+                            <div class="notification-rectangle">
+                                <div class="notification-text">
+                                    <li>{{$error}}</li>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
             </form>
         </div>
     </div>
 </section>
 </body>
 </div>
-<script src="assets/js/custom/authentication/sign-in/general.js"></script>
 </body>
 </html>

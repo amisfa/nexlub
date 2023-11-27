@@ -11,12 +11,27 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
+    public function create()
+    {
+        return view('auth.login');
+    }
+
+
     public function store(Request $request)
 {
-    $request->validate([
-        'username' => 'required',
-        'password' => 'required|confirmed|min:8',
-    ]);
+    $messages = [
+        'g-recaptcha-response.recaptcha' => 'Captcha verification failed',
+        'g-recaptcha-response.required' => 'Please complete the captcha'
+    ];
+    $validator = Validator::make($request->all(), [
+        'username' => 'required|unique:auth_user',
+        'password' => 'required|min:8',
+        'g-recaptcha-response' => 'required|recaptcha'
+    ], $messages);
+
+    if ($validator->fails()) {
+        return redirect('auth/login')->withErrors($validator->messages());
+    }
 
     $user = User::where('username', $request->input('username'))->first();
     if (!$user || !Hash::check($request->input('password'), $user->password)) {
@@ -30,8 +45,5 @@ class LoginController extends Controller
     return redirect(RouteServiceProvider::HOME);
 }
 
-    public function create()
-    {
-        return view('auth.login');
-    }
+
 }
