@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Helpers\Helper;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -40,6 +42,12 @@ class RegisterController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'wallet_no' => $request->wallet_no,
+        ]);
+        Helper::PokerMavens([
+            "Command" => "AccountsAdd",
+            'Player' => $request->username,
+            'Email' => $request->email,
+            'PW' => Hash::make($request->password)
         ]);
         Auth::loginUsingId($user->id);
         return redirect(RouteServiceProvider::HOME);

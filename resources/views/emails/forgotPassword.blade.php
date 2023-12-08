@@ -6,10 +6,10 @@
 
     Otherwise, click the link below to complete the process.
 
-    @component('mail::button', ['url' => config('app.url_front').'/auth/reset-password?email='.$user->email.'&token='.$token])
+    @component('mail::button', ['url' => env('URL_FRONT').'/auth/reset-password?email='.$user->email.'&token='.$token])
         Reset Password
     @endcomponent
 
     Thanks,<br>
-    {{ config('app.name') }}
+    {{ env('APP_NAME') }}
 @endcomponent
