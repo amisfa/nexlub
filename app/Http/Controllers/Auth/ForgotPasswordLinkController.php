@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Mail\ForgotPassword;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class ForgotPasswordLinkController extends Controller
 {
@@ -13,14 +17,20 @@ class ForgotPasswordLinkController extends Controller
         $request->validate([
             'email' => 'required|email',
         ]);
+        $user = User::where('email', $request->email)->first();
+        if (!$user) abort(404);
 
-        $status = Password::sendResetLink(
-            $request->only('email')
-    );
+        $token = Str::random(64);
 
-        return $status === Password::RESET_LINK_SENT
-            ? back()->with('status', __($status))
-            : back()->withInput($request->only('email'))->withErrors(['email' => __($status)]);
+        DB::table('password_resets')->insert([
+            'email' => $request->email,
+            'token' => $token,
+            'created_at' => now()
+        ]);
+
+        Mail::to($request->email)->send(new ForgotPassword($token, $user));
+
+        return response()->json(true);
     }
     public function create()
     {

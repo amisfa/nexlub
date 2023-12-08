@@ -1,0 +1,15 @@
+@component('mail::message')
+    # Dear {{ $user->username }},
+
+    Someone, hopefully you, has requested to reset the password for your account.
+    If you did not perform this request, you can safely ignore this email.
+
+    Otherwise, click the link below to complete the process.
+
+    @component('mail::button', ['url' => config('app.url_front').'/auth/reset-password?email='.$user->email.'&token='.$token])
+        Reset Password
+    @endcomponent
+
+    Thanks,<br>
+    {{ config('app.name') }}
+@endcomponent

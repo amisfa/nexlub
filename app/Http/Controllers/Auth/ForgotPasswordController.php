@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
@@ -14,24 +15,30 @@ class ForgotPasswordController extends Controller
     public function reset(Request $request)
     {
         $request->validate([
-            'token' => 'required',
             'email' => 'required|email',
-            'password' => 'required|string|confirmed|min:8',
+            'password' => 'required|string|min:6|confirmed',
+            'password_confirmation' => 'required'
         ]);
 
-        $status = Password::reset(
-            $request->only('email', 'password', 'password_confirmation', 'token'),
-            function ($user) use ($request) {
-                $user->forceFill([
-                    'password' => Hash::make($request->password),
-                    'remember_token' => Str::random(60)
-                ])->save();
-            }
-        );
+        $user = User::where('work_email', $request->email)->first();
+        if (!$user) abort(404);
 
-        return $status == Password::PASSWORD_RESET
-            ? redirect()->route('login')->with('status', __($status))
-            : back()->withInput($request->only('email'))->withErrors(['email' => __($status)]);
+        $passwordReset = DB::table('password_resets')
+            ->where([
+                'email' => $request->email,
+                'token' => $request->token,
+                'deleted_at' => null
+            ])
+            ->first();
+
+        if (!$passwordReset) abort(401);
+
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        DB::table('password_resets')->where(['email' => $request->email])
+            ->update(['deleted_at' => now()]);
+        return response()->json(true);
     }
     public function create()
     {
