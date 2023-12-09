@@ -15,6 +15,6 @@
     <meta property="og:site_name" content="Keenthemes | Metronic"/>
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8"/>
     <link rel="shortcut icon" href="assets/media/logos/favicon.ico"/>
-    <link href="assets/theme/css/login.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/auth/css/style.css" rel="stylesheet" type="text/css"/>
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>

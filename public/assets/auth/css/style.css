@@ -5,6 +5,20 @@ body {
     min-height: 100vh;
     background: #29c9e9;
 }
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 13px !important;
+    font-weight: 400;
+    font-family: Inter, Helvetica, sans-serif;
+}
 
 section {
     position: absolute;
@@ -246,20 +260,6 @@ input[type="submit"]:active {
         0px 1px 1px 0px rgba(0, 0, 0, .14),
         0px 3px 3px -1px rgba(0, 0, 0, .12);
     }
-}
-*, ::after, ::before {
-    box-sizing: border-box;
-}
-body,
-html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 13px !important;
-    font-weight: 400;
-    font-family: Inter, Helvetica, sans-serif;
 }
 
 @keyframes fade-in {

@@ -38,7 +38,7 @@
     <div class="signin">
         <div class="content">
             <h2>Register</h2>
-            <form class="form" action="{{ route('register-form') }}" method="post"
+            <form class="form" action="#" method="post"
                   onsubmit="return registerValidation();">
                 @csrf
                 <div class="inputBox">
@@ -57,7 +57,7 @@
                 <div class="inputBox">
                     <input type="text" name="wallet_no" value="{{old('wallet_no')}}" required> <i>Wallet(0xabc123...)</i>
                 </div>
-                <div class="links"><a href="{{route('forgot-pass')}}">Forgot Password</a> <a href="{{route('login')}}">Sign
+                <div class="links"><a href="#">Forgot Password</a> <a href="{{route('login')}}">Sign
                         in</a>
                 </div>
                 <div style="overflow-x: scroll;border: solid 2px;" class="beauty-scroll">

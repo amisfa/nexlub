@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () {
-    return view('dashboard.dashboard');
+    return view('dashboard');
 });
 
 Route::prefix('auth')->group(function () {
