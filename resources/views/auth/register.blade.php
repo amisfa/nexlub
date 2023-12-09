@@ -109,6 +109,8 @@
         let e = document.querySelector("#password").value, r = document.querySelector("#password_confirmation").value;
         return !(e.length < 8) && !(r.length < 8) || (alert("Your password must be at least 8 characters long"), !1)
     }
+    //horizontal avatar scroll
+    const element=document.querySelector(".beauty-scroll");element.addEventListener("wheel",e=>{e.preventDefault(),element.scrollBy({left:e.deltaY<0?-30:30})});
 </script>
 </body>
 </html>
