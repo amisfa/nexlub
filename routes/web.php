@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', function () {
+    return view('dashboard.dashboard');
+});
 
 Route::prefix('auth')->group(function () {
     Route::get('/register', [RegisterController::class, 'create'])->name('signup');
