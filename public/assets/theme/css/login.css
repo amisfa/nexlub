@@ -247,6 +247,20 @@ input[type="submit"]:active {
         0px 3px 3px -1px rgba(0, 0, 0, .12);
     }
 }
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 13px !important;
+    font-weight: 400;
+    font-family: Inter, Helvetica, sans-serif;
+}
 
 @keyframes fade-in {
     0% {
@@ -254,5 +268,17 @@ input[type="submit"]:active {
     }
     100% {
         opacity: .8;
+    }
+}
+@media (max-width: 991.98px) {
+    body,
+    html {
+        font-size: 12px !important;
+    }
+}
+@media (max-width: 767.98px) {
+    body,
+    html {
+        font-size: 12px !important;
     }
 }

@@ -49,8 +49,6 @@
     <div class="kt-header-mobile__toolbar">
         <button class="kt-header-mobile__toolbar-toggler kt-header-mobile__toolbar-toggler--left"
                 id="kt_aside_mobile_toggler"><span></span></button>
-        <button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler"><i
-                class="flaticon-more-1"></i></button>
     </div>
 </div>
 
@@ -561,22 +559,6 @@
 
                 <!-- end:: Aside -->
                 <div class="kt-holder kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
-
-                    <!-- begin:: Subheader -->
-                    <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-                        <div class="kt-subheader__main">
-                            <h3 class="kt-subheader__title">
-                                Dashboard </h3>
-                            <span class="kt-subheader__separator kt-hidden"></span>
-                            <div class="kt-subheader__breadcrumbs">
-                                <a href="#" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
-                                <span class="kt-subheader__breadcrumbs-separator"></span>
-                                <a href="" class="kt-subheader__breadcrumbs-link">
-                                    Application </a>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- begin::Global Config(global config for global JS sciprts) -->
                     <script>
                         var KTAppOptions = {
@@ -599,7 +581,6 @@
                         };
                     </script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                     <script src="{{ asset('/dashboard/js/scripts.bundle.js') }}" type="text/javascript"></script>
                     <script type="module" src="{{asset('/js/app.js')}}"></script>
                 </div>
