@@ -55,7 +55,7 @@
                         Password</i>
                 </div>
                 <div class="inputBox">
-                    <input type="text" name="wallet_no" value="{{old('wallet_no')}}" required> <i>Wallet No.</i>
+                    <input type="text" name="wallet_no" value="{{old('wallet_no')}}" required> <i>Wallet(0xabc123...)</i>
                 </div>
                 <div class="links"><a href="{{route('forgot-pass')}}">Forgot Password</a> <a href="{{route('login')}}">Sign
                         in</a>
