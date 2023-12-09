@@ -22,30 +22,20 @@
             }
         });
     </script>
-
-    <!--end::Fonts -->
-
-    <!--end::Page Vendors Styles -->
-
-    <!--end:: Global Mandatory Vendors -->
-
-    <!--begin:: Global Optional Vendors -->
     <link href="{{ asset('/flaticon/flaticon.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('/flaticon2/flaticon.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
           type="text/css"/>
-
-    <!--end:: Global Optional Vendors -->
-
-    <!--begin::Global Theme Styles(used by all pages) -->
     <link href="{{ asset('/dashboard/css/style.bundle.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('/css/app.css')}}" rel="stylesheet">
 
 </head>
 
 <!-- end::Head -->
 
 <!-- begin::Body -->
-<body class="kt-page--fluid kt-page-content-white kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-aside--enabled kt-aside--fixed kt-page--loading">
+<body
+    class="kt-page--fluid kt-page-content-white kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-aside--enabled kt-aside--fixed kt-page--loading">
 
 <!-- begin:: Page -->
 
@@ -92,7 +82,8 @@
                                 <span class="kt-header__topbar-icon"><i class="flaticon2-bell-alarm-symbol"></i></span>
                                 <span class="kt-hidden kt-badge kt-badge--danger"></span>
                             </div>
-                            <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-xl">
+                            <div
+                                class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-xl">
                                 <form>
 
                                     <!--begin: Head -->
@@ -100,7 +91,8 @@
                                         <h3 class="kt-head__title">
                                             User Notifications
                                             &nbsp;
-                                            <span class="btn btn-label-primary btn-sm btn-bold btn-font-md">23 new</span>
+                                            <span
+                                                class="btn btn-label-primary btn-sm btn-bold btn-font-md">23 new</span>
                                         </h3>
                                         <ul class="nav nav-tabs nav-tabs-line nav-tabs-bold nav-tabs-line-3x nav-tabs-line-brand  kt-notification-item-padding-x"
                                             role="tablist">
@@ -473,7 +465,8 @@
                                         </div>
                                         <div class="tab-pane" id="topbar_notifications_logs" role="tabpanel">
                                             <div class="kt-grid kt-grid--ver" style="min-height: 200px;">
-                                                <div class="kt-grid kt-grid--hor kt-grid__item kt-grid__item--fluid kt-grid__item--middle">
+                                                <div
+                                                    class="kt-grid kt-grid--hor kt-grid__item kt-grid__item--fluid kt-grid__item--middle">
                                                     <div class="kt-grid__item kt-grid__item--middle kt-align-center">
                                                         All caught up!
                                                         <br>No new notifications.
@@ -496,7 +489,8 @@
                                 <img alt="Pic" src="./assets/media/users/300_21.jpg"/>
                                 <span class="kt-header__topbar-icon kt-bg-brand kt-hidden"><b>S</b></span>
                             </div>
-                            <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-xl">
+                            <div
+                                class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-xl">
 
                                 <!--begin: Head -->
                                 <div class="kt-user-card kt-user-card--skin-light kt-notification-item-padding-x">
@@ -504,13 +498,15 @@
                                         <img class="kt-hidden-" alt="Pic" src="./assets/media/users/300_25.jpg"/>
 
                                         <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
-                                        <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold kt-hidden">S</span>
+                                        <span
+                                            class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold kt-hidden">S</span>
                                     </div>
                                     <div class="kt-user-card__name">
                                         Sean Stone
                                     </div>
                                     <div class="kt-user-card__badge">
-                                        <span class="btn btn-label-primary btn-sm btn-bold btn-font-md">23 messages</span>
+                                        <span
+                                            class="btn btn-label-primary btn-sm btn-bold btn-font-md">23 messages</span>
                                     </div>
                                 </div>
 
@@ -541,7 +537,8 @@
                                 <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
                                     data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
                                                                           class="kt-menu__link kt-menu__toggle"><i
-                                            class="kt-menu__link-icon flaticon-layers"></i><span class="kt-menu__link-text">Games</span><i
+                                            class="kt-menu__link-icon flaticon-layers"></i><span
+                                            class="kt-menu__link-text">Games</span><i
                                             class="kt-menu__ver-arrow la la-angle-right"></i></a>
                                     <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
                                         <ul class="kt-menu__subnav">
@@ -601,11 +598,10 @@
                             }
                         };
                     </script>
-                    <script src="{{ asset('/jquery/dist/jquery.js') }}" type="text/javascript"></script>
-                    <script src="{{ asset('/popper.js/dist/umd/popper.js') }}" type="text/javascript"></script>
-                    <script src="{{ asset('/bootstrap/dist/js/bootstrap.min.js') }}"
-                            type="text/javascript"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                     <script src="{{ asset('/dashboard/js/scripts.bundle.js') }}" type="text/javascript"></script>
+                    <script type="module" src="{{asset('/js/app.js')}}"></script>
                 </div>
             </div>
         </div>
