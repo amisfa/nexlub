@@ -1,6 +1,5 @@
 <?php
 
-use App\Helpers\Helper;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordLinkController;
 use App\Http\Controllers\Auth\LoginController;

@@ -60,6 +60,22 @@
                 <div class="links"><a href="{{route('forgot-pass')}}">Forgot Password</a> <a href="{{route('login')}}">Sign
                         in</a>
                 </div>
+                <div style="overflow-x: scroll;border: solid 2px;" class="beauty-scroll">
+                    <div style="width:100%;display: flex;position: relative">
+                        @php
+                            for ($i = 0; $i < 64; $i++)
+                            {
+                              $a = "display: inline-block; width: " . 64 . "px; height: " . 64 . "px; background: " .
+                                   "url('" . env('mavens_url') . "/Image?Name=Avatars') no-repeat -" . ($i * 64) . "px 0px;";
+                              $s = "<div><input type='radio' name='avatar' value='" . ($i + 1) . "'";
+                              if ($i == 0) $s .= " checked";
+                              $s .= " required>";
+                              $s .= "<div style=\"" . $a . "\"></div></div>";
+                              echo $s;
+                            }
+                        @endphp
+                    </div>
+                </div>
                 @if(config('services.recaptcha.key'))
                     <div class="captcha-container">
                         <div class="g-recaptcha" data-theme="dark"

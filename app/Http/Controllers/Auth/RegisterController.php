@@ -29,9 +29,10 @@ class RegisterController extends Controller
             'username' => 'required|unique:auth_user',
             'email' => 'required|email|unique:auth_user',
             'wallet_no' => 'required',
+            'avatar' => 'required',
             'password' => 'required|min:8',
             'password_confirmation' => 'required|min:8|same:password',
-            'g-recaptcha-response' => 'required|recaptcha'
+//            'g-recaptcha-response' => 'required|recaptcha'
         ], $messages);
         if ($validator->fails()) {
             return redirect('auth/register')->withErrors($validator->messages())->withInput();
@@ -42,7 +43,7 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
             'wallet_no' => $request->wallet_no,
         ]);
-        Helper::setPokerMavens([
+        $response = Helper::setPokerMavens([
             "Command" => "AccountsAdd",
             'Player' => $request->username,
             'Email' => $request->email,
