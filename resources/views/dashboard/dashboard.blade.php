@@ -24,7 +24,7 @@
     </script>
     <link href="{{ asset('/flaticon/flaticon.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('/flaticon2/flaticon.css') }}" rel="stylesheet" type="text/css"/>
-    <link href="{{ asset('/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
+    <link href="{{ asset('/line-awesome/css/line-awesome.css') }}" rel="stylesheet"
           type="text/css"/>
     <link href="{{ asset('/dashboard/css/style.bundle.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('/css/app.css')}}" rel="stylesheet">
