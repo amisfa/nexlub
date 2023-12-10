@@ -17,6 +17,10 @@ return new class extends Migration {
             $table->string('email')->unique();
             $table->string('password');
             $table->string('wallet_no')->index();
+            $table->unsignedBigInteger('referrer_id');
+            $table->foreign('referrer_id')->references('id')->on('auth_user');
+            $table->string('referral_token')->unique();
+
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

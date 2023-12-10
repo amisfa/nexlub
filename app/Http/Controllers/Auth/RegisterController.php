@@ -10,11 +10,16 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
     public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
+        if (request()->has('ref')) {
+            session(['referrer' => request()->query('ref')]);
+        }
+
         return view('auth.register');
     }
 
@@ -37,10 +42,13 @@ class RegisterController extends Controller
         if ($validator->fails()) {
             return redirect('auth/register')->withErrors($validator->messages())->withInput();
         }
+        $referrer = User::query()->where('referral_token', session()->pull('referrer'))->first();
         $user = User::query()->create([
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'referrer_id' => $referrer ? $referrer->id : null,
+            'referral_token' => Str::random(16),
             'wallet_no' => $request->wallet_no,
         ]);
         $response = Helper::setPokerMavens([

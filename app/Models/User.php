@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -21,9 +23,13 @@ class User extends Authenticatable
         'password',
         'username',
         'phone_no',
-        'wallet_no'
+        'wallet_no',
+        'referrer_id',
+        'referral_token'
     ];
     protected $table = 'auth_user';
+
+    protected $appends = ['referral_link'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -43,4 +49,20 @@ class User extends Authenticatable
     protected $casts = [
         'password' => 'hashed',
     ];
+
+    public function referrer(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'referrer_id', 'id');
+    }
+
+    public function referrals(): HasMany
+    {
+        return $this->hasMany(User::class, 'referrer_id', 'id');
+    }
+
+    public function getReferralLinkAttribute(): string
+    {
+        return $this->referral_link = route('signup', ['ref' => $this->referral_token]);
+    }
+
 }
