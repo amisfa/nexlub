@@ -69,7 +69,7 @@
                                    "url('" . env('mavens_url') . "/Image?Name=Avatars') no-repeat -" . ($i * 64) . "px 0px;";
                               $s = "<div><input type='radio' name='avatar' value='" . ($i + 1) . "'";
                               if ($i == 0) $s .= " checked";
-                              $s .= " required>";
+                              $s .= " required>".$i+1;
                               $s .= "<div style=\"" . $a . "\"></div></div>";
                               echo $s;
                             }
