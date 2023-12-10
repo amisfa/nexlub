@@ -14,7 +14,7 @@
             <li>
                 <a data-toggle="collapse" href="#laravel-examples" aria-expanded="true">
                     <i class="fab fa-laravel" ></i>
-                    <span class="nav-link-text" >{{ __('Laravel Examples') }}</span>
+                    <span class="nav-link-text" >{{ __('Rooms') }}</span>
                     <b class="caret mt-1"></b>
                 </a>
 
@@ -23,23 +23,46 @@
                         <li @if ($pageSlug == 'profile') class="active " @endif>
                             <a href="#">
                                 <i class="tim-icons icon-single-02"></i>
-                                <p>{{ __('User Profile') }}</p>
+                                <p>{{ __('Poker') }}</p>
                             </a>
                         </li>
                         <li @if ($pageSlug == 'users') class="active " @endif>
                             <a href="#">
                                 <i class="tim-icons icon-bullet-list-67"></i>
-                                <p>{{ __('User Management') }}</p>
+                                <p>{{ __('Blackjack') }}</p>
                             </a>
                         </li>
                     </ul>
                 </div>
             </li>
             <li @if ($pageSlug == 'icons') class="active " @endif>
-                <a href="#">
+                    <a data-toggle="collapse" href="#laravel-examples" aria-expanded="true">
                     <i class="tim-icons icon-atom"></i>
-                    <p>{{ __('Icons') }}</p>
+                    <p>{{ __('Financial') }}</p>
+                    <b class="caret mt-1"></b>
                 </a>
+                <div class="collapse show" id="laravel-examples">
+                    <ul class="nav pl-4">
+                        <li @if ($pageSlug == 'profile') class="active " @endif>
+                            <a href="#">
+                                <i class="tim-icons icon-single-02"></i>
+                                <p>{{ __('Wallet') }}</p>
+                            </a>
+                        </li>
+                        <li @if ($pageSlug == 'users') class="active " @endif>
+                            <a href="#">
+                                <i class="tim-icons icon-bullet-list-67"></i>
+                                <p>{{ __('Withdraw') }}</p>
+                            </a>
+                        </li>
+                        <li @if ($pageSlug == 'users') class="active " @endif>
+                            <a href="#">
+                                <i class="tim-icons icon-bullet-list-67"></i>
+                                <p>{{ __('Deposit') }}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
             <li @if ($pageSlug == 'maps') class="active " @endif>
                 <a href="#">
