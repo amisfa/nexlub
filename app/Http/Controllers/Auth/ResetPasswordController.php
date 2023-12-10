@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 
-class ForgotPasswordController extends Controller
+class ResetPasswordController extends Controller
 {
     public function reset(Request $request)
     {

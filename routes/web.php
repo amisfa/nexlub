@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\Auth\ForgotPasswordLinkController;
+use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\ForgetPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -27,9 +27,9 @@ Route::prefix('auth')->group(function () {
     Route::get('/login', [LoginController::class, 'create'])->name('login');
     Route::post('/login', [LoginController::class, 'store'])->name('login-form');
     Route::post('/logout', [Logoutcontroller::class, 'destroy'])->middleware('auth');
-    Route::post('/forgot-password', [ForgotPasswordLinkController::class, 'store']);
-    Route::post('/reset-password/{token}', [ForgotPasswordController::class, 'reset']);
-    Route::get('/forgot-password', [ForgotPasswordLinkController::class, 'create'])->name('forgot-pass');;
-    Route::get('/reset-password', [ForgotPasswordController::class, 'create']);
+    Route::post('/forgot-password', [ForgetPasswordController::class, 'store']);
+    Route::post('/reset-password/{token}', [ResetPasswordController::class, 'reset']);
+    Route::get('/forgot-password', [ForgetPasswordController::class, 'create'])->name('forgot-pass');;
+    Route::get('/reset-password', [ResetPasswordController::class, 'create']);
 
 });

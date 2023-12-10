@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
-class ForgotPasswordLinkController extends Controller
+class ForgetPasswordController extends Controller
 {
     public function store(Request $request)
     {
