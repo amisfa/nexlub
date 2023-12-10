@@ -8,21 +8,24 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 class ResetPasswordController extends Controller
 {
     public function reset(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|string|min:6|confirmed',
-            'password_confirmation' => 'required'
-        ]);
-
-        $user = User::where('work_email', $request->email)->first();
-        if (!$user) abort(404);
-
+        $messages = [
+            'password_confirmation.same' => 'Password Confirmation should match the Password',
+        ];
+        $validator = Validator::make($request->all(), [
+            'password' => 'required|min:8',
+            'password_confirmation' => 'required|min:8|same:password',
+        ], $messages);
+        if ($validator->fails()) {
+            return redirect('auth/reset-password')->withErrors($validator->messages())->withInput();
+        }
+        $user = User::where('email', $request->email)->first();
         $passwordReset = DB::table('password_resets')
             ->where([
                 'email' => $request->email,
@@ -31,14 +34,14 @@ class ResetPasswordController extends Controller
             ])
             ->first();
 
-        if (!$passwordReset) abort(401);
-
+        if (!$passwordReset) {
+            return redirect('auth/reset-password')->withErrors('test');
+        }
         $user->password = Hash::make($request->password);
         $user->save();
-
         DB::table('password_resets')->where(['email' => $request->email])
             ->update(['deleted_at' => now()]);
-        return response()->json(true);
+        return redirect('auth/login');
     }
     public function create()
     {

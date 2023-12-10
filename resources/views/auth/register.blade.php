@@ -38,7 +38,7 @@
     <div class="signin">
         <div class="content">
             <h2>Register</h2>
-            <form class="form" action="#" method="post"
+            <form class="form" action="{{ route('register-form') }}" method="post"
                   onsubmit="return registerValidation();">
                 @csrf
                 <div class="inputBox">

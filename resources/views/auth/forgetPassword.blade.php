@@ -42,6 +42,13 @@
                 <div class="inputBox">
                     <input type="text" required> <i>Email</i>
                 </div>
+                @if(config('services.recaptcha.key'))
+                    <div class="captcha-container">
+                        <div class="g-recaptcha" data-theme="dark"
+                             data-sitekey="{{config('services.recaptcha.key')}}">
+                        </div>
+                    </div>
+                @endif
                 <div class="inputBox">
                     <input type="submit" value="Submit">
                 </div>

@@ -8,30 +8,33 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 class ForgetPasswordController extends Controller
 {
     public function store(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-        ]);
+        $messages = [
+            'email.exists' => 'No User With This Email Exists!',
+        ];
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|exists:auth_user,email',
+        ], $messages);
+        if ($validator->fails()) {
+            return redirect('auth/forgot-password')->withErrors($validator->messages())->withInput();
+        }
         $user = User::where('email', $request->email)->first();
-        if (!$user) abort(404);
-
         $token = Str::random(64);
-
         DB::table('password_resets')->insert([
             'email' => $request->email,
             'token' => $token,
             'created_at' => now()
         ]);
-
         Mail::to($request->email)->send(new ForgotPassword($token, $user));
-
         return response()->json(true);
     }
+
     public function create()
     {
         return view('auth.forgetPassword');
