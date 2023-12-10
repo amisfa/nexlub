@@ -35,3 +35,4 @@ class ForgotPassword extends Mailable
             ->with(['token', $this->token, 'user' => $this->user]);
     }
 }
+

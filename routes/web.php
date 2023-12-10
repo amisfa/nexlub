@@ -27,9 +27,11 @@ Route::prefix('auth')->group(function () {
     Route::get('/login', [LoginController::class, 'create'])->name('login');
     Route::post('/login', [LoginController::class, 'store'])->name('login-form');
     Route::post('/logout', [Logoutcontroller::class, 'destroy'])->middleware('auth');
-    Route::post('/forgot-password', [ForgetPasswordController::class, 'store']);
-    Route::post('/reset-password/{token}', [ResetPasswordController::class, 'reset']);
     Route::get('/forgot-password', [ForgetPasswordController::class, 'create'])->name('forgot-pass');;
+    Route::post('/forgot-password', [ForgetPasswordController::class, 'store'])->name('forget-password');
     Route::get('/reset-password', [ResetPasswordController::class, 'create']);
+    Route::post('/reset-password/{token}/{email}', [ResetPasswordController::class, 'reset'])->name('reset-password');
 
 });
+
+

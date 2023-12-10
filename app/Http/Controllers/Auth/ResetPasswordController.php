@@ -33,7 +33,6 @@ class ResetPasswordController extends Controller
                 'deleted_at' => null
             ])
             ->first();
-
         if (!$passwordReset) {
             return redirect('auth/reset-password')->withErrors(['password' => ['Invalid reset link']]);
         }
