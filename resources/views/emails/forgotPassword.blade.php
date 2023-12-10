@@ -10,6 +10,6 @@
         Reset Password
     @endcomponent
 
-    Thanks,<br>
+    Thanks,
     {{ env('APP_NAME') }}
 @endcomponent
