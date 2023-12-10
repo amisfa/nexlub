@@ -35,7 +35,7 @@ class ResetPasswordController extends Controller
             ->first();
 
         if (!$passwordReset) {
-            return redirect('auth/reset-password')->withErrors('test');
+            return redirect('auth/reset-password')->withErrors(['password' => ['Invalid reset link']]);
         }
         $user->password = Hash::make($request->password);
         $user->save();
