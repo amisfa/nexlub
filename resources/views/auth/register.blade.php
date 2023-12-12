@@ -38,7 +38,7 @@
     <div class="signin">
         <div class="content">
             <h2>Register</h2>
-            <form class="form" action="{{ route('register-form') }}" method="post"
+            <form class="form" action="{{ route('signup-form') }}" method="post"
                   onsubmit="return registerValidation();">
                 @csrf
                 <div class="inputBox">
@@ -55,9 +55,11 @@
                         Password</i>
                 </div>
                 <div class="inputBox">
-                    <input type="text" name="wallet_no" value="{{old('wallet_no')}}" required> <i>Wallet(0xabc123...)</i>
+                    <input type="text" name="wallet_no" value="{{old('wallet_no')}}" required>
+                    <i>Wallet(0xabc123...)</i>
                 </div>
-                <div class="links"><a href="#">Forgot Password</a> <a href="{{route('login')}}">Sign
+                <div class="links"><a href="{{route('forgot-password-view')}}">Forgot Password</a> <a
+                        href="{{route('login')}}">Sign
                         in</a>
                 </div>
                 <div style="overflow-x: scroll;border: solid 2px;" class="beauty-scroll">
@@ -109,8 +111,12 @@
         let e = document.querySelector("#password").value, r = document.querySelector("#password_confirmation").value;
         return !(e.length < 8) && !(r.length < 8) || (alert("Your password must be at least 8 characters long"), !1)
     }
+
     //horizontal avatar scroll
-    const element=document.querySelector(".beauty-scroll");element.addEventListener("wheel",e=>{e.preventDefault(),element.scrollBy({left:e.deltaY<0?-30:30})});
+    const element = document.querySelector(".beauty-scroll");
+    element.addEventListener("wheel", e => {
+        e.preventDefault(), element.scrollBy({left: e.deltaY < 0 ? -30 : 30})
+    });
 </script>
 </body>
 </html>

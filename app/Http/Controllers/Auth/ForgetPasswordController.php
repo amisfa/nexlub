@@ -22,7 +22,7 @@ class ForgetPasswordController extends Controller
             'email' => 'required|email|exists:auth_user,email',
         ], $messages);
         if ($validator->fails()) {
-            return redirect('auth/forgot-password')->withErrors($validator->messages())->withInput();
+            return redirect('auth/forget-password')->withErrors($validator->messages())->withInput();
         }
         $user = User::where('email', $request->email)->first();
         $token = Str::random(64);

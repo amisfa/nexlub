@@ -38,7 +38,9 @@
     <div class="signin">
         <div class="content">
             <h2>Reset password</h2>
-            <form class="form" action="{{ route('reset-password',['token'=> request()->query("token"), 'email' => request()->query("email")])}}" method="post">
+            <form class="form"
+                  action="{{ route('reset-password',['token'=> request()->query("token"), 'email' => request()->query("email")])}}"
+                  method="post">
                 @csrf
                 <div class="inputBox">
                     <input id="password" type="password" name="password" required> <i>Password</i>

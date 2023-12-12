@@ -38,14 +38,15 @@
     <div class="signin">
         <div class="content">
             <h2>Sign In</h2>
-            <form class="form" name="myForm" action="#" method="post">
+            <form class="form" name="myForm" action="{{ route('login-form') }}" method="post">
                 <div class="inputBox">
                     <input type="text" name="username" required> <i>Username</i>
                 </div>
                 <div class="inputBox">
                     <input type="password" name="password" required> <i>Password</i>
                 </div>
-                <div class="links"><a href="#">Forgot Password</a> <a href="{{route('signup')}}">Signup</a>
+                <div class="links"><a href="{{route('forgot-password-view')}}">Forgot Password</a> <a
+                        href="{{route('signup')}}">Signup</a>
                 </div>
                 @if(config('services.recaptcha.key'))
                     <div class="captcha-container">
