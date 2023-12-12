@@ -88,7 +88,6 @@
                 <div class="inputBox">
                     <input type="submit" value="Create your account">
                 </div>
-                <br/>
                 @if(count($errors->all()))
                     @foreach($errors->all() as $error)
                         <div class="notification-container">

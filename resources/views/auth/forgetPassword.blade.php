@@ -45,18 +45,17 @@
                         <input type="text" name="email" required {{$errors->has('email-sent') ? 'disabled' : ''}}>
                         <i>Email</i>
                     </div>
-                    {{--                @if(config('services.recaptcha.key'))--}}
-                    {{--                    <div class="captcha-container">--}}
-                    {{--                        <div class="g-recaptcha" data-theme="dark"--}}
-                    {{--                             data-sitekey="{{config('services.recaptcha.key')}}">--}}
-                    {{--                        </div>--}}
-                    {{--                    </div>--}}
-                    {{--                @endif--}}
+{{--                    @if(config('services.recaptcha.key'))--}}
+{{--                        <div class="captcha-container">--}}
+{{--                            <div class="g-recaptcha" data-theme="dark"--}}
+{{--                                 data-sitekey="{{config('services.recaptcha.key')}}">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    @endif--}}
                     <div class="inputBox">
                         <input type="submit" value="Submit">
                     </div>
                 @endif
-                <br>
                 @if(count($errors->all()))
                     @foreach($errors->all() as $error)
                         <div class="notification-container">

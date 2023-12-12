@@ -52,7 +52,6 @@
                 <div class="inputBox">
                     <input type="submit" value="Submit">
                 </div>
-                <br>
                 @if(count($errors->all()))
                     @foreach($errors->all() as $error)
                         <div class="notification-container">
