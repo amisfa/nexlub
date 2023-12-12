@@ -39,6 +39,7 @@
         <div class="content">
             <h2>Sign In</h2>
             <form class="form" name="myForm" action="{{ route('login-form') }}" method="post">
+                @csrf
                 <div class="inputBox">
                     <input type="text" name="username" required> <i>Username</i>
                 </div>

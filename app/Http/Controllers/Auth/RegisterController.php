@@ -16,9 +16,7 @@ class RegisterController extends Controller
 {
     public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
-        if (request()->has('ref')) {
-            session(['referrer' => request()->query('ref')]);
-        }
+        if (request()->has('ref')) session(['referrer' => request()->query('ref')]);
         return view('auth.register');
     }
 
@@ -50,7 +48,7 @@ class RegisterController extends Controller
             'referral_token' => Str::random(16),
             'wallet_no' => $request->wallet_no,
         ]);
-        $response = Helper::setPokerMavens([
+        Helper::setPokerMavens([
             "Command" => "AccountsAdd",
             'Player' => $request->username,
             'Email' => $request->email,

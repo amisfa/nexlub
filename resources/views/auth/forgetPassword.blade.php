@@ -40,19 +40,22 @@
             <h2>Forgot password</h2>
             <form class="form" action="{{ route('forget-password') }}" method="post">
                 @csrf
-                <div class="inputBox">
-                    <input type="text" name="email" required> <i>Email</i>
-                </div>
-                {{--                @if(config('services.recaptcha.key'))--}}
-                {{--                    <div class="captcha-container">--}}
-                {{--                        <div class="g-recaptcha" data-theme="dark"--}}
-                {{--                             data-sitekey="{{config('services.recaptcha.key')}}">--}}
-                {{--                        </div>--}}
-                {{--                    </div>--}}
-                {{--                @endif--}}
-                <div class="inputBox">
-                    <input type="submit" value="Submit">
-                </div>
+                @if(!$errors->has('email-sent'))
+                    <div class="inputBox">
+                        <input type="text" name="email" required {{$errors->has('email-sent') ? 'disabled' : ''}}>
+                        <i>Email</i>
+                    </div>
+                    {{--                @if(config('services.recaptcha.key'))--}}
+                    {{--                    <div class="captcha-container">--}}
+                    {{--                        <div class="g-recaptcha" data-theme="dark"--}}
+                    {{--                             data-sitekey="{{config('services.recaptcha.key')}}">--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+                    {{--                @endif--}}
+                    <div class="inputBox">
+                        <input type="submit" value="Submit">
+                    </div>
+                @endif
                 <br>
                 @if(count($errors->all()))
                     @foreach($errors->all() as $error)

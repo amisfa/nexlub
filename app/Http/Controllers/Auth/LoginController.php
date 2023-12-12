@@ -26,9 +26,9 @@ class LoginController extends Controller
             'g-recaptcha-response.required' => 'Please complete the captcha'
         ];
         $validator = Validator::make($request->all(), [
-            'username' => 'required|unique:auth_user',
+            'username' => 'required',
             'password' => 'required|min:8',
-            'g-recaptcha-response' => 'required|recaptcha'
+//            'g-recaptcha-response' => 'required|recaptcha'
         ], $messages);
 
         if ($validator->fails()) {
@@ -36,11 +36,8 @@ class LoginController extends Controller
         }
 
         $user = User::where('username', $request->input('username'))->first();
-        if (!$user || !Hash::check($request->input('password'), $user->password)) {
-
-            return redirect('auth/login')->withErrors($validator->messages());
-        }
-
+        if (!$user || !Hash::check($request->input('password'), $user->password))
+            return redirect('auth/login')->withErrors(['password' => 'User not found or password was incorrect']);
         Auth::loginUsingId($user->id);
         return redirect('profile');
     }

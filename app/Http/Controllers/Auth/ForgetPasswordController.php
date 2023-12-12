@@ -32,7 +32,7 @@ class ForgetPasswordController extends Controller
             'created_at' => now()
         ]);
         Mail::to($request->email)->send(new ForgotPassword($token, $user));
-        return response()->json(true);
+        return redirect('auth/forget-password')->withErrors(['email-sent'=> 'We have e-mailed your password reset link!']);
     }
 
     public function create()

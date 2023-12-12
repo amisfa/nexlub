@@ -13,6 +13,8 @@ class ResetPasswordController extends Controller
 {
     public function reset(Request $request)
     {
+        $token = $request->token;
+        $email = $request->email;
         $messages = [
             'password_confirmation.same' => 'Password Confirmation should match the Password',
         ];
@@ -20,26 +22,24 @@ class ResetPasswordController extends Controller
             'password' => 'required|min:8',
             'password_confirmation' => 'required|min:8|same:password',
         ], $messages);
-        if ($validator->fails()) {
-            return redirect('auth/reset-password')->withErrors($validator->messages())->withInput();
-        }
+        if ($validator->fails())
+            return redirect("auth/reset-password?email=$email&token=$token")->withErrors($validator->messages())->withInput();
         $user = User::where('email', $request->email)->first();
         $passwordReset = DB::table('password_resets')
             ->where([
-                'email' => $request->email,
-                'token' => $request->token,
+                'email' => $email,
+                'token' => $token,
                 'deleted_at' => null
             ])
             ->first();
-        if (!$passwordReset) {
-            return redirect('auth/reset-password')->withErrors(['password' => ['Invalid reset link']]);
-        }
+        if (!$passwordReset)
+            return redirect("auth/reset-password?email=$email&token=$token")->withErrors(['password' => ['Invalid reset link']]);
         $user->password = Hash::make($request->password);
         $user->save();
-        DB::table('password_resets')->where(['email' => $request->email])
-            ->update(['deleted_at' => now()]);
+        DB::table('password_resets')->where(['email' => $email])->update(['deleted_at' => now()]);
         return redirect('auth/login');
     }
+
     public function create()
     {
         return view('auth.resetPassword');

@@ -335,7 +335,7 @@
 </footer>
             </div>
         </div>
-        <form id="logout-form" action="#" method="POST" style="display: none;">
+        <form id="logout-form" action="{{route('log-out')}}" method="POST" style="display: none;">
             <input type="hidden" name="_token" value="ub2DzAIrgUnghVvu3l3KAbbq0UztNO8yfkrDNm6n">            </form>
     <script src="{{ asset('black') }}/js/core/jquery.min.js"></script>
     <script src="{{ asset('black') }}/js/core/popper.min.js"></script>

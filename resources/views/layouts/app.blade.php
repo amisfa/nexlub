@@ -34,7 +34,7 @@
 {{--                    @include('layouts.footer')--}}
 {{--                </div>--}}
 {{--            </div>--}}
-{{--            <form id="logout-form" action="#" method="POST" style="display: none;">--}}
+{{--            <form id="logout-form" action="{{route('log-out')}}" method="POST" style="display: none;">--}}
 {{--                @csrf--}}
 {{--            </form>--}}
 {{--        @else--}}
@@ -62,7 +62,7 @@
         @include('layouts.footer')
     </div>
 </div>
-<form id="logout-form" action="#" method="POST" style="display: none;">
+<form id="logout-form" action="{{route('log-out')}}" method="POST" style="display: none;">
     @csrf
 </form>
 
