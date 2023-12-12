@@ -6,6 +6,7 @@ use App\Mail\ForgotPassword;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
@@ -32,11 +33,12 @@ class ForgetPasswordController extends Controller
             'created_at' => now()
         ]);
         Mail::to($request->email)->send(new ForgotPassword($token, $user));
-        return redirect('auth/forget-password')->withErrors(['email-sent'=> 'We have e-mailed your password reset link!']);
+        return redirect('auth/forget-password')->withErrors(['email-sent' => 'We have e-mailed your password reset link!']);
     }
 
-    public function create()
+    public function create(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Routing\Redirector|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse
     {
+        if (Auth::user()) return redirect('profile');
         return view('auth.forgetPassword');
     }
 }

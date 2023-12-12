@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Helpers\Helper;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -36,12 +38,18 @@ class ResetPasswordController extends Controller
             return redirect("auth/reset-password?email=$email&token=$token")->withErrors(['password' => ['Invalid reset link']]);
         $user->password = Hash::make($request->password);
         $user->save();
+        Helper::setPokerMavens([
+            "Command" => "AccountsEdit",
+            'Player' => $user->username,
+            'PW' => $request->password,
+        ]);
         DB::table('password_resets')->where(['email' => $email])->update(['deleted_at' => now()]);
         return redirect('auth/login');
     }
 
-    public function create()
+    public function create(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Routing\Redirector|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse
     {
+        if (Auth::user()) return redirect('profile');
         return view('auth.resetPassword');
     }
 }

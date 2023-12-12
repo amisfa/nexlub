@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Helpers\Helper;
 use App\Models\User;
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -14,8 +13,9 @@ use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
-    public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
+    public function create(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Routing\Redirector|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse
     {
+        if (Auth::user()) return redirect('profile');
         if (request()->has('ref')) session(['referrer' => request()->query('ref')]);
         return view('auth.register');
     }
@@ -52,7 +52,7 @@ class RegisterController extends Controller
             "Command" => "AccountsAdd",
             'Player' => $request->username,
             'Email' => $request->email,
-            'PW' => Hash::make($request->password),
+            'PW' => $request->password,
             'Custom1' => $request->wallet_no,
         ]);
         Auth::loginUsingId($user->id);
