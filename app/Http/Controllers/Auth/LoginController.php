@@ -20,33 +20,28 @@ class LoginController extends Controller
 
 
     public function store(Request $request)
-{
-    $messages = [
-        'g-recaptcha-response.recaptcha' => 'Captcha verification failed',
-        'g-recaptcha-response.required' => 'Please complete the captcha'
-    ];
-    $validator = Validator::make($request->all(), [
-        'username' => 'required|unique:auth_user',
-        'password' => 'required|min:8',
-        'g-recaptcha-response' => 'required|recaptcha'
-    ], $messages);
+    {
+        $messages = [
+            'g-recaptcha-response.recaptcha' => 'Captcha verification failed',
+            'g-recaptcha-response.required' => 'Please complete the captcha'
+        ];
+        $validator = Validator::make($request->all(), [
+            'username' => 'required|unique:auth_user',
+            'password' => 'required|min:8',
+            'g-recaptcha-response' => 'required|recaptcha'
+        ], $messages);
 
-    if ($validator->fails()) {
-        return redirect('auth/login')->withErrors($validator->messages());
-    }
+        if ($validator->fails()) {
+            return redirect('auth/login')->withErrors($validator->messages());
+        }
 
-    $user = User::where('username', $request->input('username'))->first();
-    if (!$user || !Hash::check($request->input('password'), $user->password)) {
+        $user = User::where('username', $request->input('username'))->first();
+        if (!$user || !Hash::check($request->input('password'), $user->password)) {
 
-        return redirect('auth/login')->withErrors($validator->messages());
-    }
+            return redirect('auth/login')->withErrors($validator->messages());
+        }
 
-//    Auth::login($user);
         Auth::loginUsingId($user->id);
-
-
-        return redirect(RouteServiceProvider::HOME);
-}
-
-
+        return redirect('dashboard');
+    }
 }

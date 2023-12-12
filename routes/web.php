@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\ForgetPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', function () {
-    return view('dashboard');
-});
 
 Route::prefix('auth')->group(function () {
     Route::get('/register', [RegisterController::class, 'create'])->name('signup');
@@ -31,7 +29,9 @@ Route::prefix('auth')->group(function () {
     Route::post('/forgot-password', [ForgetPasswordController::class, 'store'])->name('forget-password');
     Route::get('/reset-password', [ResetPasswordController::class, 'create']);
     Route::post('/reset-password/{token}/{email}', [ResetPasswordController::class, 'reset'])->name('reset-password');
-
+});
+Route::prefix('profile')->middleware('auth:web')->group(function () {
+    Route::get('/', [DashboardController::class, 'create'])->name('dashboard');
 });
 
 

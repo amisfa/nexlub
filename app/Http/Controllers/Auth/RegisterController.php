@@ -19,7 +19,6 @@ class RegisterController extends Controller
         if (request()->has('ref')) {
             session(['referrer' => request()->query('ref')]);
         }
-
         return view('auth.register');
     }
 
@@ -59,6 +58,6 @@ class RegisterController extends Controller
             'Custom1' => $request->wallet_no,
         ]);
         Auth::loginUsingId($user->id);
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('dashboard');
     }
 }
