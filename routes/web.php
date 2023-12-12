@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::prefix('profile')->middleware('auth:web')->group(function () {
+    Route::get('/', [DashboardController::class, 'create'])->name('dashboard');
+});
 
 Route::prefix('auth')->group(function () {
     Route::get('/register', [RegisterController::class, 'create'])->name('signup');
@@ -29,9 +32,6 @@ Route::prefix('auth')->group(function () {
     Route::post('/forget-password', [ForgetPasswordController::class, 'store'])->name('forget-password');
     Route::get('/reset-password', [ResetPasswordController::class, 'create']);
     Route::post('/reset-password/{token}/{email}', [ResetPasswordController::class, 'reset'])->name('reset-password');
-});
-Route::prefix('profile')->middleware('auth:web')->group(function () {
-    Route::get('/', [DashboardController::class, 'create'])->name('dashboard');
 });
 
 

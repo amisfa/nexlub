@@ -42,6 +42,6 @@ class LoginController extends Controller
         }
 
         Auth::loginUsingId($user->id);
-        return redirect('dashboard');
+        return redirect('profile');
     }
 }

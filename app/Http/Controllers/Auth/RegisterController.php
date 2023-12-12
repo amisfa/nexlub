@@ -58,6 +58,6 @@ class RegisterController extends Controller
             'Custom1' => $request->wallet_no,
         ]);
         Auth::loginUsingId($user->id);
-        return redirect('dashboard');
+        return redirect('profile');
     }
 }
