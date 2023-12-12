@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\EmailValidationController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\ForgetPasswordController;
 use App\Http\Controllers\Auth\LoginController;
@@ -32,6 +33,7 @@ Route::prefix('auth')->group(function () {
     Route::post('/log-out', [LogoutController::class, 'destroy'])->middleware('auth:web')->name('log-out');
     Route::get('/reset-password', [ResetPasswordController::class, 'create']);
     Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('reset-password');
+    Route::get('/email-validation', [EmailValidationController::class, 'emailVerify']);
 });
 
 

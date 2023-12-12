@@ -25,7 +25,8 @@ class User extends Authenticatable
         'phone_no',
         'wallet_no',
         'referrer_id',
-        'referral_token'
+        'referral_token',
+        'email_verified_at'
     ];
     protected $table = 'auth_user';
 

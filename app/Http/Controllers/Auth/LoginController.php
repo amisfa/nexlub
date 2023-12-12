@@ -42,4 +42,12 @@ class LoginController extends Controller
         Auth::loginUsingId($user->id);
         return redirect('profile');
     }
+
+    public function validateEmail(User $user)
+    {
+        $token = request()->query('token');
+        if (Auth::user()) {
+
+        }
+    }
 }

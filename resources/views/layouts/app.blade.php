@@ -54,11 +54,18 @@
     @include('layouts.navbars.sidebar')
     <div class="main-panel">
         @include('layouts.navbars.navbar')
-
         <div class="content">
+            @if(session('warning'))
+                <div class="alert alert-primary" role="alert">{{session('warning')}}</div>
+            @endif
+            @if(session('success'))
+                <div class="alert alert-success" role="alert">{{session('success')}}</div>
+            @endif
+            @if(session('error'))
+                <div class="alert alert-danger" role="alert">{{session('error')}}</div>
+            @endif
             @yield('content')
         </div>
-
         @include('layouts.footer')
     </div>
 </div>
