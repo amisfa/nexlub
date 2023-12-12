@@ -1,8 +1,8 @@
 <div class="sidebar">
     <div class="sidebar-wrapper">
         <div class="logo">
-            <a href="#" class="simple-text logo-mini">{{ __('BD') }}</a>
-            <a href="#" class="simple-text logo-normal">{{ __('Black Dashboard') }}</a>
+            <a href="#" class="simple-text logo-mini">{{ __('NL') }}</a>
+            <a href="#" class="simple-text logo-normal">{{ __('Play and Earn') }}</a>
         </div>
         <ul class="nav">
             <li @if ($pageSlug == 'dashboard') class="active " @endif>
@@ -14,6 +14,7 @@
             <li>
                 <a data-toggle="collapse" href="#laravel-examples" aria-expanded="true">
                     <i class="fab fa-laravel" ></i>
+                    <i class="tim-icons icon-chart-pie-36"></i>
                     <span class="nav-link-text" >{{ __('Rooms') }}</span>
                     <b class="caret mt-1"></b>
                 </a>
@@ -82,24 +83,6 @@
                     <p>{{ __('Table List') }}</p>
                 </a>
             </li>
-            <li @if ($pageSlug == 'typography') class="active " @endif>
-                <a href="#">
-                    <i class="tim-icons icon-align-center"></i>
-                    <p>{{ __('Typography') }}</p>
-                </a>
-            </li>
-            <li @if ($pageSlug == 'rtl') class="active " @endif>
-                <a href="#">
-                    <i class="tim-icons icon-world"></i>
-                    <p>{{ __('RTL Support') }}</p>
-                </a>
-            </li>
-            <li class=" {{ $pageSlug == 'upgrade' ? 'active' : '' }} bg-info">
-                <a href="#">
-                    <i class="tim-icons icon-spaceship"></i>
-                    <p>{{ __('Upgrade to PRO') }}</p>
-                </a>
-            </li>
-        </ul>
+
     </div>
 </div>

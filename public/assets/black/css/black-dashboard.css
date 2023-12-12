@@ -2369,8 +2369,8 @@ fieldset:disabled a.btn {
 
 .btn-primary:hover {
   color: #ffffff;
-  background-color: #db2dc0;
-  border-color: #d725bb;
+  background-color: #29c9e9;
+  border-color: #29c9e9;
 }
 
 .btn-primary:focus,
@@ -2389,8 +2389,8 @@ fieldset:disabled a.btn {
 .btn-primary:not(:disabled):not(.disabled).active,
 .show>.btn-primary.dropdown-toggle {
   color: #ffffff;
-  background-color: #d725bb;
-  border-color: #cd23b2;
+  background-color: #29c9e9;
+  border-color: #29c9e9;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus,
@@ -2863,7 +2863,7 @@ fieldset:disabled a.btn {
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
 .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
 .show>.btn-outline-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0 rgba(225, 78, 202, 0.5);
+  box-shadow: 0 0 0 0 rgb(41, 201, 233);
 }
 
 .btn-outline-secondary {
@@ -3291,7 +3291,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-link:hover {
-  color: #c221a9;
+  color: #29c9e9;
   text-decoration: none;
   background-color: transparent;
   border-color: transparent;
@@ -4005,7 +4005,7 @@ input[type="button"].btn-block {
 }
 
 .custom-radio .custom-control-input:disabled:checked~.custom-control-label::before {
-  background-color: rgba(225, 78, 202, 0.5);
+  background-color: rgb(41, 201, 233);
 }
 
 .custom-select {
@@ -5157,7 +5157,7 @@ input[type="button"].btn-block {
 .badge-primary[href]:focus {
   color: #ffffff;
   text-decoration: none;
-  background-color: #d725bb;
+  background-color: #29c9e9;
 }
 
 .badge-secondary {
@@ -5341,16 +5341,16 @@ input[type="button"].btn-block {
 
 .alert-primary {
   color: #29c9e9;
-  background-color: #e66ad2;
-  border-color: #e66ad2;
+  background-color: #29c9e9;
+  border-color: #29c9e9;
 }
 
 .alert-primary hr {
-  border-top-color: #e254cb;
+  border-top-color: #29c9e9;
 }
 
 .alert-primary .alert-link {
-  color: #d725bb;
+  color: #29c9e9;
 }
 
 .alert-secondary {
@@ -5640,20 +5640,20 @@ input[type="button"].btn-block {
 }
 
 .list-group-item-primary {
-  color: #853d89;
+  color: #29c9e9;
   background-color: #f7cdf0;
 }
 
 .list-group-item-primary.list-group-item-action:hover,
 .list-group-item-primary.list-group-item-action:focus {
-  color: #853d89;
+  color: #29c9e9;
   background-color: #f3b7e9;
 }
 
 .list-group-item-primary.list-group-item-action.active {
   color: #ffffff;
-  background-color: #853d89;
-  border-color: #853d89;
+  background-color: #29c9e9;
+  border-color: #29c9e9;
 }
 
 .list-group-item-secondary {
@@ -10425,7 +10425,7 @@ a.text-darker:focus {
   background-image: -webkit-linear-gradient(to bottom left, #344675, #263148, #344675) !important;
   background-image: -o-linear-gradient(to bottom left, #344675, #263148, #344675) !important;
   background-image: -moz-linear-gradient(to bottom left, #344675, #263148, #344675) !important;
-  color: #ffffff;
+  color: #263148;
   box-shadow: none;
 }
 
@@ -14139,7 +14139,7 @@ p.description {
 }
 
 .blockquote.blockquote-danger {
-  border-color: #fd5d93;
+  border-color: #29c9e9;
   color: #fd5d93;
 }
 
@@ -14852,10 +14852,10 @@ table.tablesorter thead tr .headerSortDown {
 .sidebar,
 .off-canvas-sidebar {
   background: #ba54f5;
-  background: -webkit-linear-gradient(0deg, #ba54f5 0%, #29c9e9 100%);
-  background: -o-linear-gradient(0deg, #ba54f5 0%, #29c9e9 100%);
-  background: -moz-linear-gradient(0deg, #ba54f5 0%, #29c9e9 100%);
-  background: linear-gradient(0deg, #ba54f5 0%, #29c9e9 100%);
+  background: -webkit-linear-gradient(0deg, rgba(6, 43, 234, 0.5) 0%, #29c9e9 100%);
+  background: -o-linear-gradient(0deg, rgba(6, 43, 234, 0.5) 0%, #29c9e9 100%);
+  background: -moz-linear-gradient(0deg, rgba(6, 43, 234, 0.5) 0%, #29c9e9 100%);
+  background: linear-gradient(0deg, rgba(6, 43, 234, 0.5) 0%, #29c9e9 100%);
   height: calc(100vh - 90px);
   width: 230px;
   position: fixed;
@@ -16689,7 +16689,7 @@ textarea.form-control:active {
   }
 }
 
-/*!
+/*/
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license - http://opensource.org/licenses/MIT
 
@@ -16997,7 +16997,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .white-content .form-control:focus {
-  border-color: #29c9e9;
+    border-color: #29c9e9;
 }
 
 .white-content .form-group.no-border .form-control,
