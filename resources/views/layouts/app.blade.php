@@ -21,35 +21,6 @@
     <link href="{{ asset('black') }}/css/theme.css" rel="stylesheet"/>
 </head>
 <body class="{{ $class ?? '' }}">
-{{--        @auth()--}}
-{{--            <div class="wrapper">--}}
-{{--                    @include('layouts.navbars.sidebar')--}}
-{{--                <div class="main-panel">--}}
-{{--                    @include('layouts.navbars.navbar')--}}
-
-{{--                    <div class="content">--}}
-{{--                        @yield('content')--}}
-{{--                    </div>--}}
-
-{{--                    @include('layouts.footer')--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <form id="logout-form" action="{{route('log-out')}}" method="POST" style="display: none;">--}}
-{{--                @csrf--}}
-{{--            </form>--}}
-{{--        @else--}}
-{{--            @include('layouts.navbars.navbar')--}}
-{{--            <div class="wrapper wrapper-full-page">--}}
-{{--                <div class="full-page {{ $contentClass ?? '' }}">--}}
-{{--                    <div class="content">--}}
-{{--                        <div class="container">--}}
-{{--                            @yield('content')--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    @include('layouts.footer')--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        @endauth--}}
 <div class="wrapper">
     @include('layouts.navbars.sidebar')
     <div class="main-panel">

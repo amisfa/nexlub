@@ -16,7 +16,7 @@ class RegisterController extends Controller
 {
     public function create(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Routing\Redirector|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse
     {
-        if (Auth::user()) return redirect('profile');
+        if (Auth::user()) return redirect('dashboard');
         if (request()->has('ref')) session(['referrer' => request()->query('ref')]);
         return view('auth.register');
     }
@@ -60,6 +60,6 @@ class RegisterController extends Controller
             'Custom1' => $request->wallet_no,
         ]);
         Auth::loginUsingId($user->id);
-        return redirect('profile')->with(['warning' => 'Plz Check Your Email']);;
+        return redirect('dashboard')->with(['warning' => 'Plz Check Your Email']);;
     }
 }

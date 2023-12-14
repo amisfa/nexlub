@@ -16,7 +16,7 @@ class EmailValidationController extends Controller
         $userId = request()->query('user_id');
         $userVerify = UserVerify::query()->where('token', $token)->where('user_id', $userId)->first();
         if (!$userVerify) {
-            if (Auth::user()) return redirect('profile')->with(['error' => 'Invalid Email Validation']);
+            if (Auth::user()) return redirect('dashboard')->with(['error' => 'Invalid Email Validation']);
             return redirect('auth/login')->withErrors(['email-verify' => 'Invalid Email Validation']);
         }
         $user = User::find($userId);
@@ -24,6 +24,6 @@ class EmailValidationController extends Controller
         $user->save();
         $userVerify->update(['deleted_at' => now()]);
         if (!Auth::user()) Auth::loginUsingId($user->id);
-        return redirect('profile')->with(['success' => 'Your Email Verified!']);
+        return redirect('dashboard')->with(['success' => 'Your Email Verified!']);
     }
 }

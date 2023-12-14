@@ -15,7 +15,7 @@ class LoginController extends Controller
 {
     public function create(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Routing\Redirector|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse
     {
-        if (Auth::user()) return redirect('profile');
+        if (Auth::user()) return redirect('dashboard');
         return view('auth.login');
     }
 
@@ -40,7 +40,7 @@ class LoginController extends Controller
         if (!$user || !Hash::check($request->input('password'), $user->password))
             return redirect('auth/login')->withErrors(['password' => 'User not found or password was incorrect']);
         Auth::loginUsingId($user->id);
-        return redirect('profile');
+        return redirect('dashboard');
     }
 
     public function validateEmail(User $user)
