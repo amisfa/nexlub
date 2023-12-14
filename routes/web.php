@@ -6,7 +6,7 @@ use App\Http\Controllers\Auth\ForgetPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::prefix('dashboard')->middleware('auth:web')->group(function () {
-    Route::get('/', [DashboardController::class, 'create'])->name('dashboard');
+    Route::get('/', [ProfileController::class, 'create'])->name('dashboard');
+    Route::get('/profile', [ProfileController::class, 'create'])->name('profile');
 });
 
 Route::prefix('auth')->group(function () {
