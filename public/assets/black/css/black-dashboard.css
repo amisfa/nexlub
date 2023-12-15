@@ -606,7 +606,9 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
-
+.comboBox {
+    color: #000000;
+}
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
