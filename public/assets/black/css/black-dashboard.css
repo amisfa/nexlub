@@ -641,9 +641,11 @@ pre code {
 
 .row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-right: -15px;
   margin-left: -15px;
+    align-items: center;
+    flex-direction: column-reverse;
 }
 
 .no-gutters {
@@ -14076,6 +14078,7 @@ p {
 
 p.description {
   font-size: 1.14em;
+    font-weight: 900
 }
 
 .title {
@@ -17288,7 +17291,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .card .card-header {
-  padding: 15px 15px 0;
+  padding: px 15px 0;
   border: 0;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -17690,8 +17693,8 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .card-user .avatar {
-  width: 124px;
-  height: 124px;
+  width: 250px;
+  height: 250px;
   border: 5px solid #2b3553;
   border-bottom-color: transparent;
   background-color: transparent;
