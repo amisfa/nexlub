@@ -8,26 +8,48 @@
                     <h1 class="title">Choose Your Game</h1>
                 </div>
                 <div class="card-body all-icons">
-                    <div class="row">
-                        <div class="font-icon-list col-lg-5 col-md-3 col-sm-4 col-xs-6 col-xs-6 ">
-                            <a href=><img src="{{ asset('black') }}/img/1.jpg" alt="Poker">
-                            </a>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <a href=><img src="{{ asset('black') }}/img/1.jpg" alt="Poker">
+                                </a>
+                            </div>
+                            <div class="col order-5">
+                                <a href=><img src="{{ asset('black') }}/img/2.jpg" alt="Poker">
+                                </a>
+                            </div>
                         </div>
-                        <div class="font-icon-list col-lg-5 col-md-3 col-sm-4 col-xs-6 col-xs-6">
-                            <a href=><img src="{{ asset('black') }}/img/2.jpg" alt="Poker">
-                            </a>
+                        <div class="row">
+                            <div class="col">
+                                <a href=><img src="{{ asset('black') }}/img/3.jpg" alt="Poker">
+                                </a>
+                            </div>
+                            <div class="col order-5">
+                                <a href=><img src="{{ asset('black') }}/img/4.jpg" alt="Poker">
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="font-icon-list col-lg-5 col-md-3 col-sm-4 col-xs-6 col-xs-6">
-                            <a href=><img src="{{ asset('black') }}/img/3.jpg" alt="Poker">
-                            </a>
-                        </div>
-                        <div class="font-icon-list col-lg-5 col-md-3 col-sm-4 col-xs-6 col-xs-6">
-                            <a href=><img src="{{ asset('black') }}/img/4.jpg" alt="Poker">
-                            </a>
-                        </div>
-                    </div>
+                    {{--                    <div class="row">--}}
+                    {{--                        <div class="font-icon-list col-lg-5 col-md-3 col-sm-4 col-xs-6 col-xs-6 ">--}}
+                    {{--                            <a href=><img src="{{ asset('black') }}/img/1.jpg" alt="Poker">--}}
+                    {{--                            </a>--}}
+                    {{--                        </div>--}}
+                    {{--                        <div class="font-icon-list col-lg-5 col-md-3 col-sm-4 col-xs-6 col-xs-6">--}}
+                    {{--                            <a href=><img src="{{ asset('black') }}/img/2.jpg" alt="Poker">--}}
+                    {{--                            </a>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+                    {{--                    <div class="row">--}}
+                    {{--                        <div class="font-icon-list col-lg-5 col-md-3 col-sm-4 col-xs-6 col-xs-6">--}}
+                    {{--                            <a href=><img src="{{ asset('black') }}/img/3.jpg" alt="Poker">--}}
+                    {{--                            </a>--}}
+                    {{--                        </div>--}}
+                    {{--                        <div class="font-icon-list col-lg-5 col-md-3 col-sm-4 col-xs-6 col-xs-6">--}}
+                    {{--                            <a href=><img src="{{ asset('black') }}/img/4.jpg" alt="Poker">--}}
+                    {{--                            </a>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
 
                     {{--                        <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">--}}
                     {{--                            <div class="font-icon-detail">--}}
