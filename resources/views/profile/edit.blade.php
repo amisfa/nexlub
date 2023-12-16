@@ -11,9 +11,7 @@
                     <div class="card-body">
                             @csrf
                             @method('put')
-
                             @include('alerts.success')
-
                             <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                 <label>{{ __('Name') }}</label>
                                 <input type="text" name="name" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" placeholder="{{ __('UserName') }}" value="{{ old('username', auth()->user()->username) }}">
@@ -30,7 +28,6 @@
                     </div>
                 </form>
             </div>
-
             <div class="card">
                 <div class="card-header">
                     <h5 class="title">{{ __('Password') }}</h5>
@@ -39,15 +36,12 @@
                     <div class="card-body">
                         @csrf
                         @method('put')
-
                         @include('alerts.success', ['key' => 'password_status'])
-
                         <div class="form-group{{ $errors->has('old_password') ? ' has-danger' : '' }}">
                             <label>{{ __('Current Password') }}</label>
                             <input type="password" name="old_password" class="form-control{{ $errors->has('old_password') ? ' is-invalid' : '' }}" placeholder="{{ __('Current Password') }}" value="" required>
                             @include('alerts.feedback', ['field' => 'old_password'])
                         </div>
-
                         <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                             <label>{{ __('New Password') }}</label>
                             <input type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('New Password') }}" value="" required>
