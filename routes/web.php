@@ -26,7 +26,7 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/', [ProfileController::class, 'create'])->name('dashboard');
     Route::get('/profile', [ProfileController::class, 'create'])->name('profile');
     Route::get('/wallet', [WalletController::class, 'create'])->name('wallet');
-    Route::get('/play', [PlayController::class, 'create'])->name('Play');
+    Route::get('/play', [PlayController::class, 'create'])->name('play');
     Route::get('/addBalance', [AddBalanceController::class, 'create'])->name('addBalance');
 });
 
