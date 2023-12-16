@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Helpers\Helper;
+use App\Mail\VerifyEmail;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Models\UserVerify;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -48,15 +50,17 @@ class RegisterController extends Controller
             'referrer_id' => $referrer ? $referrer->id : null,
             'referral_token' => Str::random(16),
             'wallet_no' => $request->wallet_no,
+            'avatar' => $request->avatar,
         ]);
         $token = Str::random(64);
         UserVerify::create(['user_id' => $user->id, 'token' => $token]);
-//        Mail::to($request->email)->send(new VerifyEmail($token, $user));
+        Mail::to($request->email)->send(new VerifyEmail($token, $user));
         Helper::setPokerMavens([
             "Command" => "AccountsAdd",
             'Player' => $request->username,
             'Email' => $request->email,
             'PW' => $request->password,
+            'Avatar' => $request->avatar,
             'Custom1' => $request->wallet_no,
         ]);
         Auth::loginUsingId($user->id);

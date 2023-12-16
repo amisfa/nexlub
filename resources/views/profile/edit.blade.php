@@ -16,10 +16,9 @@
 
                             <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                 <label>{{ __('Name') }}</label>
-                                <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name', auth()->user()->name) }}">
+                                <input type="text" name="name" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" placeholder="{{ __('UserName') }}" value="{{ old('username', auth()->user()->username) }}">
                                 @include('alerts.feedback', ['field' => 'name'])
                             </div>
-
                             <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                 <label>{{ __('Email address') }}</label>
                                 <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email address') }}" value="{{ old('email', auth()->user()->email) }}">
