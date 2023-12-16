@@ -31,7 +31,7 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/wallet', [WalletController::class, 'create'])->name('wallet');
     Route::get('/play', [PlayController::class, 'create'])->name('play');
     Route::get('/add-balance', [AddBalanceController::class, 'create'])->name('addBalance');
-    Route::post('/add-balance', [PaymentController::class, 'createCryptoPayment'])->name('pay');
+    Route::post('/add-balance', [PaymentController::class, 'createPayment'])->name('pay');
     Route::get('/deposit', [DepositController::class, 'create'])->name('deposit');
 });
 
