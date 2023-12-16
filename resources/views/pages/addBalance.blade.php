@@ -5,12 +5,12 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Input Form</div>
+                    <div class="card-header">Add Balance</div>
                     <div class="card-body">
                         <form method="post" action="#">
                             @csrf
                             <div class="form-group">
-                                <label for="Amount">Input 1</label>
+                                <label for="Amount">Amount</label>
                                 <input type="number" class="form-control" id="input1" name="input1" placeholder="Enter input">
                             </div>
                             <div class="form-group">
@@ -22,14 +22,6 @@
                                     <option value="EUR" class="comboBox">EUR</option>
                                     <option value="AED" class="comboBox">AED</option>
                                 </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="input3">Input 3</label>
-                                <input type="text" class="form-control" id="input3" name="input3" placeholder="Enter input">
-                            </div>
-                            <div class="form-group">
-                                <label for="input4">Input 4</label>
-                                <input type="text" class="form-control" id="input4" name="input4" placeholder="Enter input">
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
