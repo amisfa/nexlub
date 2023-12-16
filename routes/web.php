@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\dashboard\AddBalanceController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\DepositController;
+use App\Http\Controllers\Dashboard\EditProfileController;
 use App\Http\Controllers\Dashboard\PlayController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\WalletController;
@@ -27,6 +28,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/', [DashboardController::class, 'create'])->name('dashboard');
     Route::get('/profile', [ProfileController::class, 'create'])->name('profile');
+    Route::get('/editprofile', [EditProfileController::class, 'create'])->name('editprofile');
     Route::get('/wallet', [WalletController::class, 'create'])->name('wallet');
     Route::get('/play', [PlayController::class, 'create'])->name('play');
     Route::get('/addBalance', [AddBalanceController::class, 'create'])->name('addBalance');
