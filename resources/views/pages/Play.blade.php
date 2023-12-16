@@ -10,8 +10,7 @@
                 <div class="card-body all-icons">
                     <div class="row">
                         <div class="font-icon-list col-lg-5 col-md-3 col-sm-4 col-xs-6 col-xs-6">
-{{--                            <img src="https://maxfreespins.com/wp-content/uploads/2018/02/poker-hd-wallpaper-9.jpg" alt="Poker">--}}
-                            <a href=><img src="https://maxfreespins.com/wp-content/uploads/2018/02/poker-hd-wallpaper-9.jpg" alt="Poker">
+                            <a href=><img src="{{ asset('black') }}/img/1.jpg" alt="Poker">
                             </a>
                         </div>
                         <div class="font-icon-list col-lg-5 col-md-3 col-sm-4 col-xs-6 col-xs-6">
