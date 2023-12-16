@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header">Add Balance</div>
                     <div class="card-body">
-                        <form method="post" action="#">
+                        <form method="post" action="{{route('pay')}}">
                             @csrf
                             <div class="form-group">
                                 <label for="Amount">Amount</label>

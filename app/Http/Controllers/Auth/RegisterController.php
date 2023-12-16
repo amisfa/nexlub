@@ -64,6 +64,6 @@ class RegisterController extends Controller
             'Custom1' => $request->wallet_no,
         ]);
         Auth::loginUsingId($user->id);
-        return redirect('dashboard')->with(['warning' => 'Plz Check Your Email']);;
+        return redirect('dashboard')->with(['warning' => 'Plz Check Your Email']);
     }
 }
