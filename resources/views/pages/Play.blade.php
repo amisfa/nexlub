@@ -10,22 +10,40 @@
                 <div class="card-body all-icons">
                     <div class="container">
                         <div class="row">
-                            <div class="col">
-                                <a href=><img src="{{ asset('black') }}/img/1.jpg" alt="Poker">
+                            <div class="col" style="position: relative">
+                                <a href=>
+                                    <div class="image-container">
+                                        <img src="{{ asset('black') }}/img/1.jpg" alt="Poker" class="img-fluid">
+                                    </div>
                                 </a>
                             </div>
                             <div class="col order-5">
-                                <a href=><img src="{{ asset('black') }}/img/2.jpg" alt="Poker">
+                                <a href=>
+                                    <div class="image-container">
+                                        <img src="{{ asset('black') }}/img/2.jpg" alt="Poker">
+                                    </div>
                                 </a>
                             </div>
                         </div>
+                        <div>
+                            <br>
+                            <br>
+                        </div>
                         <div class="row">
                             <div class="col">
-                                <a href=><img src="{{ asset('black') }}/img/3.jpg" alt="Poker">
+                                <a href=>
+                                    <div class="image-container">
+                                        <img src="{{ asset('black') }}/img/3.jpg" alt="Poker" class="image-fluid">
+                                        <div class="image-overlay"></div>
+                                    </div>
                                 </a>
                             </div>
                             <div class="col order-5">
-                                <a href=><img src="{{ asset('black') }}/img/4.jpg" alt="Poker">
+                                <a href=>
+                                    <div class="image-container">
+                                        <img src="{{ asset('black') }}/img/4.jpg" alt="Poker">
+                                        <div class="image-overlay"></div>
+                                    </div>
                                 </a>
                             </div>
                         </div>

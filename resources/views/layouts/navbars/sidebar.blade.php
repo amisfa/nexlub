@@ -6,7 +6,7 @@
         </div>
         <ul class="nav">
             <li @if ($pageSlug == 'dashboard') class="active " @endif>
-                <a href="#">
+                <a href="{{route('dashboard')}}">
                     <i class="tim-icons icon-chart-pie-36"></i>
                     <p>{{ __('Dashboard') }}</p>
                 </a>
@@ -21,6 +21,12 @@
                 <a href="{{route('addBalance')}}">
                     <i class="tim-icons icon-chart-pie-36"></i>
                     <p>{{ __('add balance') }}</p>
+                </a>
+            </li>
+            <li @if ($pageSlug == 'dashboard') class="active " @endif>
+                <a href="{{route('deposit')}}">
+                    <i class="tim-icons icon-chart-pie-36"></i>
+                    <p>{{ __('deposit') }}</p>
                 </a>
             </li>
             <li @if ($pageSlug == 'dashboard') class="active " @endif>
