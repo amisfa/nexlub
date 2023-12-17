@@ -46,7 +46,7 @@ class Helper
         foreach ($currencies as $key => $currency) {
             if (!in_array($currency['currency'], $selectedCurrencies)) unset($currencies[$key]);
         }
-        return $currencies;
+        return array_reverse($currencies);
     }
 
     static function createPayment($params)

@@ -12,7 +12,6 @@ return new class extends Migration {
     {
         Schema::create('auth_user', function (Blueprint $table) {
             $table->id();
-            $table->boolean('status')->default(1)->index();
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('password');

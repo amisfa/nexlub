@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => __('Deposit'), 'pageSlug' => 'Deposit'])
+@extends('layouts.app', ['page' => __('Create Payment'), 'pageSlug' => 'create-payment'])
 
 @section('content')
     <div class="container">
@@ -13,17 +13,6 @@
                                 <label for="Amount">Amount</label>
                                 <input type="number" class="form-control" id="amount" name="price_amount"
                                        placeholder="Enter input" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="Currency">Currency</label>
-                                <select class="form-control" id="currency" name="price_currency" required>
-                                    <option value="" class="comboBox"></option>
-                                    <option value="USD" class="comboBox">USD</option>
-                                    <option value="IRR" class="comboBox">IRR</option>
-                                    <option value="TRL" class="comboBox">TRL</option>
-                                    <option value="EUR" class="comboBox">EUR</option>
-                                    <option value="AED" class="comboBox">AED</option>
-                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="Currency">Pay Currency</label>
@@ -53,24 +42,26 @@
 @endsection
 @push('js')
     <script>
-        $(window).on('pageshow', function(){
+        $(window).on('pageshow', function () {
             manipulateLimits()
         });
 
         $('#pay-currency').change(function () {
             manipulateLimits()
         });
+
         function manipulateLimits() {
-            minAmount = $('#pay-currency').find(":selected").attr('min_amount')
-            maxAmount = $('#pay-currency').find(":selected").attr('max_amount')
+            minAmount = parseFloat($('#pay-currency').find(":selected").attr('min_amount'))
+            maxAmount = parseFloat($('#pay-currency').find(":selected").attr('max_amount'))
             if (minAmount || maxAmount) {
                 $('.min-column').html(`Min: ` + minAmount)
                 $('.max-column').html(`Max: ` + maxAmount)
             }
         }
+
         function validateForm() {
-            minAmount = $('#pay-currency').find(":selected").attr('min_amount')
-            maxAmount = $('#pay-currency').find(":selected").attr('max_amount')
+            minAmount = parseFloat($('#pay-currency').find(":selected").attr('min_amount'))
+            maxAmount = parseFloat($('#pay-currency').find(":selected").attr('max_amount'))
             amount = $('#amount').val()
             if (amount < minAmount) {
                 alert('The amount is less than the limit')

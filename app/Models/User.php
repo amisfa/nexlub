@@ -67,4 +67,9 @@ class User extends Authenticatable
         return $this->referral_link = route('signup', ['ref' => $this->referral_token]);
     }
 
+    public function payments(): HasMany
+    {
+        return $this->hasMany(UserPayment::class, 'user_id');
+    }
+
 }

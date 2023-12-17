@@ -19,6 +19,7 @@
     <!-- CSS -->
     <link href="{{ asset('black') }}/css/black-dashboard.css?v=1.0.0" rel="stylesheet"/>
     <link href="{{ asset('black') }}/css/theme.css" rel="stylesheet"/>
+    @laravelViewsStyles
 </head>
 <body class="{{ $class ?? '' }}">
 <div class="wrapper">
@@ -127,5 +128,6 @@
     });
 </script>
 @stack('js')
+@laravelViewsScripts
 </body>
 </html>
