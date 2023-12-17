@@ -56,4 +56,12 @@ class Helper
             'Content-Type' => 'application/json'
         ])->post('https://api.nowpayments.io/v1/payment', $params);
     }
+
+    static function getEstimatedPrice($params): \GuzzleHttp\Promise\PromiseInterface|\Illuminate\Http\Client\Response
+    {
+        return Http::asForm()->withHeaders([
+            'x-api-key' => env('NOWPAYMENTS_API_KEY'),
+            'Content-Type' => 'application/json'
+        ])->get('https://api.nowpayments.io/v1/estimate', $params);
+    }
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
@@ -27,7 +27,8 @@ class User extends Authenticatable
         'referrer_id',
         'referral_token',
         'email_verified_at',
-        'avatar'
+        'avatar',
+        'balance',
     ];
     protected $table = 'auth_user';
 

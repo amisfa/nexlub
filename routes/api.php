@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Dashboard\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //
-//Route::middleware('auth:web')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
+Route::prefix('v1')->middleware('auth:api')->group(function () {
+    Route::get('/get-estimated-price', [PaymentController::class, 'getEstimatedPrice'])->name('get-estimated-price');
+});
