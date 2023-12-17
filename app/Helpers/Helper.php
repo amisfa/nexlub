@@ -18,14 +18,35 @@ class Helper
 
     static function getAvailableCurrencies()
     {
-        return Http::retry(3, 100, throw: false)->withHeaders([
-            'Content-Type' => 'application/json',
-            'Cache-Control' => 'no-cache',
-            'User-Agent' => 'PostmanRuntime/7.36.0',
-            'Accept' => '*/*',
-            'Accept-Encoding' => 'gzip, deflate, br',
-            'Connection' => 'keep-alive',
-        ])->get('https://api.nowpayments.io/v1/status');
+        $response = Http::withHeaders([
+            'x-api-key' => env('NOWPAYMENTS_API_KEY'),
+        ])->get('https://api.nowpayments.io/v1/currencies?fixed_rate=true');
+        if ($response->status() !== 200) return [];
+        $selectedCurrencies = [
+            "btc",
+            "usdttrc20",
+            "usdterc20",
+            "usdc",
+            "usdtbsc",
+            "usdcmatic",
+            "usdtmatic",
+            "usdtarb",
+            "usdcarc20",
+            "usdcop",
+            "usdcsol",
+            "usdtop",
+            "busd",
+            "usdcbsc",
+            "eth",
+            "ltc",
+            "trx",
+            "usdtsol"
+        ];
+        $currencies = json_decode($response->body(), true)['currencies'];
+        foreach ($currencies as $key => $currency) {
+            if (!in_array($currency['currency'], $selectedCurrencies)) unset($currencies[$key]);
+        }
+        return $currencies;
     }
 
     static function createPayment($params)
