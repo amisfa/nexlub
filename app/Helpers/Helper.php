@@ -24,6 +24,7 @@ class Helper
         if ($response->status() !== 200) return [];
         $selectedCurrencies = [
             "btc",
+            "bnbbsc",
             "usdttrc20",
             "usdterc20",
             "usdc",
