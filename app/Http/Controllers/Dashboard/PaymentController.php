@@ -20,6 +20,8 @@ class PaymentController extends Controller
                 'price_amount' => request()->price_amount ?? 100,
                 'price_currency' => 'usd',
                 'pay_currency' => request()->pay_currency ?? 'btc',
+                'is_fee_paid_by_user' => true,
+                'is_fixed_rate' => true
             ];
             $response = Helper::createPayment($data);
             $details = json_decode($response->body(), true);
