@@ -34,7 +34,7 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/create-invoice', [InvoiceController::class, 'createInvoice'])->name('create-invoice');
 
     Route::get('/success-payment', [InvoiceController::class, 'successPayment']);
-    Route::get('/cancel-payment', [InvoiceController::class, 'createInvoice']);
+    Route::get('/cancel-payment', [InvoiceController::class, 'cancelPayment']);
     Route::get('/partially_paid_url', [InvoiceController::class, 'createInvoice'])->name('create-invoice');
     Route::get('/payments', [PaymentController::class, 'create'])->name('payments');
 

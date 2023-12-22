@@ -19,6 +19,5 @@ class UserInvoice extends Model
         'pay_currency',
         'paid_at',
         'partially_paid_at',
-        'canceled_at'
     ];
 }

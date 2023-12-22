@@ -72,6 +72,11 @@ class InvoiceController extends Controller
         return redirect('dashboard/payments')->with(['success' => 'Payment Paid Successfully']);
     }
 
+    public function cancelPayment()
+    {
+        return redirect('dashboard')->with(['success' => 'Payment Canceled Successfully']);
+    }
+
     public function getEstimatedPrice()
     {
         $currency = request()->currency;

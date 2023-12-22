@@ -21,7 +21,6 @@ return new class extends Migration {
             $table->string('pay_currency');
             $table->dateTime('paid_at')->nullable();
             $table->dateTime('partially_paid_at')->nullable();
-            $table->dateTime('canceled_at')->nullable();
             $table->timestamps();
         });
     }
