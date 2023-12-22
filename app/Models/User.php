@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\hasRoles;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -69,9 +70,9 @@ class User extends Authenticatable
         return $this->referral_link = route('signup', ['ref' => $this->referral_token]);
     }
 
-    public function payments(): HasMany
+    public function invoices(): HasMany
     {
-        return $this->hasMany(UserPayment::class, 'user_id');
+        return $this->hasMany(UserInvoice::class, 'user_id');
     }
 
 }

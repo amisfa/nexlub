@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Dashboard\PaymentController;
+use App\Http\Controllers\Dashboard\InvoiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 //
 Route::prefix('v1')->middleware('auth:api')->group(function () {
-    Route::get('/get-estimated-price', [PaymentController::class, 'getEstimatedPrice'])->name('get-estimated-price');
+    Route::get('/get-estimated-price', [InvoiceController::class, 'getEstimatedPrice'])->name('get-estimated-price');
 });

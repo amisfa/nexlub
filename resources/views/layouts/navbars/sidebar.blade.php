@@ -20,21 +20,21 @@
             <li>
                 <a data-toggle="collapse" href="#payments" aria-expanded="true">
                     <i class="fab fa-laravel"></i>
-                    <span class="nav-link-text">{{ __('Payment') }}</span>
+                    <span class="nav-link-text">{{ __('Invoice') }}</span>
                     <b class="caret mt-1"></b>
                 </a>
                 <div class="collapse show" id="payments">
                     <ul class="nav pl-4">
-                        <li @if ($pageSlug == 'create-payment') class="active " @endif>
-                            <a href="{{route('create-payment')}}">
+                        <li @if ($pageSlug == 'create-invoice') class="active " @endif>
+                            <a href="{{route('create-invoice')}}">
                                 <i class="tim-icons icon-chart-pie-36"></i>
-                                <p>{{ __('Create Payment') }}</p>
+                                <p>{{ __('Create Invoice') }}</p>
                             </a>
                         </li>
-                        <li @if ($pageSlug == 'payments') class="active " @endif>
-                            <a href="{{route('payments')}}">
+                        <li @if ($pageSlug == 'invoices') class="active " @endif>
+                            <a href="{{route('invoices')}}">
                                 <i class="tim-icons icon-chart-pie-36"></i>
-                                <p>{{ __('Payments') }}</p>
+                                <p>{{ __('Invoices') }}</p>
                             </a>
                         </li>
                     </ul>

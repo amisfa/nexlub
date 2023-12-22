@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => __('Create Payment'), 'pageSlug' => 'create-payment'])
+@extends('layouts.app', ['page' => __('Create Invoice'), 'pageSlug' => 'create-invoice'])
 
 @section('content')
     <div class="container">
@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header">Add Balance</div>
                     <div class="card-body">
-                        <form method="post" action="{{route('pay')}}" onsubmit="return validateForm();">
+                        <form method="post" action="{{route('set-invoice')}}" onsubmit="return validateForm();">
                             @csrf
                             <div class="form-group">
                                 <label for="Amount">Amount</label>
@@ -28,7 +28,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="d-flex justify-content-around" style="padding:15px;padding-top:0px;">
+                            <div class="d-flex flex-column justify-content-around" style="padding:15px;padding-top:0px;">
                                 <div class="min-column text-danger"></div>
                                 <div id="estimated-price" class="text-primary"></div>
                                 <div class="max-column text-success"></div>

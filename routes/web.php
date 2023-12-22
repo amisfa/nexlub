@@ -1,15 +1,14 @@
 <?php
 
 use App\Http\Controllers\Auth\EmailValidationController;
-use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\ForgetPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\dashboard\CreatePaymentController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\DepositController;
-use App\Http\Controllers\Dashboard\PaymentController;
+use App\Http\Controllers\dashboard\InvoiceController;
 use App\Http\Controllers\Dashboard\PlayController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\WalletController;
@@ -30,9 +29,9 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/profile', [ProfileController::class, 'create'])->name('profile');
     Route::get('/wallet', [WalletController::class, 'create'])->name('wallet');
     Route::get('/play', [PlayController::class, 'create'])->name('play');
-    Route::get('/payments', [PaymentController::class, 'create'])->name('payments');
-    Route::get('/create-payment', [CreatePaymentController::class, 'create'])->name('create-payment');
-    Route::post('/create-payment', [PaymentController::class, 'createPayment'])->name('pay');
+    Route::get('/invoices', [InvoiceController::class, 'indexView'])->name('invoices');
+    Route::get('/create-invoice', [InvoiceController::class, 'createInvoice'])->name('create-invoice');
+    Route::post('/create-invoice', [InvoiceController::class, 'makeInvoice'])->name('set-invoice');
     Route::get('/deposit', [DepositController::class, 'create'])->name('deposit');
 });
 

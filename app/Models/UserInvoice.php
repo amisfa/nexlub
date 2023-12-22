@@ -4,19 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserPayment extends Model
+class UserInvoice extends Model
 {
 
-    protected $table = 'user_payment';
+    protected $table = 'user_invoice';
 
     protected $fillable = [
-        'payment_id',
+        'invoice_id',
         'user_id',
-        'pay_address',
+        'invoice_url',
         'price_amount',
         'price_currency',
-        'pay_amount',
         'pay_currency',
-        'status'
     ];
 }

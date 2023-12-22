@@ -50,12 +50,12 @@ class Helper
         return array_reverse($currencies);
     }
 
-    static function createPayment($params)
+    static function createInvoice($params)
     {
         return Http::asForm()->withHeaders([
             'x-api-key' => env('NOWPAYMENTS_API_KEY'),
             'Content-Type' => 'application/json'
-        ])->post('https://api.nowpayments.io/v1/payment', $params);
+        ])->post('https://api.nowpayments.io/v1/invoice', $params);
     }
 
     static function getEstimatedPrice($params): \GuzzleHttp\Promise\PromiseInterface|\Illuminate\Http\Client\Response
