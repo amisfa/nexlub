@@ -2,6 +2,8 @@
 
 namespace App\Helpers;
 
+use App\Models\User;
+use App\Models\UserPayment;
 use Illuminate\Support\Facades\Http;
 
 class Helper
@@ -64,5 +66,16 @@ class Helper
             'x-api-key' => env('NOWPAYMENTS_API_KEY'),
             'Content-Type' => 'application/json'
         ])->get('https://api.nowpayments.io/v1/estimate', $params);
+    }
+
+    static function addBalance($params): void
+    {
+        $user = User::query()->find($params['user_id']);
+        User::query()->update(['balance' => intval($user->balance) + intval($params['amount'])]);
+        Helper::setPokerMavens([
+            "Command" => "AccountsEdit",
+            'Player' => $user->username,
+            'Balance' => intval($user->balance) + intval($params['amount'])
+        ]);
     }
 }
