@@ -16,7 +16,7 @@ demo = {
   },
 
   initDocChart: function() {
-    chartColor = "#FFFFFF";
+    chartColor = "#29c9e9";
 
     // General configuration for the charts with Line gradientStroke
     gradientChartOptionsConfiguration = {
