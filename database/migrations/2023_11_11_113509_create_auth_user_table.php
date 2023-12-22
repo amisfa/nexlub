@@ -12,7 +12,6 @@ return new class extends Migration {
     {
         Schema::create('auth_user', function (Blueprint $table) {
             $table->id();
-            $table->boolean('status')->default(1)->index();
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('password');
@@ -22,6 +21,7 @@ return new class extends Migration {
             $table->unsignedTinyInteger('avatar');
             $table->foreign('referrer_id')->references('id')->on('auth_user');
             $table->string('referral_token')->unique();
+            $table->unsignedDecimal('balance', 18, 2)->default(0);
 
             $table->rememberToken();
             $table->timestamps();
