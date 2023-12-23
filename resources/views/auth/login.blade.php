@@ -57,7 +57,7 @@
                     </div>
                 @endif
                 <div class="inputBox">
-                    <input type="submit" value="Login">
+                    <input type="submit" value="Login" class="submitBox">
                 </div>
                 @if(count($errors->all()))
                     @foreach($errors->all() as $error)

@@ -50,7 +50,7 @@
                         Password</i>
                 </div>
                 <div class="inputBox">
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" class="submitBox">
                 </div>
                 @if(count($errors->all()))
                     @foreach($errors->all() as $error)

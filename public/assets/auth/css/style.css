@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #000728;
+    background: #22c9e9;
 }
 *, ::after, ::before {
     box-sizing: border-box;
@@ -38,7 +38,7 @@ section::before {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(#000, #000728, #000);
+    background: linear-gradient(#000, #22c9e9, #000);
     animation: animate 5s linear infinite;
 }
 
@@ -62,7 +62,7 @@ section span {
 }
 
 section span:hover {
-    background: #000728;
+    background: #22c9e9;
     transition: 0s;
 }
 
@@ -91,7 +91,7 @@ section .signin .content {
 
 section .signin .content h2 {
     font-size: 2em;
-    color: #000728;
+    color: #22c9e9;
     text-transform: uppercase;
 }
 
@@ -118,12 +118,16 @@ section .signin .content .form .inputBox input:-webkit-autofill:active {
     outline: none;
     padding: 25px 10px 7.5px;
     border-radius: 4px;
-    color: #fff !important;
+    color: #ffffff !important;
     font-weight: 500;
     font-size: 1em;
     -webkit-transition: "color 3500s ease-out, background-color 3500s ease-out";
     -webkit-transition-delay: 350s;
 }
+section .signin .content .form .inputBox .submitBox{
+    color: #22c9e9 !important;
+}
+
 .captcha-container{
     display: flex;
     width: 100%;
@@ -157,15 +161,24 @@ section .signin .content .form .inputBox i {
     color: #fff;
     text-decoration: none;
 }
-
-.signin .content .form .links a:nth-child(2) {
-    color: #000728;
-    font-weight: 600;
+.signin .content .form .links a:hover{
+    color: #22c9e9;
+    transition-delay: 0.1s;
+    transition: 0.2s;
 }
 
+.signin .content .form .links a:nth-child(2) {
+    color: #ffffff;
+    font-weight: 600;
+}
+.signin .content .form .links a:nth-child(2):hover{
+    color: #22c9e9;
+    transition-delay: 0.1s;
+    transition: 0.2s;
+}
 .signin .content .form .inputBox input[type="submit"] {
     padding: 10px;
-    background: #000728;
+    background: #22c9e9;
     color: #000;
     font-weight: 600;
     font-size: 1.35em;
