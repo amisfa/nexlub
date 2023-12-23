@@ -27,6 +27,7 @@ class PaymentsTableView extends TableView
         return [
             'Price Amount',
             'Payment Currency',
+            'status',
             Header::title('Created')->sortBy('created_at'),
         ];
     }
@@ -37,7 +38,14 @@ class PaymentsTableView extends TableView
         return [
             $model->price_amount . ' ' . $model->price_currency,
             $model->pay_currency,
+            '<p class="' . $this->getStatusColor($model->status) . '">' . $model->status . '</p>',
             $model->created_at->diffforHumans()
         ];
     }
+
+    public static function getStatusColor($status): string
+    {
+        return $status == "Canceled" ? "text-danger" : ($status == "Partially Paid" ? "text-warning" : "text-success");
+    }
 }
+

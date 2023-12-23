@@ -25,13 +25,15 @@ class InvoiceController extends Controller
     {
         try {
             $token = Str::random(18);
+            $invoiceId = Str::uuid();
             $data = [
                 'price_amount' => request()->price_amount ?? 100,
+                'order_id' => $invoiceId,
                 'price_currency' => 'usd',
                 'pay_currency' => request()->pay_currency ?? 'btc',
-                'success_url' => env('url_front') . 'dashboard/success-payment/?token=' . $token,
-                'cancel_url' => env('url_front') . 'dashboard/cancel-payment',
-                'partially_paid_url' => env('url_front') . 'dashboard/partially-payment',
+                'success_url' => env('url_front') . 'dashboard/success-payment?token=' . $token . '&id=' . $invoiceId,
+                'cancel_url' => env('url_front') . 'dashboard/cancel-payment?id=' . $invoiceId,
+                'partially_paid_url' => env('url_front') . 'dashboard/partially-payment?id=' . $invoiceId,
                 'is_fee_paid_by_user' => "true",
                 'is_fixed_rate' => "true",
             ];
@@ -40,7 +42,8 @@ class InvoiceController extends Controller
             UserInvoice::query()->create([
                 'user_id' => auth()->id(),
                 'invoice_token' => $token,
-                'invoice_id' => $details['id'],
+                'invoice_id' => $invoiceId,
+                'now_payment_id' => $details['id'],
                 'invoice_url' => $details['invoice_url'],
                 'price_amount' => $details['price_amount'],
                 'price_currency' => $details['price_currency'],
@@ -52,18 +55,24 @@ class InvoiceController extends Controller
         }
     }
 
-    public function successPayment()
+    public function successPayment(): \Illuminate\Foundation\Application|\Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|Application
     {
         $token = request()->query('token');
-        $invoice = UserInvoice::query()->where('invoice_token', $token)->whereNull('paid_at')->first();
-        if (!$invoice) return redirect('dashboard')->with(['error' => 'Invalid Payment Link']);
+        $invoiceId = request()->query('id');
+        $invoice = UserInvoice::query()->where([['invoice_id', $invoiceId], ['invoice_token', $token]])->whereNull(['paid_at', 'dropped_at'])->first();
+        if (!$invoice) {
+            UserInvoice::query()->where('invoice_id', $invoiceId)->update(['dropped_at' => now()]);
+            return redirect('dashboard')->with(['error' => 'Invalid Payment Link']);
+        }
         $invoice->paid_at = now();
         $invoice->save();
         UserPayment::query()->create([
+            'invoice_id' => $invoice->invoice_id,
             'user_id' => $invoice->user_id,
             'price_amount' => $invoice->price_amount,
             'price_currency' => $invoice->price_currency,
             'pay_currency' => $invoice->pay_currency,
+            'status' => 'Paid'
         ]);
         Helper::addBalance([
             'user_id' => $invoice->user_id,
@@ -72,9 +81,40 @@ class InvoiceController extends Controller
         return redirect('dashboard/payments')->with(['success' => 'Payment Paid Successfully']);
     }
 
-    public function cancelPayment()
+    public function cancelPayment(): \Illuminate\Foundation\Application|\Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|Application
     {
+        $invoiceId = request()->query('id');
+        $invoice = UserInvoice::query()->where('invoice_id', $invoiceId)->whereNull('canceled_at')->first();
+        if (!$invoice) return redirect('dashboard')->with(['error' => 'Invalid Payment Link']);
+        $invoice->canceled_at = now();
+        $invoice->save();
+        UserPayment::query()->create([
+            'invoice_id' => $invoice->invoice_id,
+            'user_id' => $invoice->user_id,
+            'price_amount' => $invoice->price_amount,
+            'price_currency' => $invoice->price_currency,
+            'pay_currency' => $invoice->pay_currency,
+            'status' => 'Canceled'
+        ]);
         return redirect('dashboard')->with(['success' => 'Payment Canceled Successfully']);
+    }
+
+    public function partiallyPaidPayment(): \Illuminate\Foundation\Application|\Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|Application
+    {
+        $invoiceId = request()->query('id');
+        $invoice = UserInvoice::query()->where('invoice_id', $invoiceId)->whereNull('partially_paid_at')->first();
+        if (!$invoice) return redirect('dashboard')->with(['error' => 'Invalid Payment Link']);
+        $invoice->partially_paid_at = now();
+        $invoice->save();
+        UserPayment::query()->create([
+            'invoice_id' => $invoice->invoice_id,
+            'user_id' => $invoice->user_id,
+            'price_amount' => $invoice->price_amount,
+            'price_currency' => $invoice->price_currency,
+            'pay_currency' => $invoice->pay_currency,
+            'status' => 'Partially Paid'
+        ]);
+        return redirect('dashboard')->with(['error' => 'Payment Partially Paid Successfully']);
     }
 
     public function getEstimatedPrice()

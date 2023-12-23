@@ -12,9 +12,11 @@ class UserPayment extends Model
 
     protected $fillable = [
         'user_id',
+        'invoice_id',
         'price_amount',
         'price_currency',
         'pay_currency',
+        'status'
     ];
 
     public function user(): BelongsTo
