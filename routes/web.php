@@ -13,6 +13,7 @@ use App\Http\Controllers\Dashboard\PaymentController;
 use App\Http\Controllers\Dashboard\PlayController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\WalletController;
+use App\Http\Controllers\Dashboard\WithdrawController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,7 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/play', [PlayController::class, 'create'])->name('play');
     Route::get('/invoices', [InvoiceController::class, 'create'])->name('invoices');
     Route::get('/create-invoice', [InvoiceController::class, 'createInvoice'])->name('create-invoice');
+    Route::get('/withdraw', [WithdrawController::class, 'create'])->name('withdraw');
 
     Route::get('/success-payment', [InvoiceController::class, 'successPayment']);
     Route::get('/cancel-payment', [InvoiceController::class, 'cancelPayment']);
