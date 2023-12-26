@@ -75,6 +75,4 @@
     </div>
 </section>
 </body>
-</div>
-</body>
 </html>

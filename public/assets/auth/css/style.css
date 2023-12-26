@@ -251,7 +251,7 @@ input[type="submit"]:active {
 }
 .beauty-scroll::-webkit-scrollbar-thumb {
     border-radius: 0.125rem!important;
-    background-color: gray!important;
+    background-color: rgb(128, 128, 128) !important;
 }
 
 @keyframes scale-in {

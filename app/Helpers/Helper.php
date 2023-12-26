@@ -73,9 +73,29 @@ class Helper
         $user = User::query()->find($params['user_id']);
         User::query()->update(['balance' => intval($user->balance) + intval($params['amount'])]);
         Helper::setPokerMavens([
-            "Command" => "AccountsEdit",
+            "Command" => "AccountsIncBalance",
             'Player' => $user->username,
-            'Balance' => intval($user->balance) + intval($params['amount'])
+            'Amount' => $params['amount']
+        ]);
+        Helper::setPokerMavens([
+            'Command' => 'LogsAddEvent',
+            'Log' => $params['log']
+        ]);
+    }
+
+    static function decBalance($params): void
+    {
+        $user = User::query()->find($params['user_id']);
+        User::query()->update(['balance' => intval($user->balance) - intval($params['amount'])]);
+        Helper::setPokerMavens([
+            "Command" => "AccountsDecBalance",
+            'Player' => $user->username,
+            'Negative' => 'Skip',
+            'Amount' => $params['amount']
+        ]);
+        Helper::setPokerMavens([
+            'Command' => 'LogsAddEvent',
+            'Log' => $params['log']
         ]);
     }
 }
