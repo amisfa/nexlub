@@ -15,14 +15,36 @@ class RoleAndPermissionSeeder extends Seeder
     {
         Permission::create(['name' => 'view-users', 'guard_name' => config('auth.defaults.guard')]);
         Permission::create(['name' => 'block-users', 'guard_name' => config('auth.defaults.guard')]);
+        Permission::create(['name' => 'determine_access', 'guard_name' => config('auth.defaults.guard')]);
+        Permission::create(['name' => 'payment-users', 'guard_name' => config('auth.defaults.guard')]);
+        Permission::create(['name' => 'withdraw-users', 'guard_name' => config('auth.defaults.guard')]);
+        Permission::create(['name' => 'subset-users', 'guard_name' => config('auth.defaults.guard')]);
+        Permission::create(['name' => 'tickets', 'guard_name' => config('auth.defaults.guard')]);
+        Permission::create(['name' => 'email-users', 'guard_name' => config('auth.defaults.guard')]);
+        Permission::create(['name' => 'payments', 'guard_name' => config('auth.defaults.guard')]);
+        Permission::create(['name' => 'withdraw', 'guard_name' => config('auth.defaults.guard')]);
         $administratorRole = Role::create(['name' => 'Administrator', 'guard_name' => config('auth.defaults.guard')]);
         $adminRole = Role::create(['name' => 'Admin', 'guard_name' => config('auth.defaults.guard')]);
         $administratorRole->givePermissionTo([
             'view-users',
-            'block-users'
+            'block-users',
+            'determine_access',
+            'payment-users',
+            'withdraw-users',
+            'subset-users',
+            'tickets',
+            'email-users',
+            'payments',
+            'withdraw'
         ]);
         $adminRole->givePermissionTo([
             'view-users',
+            'determine_access',
+            'payment-users',
+            'withdraw-users',
+            'subset-users',
+            'payments',
+            'withdraw'
         ]);
     }
 }
