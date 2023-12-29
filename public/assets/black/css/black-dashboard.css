@@ -660,6 +660,10 @@ pre code {
     margin-left: auto;
 }
 
+#edit-prof {
+    justify-content: center;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;
