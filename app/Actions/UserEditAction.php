@@ -11,7 +11,7 @@ class UserEditAction extends Action
      * Any title you want to be displayed
      * @var String
      * */
-    public $title = "edit";
+    public $title = "Edit Profile";
 
     /**
      * This should be a valid Feather icon string
