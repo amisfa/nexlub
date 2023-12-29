@@ -35,8 +35,8 @@ class RoleAndPermissionSeeder extends Seeder
         ]);
         $adminRole->givePermissionTo([
             'view-users',
-            'payment-users',
-            'withdraw-users',
+            'user-payments',
+            'user-withdraws',
             'user-subsets',
             'payments',
             'withdraws'
