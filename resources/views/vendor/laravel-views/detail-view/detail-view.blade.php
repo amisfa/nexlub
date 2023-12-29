@@ -1,7 +1,7 @@
 <x-lv-layout>
   <div class="flex items-center mb-4 px-4">
     <div class="flex-1">
-      <div class="font-bold text-2xl text-gray-900">
+      <div class="font-bold text-2xl title">
         {{ $title }}
       </div>
       @isset ($subtitle)

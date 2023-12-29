@@ -1,18 +1,18 @@
-@extends('layouts.app', ['page' => __('User Profile'), 'pageSlug' => 'profile'])
+{{--@extends('layouts.app', ['page' => __('User Profile'), 'pageSlug' => 'profile'])--}}
 
-@section('content')
-    <div class="row">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="title">{{ __('Profile') }}</h5>
-                </div>
+{{--@section('content')--}}
+{{--    <div class="row">--}}
+{{--        <div class="col-md-8">--}}
+{{--            <div class="card">--}}
+{{--                <div class="card-header">--}}
+{{--                    <h5 class="title">{{ __('Profile') }}</h5>--}}
+{{--                </div>--}}
 {{--                <form method="post" action="{{ route('signup-form') }}" onsubmit="return registerValidation();">--}}
-                    <div class="card-body">
-                        @csrf
-                        @method('Post')
+{{--                    <div class="card-body">--}}
+{{--                        @csrf--}}
+{{--                        @method('Post')--}}
 
-                        @include('alerts.success')
+{{--                        @include('alerts.success')--}}
 
 {{--                        <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">--}}
 {{--                            <label>{{ __('Name') }}</label>--}}
@@ -26,35 +26,35 @@
 {{--                            @include('alerts.feedback', ['field' => 'email'])--}}
 {{--                        </div>--}}
 
-                        <div class="form-group{{ $errors->has('wallet_n0') ? ' has-danger' : '' }}">
-                            <label>{{ __('Name') }}</label>
-                            <div type="wallet_no" name="wallet_no" class="form-control{{ $errors->has('wallet_no') ? ' is-invalid' : '' }}">
-                                {{ old('username', auth()->user()->username) }}                            </div>
-                            @include('alerts.feedback', ['field' => 'email'])
-                        </div>
-                        <div class="form-group{{ $errors->has('wallet_n0') ? ' has-danger' : '' }}">
-                            <label>{{ __('Email') }}</label>
-                            <div type="wallet_no" name="wallet_no" class="form-control{{ $errors->has('wallet_no') ? ' is-invalid' : '' }}">
-                                {{ old('email', auth()->user()->email) }}
-                            </div>
-                            @include('alerts.feedback', ['field' => 'email'])
-                        </div>
-                        <div class="form-group{{ $errors->has('wallet_n0') ? ' has-danger' : '' }}">
-                            <label>{{ __('Wallet number') }}</label>
-                            <div type="wallet_no" name="wallet_no" class="form-control{{ $errors->has('wallet_no') ? ' is-invalid' : '' }}">
-                                {{ old('wallet_no', auth()->user()->wallet_no) }}
-                            </div>
-                            @include('alerts.feedback', ['field' => 'email'])
-                        </div>
+{{--                        <div class="form-group{{ $errors->has('wallet_n0') ? ' has-danger' : '' }}">--}}
+{{--                            <label>{{ __('Name') }}</label>--}}
+{{--                            <div type="wallet_no" name="wallet_no" class="form-control{{ $errors->has('wallet_no') ? ' is-invalid' : '' }}">--}}
+{{--                                {{ old('username', auth()->user()->username) }}                            </div>--}}
+{{--                            @include('alerts.feedback', ['field' => 'email'])--}}
+{{--                        </div>--}}
+{{--                        <div class="form-group{{ $errors->has('wallet_n0') ? ' has-danger' : '' }}">--}}
+{{--                            <label>{{ __('Email') }}</label>--}}
+{{--                            <div type="wallet_no" name="wallet_no" class="form-control{{ $errors->has('wallet_no') ? ' is-invalid' : '' }}">--}}
+{{--                                {{ old('email', auth()->user()->email) }}--}}
+{{--                            </div>--}}
+{{--                            @include('alerts.feedback', ['field' => 'email'])--}}
+{{--                        </div>--}}
+{{--                        <div class="form-group{{ $errors->has('wallet_n0') ? ' has-danger' : '' }}">--}}
+{{--                            <label>{{ __('Wallet number') }}</label>--}}
+{{--                            <div type="wallet_no" name="wallet_no" class="form-control{{ $errors->has('wallet_no') ? ' is-invalid' : '' }}">--}}
+{{--                                {{ old('wallet_no', auth()->user()->wallet_no) }}--}}
+{{--                            </div>--}}
+{{--                            @include('alerts.feedback', ['field' => 'email'])--}}
+{{--                        </div>--}}
 
-                    </div>
-                    <div class="card-footer">
-                        <a href="{{route('editprofile')}}">
-                        <button class="btn btn-fill btn-primary">{{ __('Edit') }}</button>
-                        </a>
-                    </div>
+{{--                    </div>--}}
+{{--                    <div class="card-footer">--}}
+{{--                        <a href="{{route('editprofile')}}">--}}
+{{--                        <button class="btn btn-fill btn-primary">{{ __('Edit') }}</button>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
 {{--                </form>--}}
-            </div>
+{{--            </div>--}}
 
 {{--            <div class="card">--}}
 {{--                <div class="card-header">--}}
@@ -126,5 +126,22 @@
 {{--                </div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
+{{--    </div>--}}
+{{--@endsection--}}
+
+
+@extends('layouts.app', ['page' => __('Profile'), 'pageSlug' => 'profile'])
+
+@section('content')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card p-3 overflow-auto">
+                    <div class="card-header"></div>
+                    <livewire:example-detail-view/>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
+
