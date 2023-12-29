@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use App\Mail\VerifyEmail;
 use App\Traits\hasRoles;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
@@ -55,6 +58,20 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::updating(function (User $user) {
+            if (in_array('email', $user->getChanges())) {
+                $user->email_verified_at = null;
+                $token = Str::random(64);
+                UserVerify::create(['user_id' => $user->id, 'token' => $token]);
+                Mail::to($user->email)->send(new VerifyEmail($token, $user));
+            }
+        });
+    }
+
     public function referrer(): BelongsTo
     {
         return $this->belongsTo(User::class, 'referrer_id', 'id');
@@ -89,6 +106,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(UserWithdraw::class, 'user_id');
     }
-
-
 }
