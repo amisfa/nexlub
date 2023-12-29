@@ -36,13 +36,13 @@ class ResetPasswordController extends Controller
             ->first();
         if (!$passwordReset)
             return redirect("auth/reset-password?email=$email&token=$token")->withErrors(['password' => ['Invalid reset link']]);
-        $user->password = Hash::make($request->password);
-        $user->save();
         Helper::setPokerMavens([
             "Command" => "AccountsEdit",
             'Player' => $user->username,
             'PW' => $request->password,
         ]);
+        $user->password = Hash::make($request->password);
+        $user->save();
         DB::table('password_resets')->where(['email' => $email])->update(['deleted_at' => now()]);
         return redirect('auth/login');
     }

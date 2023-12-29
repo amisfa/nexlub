@@ -2,9 +2,12 @@
 
 namespace App\Helpers;
 
+use App\Mail\VerifyEmail;
 use App\Models\User;
-use App\Models\UserPayment;
+use App\Models\UserVerify;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class Helper
 {
@@ -14,7 +17,7 @@ class Helper
         $params['JSON'] = 'Yes';
         $response = Http::asForm()->post(env("MAVENS_URL") . '/api', $params);
         $response = json_decode($response);
-        if ($response->Result !== 'Ok') return $response->Error;
+        if ($response->Result !== 'Ok') return back()->withErrors(['error' => $response->Error]);
         return $response;
     }
 
@@ -71,7 +74,6 @@ class Helper
     static function addBalance($params): void
     {
         $user = User::query()->find($params['user_id']);
-        User::query()->update(['balance' => intval($user->balance) + intval($params['amount'])]);
         Helper::setPokerMavens([
             "Command" => "AccountsIncBalance",
             'Player' => $user->username,
@@ -81,12 +83,12 @@ class Helper
             'Command' => 'LogsAddEvent',
             'Log' => $params['log']
         ]);
+        User::query()->update(['balance' => intval($user->balance) + intval($params['amount'])]);
     }
 
     static function decBalance($params): void
     {
         $user = User::query()->find($params['user_id']);
-        User::query()->update(['balance' => intval($user->balance) - intval($params['amount'])]);
         Helper::setPokerMavens([
             "Command" => "AccountsDecBalance",
             'Player' => $user->username,
@@ -97,5 +99,13 @@ class Helper
             'Command' => 'LogsAddEvent',
             'Log' => $params['log']
         ]);
+        User::query()->update(['balance' => intval($user->balance) - intval($params['amount'])]);
+    }
+
+    static function sendValidationEmail($user): void
+    {
+        $token = Str::random(64);
+        UserVerify::query()->create(['user_id' => $user->id, 'token' => $token])->save();
+        Mail::to($user->email)->send(new VerifyEmail($token, $user));
     }
 }

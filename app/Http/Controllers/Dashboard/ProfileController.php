@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Helpers\Helper;
 use App\Http\Requests\ProfileRequest;
 use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
@@ -28,8 +29,20 @@ class ProfileController extends Controller
     {
         $user = User::find(auth()->id());
         $user->update($request->all());
-        if ($user->wasChanged()) return back()->withStatus(__('Profile successfully updated.'));
-        else return back();
+        if ($user->wasChanged('email')) {
+            $user->email_verified_at = null;
+            Helper::sendValidationEmail($user);
+        }
+        if ($user->wasChanged()) {
+            Helper::setPokerMavens([
+                "Command" => "AccountsEdit",
+                'Player' => $user->username,
+                'Email' => $user->email,
+                'Avatar' => $request->avatar,
+                'Custom1' => $request->wallet_no,
+            ]);
+            return back()->withStatus(__('Profile successfully updated.'));
+        } else return back();
     }
 
     public function changeUserPassword()
@@ -44,6 +57,11 @@ class ProfileController extends Controller
         ], $messages);
         if ($validator->fails()) return back()->withErrors($validator->messages());
         $user = User::find(auth()->id());
+        Helper::setPokerMavens([
+            "Command" => "AccountsEdit",
+            'Player' => $user->username,
+            'PW' => request('password'),
+        ]);
         $user->update(['password' => Hash::make(request('password'))]);
         if ($user->wasChanged()) return back()->withPasswordStatus(__('Password successfully updated.'));
         else return back();

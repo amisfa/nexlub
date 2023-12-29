@@ -58,19 +58,6 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    protected static function booted()
-    {
-        static::updated(function (User $user) {
-            if ($user->wasChanged('email')) {
-                $user->email_verified_at = null;
-                $token = Str::random(64);
-                UserVerify::query()->create(['user_id' => $user->id, 'token' => $token])->save();
-                Mail::to($user->email)->send(new VerifyEmail($token, $user));
-            }
-        });
-    }
-
-
     public function referrer(): BelongsTo
     {
         return $this->belongsTo(User::class, 'referrer_id', 'id');

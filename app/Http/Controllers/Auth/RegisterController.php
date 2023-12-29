@@ -43,6 +43,14 @@ class RegisterController extends Controller
             return redirect('auth/register')->withErrors($validator->messages())->withInput();
         }
         $referrer = User::query()->where('referral_token', session()->pull('referrer'))->first();
+        Helper::setPokerMavens([
+            "Command" => "AccountsAdd",
+            'Player' => $request->username,
+            'Email' => $request->email,
+            'PW' => $request->password,
+            'Avatar' => $request->avatar,
+            'Custom1' => $request->wallet_no,
+        ]);
         $user = User::query()->create([
             'username' => $request->username,
             'email' => $request->email,
@@ -52,17 +60,7 @@ class RegisterController extends Controller
             'wallet_no' => $request->wallet_no,
             'avatar' => $request->avatar,
         ]);
-        $token = Str::random(64);
-        UserVerify::create(['user_id' => $user->id, 'token' => $token]);
-        Mail::to($request->email)->send(new VerifyEmail($token, $user));
-        Helper::setPokerMavens([
-            "Command" => "AccountsAdd",
-            'Player' => $request->username,
-            'Email' => $request->email,
-            'PW' => $request->password,
-            'Avatar' => $request->avatar,
-            'Custom1' => $request->wallet_no,
-        ]);
+        Helper::sendValidationEmail($user);
         Auth::loginUsingId($user->id);
         return redirect('dashboard')->with(['warning' => 'Plz Check Your Email']);
     }
