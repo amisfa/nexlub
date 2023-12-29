@@ -5,9 +5,11 @@ body {
     min-height: 100vh;
     background: #22c9e9;
 }
+
 *, ::after, ::before {
     box-sizing: border-box;
 }
+
 body,
 html {
     height: 100%;
@@ -66,20 +68,19 @@ section span:hover {
     transition: 0s;
 }
 
-section .signin {
-    position: absolute;
+.auth-page {
+    position: relative;
+    overflow: auto;
     width: 400px;
     background: #222;
     z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 40px;
     border-radius: 4px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 9);
+    height: 90%;
 }
 
-section .signin .content {
+.auth-page .content {
     position: relative;
     width: 100%;
     display: flex;
@@ -87,30 +88,34 @@ section .signin .content {
     align-items: center;
     flex-direction: column;
     gap: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
+    min-height: 100%;
 }
 
-section .signin .content h2 {
+.auth-page .content h2 {
     font-size: 2em;
     color: #22c9e9;
     text-transform: uppercase;
 }
 
-section .signin .content .form {
+.auth-page .content .form {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-section .signin .content .form .inputBox {
+.auth-page .content .form .inputBox {
     position: relative;
     width: 100%;
 }
 
-section .signin .content .form .inputBox input, section .signin .content .form .inputBox input:-webkit-autofill,
-section .signin .content .form .inputBox input:-webkit-autofill:hover,
-section .signin .content .form .inputBox input:-webkit-autofill:focus,
-section .signin .content .form .inputBox input:-webkit-autofill:active {
+.auth-page .content .form .inputBox input, .auth-page .content .form .inputBox input:-webkit-autofill,
+.auth-page .content .form .inputBox input:-webkit-autofill:hover,
+.auth-page .content .form .inputBox input:-webkit-autofill:focus,
+.auth-page .content .form .inputBox input:-webkit-autofill:active {
     position: relative;
     width: 100%;
     background: #333 !important;
@@ -124,16 +129,18 @@ section .signin .content .form .inputBox input:-webkit-autofill:active {
     -webkit-transition: "color 3500s ease-out, background-color 3500s ease-out";
     -webkit-transition-delay: 350s;
 }
-section .signin .content .form .inputBox .submitBox{
+
+.auth-page .content .form .inputBox .submitBox {
     color: #22c9e9 !important;
 }
 
-.captcha-container{
+.captcha-container {
     display: flex;
     width: 100%;
     justify-content: center;
 }
-section .signin .content .form .inputBox i {
+
+.auth-page .content .form .inputBox i {
     position: absolute;
     left: 0;
     padding: 15px 10px;
@@ -143,40 +150,43 @@ section .signin .content .form .inputBox i {
     pointer-events: none;
 }
 
-.signin .content .form .inputBox input:focus ~ i,
-.signin .content .form .inputBox input:valid ~ i {
+.auth-page .content .form .inputBox input:focus ~ i,
+.auth-page .content .form .inputBox input:valid ~ i {
     transform: translateY(-7.5px);
     font-size: 0.8em;
     color: #fff;
 }
 
-.signin .content .form .links {
+.auth-page .content .form .links {
     position: relative;
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.signin .content .form .links a {
+.auth-page .content .form .links a {
     color: #fff;
     text-decoration: none;
 }
-.signin .content .form .links a:hover{
+
+.auth-page .content .form .links a:hover {
     color: #22c9e9;
     transition-delay: 0.1s;
     transition: 0.2s;
 }
 
-.signin .content .form .links a:nth-child(2) {
+.auth-page .content .form .links a:nth-child(2) {
     color: #ffffff;
     font-weight: 600;
 }
-.signin .content .form .links a:nth-child(2):hover{
+
+.auth-page .content .form .links a:nth-child(2):hover {
     color: #22c9e9;
     transition-delay: 0.1s;
     transition: 0.2s;
 }
-.signin .content .form .inputBox input[type="submit"] {
+
+.auth-page .content .form .inputBox input[type="submit"] {
     padding: 10px;
     background: #22c9e9;
     color: #000;
@@ -242,16 +252,26 @@ input[type="submit"]:active {
 }
 
 .beauty-scroll::-webkit-scrollbar-track {
-    border-radius: 0.125rem!important;
-    background-color: lightgray!important;
+    border-radius: 0.125rem !important;
+    background-color: lightgray !important;
 }
+
 .beauty-scroll::-webkit-scrollbar {
-    width: 0.25rem!important;
-    border-radius: 0.125rem!important;
+    width: 0.25rem !important;
+    border-radius: 0.125rem !important;
 }
+
 .beauty-scroll::-webkit-scrollbar-thumb {
-    border-radius: 0.125rem!important;
+    border-radius: 0.125rem !important;
     background-color: rgb(128, 128, 128) !important;
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
+
+.avatar-selection input:checked + label img {
+    filter: unset !important;
 }
 
 @keyframes scale-in {
@@ -283,12 +303,14 @@ input[type="submit"]:active {
         opacity: .8;
     }
 }
+
 @media (max-width: 991.98px) {
     body,
     html {
         font-size: 12px !important;
     }
 }
+
 @media (max-width: 767.98px) {
     body,
     html {
