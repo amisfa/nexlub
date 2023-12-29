@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire;
 
+use App\Actions\UserEditAction;
 use App\Models\User;
-use LaravelViews\Actions\RedirectAction;
 use LaravelViews\Views\DetailView;
 
 class UserProfileView extends DetailView
@@ -29,9 +29,7 @@ class UserProfileView extends DetailView
 
     public function actions(): array
     {
-        return [
-            new RedirectAction('profile-edit', 'Edit user', 'edit'),
-        ];
+        return [new UserEditAction()];
     }
 
     public static function isEmailVerified($verified_at): string
@@ -41,6 +39,6 @@ class UserProfileView extends DetailView
 
     public static function getVerifiedText($verified_at): string
     {
-        return  $verified_at ? "Verified" : "Not Verified" ;
+        return $verified_at ? "Verified" : "Not Verified";
     }
 }
