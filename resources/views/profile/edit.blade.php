@@ -76,8 +76,9 @@
                         </div>
                         <div class="form-group">
                             <label>{{ __('Confirm New Password') }}</label>
-                            <input type="password" name="password_confirmation" class="form-control"
+                            <input type="password" name="password_confirmation" class="form-control {{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}"
                                    placeholder="{{ __('Confirm New Password') }}" value="" required>
+                            @include('alerts.feedback', ['field' => 'password_confirmation'])
                         </div>
                     </div>
                     <div class="card-footer">
