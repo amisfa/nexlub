@@ -53,7 +53,7 @@
 {{--                        </div>--}}
 {{--                    @endif--}}
                     <div class="inputBox">
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Submit" class="submitBox">
                     </div>
                 @endif
                 @if(count($errors->all()))

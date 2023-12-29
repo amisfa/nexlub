@@ -1,18 +1,18 @@
-@extends('layouts.app', ['page' => __('Create Payment'), 'pageSlug' => 'create-payment'])
+@extends('layouts.app', ['page' => __('Invoices'), 'pageSlug' => 'invoices'])
 
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Add Balance</div>
                     <div class="card-body">
-                        <form method="post" action="{{route('pay')}}" onsubmit="return validateForm();">
+                        <form method="post" action="{{route('set-invoice')}}" onsubmit="return validateForm();">
                             @csrf
                             <div class="form-group">
-                                <label for="Amount">Amount</label>
+                                <label for="Amount">USD Amount</label>
                                 <input type="number" step="0.01" class="form-control" id="amount" name="price_amount"
-                                       placeholder="Enter input" required>
+                                       placeholder="$100" required>
                             </div>
                             <div class="form-group">
                                 <label for="Currency">Pay Currency</label>
@@ -28,7 +28,8 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="d-flex justify-content-around" style="padding:15px;padding-top:0px;">
+                            <div class="d-flex flex-column justify-content-around"
+                                 style="padding:15px;padding-top:0px;">
                                 <div class="min-column text-danger"></div>
                                 <div id="estimated-price" class="text-primary"></div>
                                 <div class="max-column text-success"></div>
@@ -95,3 +96,4 @@
         }
     </script>
 @endpush
+

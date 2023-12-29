@@ -86,7 +86,7 @@
                     </div>
                 @endif
                 <div class="inputBox">
-                    <input type="submit" value="Create your account">
+                    <input type="submit" value="Create your account" class="submitBox">
                 </div>
                 @if(count($errors->all()))
                     @foreach($errors->all() as $error)

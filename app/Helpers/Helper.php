@@ -2,6 +2,8 @@
 
 namespace App\Helpers;
 
+use App\Models\User;
+use App\Models\UserPayment;
 use Illuminate\Support\Facades\Http;
 
 class Helper
@@ -50,12 +52,12 @@ class Helper
         return array_reverse($currencies);
     }
 
-    static function createPayment($params)
+    static function createInvoice($params)
     {
         return Http::asForm()->withHeaders([
             'x-api-key' => env('NOWPAYMENTS_API_KEY'),
             'Content-Type' => 'application/json'
-        ])->post('https://api.nowpayments.io/v1/payment', $params);
+        ])->post('https://api.nowpayments.io/v1/invoice', $params);
     }
 
     static function getEstimatedPrice($params): \GuzzleHttp\Promise\PromiseInterface|\Illuminate\Http\Client\Response
@@ -64,5 +66,36 @@ class Helper
             'x-api-key' => env('NOWPAYMENTS_API_KEY'),
             'Content-Type' => 'application/json'
         ])->get('https://api.nowpayments.io/v1/estimate', $params);
+    }
+
+    static function addBalance($params): void
+    {
+        $user = User::query()->find($params['user_id']);
+        User::query()->update(['balance' => intval($user->balance) + intval($params['amount'])]);
+        Helper::setPokerMavens([
+            "Command" => "AccountsIncBalance",
+            'Player' => $user->username,
+            'Amount' => $params['amount']
+        ]);
+        Helper::setPokerMavens([
+            'Command' => 'LogsAddEvent',
+            'Log' => $params['log']
+        ]);
+    }
+
+    static function decBalance($params): void
+    {
+        $user = User::query()->find($params['user_id']);
+        User::query()->update(['balance' => intval($user->balance) - intval($params['amount'])]);
+        Helper::setPokerMavens([
+            "Command" => "AccountsDecBalance",
+            'Player' => $user->username,
+            'Negative' => 'Skip',
+            'Amount' => $params['amount']
+        ]);
+        Helper::setPokerMavens([
+            'Command' => 'LogsAddEvent',
+            'Log' => $params['log']
+        ]);
     }
 }

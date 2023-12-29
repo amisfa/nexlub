@@ -4,9 +4,6 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    <h1 class="title">Choose Your Game</h1>
-                </div>
                 <div class="card-body all-icons">
                     <div class="container">
                         <div class="row">

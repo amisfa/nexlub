@@ -7,11 +7,10 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Routing\Controller;
 
-
-class PaymentController extends Controller
+class WithdrawController extends Controller
 {
     public function create(): View|\Illuminate\Foundation\Application|Factory|Application
     {
-        return view('pages.payments');
+        return view('pages.withdraw');
     }
 }
