@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\User;
+use LaravelViews\Actions\RedirectAction;
 use LaravelViews\Views\DetailView;
 
 class UserProfileView extends DetailView
@@ -21,8 +22,15 @@ class UserProfileView extends DetailView
     public function heading($model)
     {
         return [
+            "Edit Profile",
             "{$model->username}",
-            "user profile data",
+        ];
+    }
+
+    public function actions(): array
+    {
+        return [
+            new RedirectAction('profile-edit', 'Edit user', 'edit'),
         ];
     }
 }

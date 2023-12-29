@@ -29,6 +29,9 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/', [DashboardController::class, 'create'])->name('dashboard');
     Route::get('/profile', [ProfileController::class, 'create'])->name('profile-view');
+    Route::get('/edit-profile', [ProfileController::class, 'update'])->name('profile-edit');
+    Route::put('/edit-user-details', [ProfileController::class, 'editUserDetails'])->name('edit-user-details');
+    Route::put('/change-user-password', [ProfileController::class, 'changeUserPassword'])->name('change-user-password');
     Route::get('/wallet', [WalletController::class, 'create'])->name('wallet');
     Route::get('/play', [PlayController::class, 'create'])->name('play');
     Route::get('/invoices', [InvoiceController::class, 'create'])->name('invoices');

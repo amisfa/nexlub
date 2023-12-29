@@ -85,6 +85,7 @@ html {
     height: 100%;
     object-fit: cover; /* Ensures the image covers the entire container, while retaining its aspect ratio */
 }
+
 @-ms-viewport {
     width: device-width;
 }
@@ -18833,6 +18834,14 @@ Copyright (c) 2015 Daniel Eden
 
 .sidebar .sidebar-wrapper > .nav [data-toggle="collapse"] ~ div > ul > li > a i, .sidebar .sidebar-wrapper .user .info [data-toggle="collapse"] ~ div > ul > li > a i, .off-canvas-sidebar .sidebar-wrapper > .nav [data-toggle="collapse"] ~ div > ul > li > a i, .off-canvas-sidebar .sidebar-wrapper .user .info [data-toggle="collapse"] ~ div > ul > li > a i {
     line-height: 32px;
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
+
+.avatar-selection input:checked + label img {
+    filter: unset !important;
 }
 
 .grayscale {
