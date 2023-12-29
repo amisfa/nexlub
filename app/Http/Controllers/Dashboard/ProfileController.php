@@ -44,7 +44,9 @@ class ProfileController extends Controller
             'password_confirmation' => 'required|min:8|same:password',
         ], $messages);
         if ($validator->fails()) return back()->withErrors($validator->messages());
-        auth()->user()->update(['password' => Hash::make(request('password'))]);
-        return back()->withPasswordStatus(__('Password successfully updated.'));
+        $user = User::find(auth()->id());
+        $user->update(['password' => Hash::make(request('password'))]);
+        if ($user->wasChanged()) return back()->withPasswordStatus(__('Profile successfully updated.'));
+        else return back();
     }
 }
