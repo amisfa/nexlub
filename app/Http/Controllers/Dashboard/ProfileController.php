@@ -12,6 +12,6 @@ class ProfileController extends Controller
 {
     public function create(): View|\Illuminate\Foundation\Application|Factory|Application
     {
-        return view('profile.profile');
+        return view('profile.view');
     }
 }

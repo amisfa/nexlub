@@ -14258,7 +14258,8 @@ img {
 }
 
 .navbar .photo img {
-    width: 100%;
+    position: absolute;
+    top: -5px;
 }
 
 .navbar .navbar-wrapper {
