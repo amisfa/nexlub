@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Requests\ProfileRequest;
+use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -25,9 +26,10 @@ class ProfileController extends Controller
 
     public function editUserDetails(ProfileRequest $request)
     {
-        auth()->user()->update($request->all());
-
-        return back()->withStatus(__('Profile successfully updated.'));
+        $user = User::find(auth()->id());
+        $user->update($request->all());
+        if ($user->wasChanged()) return back()->withStatus(__('Profile successfully updated.'));
+        else return back();
     }
 
     public function changeUserPassword()
