@@ -13,9 +13,9 @@ class UserProfileView extends DetailView
     public function detail($model)
     {
         return [
-            '<p class="title"> Name </p>' => old('username', $model->username),
-            '<p class="title"> Email </p>' => old('email', $model->email),
-            '<p class="title"> Wallet.No </p>' => old('wallet_no', $model->wallet_no),
+            '<p class="title"> Name </p>' => $model->username,
+            '<p class="title">Email</p>' => '<p class="' . $this->isEmailVerified($model->email_verified_at) . '">' . $model->email . ' (' . $this->getVerifiedText($model->email_verified_at) . ')' . '</p>',
+            '<p class="title"> Wallet.No </p>' => $model->wallet_no,
         ];
     }
 
@@ -32,5 +32,15 @@ class UserProfileView extends DetailView
         return [
             new RedirectAction('profile-edit', 'Edit user', 'edit'),
         ];
+    }
+
+    public static function isEmailVerified($verified_at): string
+    {
+        return $verified_at ? 'text-success' : 'text-danger';
+    }
+
+    public static function getVerifiedText($verified_at): string
+    {
+        return  $verified_at ? "Verified" : "Not Verified" ;
     }
 }
