@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+<nav class="navbar navbar-expand-lg navbar-absolute navbar-desktop">
     <div class="container-fluid">
         <div class="navbar-wrapper">
             <div class="navbar-toggle d-inline">
@@ -19,13 +19,17 @@
         <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto">
                 <li class="dropdown nav-item">
-                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <div class="photo">
-                            <img src="{{ asset('avatars') }}/{{auth()->user()->avatar}}.png" width="28px"
+                    <a href="#" class="dropdown-toggle nav-link flex justify-between items-center" data-toggle="dropdown">
+                        <div class="flex justify-start pr-4">
+                            <img src="{{ asset('avatars') }}/{{auth()->user()->avatar}}.png"
+                                 style="height: 40px!important"
                                  alt="{{ __('Profile Photo') }}">
+                            <div class="flex flex-column bold px-1 justify-end">
+                                <p>{{auth()->user()->username}}</p>
+                                <p>${{number_format(auth()->user()->balance, 2)}}</p>
+                            </div>
                         </div>
                         <b class="caret d-none d-lg-block d-xl-block"></b>
-                        <p class="d-lg-none">{{ __('Profile') }}</p>
                     </a>
                     <ul class="dropdown-menu dropdown-navbar">
                         <li class="nav-link">

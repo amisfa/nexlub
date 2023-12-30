@@ -26,9 +26,9 @@ $(document).ready(function () {
     if ($('.full-screen-map').length == 0 && $('.bd-docs').length == 0) {
         // On click navbar-collapse the menu will be white not transparent
         $('.collapse').on('show.bs.collapse', function () {
-            $(this).closest('.navbar').removeClass('navbar-transparent').addClass('bg-white');
+            $(this).closest('.navbar').removeClass('navbar-desktop').addClass('bg-navbar');
         }).on('hide.bs.collapse', function () {
-            $(this).closest('.navbar').addClass('navbar-transparent').removeClass('bg-white');
+            $(this).closest('.navbar').addClass('navbar-desktop').removeClass('bg-navbar');
         });
     }
     blackDashboard.initMinimizeSidebar();
