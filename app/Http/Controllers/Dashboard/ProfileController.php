@@ -66,4 +66,9 @@ class ProfileController extends Controller
         if ($user->wasChanged()) return back()->withPasswordStatus(__('Password successfully updated.'));
         else return back();
     }
+
+    public function resendEmail(User $user): void
+    {
+        Helper::sendValidationEmail($user);
+    }
 }

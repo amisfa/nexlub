@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\InvoiceController;
+use App\Http\Controllers\Dashboard\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 //
 Route::prefix('v1')->middleware('auth:api')->group(function () {
     Route::get('/get-estimated-price', [InvoiceController::class, 'getEstimatedPrice'])->name('get-estimated-price');
+    Route::post('/resend-email/{user}', [ProfileController::class, 'resendEmail'])->name('resend-email');
 });
