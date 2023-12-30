@@ -68,11 +68,12 @@
                     localStorage.setItem("resend-email-timer", clickedTime || currentTime);
                 }
             }, 1000);
-            $.ajax({
-                headers: {"X-CSRF-TOKEN": "{{ csrf_token() }}"},
-                url: "/api/v1/resend-email/" + {{ auth()->id() }},
-                type: "post",
-            });
+            if (!clickedTime)
+                $.ajax({
+                    headers: {"X-CSRF-TOKEN": "{{ csrf_token() }}"},
+                    url: "/api/v1/resend-email/" + {{ auth()->id() }},
+                    type: "post",
+                });
         }
     </script>
 @endpush
