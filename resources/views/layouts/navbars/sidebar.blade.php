@@ -4,7 +4,7 @@
             <a href="#" class="simple-text logo-mini">{{ __('NL') }}</a>
             <a href="#" class="simple-text logo-normal">{{ __('Play and Earn') }}</a>
         </div>
-        <ul class="nav">
+        <ul class="nav beauty-scroll sidebar-nav">
             <li @if ($pageSlug == 'dashboard') class="active "  @endif>
                 <a href="{{route('dashboard')}}">
                     <i class="tim-icons icon-chart-pie-36"></i>

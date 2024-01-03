@@ -14273,7 +14273,7 @@ img {
 }
 
 .navbar.navbar-desktop {
-    background: linear-gradient(270deg, rgba(2, 0, 36, 1) 0%, rgba(23, 107, 123, 1) 40%, rgba(0, 212, 255, 1) 73%) !important;
+    background: #006CA5;
 }
 
 .navbar.bg-navbar .navbar-nav .search-bar.input-group i {
@@ -14386,6 +14386,19 @@ img {
 }
 
 @media screen and (max-width: 991px) {
+    .sidebar-nav {
+        height: 100% !important;
+        margin-top: -5px !important;
+        padding-top: 15px;
+        display: block;
+        border-right: 4px solid #b7b7b7;
+        overflow: auto;
+    }
+
+    .sidebar .sidebar-wrapper, .off-canvas-sidebar .sidebar-wrapper {
+        border-radius: unset !important;
+    }
+
     .navbar .container-fluid {
         padding-right: 15px;
         padding-left: 15px;
@@ -15742,7 +15755,7 @@ table.tablesorter thead tr .headerSortDown {
 
 .sidebar,
 .off-canvas-sidebar {
-    background: linear-gradient(2deg, rgba(2, 0, 36, 1) 0%, rgba(23, 107, 123, 1) 54%, rgba(0, 212, 255, 1) 100%);
+    background: #006CA5;
     height: calc(100vh - 90px);
     width: 230px;
     position: fixed;
@@ -15754,16 +15767,21 @@ table.tablesorter thead tr .headerSortDown {
     display: block;
     margin-top: 78px;
     transition: 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    border-radius: 0 0 20px 0;
 }
 
 .sidebar .sidebar-wrapper,
 .off-canvas-sidebar .sidebar-wrapper {
     width: 100%;
     min-height: 100%;
+    height: 100%;
     max-height: calc(100vh - 705px);
     z-index: 4;
     position: relative;
-    overflow: auto;
+    overflow: hidden;
+    border-right: 2px solid #b7b7b7;
+    border-bottom: 2px solid #b7b7b7;
+    border-radius: 0 0 20px 0;
 }
 
 .sidebar .sidebar-wrapper .dropdown .dropdown-backdrop,
@@ -16224,8 +16242,9 @@ table.tablesorter thead tr .headerSortDown {
 }
 
 .main-panel > .content {
-    padding: 88px 30px 30px 280px;
+    padding: 22px 30px 30px 280px;
     min-height: calc(100vh - 70px);
+    border-top: 80px solid #b7b7b7;
 }
 
 .main-panel > .navbar {
@@ -16393,6 +16412,12 @@ table.tablesorter thead tr .headerSortDown {
 }
 
 @media screen and (max-width: 991px) {
+    .sidebar .sidebar-wrapper {
+        border-right: unset !important;
+        border-bottom: unset !important;
+        overflow: hidden !important;
+    }
+
     .sidebar {
         position: fixed;
         display: block;
@@ -16441,6 +16466,7 @@ table.tablesorter thead tr .headerSortDown {
 
     .main-panel .content {
         padding-left: 30px;
+        border-top: 60px solid #b7b7b7 !important;
     }
 
     .nav-open .main-panel {
