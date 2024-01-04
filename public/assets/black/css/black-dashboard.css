@@ -4630,6 +4630,7 @@ input[type="button"].btn-block {
 
 .navbar-toggler {
     padding: 0.25rem 0.75rem;
+    margin-right: -25px;
     font-size: 0.99925rem;
     line-height: 1;
     background-color: transparent;
@@ -6939,7 +6940,7 @@ button.bg-default:focus {
 }
 
 .bg-navbar {
-    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(23, 107, 123, 1) 54%, rgba(0, 212, 255, 1) 100%) !important;
+    background: #006CA5 !important;
 }
 
 a.bg-navbar:hover,
@@ -14257,6 +14258,7 @@ img {
 .navbar .navbar-wrapper {
     display: flex;
     align-items: center;
+    margin-left: -20px;
 }
 
 .navbar .navbar-text {
