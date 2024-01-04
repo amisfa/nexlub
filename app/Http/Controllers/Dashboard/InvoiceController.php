@@ -74,7 +74,7 @@ class InvoiceController extends Controller
         Helper::addBalance([
             'user_id' => $invoice->user_id,
             'amount' => $invoice->price_amount,
-            'log' => $invoice->price_amount . ' USD Paid by ' . auth()->user()->username
+            'log' => $invoice->price_amount . ' USD Paid by ' . $invoice->user->username
         ]);
         return redirect('dashboard/payments')->with(['success' => 'Payment Paid Successfully']);
     }
