@@ -337,7 +337,7 @@ input[type="submit"]:active {
 .g-recaptcha > * {
     float: right;
     right: 0;
-    margin: -2px -75px -10px;/*remove borders*/
+    margin: -22px -75px -25px;/*remove borders*/
 }
 
 .g-recaptcha::after{
