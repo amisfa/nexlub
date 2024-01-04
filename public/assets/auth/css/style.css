@@ -313,3 +313,41 @@ input[type="submit"]:active {
         font-size: 12px !important;
     }
 }
+
+/*.g-recaptcha {*/
+/*    position: relative;*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    background: #222;*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*.g-recaptcha > * {*/
+/*    margin: -3px -3px -10px;!*remove borders*!*/
+/*}*/
+
+.g-recaptcha {
+    position: relative;
+    width: 100%;
+    background: #222;
+    overflow: hidden;
+}
+
+.g-recaptcha > * {
+    float: right;
+    right: 0;
+    margin: -22px -75px -25px;/*remove borders*/
+}
+
+.g-recaptcha::after{
+    display: block;
+    content: "";
+    position: absolute;
+    left:0;
+    right:218px;
+    top: 0;
+    bottom:0;
+    background-color: #222;
+    clear: both;
+}
