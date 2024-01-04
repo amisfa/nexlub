@@ -7,11 +7,11 @@ use App\Http\Controllers\Controller;
 use App\Models\UserInvoice;
 use App\Models\UserPayment;
 use Exception;
+use Hidehalo\Nanoid\Client;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Str;
 
 class InvoiceController extends Controller
 {
@@ -23,7 +23,8 @@ class InvoiceController extends Controller
     public function makeInvoice(): \Illuminate\Foundation\Application|\Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|Application
     {
         try {
-            $token = Str::random(18);
+            $nano = new Client();
+            $token = $nano->generateId(21, Client::MODE_DYNAMIC);
             $invoice = UserInvoice::query()->create([
                 'user_id' => auth()->id(),
                 'invoice_token' => $token,
