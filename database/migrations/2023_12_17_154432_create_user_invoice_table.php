@@ -12,18 +12,15 @@ return new class extends Migration {
     {
         Schema::create('user_invoice', function (Blueprint $table) {
             $table->id();
-            $table->uuid('invoice_id');
-            $table->unsignedBigInteger('now_payment_id');
+            $table->ulid('invoice_id');
+            $table->string('plisio_id');
             $table->unsignedBigInteger('user_id');
             $table->string('invoice_url');
             $table->string('invoice_token');
             $table->string('price_amount');
-            $table->string('price_currency');
-            $table->string('pay_currency');
             $table->dateTime('paid_at')->nullable();
-            $table->dateTime('canceled_at')->nullable();
+            $table->dateTime('failed_at')->nullable();
             $table->dateTime('dropped_at')->nullable();
-            $table->dateTime('partially_paid_at')->nullable();
             $table->timestamps();
         });
     }

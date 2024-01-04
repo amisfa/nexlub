@@ -15,8 +15,6 @@ return new class extends Migration {
             $table->uuid('invoice_id');
             $table->unsignedBigInteger('user_id');
             $table->string('price_amount');
-            $table->string('price_currency');
-            $table->string('pay_currency');
             $table->string('status');
 
             $table->timestamps();

@@ -39,11 +39,10 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/withdraw', [WithdrawController::class, 'create'])->name('withdraw');
 
     Route::get('/success-payment', [InvoiceController::class, 'successPayment']);
-    Route::get('/cancel-payment', [InvoiceController::class, 'cancelPayment']);
-    Route::get('/partially_paid_url', [InvoiceController::class, 'partiallyPaidPayment'])->name('create-invoice');
+    Route::get('/failed-payment', [InvoiceController::class, 'failedPayment']);
     Route::get('/payments', [PaymentController::class, 'create'])->name('payments');
 
-    Route::post('/create-invoice', [InvoiceController::class, 'makeInvoice'])->name('set-invoice');
+    Route::post('/create-invoice', [InvoiceController::class, 'makeInvoice'])->name('make-invoice');
     Route::get('/deposit', [DepositController::class, 'create'])->name('deposit');
 });
 

@@ -14,8 +14,6 @@ class UserPayment extends Model
         'user_id',
         'invoice_id',
         'price_amount',
-        'price_currency',
-        'pay_currency',
         'status'
     ];
 

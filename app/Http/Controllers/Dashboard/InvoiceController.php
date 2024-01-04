@@ -17,39 +17,35 @@ class InvoiceController extends Controller
 {
     public function create(): View|\Illuminate\Foundation\Application|Factory|Application
     {
-        $availableCurrencies = Helper::getAvailableCurrencies();
-        return view('pages.invoice', ['currencies' => $availableCurrencies]);
+        return view('pages.invoice');
     }
 
     public function makeInvoice(): \Illuminate\Foundation\Application|\Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|Application
     {
         try {
             $token = Str::random(18);
-            $invoiceId = Str::uuid();
+            $invoiceId = Str::ulid(now())->toBase32();
             $data = [
-                'price_amount' => request()->price_amount ?? 100,
-                'order_id' => $invoiceId,
-                'price_currency' => 'usd',
-                'pay_currency' => request()->pay_currency ?? 'btc',
-                'success_url' => env('url_front') . 'dashboard/success-payment?token=' . $token . '&id=' . $invoiceId,
-                'cancel_url' => env('url_front') . 'dashboard/cancel-payment?id=' . $invoiceId,
-                'partially_paid_url' => env('url_front') . 'dashboard/partially-payment?id=' . $invoiceId,
-                'is_fee_paid_by_user' => "true",
-                'is_fixed_rate' => "true",
+                'source_amount' => request()->price_amount ?? 100,
+                'source_currency' => 'USD',
+                'order_number' => $invoiceId,
+                'order_name' => auth()->user()->username,
+                'success_callback_url' => env('app_url') . 'dashboard/success-payment?token=' . $token . '&id=' . $invoiceId,
+                'fail_callback_url' => env('app_url') . 'dashboard/failed-payment?id=' . $invoiceId,
+                'email' => auth()->user()->email
             ];
             $response = Helper::createInvoice($data);
             $details = json_decode($response->body(), true);
-            UserInvoice::query()->create([
+            if ($response->status() !== 200) return redirect('dashboard')->with(['error' => array_values(json_decode($details['data']['message'], true))[0]]);
+            $item = UserInvoice::query()->create([
                 'user_id' => auth()->id(),
                 'invoice_token' => $token,
                 'invoice_id' => $invoiceId,
-                'now_payment_id' => $details['id'],
-                'invoice_url' => $details['invoice_url'],
-                'price_amount' => $details['price_amount'],
-                'price_currency' => $details['price_currency'],
-                'pay_currency' => $details['pay_currency'],
+                'plisio_id' => $details['data']['txn_id'],
+                'invoice_url' => $details['data']['invoice_url'],
+                'price_amount' => request()->price_amount ?? 100,
             ]);
-            return Redirect::to($details['invoice_url']);
+            return Redirect::to($details['data']['invoice_url']);
         } catch (Exception $e) {
             return redirect('dashboard')->with(['error' => 'Invoice created failed']);
         }
@@ -70,8 +66,6 @@ class InvoiceController extends Controller
             'invoice_id' => $invoice->invoice_id,
             'user_id' => $invoice->user_id,
             'price_amount' => $invoice->price_amount,
-            'price_currency' => $invoice->price_currency,
-            'pay_currency' => $invoice->pay_currency,
             'status' => 'Paid'
         ]);
         Helper::addBalance([
@@ -82,53 +76,19 @@ class InvoiceController extends Controller
         return redirect('dashboard/payments')->with(['success' => 'Payment Paid Successfully']);
     }
 
-    public function cancelPayment(): \Illuminate\Foundation\Application|\Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|Application
+    public function failedPayment(): \Illuminate\Foundation\Application|\Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|Application
     {
         $invoiceId = request()->query('id');
-        $invoice = UserInvoice::query()->where('invoice_id', $invoiceId)->whereNull('canceled_at')->first();
+        $invoice = UserInvoice::query()->where('invoice_id', $invoiceId)->whereNull('failed_at')->first();
         if (!$invoice) return redirect('dashboard')->with(['error' => 'Invalid Payment Link']);
-        $invoice->canceled_at = now();
+        $invoice->failed_at = now();
         $invoice->save();
         UserPayment::query()->create([
             'invoice_id' => $invoice->invoice_id,
             'user_id' => $invoice->user_id,
             'price_amount' => $invoice->price_amount,
-            'price_currency' => $invoice->price_currency,
-            'pay_currency' => $invoice->pay_currency,
-            'status' => 'Canceled'
+            'status' => 'Failed'
         ]);
-        return redirect('dashboard')->with(['success' => 'Payment Canceled Successfully']);
+        return redirect('dashboard')->with(['error' => 'Payment Failed']);
     }
-
-    public function partiallyPaidPayment(): \Illuminate\Foundation\Application|\Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|Application
-    {
-        $invoiceId = request()->query('id');
-        $invoice = UserInvoice::query()->where('invoice_id', $invoiceId)->whereNull('partially_paid_at')->first();
-        if (!$invoice) return redirect('dashboard')->with(['error' => 'Invalid Payment Link']);
-        $invoice->partially_paid_at = now();
-        $invoice->save();
-        UserPayment::query()->create([
-            'invoice_id' => $invoice->invoice_id,
-            'user_id' => $invoice->user_id,
-            'price_amount' => $invoice->price_amount,
-            'price_currency' => $invoice->price_currency,
-            'pay_currency' => $invoice->pay_currency,
-            'status' => 'Partially Paid'
-        ]);
-        return redirect('dashboard')->with(['error' => 'Payment Partially Paid Successfully']);
-    }
-
-    public function getEstimatedPrice()
-    {
-        $currency = request()->currency;
-        $amount = request()->amount;
-        $response = Helper::getEstimatedPrice([
-            'currency_from' => 'usd',
-            'amount' => $amount,
-            'currency_to' => $currency
-        ]);
-        $details = json_decode($response, true);
-        return response()->json($details, 200);
-    }
-
 }
