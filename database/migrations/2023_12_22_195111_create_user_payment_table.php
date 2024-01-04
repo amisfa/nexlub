@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('user_payment', function (Blueprint $table) {
             $table->id();
-            $table->uuid('invoice_id');
+            $table->string('invoice_id');
             $table->unsignedBigInteger('user_id');
             $table->string('price_amount');
             $table->string('status');

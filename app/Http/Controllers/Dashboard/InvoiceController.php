@@ -24,27 +24,29 @@ class InvoiceController extends Controller
     {
         try {
             $token = Str::random(18);
-            $invoiceId = Str::ulid(now())->toBase32();
+            $invoice = UserInvoice::query()->create([
+                'user_id' => auth()->id(),
+                'invoice_token' => $token,
+                'price_amount' => request()->price_amount ?? 100,
+            ]);
             $data = [
-                'source_amount' => request()->price_amount ?? 100,
+                'source_amount' => $invoice->price_amount,
                 'source_currency' => 'USD',
-                'order_number' => $invoiceId,
-                'order_name' => auth()->user()->username,
-                'success_callback_url' => env('app_url') . 'dashboard/success-payment?token=' . $token . '&id=' . $invoiceId,
-                'fail_callback_url' => env('app_url') . 'dashboard/failed-payment?id=' . $invoiceId,
-                'email' => auth()->user()->email
+                'order_number' => $invoice->id,
+                'order_name' => $invoice->user->username,
+                'success_callback_url' => env('app_url') . 'dashboard/success-payment?token=' . $token . '&id=' . $invoice->id,
+                'fail_callback_url' => env('app_url') . 'dashboard/failed-payment?id=' . $invoice->id,
+                'email' => $invoice->user->email
             ];
             $response = Helper::createInvoice($data);
             $details = json_decode($response->body(), true);
-            if ($response->status() !== 200) return redirect('dashboard')->with(['error' => array_values(json_decode($details['data']['message'], true))[0]]);
-            $item = UserInvoice::query()->create([
-                'user_id' => auth()->id(),
-                'invoice_token' => $token,
-                'invoice_id' => $invoiceId,
-                'plisio_id' => $details['data']['txn_id'],
-                'invoice_url' => $details['data']['invoice_url'],
-                'price_amount' => request()->price_amount ?? 100,
-            ]);
+            if ($response->status() !== 200) {
+                $invoice->update(['failed_at' => now()]);
+                return redirect('dashboard')->with(['error' => array_values(json_decode($details['data']['message'], true))[0]]);
+            }
+            $invoice['plisio_id'] = $details['data']['txn_id'];
+            $invoice['invoice_url'] = $details['data']['invoice_url'];
+            $invoice->save();
             return Redirect::to($details['data']['invoice_url']);
         } catch (Exception $e) {
             return redirect('dashboard')->with(['error' => 'Invoice created failed']);
@@ -55,15 +57,15 @@ class InvoiceController extends Controller
     {
         $token = request()->query('token');
         $invoiceId = request()->query('id');
-        $invoice = UserInvoice::query()->where([['invoice_id', $invoiceId], ['invoice_token', $token]])->whereNull(['paid_at', 'dropped_at'])->first();
+        $invoice = UserInvoice::query()->where([['id', $invoiceId], ['invoice_token', $token]])->whereNull(['paid_at', 'dropped_at'])->first();
         if (!$invoice) {
-            UserInvoice::query()->where('invoice_id', $invoiceId)->update(['dropped_at' => now()]);
+            UserInvoice::query()->where('id', $invoiceId)->update(['dropped_at' => now()]);
             return redirect('dashboard')->with(['error' => 'Invalid Payment Link']);
         }
         $invoice->paid_at = now();
         $invoice->save();
         UserPayment::query()->create([
-            'invoice_id' => $invoice->invoice_id,
+            'invoice_id' => $invoice->id,
             'user_id' => $invoice->user_id,
             'price_amount' => $invoice->price_amount,
             'status' => 'Paid'
@@ -79,12 +81,12 @@ class InvoiceController extends Controller
     public function failedPayment(): \Illuminate\Foundation\Application|\Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|Application
     {
         $invoiceId = request()->query('id');
-        $invoice = UserInvoice::query()->where('invoice_id', $invoiceId)->whereNull('failed_at')->first();
+        $invoice = UserInvoice::query()->where('id', $invoiceId)->whereNull('failed_at')->first();
         if (!$invoice) return redirect('dashboard')->with(['error' => 'Invalid Payment Link']);
         $invoice->failed_at = now();
         $invoice->save();
         UserPayment::query()->create([
-            'invoice_id' => $invoice->invoice_id,
+            'invoice_id' => $invoice->id,
             'user_id' => $invoice->user_id,
             'price_amount' => $invoice->price_amount,
             'status' => 'Failed'

@@ -11,16 +11,16 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('user_invoice', function (Blueprint $table) {
-            $table->id();
-            $table->ulid('invoice_id');
-            $table->string('plisio_id');
+            $table->string('id')->primary();
+            $table->string('plisio_id')->nullable();
             $table->unsignedBigInteger('user_id');
-            $table->string('invoice_url');
-            $table->string('invoice_token');
+            $table->string('invoice_url')->nullable();
+            $table->string('invoice_token')->nullable();
             $table->string('price_amount');
             $table->dateTime('paid_at')->nullable();
             $table->dateTime('failed_at')->nullable();
             $table->dateTime('dropped_at')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
