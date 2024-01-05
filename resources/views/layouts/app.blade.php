@@ -23,9 +23,10 @@
 </head>
 <body class="{{ $class ?? '' }}">
 <div class="wrapper">
-    @include('layouts.navbars.sidebar')
     <div class="main-panel magicpattern">
         @include('layouts.navbars.navbar')
+        @include('layouts.navbars.sidebar')
+
         <div class="content">
             @if(session('warning'))
                 <div class="alert alert-primary" role="alert">{{session('warning')}}</div>
@@ -50,7 +51,6 @@
 <script src="{{ asset('black') }}/js/core/bootstrap.min.js"></script>
 <script src="{{ asset('black') }}/js/plugins/bootstrap-notify.js"></script>
 
-<script src="{{ asset('black') }}/js/black-dashboard.js?v=1.0.0"></script>
 <script src="{{ asset('black') }}/js/theme.js"></script>
 
 @stack('js')

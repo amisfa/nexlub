@@ -1,58 +1,74 @@
-<div class="sidebar">
-    <div class="sidebar-wrapper">
-        <div class="logo">
-            <a href="#" class="simple-text logo-mini">{{ __('NL') }}</a>
-            <a href="#" class="simple-text logo-normal">{{ __('Play and Earn') }}</a>
+<div>
+    <div class="modern-menu-wrapper">
+        <div class="modern-menu-icon-wrapper">
+            <div class="toggle">
+                <span class="line-toggle"></span>
+                <span class="line-toggle"></span>
+                <span class="line-toggle"></span>
+            </div>
         </div>
-        <ul class="nav beauty-scroll sidebar-nav">
-            <li @if ($pageSlug == 'dashboard') class="active "  @endif>
+        <ul class="modern-menu">
+            <li @if ($pageSlug == 'dashboard') class="active"@endif>
                 <a href="{{route('dashboard')}}">
-                    <i class="tim-icons icon-chart-pie-36"></i>
-                    <p>{{ __('Dashboard') }}</p>
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
                 </a>
             </li>
-            <li @if ($pageSlug == 'play') class="active " @endif>
-                <a href="{{route('play')}}">
-                    <i class="tim-icons icon-chart-pie-36"></i>
-                    <p>{{ __('Play') }}</p>
+            <li @if ($pageSlug == 'invoices' || $pageSlug == 'payments') class="parent-active" @endif>
+                <a>
+                    <i class="fab fa-css3-alt"></i> Deposit
+                    <span class='cavet'><i class="fas fa-caret-right"></i></span>
                 </a>
-            </li>
-            <li>
-                <a data-toggle="collapse" href="#invoices" aria-expanded="true">
-                    <i class="fab fa-laravel"></i>
-                    <span class="nav-link-text">{{ __('Deposit') }}</span>
-                    <b class="caret mt-1"></b>
-                </a>
-                <div class="collapse show" id="invoices">
-                    <ul class="nav pl-4">
-                        <li @if ($pageSlug == 'invoices') class="active " @endif>
-                            <a href="{{route('invoices')}}">
-                                <i class="tim-icons icon-chart-pie-36"></i>
-                                <p>{{ __('Create Invoice') }}</p>
-                            </a>
-                        </li>
-                        <li @if ($pageSlug == 'payments') class="active " @endif>
-                            <a href="{{route('payments')}}">
-                                <i class="tim-icons icon-chart-pie-36"></i>
-                                <p>{{ __('Payments') }}</p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li @if ($pageSlug == 'withdraw') class="active " @endif>
-                <a href="#">
-                    <i class="tim-icons icon-chart-pie-36"></i>
-                    <p>{{ __('Withdraw') }}</p>
-                </a>
-            </li>
-            <li @if ($pageSlug == 'rewards') class="active " @endif>
-                <a href="#">
-                    <i class="tim-icons icon-chart-pie-36"></i>
-                    <p>{{ __('Rewards') }}</p>
-                </a>
+                <ul>
+                    <li @if ($pageSlug == 'invoices') class="active " @endif><a href="{{route('invoices')}}"><i
+                                class="fas fa-mobile"></i> Create Invoice</a></li>
+                    <li @if ($pageSlug == 'payments') class="active " @endif><a href="{{route('payments')}}"><i
+                                class="fas fa-glasses"></i> Payments</a></li>
+                </ul>
             </li>
         </ul>
     </div>
 </div>
+@push('js')
+    <script>
+        $(".modern-menu li").unbind("click").click(function (event) {
+            event.stopPropagation(); //stop trigger parent
+            var el = $(this).parents("li").siblings();
+            el = el.length == 0 ? $(this).siblings() : el;
+            el.find(".active").addBack().removeClass("active");
+
+            if ($(this).hasClass("active")) {
+                $(this).find(".active").addBack().removeClass("active");
+            } else {
+                $(this).addClass("active");
+            }
+        });
+        var responsive = function () {
+            var s = 500;
+            $(window).resize(function () {
+                windowSize(s);
+            });
+            windowSize(s);
+        }
+        var windowSize = function (s) {
+            var w = $(window).width();
+            if (w <= s) {
+                $(".toggle").removeClass("active");
+                $(".modern-menu-wrapper").addClass("hide").removeClass("show");
+            } else {
+                $(".toggle").addClass("active");
+                $(".modern-menu-wrapper").addClass("show").removeClass("hide");
+            }
+        }
+        responsive();
+        $(".modern-menu-icon-wrapper").unbind("click").click(function (e) {
+            e.preventDefault();
+            $('.toggle').toggleClass("active");
+            if ($(".toggle").hasClass("active")) {
+                $(".modern-menu-wrapper").addClass("show").removeClass("hide");
+            } else {
+                $(".modern-menu-wrapper").addClass("hide").removeClass("show");
+            }
+        });
+    </script>
+@endpush
 

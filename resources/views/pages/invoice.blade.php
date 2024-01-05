@@ -14,8 +14,7 @@
                                 <input type="number" step="any" class="form-control" id="amount" name="price_amount" required min=0
                                        placeholder="$100">
                             </div>
-                            <div class="d-flex flex-column justify-content-around"
-                                 style="padding:15px;padding-top:0px;">
+                            <div class="d-flex flex-column justify-content-around" style="padding:15px;padding-top:0px;">
                                 <div class="min-column text-danger"></div>
                                 <div id="estimated-price" class="text-primary"></div>
                                 <div class="max-column text-success"></div>
