@@ -14393,7 +14393,6 @@ img {
         margin-top: -5px !important;
         padding-top: 15px;
         display: block;
-        border-right: 4px solid #b7b7b7;
         overflow: auto;
     }
 
@@ -16476,11 +16475,6 @@ table.tablesorter thead tr .headerSortDown {
 @media screen and (max-width: 991px) {
     .main-panel {
         width: 100%;
-    }
-
-    .main-panel .content {
-        padding-left: 30px;
-        border-top: 60px solid #b7b7b7 !important;
     }
 
     .nav-open .main-panel {
