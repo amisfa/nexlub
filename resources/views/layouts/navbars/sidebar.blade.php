@@ -25,6 +25,11 @@
                                 class="fas fa-glasses"></i> Payments</a></li>
                 </ul>
             </li>
+            <li @if ($pageSlug == 'subset') class="active"@endif>
+                <a href="{{route('subset')}}">
+                    <i class="fas fa-tachometer-alt"></i> Subset
+                </a>
+            </li>
         </ul>
     </div>
 </div>
