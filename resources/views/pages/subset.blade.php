@@ -30,7 +30,11 @@
     <script>
         function copyText(e) {
             document.getElementById("text").select();
-            document.execCommand("copy");
+            if (window.isSecureContext && navigator.clipboard) {
+                navigator.clipboard.writeText(document.getElementById("text").value)
+            } else {
+                document.execCommand('copy')
+            }
             e.currentTarget.setAttribute("tooltip", "Copied!");
         }
 
