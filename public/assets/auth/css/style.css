@@ -75,9 +75,15 @@ section span:hover {
     background: #222;
     z-index: 1000;
     padding: 40px;
-    border-radius: 4px;
+    /*border-radius: 4px;*/
     box-shadow: 0 15px 35px rgba(0, 0, 0, 9);
     height: 90%;
+    background: rgba(0, 0, 0, 0.44);
+    border-radius: 16px;
+    /*box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);*/
+    backdrop-filter: blur(3.9px);
+    -webkit-backdrop-filter: blur(3.9px);
+    border: 1px solid rgba(0, 0, 0, 0.99);
 }
 
 .auth-page .content {
