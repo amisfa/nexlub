@@ -221,20 +221,20 @@ a:hover {
     text-decoration: none;
 }
 
-a:not([href]):not([tabindex]) {
-    color: inherit;
-    text-decoration: none;
-}
+/*a:not([href]):not([tabindex]) {*/
+/*    color: inherit;*/
+/*    text-decoration: none;*/
+/*}*/
 
-a:not([href]):not([tabindex]):hover,
-a:not([href]):not([tabindex]):focus {
-    color: inherit;
-    text-decoration: none;
-}
+/*a:not([href]):not([tabindex]):hover,*/
+/*a:not([href]):not([tabindex]):focus {*/
+/*    color: inherit;*/
+/*    text-decoration: none;*/
+/*}*/
 
-a:not([href]):not([tabindex]):focus {
-    outline: 0;
-}
+/*a:not([href]):not([tabindex]):focus {*/
+/*    outline: 0;*/
+/*}*/
 
 pre,
 code,
@@ -4903,6 +4903,7 @@ input[type="button"].btn-block {
     background-color: transparent;
     border-color: #e3e3e3;
 }
+
 .alert {
     position: relative;
     padding: 0.9rem 1.25rem;
@@ -5640,6 +5641,7 @@ button.bg-darker:focus {
         display: inline-flex !important;
     }
 }
+
 .flex-row {
     flex-direction: row !important;
 }
@@ -11598,7 +11600,7 @@ img {
 }
 
 .navbar.navbar-desktop {
-    background: #1e1e2f;
+    background: #006CA5;
 }
 
 .navbar.bg-navbar .navbar-nav .search-bar.input-group i {
@@ -12135,6 +12137,12 @@ img {
         100% {
             opacity: 1;
         }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .modern-menu-wrapper {
+        top: 57px !important;
     }
 }
 
@@ -13091,7 +13099,7 @@ table.tablesorter thead tr .headerSortDown {
 }
 
 .main-panel > .content {
-    padding: 100px 30px 30px 30px;
+    padding: 100px 50px 30px 50px;
     min-height: calc(100vh - 70px);
 }
 
@@ -13182,7 +13190,7 @@ table.tablesorter thead tr .headerSortDown {
 .navbar-collapse .navbar-nav .nav-link,
 .tag,
 .tag [data-role="remove"],
-.animation-transition-general{
+.animation-transition-general {
     -webkit-transition: all 300ms ease 0s;
     -moz-transition: all 300ms ease 0s;
     -o-transition: all 300ms ease 0s;
@@ -14076,341 +14084,6 @@ Copyright (c) 2015 Daniel Eden
     animation-name: fadeOutUp;
 }
 
-.white-content {
-    background: #f5f6fa;
-}
-
-.white-content .navbar.navbar-desktop .navbar-brand {
-    color: #1d253b;
-}
-
-.white-content .navbar.navbar-desktop .navbar-toggler-bar {
-    background: #1d253b;
-}
-
-.white-content .navbar.navbar-desktop .navbar-nav li a:not(.dropdown-item) {
-    color: #1d253b;
-}
-
-.white-content .navbar.navbar-desktop .navbar-nav li a:not(.dropdown-item) i {
-    color: #1d253b;
-}
-
-.white-content .navbar.navbar-desktop .navbar-minimize button i {
-    color: #1d253b;
-}
-
-.white-content .navbar.navbar-desktop .search-bar.input-group i {
-    color: #1d253b;
-}
-
-.white-content .navbar.navbar-desktop .search-bar.input-group .form-control {
-    color: #344675;
-}
-
-.white-content .navbar.navbar-desktop .search-bar.input-group .form-control::placeholder {
-    color: #9A9A9A;
-}
-
-.white-content .main-panel {
-    background: #f5f6fa;
-}
-
-.white-content h1,
-.white-content h2,
-.white-content h3,
-.white-content h4,
-.white-content h5,
-.white-content h6,
-.white-content p,
-.white-content ol li,
-.white-content ul li,
-.white-content pre {
-    color: #1d253b;
-}
-
-.white-content .font-icon-detail i {
-    color: #222a42;
-}
-
-.white-content .btn:not([data-action]):hover {
-    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-}
-
-.white-content .btn-neutral.btn-link {
-    color: rgba(34, 42, 66, 0.7);
-}
-
-.white-content .form-control::-moz-placeholder {
-    color: rgba(34, 42, 66, 0.4);
-    opacity: 1;
-    filter: alpha(opacity=100);
-}
-
-.white-content .form-control:-moz-placeholder {
-    color: rgba(34, 42, 66, 0.4);
-    opacity: 1;
-    filter: alpha(opacity=100);
-}
-
-.white-content .form-control::-webkit-input-placeholder {
-    color: rgba(34, 42, 66, 0.4);
-    opacity: 1;
-    filter: alpha(opacity=100);
-}
-
-.white-content .form-control:-ms-input-placeholder {
-    color: rgba(34, 42, 66, 0.4);
-    opacity: 1;
-    filter: alpha(opacity=100);
-}
-
-.white-content .has-danger .form-control,
-.white-content .has-danger .input-group-prepend .input-group-text {
-    border-color: #ec250d;
-}
-
-.white-content .input-group-prepend .input-group-text {
-    border-color: rgba(29, 37, 59, 0.5);
-    color: #1d253b;
-}
-
-.white-content .form-control {
-    color: #222a42;
-    border-color: rgba(29, 37, 59, 0.5);
-}
-
-.white-content .form-control:focus {
-    border-color: #00091f;
-}
-
-.white-content .form-group.no-border .form-control,
-.white-content .form-group.no-border .form-control + .input-group-prepend .input-group-text,
-.white-content .form-group.no-border .form-control + .input-group-append .input-group-text,
-.white-content .form-group.no-border .input-group-prepend .input-group-text,
-.white-content .form-group.no-border .input-group-append .input-group-text,
-.white-content .input-group.no-border .form-control,
-.white-content .input-group.no-border .form-control + .input-group-prepend .input-group-text,
-.white-content .input-group.no-border .form-control + .input-group-append .input-group-text,
-.white-content .input-group.no-border .input-group-prepend .input-group-text,
-.white-content .input-group.no-border .input-group-append .input-group-text {
-    background-color: rgba(222, 222, 222, 0.3);
-}
-
-.white-content .form-group.no-border .form-control:focus,
-.white-content .form-group.no-border .form-control:active,
-.white-content .form-group.no-border .form-control:active,
-.white-content .form-group.no-border .form-control + .input-group-prepend .input-group-text:focus,
-.white-content .form-group.no-border .form-control + .input-group-prepend .input-group-text:active,
-.white-content .form-group.no-border .form-control + .input-group-prepend .input-group-text:active,
-.white-content .form-group.no-border .form-control + .input-group-append .input-group-text:focus,
-.white-content .form-group.no-border .form-control + .input-group-append .input-group-text:active,
-.white-content .form-group.no-border .form-control + .input-group-append .input-group-text:active,
-.white-content .form-group.no-border .input-group-prepend .input-group-text:focus,
-.white-content .form-group.no-border .input-group-prepend .input-group-text:active,
-.white-content .form-group.no-border .input-group-prepend .input-group-text:active,
-.white-content .form-group.no-border .input-group-append .input-group-text:focus,
-.white-content .form-group.no-border .input-group-append .input-group-text:active,
-.white-content .form-group.no-border .input-group-append .input-group-text:active,
-.white-content .input-group.no-border .form-control:focus,
-.white-content .input-group.no-border .form-control:active,
-.white-content .input-group.no-border .form-control:active,
-.white-content .input-group.no-border .form-control + .input-group-prepend .input-group-text:focus,
-.white-content .input-group.no-border .form-control + .input-group-prepend .input-group-text:active,
-.white-content .input-group.no-border .form-control + .input-group-prepend .input-group-text:active,
-.white-content .input-group.no-border .form-control + .input-group-append .input-group-text:focus,
-.white-content .input-group.no-border .form-control + .input-group-append .input-group-text:active,
-.white-content .input-group.no-border .form-control + .input-group-append .input-group-text:active,
-.white-content .input-group.no-border .input-group-prepend .input-group-text:focus,
-.white-content .input-group.no-border .input-group-prepend .input-group-text:active,
-.white-content .input-group.no-border .input-group-prepend .input-group-text:active,
-.white-content .input-group.no-border .input-group-append .input-group-text:focus,
-.white-content .input-group.no-border .input-group-append .input-group-text:active,
-.white-content .input-group.no-border .input-group-append .input-group-text:active {
-    background-color: rgba(222, 222, 222, 0.5);
-}
-
-.white-content .form-group.no-border .form-control:focus + .input-group-prepend .input-group-text,
-.white-content .form-group.no-border .form-control:focus + .input-group-append .input-group-text,
-.white-content .input-group.no-border .form-control:focus + .input-group-prepend .input-group-text,
-.white-content .input-group.no-border .form-control:focus + .input-group-append .input-group-text {
-    background-color: transparent;
-}
-
-.white-content .input-group[disabled] .input-group-prepend .input-group-text,
-.white-content .input-group[disabled] .input-group-append .input-group-text {
-    background-color: #222a42;
-}
-
-.white-content .form-control[disabled],
-.white-content .form-control[readonly],
-.white-content fieldset[disabled] .form-control {
-    background: #E3E3E3;
-    border-color: rgba(29, 37, 59, 0.3);
-}
-
-.white-content .input-group-focus .input-group-prepend .input-group-text,
-.white-content .input-group-focus .input-group-append .input-group-text,
-.white-content .input-group-focus .form-control {
-    border-color: #00091f;
-}
-
-.white-content .input-group-focus.no-border .input-group-prepend .input-group-text,
-.white-content .input-group-focus.no-border .input-group-append .input-group-text {
-    background-color: rgba(222, 222, 222, 0.5);
-}
-
-.white-content .input-group-prepend .input-group-text {
-    border-right: none;
-}
-
-.white-content .input-group-append .input-group-text {
-    border-left: none;
-}
-
-.white-content .has-danger .form-control:focus,
-.white-content .has-success.input-group-focus .input-group-append .input-group-text,
-.white-content .has-success.input-group-focus .input-group-prepend .input-group-text {
-    border-color: #ec250d;
-}
-
-.white-content .has-success .form-control:focus,
-.white-content .has-success.input-group-focus .input-group-append .input-group-text,
-.white-content .has-success.input-group-focus .input-group-prepend .input-group-text {
-    border-color: #00bf9a;
-}
-
-.white-content .btn.btn-link:hover,
-.white-content .btn.btn-link:active,
-.white-content .btn.btn-link:focus {
-    color: #9A9A9A !important;
-}
-
-.white-content .btn-group .btn.active {
-    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-}
-
-.white-content .card:not(.card-white) {
-    background: #ffffff;
-    box-shadow: 0 1px 15px 0 rgba(123, 123, 123, 0.05);
-}
-
-.white-content .card:not(.card-white) .card-header {
-    color: #222a42;
-}
-
-.white-content .card:not(.card-white) .card-header a[data-toggle="collapse"] {
-    color: #222a42;
-}
-
-.white-content .card:not(.card-white) .card-header .card-title,
-.white-content .card:not(.card-white) .card-body .card-title {
-    color: #1d253b;
-}
-
-.white-content .card:not(.card-white) .card-body .card-category,
-.white-content .card:not(.card-white) .card-body .card-description {
-    color: #1d253b;
-}
-
-.white-content .card:not(.card-white) label:not(.btn) {
-    color: #344675;
-}
-
-.white-content .card:not(.card-white).nav-pills .nav-item .nav-link {
-    color: #444444;
-    background-color: rgba(222, 222, 222, 0.3);
-}
-
-.white-content .card:not(.card-white).nav-pills .nav-item .nav-link:not(.active):hover {
-    background: rgba(222, 222, 222, 0.5);
-}
-
-.white-content .card:not(.card-white).nav-pills .nav-item .nav-link.active {
-    color: #ffffff;
-}
-
-.white-content .card:not(.card-white) .tab-content .tab-pane {
-    color: #444444;
-}
-
-.white-content .card:not(.card-white) .card {
-    box-shadow: none;
-}
-
-.white-content .card:not(.card-white).card-plain {
-    background: transparent;
-    box-shadow: none;
-}
-
-.white-content .card:not(.card-white).card-tasks .card-body i {
-    color: rgba(34, 42, 66, 0.7);
-}
-
-.white-content .card:not(.card-white).card-tasks .card-body i:hover {
-    color: #222a42;
-}
-
-.white-content .table > tbody > tr > td {
-    color: rgba(34, 42, 66, 0.7) !important;
-}
-
-.white-content .table > thead > tr > th,
-.white-content .table > tbody > tr > th,
-.white-content .table > tfoot > tr > th,
-.white-content .table > thead > tr > td,
-.white-content .table > tbody > tr > td,
-.white-content .table > tfoot > tr > td {
-    border-color: rgba(34, 42, 66, 0.2);
-    padding: 12px 7px;
-    vertical-align: middle;
-}
-
-.white-content .table > thead > tr > th,
-.white-content .table button.btn-neutral.btn-link {
-    color: rgba(34, 42, 66, 0.7);
-}
-
-.white-content .footer ul li a {
-    color: #1d253b;
-}
-
-.white-content .footer .copyright {
-    color: #1d253b;
-}
-
-.white-content .progress-container .progress,
-.white-content .progress-container.progress.sm .progress {
-    background: rgba(34, 42, 66, 0.1);
-    box-shadow: 0 0 0 3px rgba(34, 42, 66, 0.1);
-}
-
-.white-content .progress-container .progress .progress-value,
-.white-content .progress-container.progress.sm .progress .progress-value {
-    color: #344675;
-}
-
-.white-content .progress-container .progress-badge,
-.white-content .progress-container.progress.sm .progress-badge {
-    color: #1d253b;
-}
-
-.white-content .full-page {
-    background: #f5f6fa;
-}
-
-.white-content .full-page h1,
-.white-content .full-page h2,
-.white-content .full-page h3,
-.white-content .full-page h4,
-.white-content .full-page h5,
-.white-content .full-page h6,
-.white-content .full-page p,
-.white-content .full-page ol li,
-.white-content .full-page ul li,
-.white-content .full-page pre {
-    color: #1d253b;
-}
 .info-horizontal .icon {
     float: left;
     margin-top: 23px;
@@ -14463,9 +14136,9 @@ Copyright (c) 2015 Daniel Eden
 
 /*# sourceMappingURL=dashboard-free.css.map */
 .modern-menu-wrapper {
-    background-color: #1e1e2f;
+    background-color: #006CA5;
     position: fixed;
-    top: 80px;
+    top: 78px;
     left: -100%;
     bottom: 0;
     width: 250px;
@@ -14528,9 +14201,9 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .modern-menu a {
-    /*color: #DDD;*/
+    color: #000;
     text-decoration: none;
-    padding: 10px 5px;
+    padding: 10px 10px;
     display: block;
     position: relative;
 }
@@ -14540,11 +14213,12 @@ Copyright (c) 2015 Daniel Eden
 .modern-menu li.active > a,
 .modern-menu li.active > a i {
     background-color: #00496e;
-    color: #fff;
+    color: #000;
 }
+
 .parent-active {
     background-color: #00496e;
-    color: #fff;
+    color: #000;
 }
 
 .modern-menu a .cavet {
@@ -14561,7 +14235,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .modern-menu li + li a {
-    border-top: 1px solid white;
+    border-top: 1px solid #000;
 }
 
 .modern-menu a i {
@@ -14569,7 +14243,7 @@ Copyright (c) 2015 Daniel Eden
     padding-right: 10px;
     text-align: center;
     width: 20px;
-    color: #fff;
+    color: #000;
 }
 
 .modern-menu,
@@ -14602,14 +14276,14 @@ Copyright (c) 2015 Daniel Eden
 
 
 .modern-menu-icon-wrapper {
-    height: 40px;
+    height: 43px;
     z-index: 9999999;
-    top: 38px;
+    top: 0;
     width: 50px;
-    /*background: #006CA5;*/
+    background: #006CA5;
     position: absolute;
     left: 100%;
-    border-top-right-radius: 3px;
+    /* border-top-right-radius: 3px; */
     border-bottom-right-radius: 3px;
     cursor: pointer;
 }
@@ -14636,7 +14310,7 @@ Copyright (c) 2015 Daniel Eden
     display: block;
     width: 37.5px;
     height: 7px;
-    background: #006CA5;
+    background: floralwhite;
     border-radius: 5px;
     transition: all .6s;
 }
@@ -14683,6 +14357,11 @@ Copyright (c) 2015 Daniel Eden
     position: relative;
     border-radius: 30px;
 }
+
+.modern-menu ul li a {
+    padding-left: 25px !important;
+}
+
 .shareLink .permalink .textLink {
     text-align: center;
     padding: 6px 49px 6px 10px;
@@ -14697,6 +14376,7 @@ Copyright (c) 2015 Daniel Eden
     appearance: none;
     transition: all 0.3s ease;
 }
+
 @media (max-width: 767px) {
     .shareLink .permalink .textLink {
         width: 100%;
@@ -14705,12 +14385,14 @@ Copyright (c) 2015 Daniel Eden
 
 .shareLink .permalink .textLink::-moz-selection {
     color: #fff;
-    background-color: #ff0a4b;
+    background-color: #00042d;
 }
+
 .shareLink .permalink .textLink::selection {
     color: #fff;
-    background-color: #ff0a4b;
+    background-color: #00042d;
 }
+
 .shareLink .permalink .copyLink {
     position: absolute;
     top: 50%;
@@ -14718,10 +14400,12 @@ Copyright (c) 2015 Daniel Eden
     cursor: pointer;
     transform: translateY(-50%);
 }
+
 .shareLink .permalink .copyLink:hover:after {
     opacity: 1;
     transform: translateY(0) translateX(-50%);
 }
+
 .shareLink .permalink .copyLink:after {
     content: attr(tooltip);
     width: 140px;
@@ -14739,9 +14423,10 @@ Copyright (c) 2015 Daniel Eden
     transition: all 300ms ease;
     text-align: center;
 }
+
 .shareLink .permalink .copyLink i {
     font-size: 20px;
-    color: #ff0a4b;
+    color: #00042d;
 }
 
 

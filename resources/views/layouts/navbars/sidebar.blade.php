@@ -13,7 +13,7 @@
                     <i class="fas fa-tachometer-alt"></i> Dashboard
                 </a>
             </li>
-            <li @if ($pageSlug == 'invoices' || $pageSlug == 'payments') class="parent-active" @endif>
+            <li @if ($pageSlug == 'invoices' || $pageSlug == 'payments') class="active" @endif>
                 <a>
                     <i class="fab fa-css3-alt"></i> Deposit
                     <span class='cavet'><i class="fas fa-caret-right"></i></span>
