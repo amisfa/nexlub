@@ -24,7 +24,7 @@
 <body class="{{ $class ?? '' }}">
 <div class="wrapper">
     @include('layouts.navbars.sidebar')
-    <div class="main-panel">
+    <div class="main-panel magicpattern">
         @include('layouts.navbars.navbar')
         <div class="content">
             @if(session('warning'))
