@@ -30,6 +30,11 @@
                     <i class="fas fa-tachometer-alt"></i> Subset
                 </a>
             </li>
+            <li @if ($pageSlug == 'ticket') class="active"@endif>
+                <a href="">
+                    <i class="fas fa-ticket"></i> Ticket
+                </a>
+            </li>
         </ul>
     </div>
 </div>

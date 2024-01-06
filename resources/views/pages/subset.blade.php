@@ -9,7 +9,7 @@
                         <div class="flex justify-between sm:flex-row flex-col">
                             <div>Subsets</div>
                             <div class="shareLink">
-                                <div class="permalink">
+                                Invite Link:<div class="permalink">
                                     <input class="textLink" type="text" name="shortlink"
                                            value="{{auth()->user()->referral_link}}" id="text"
                                            readonly="">
