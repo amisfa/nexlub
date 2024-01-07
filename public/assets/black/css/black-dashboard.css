@@ -6875,6 +6875,7 @@ button.bg-darker:focus {
 .pr-4,
 .px-4 {
     padding-right: 1.5rem !important;
+
 }
 
 .pb-4,
@@ -11600,7 +11601,8 @@ img {
 }
 
 .navbar.navbar-desktop {
-    background: #006CA5;
+    /*background: rgba(0, 108, 165, 0.2);*/
+    background: linear-gradient(to top, rgba(0, 108, 165, 0) 0%,rgba(0, 108, 165, 0.3) 100%)
 }
 
 .navbar.bg-navbar .navbar-nav .search-bar.input-group i {
@@ -14136,7 +14138,7 @@ Copyright (c) 2015 Daniel Eden
 
 /*# sourceMappingURL=dashboard-free.css.map */
 .modern-menu-wrapper {
-    background-color: #006CA5;
+    background: rgba(0, 108, 165, 0.2);
     position: fixed;
     top: 78px;
     left: -100%;
@@ -14190,7 +14192,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .modern-menu li ul {
-    background-color: #006CA5;
+    background: rgba(0, 108, 165, 0.2);
     box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.1);
     overflow: hidden;
     height: 0;
@@ -14201,25 +14203,29 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .modern-menu a {
-    color: #000;
+    color: #fff4f2;
     text-decoration: none;
     padding: 10px 10px;
     display: block;
     position: relative;
+    /*font-weight: bold;*/
 }
 
 .modern-menu a:hover,
 .modern-menu a:hover > i:first-child,
 .modern-menu li.active > a,
 .modern-menu li.active > a i {
-    background-color: #00496e;
-    color: #000;
+    /*background: rgba(0, 108, 165, 0.2);*/
+    color: #fff;
+    font-weight: bold;
 }
 
 .parent-active {
-    background-color: #00496e;
-    color: #000;
+    /*background: rgba(0, 108, 165, 0.2);*/
+    color: #fff;
+    font-weight: bold;
 }
+
 
 .modern-menu a .cavet {
     position: absolute;
@@ -14274,18 +14280,18 @@ Copyright (c) 2015 Daniel Eden
     transform: rotate(45deg);
 }
 
-
 .modern-menu-icon-wrapper {
     height: 43px;
     z-index: 9999999;
     top: 0;
     width: 50px;
-    background: #006CA5;
+    /*background: rgba(0, 108, 165, 0.2);*/
     position: absolute;
     left: 100%;
     /* border-top-right-radius: 3px; */
     border-bottom-right-radius: 3px;
     cursor: pointer;
+    background: linear-gradient(to bottom, rgba(0, 108, 165, 0) 0%,rgba(0, 108, 165, 0.2) 100%)
 }
 
 .modern-menu-icon-wrapper a {
