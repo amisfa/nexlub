@@ -3,20 +3,20 @@
 namespace App\Models;
 
 use App\Enums\CashOutStatuses;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class UserWithdraw extends Model
+class UserCashOut extends Model
 {
-    use HasFactory;
+    use SoftDeletes;
 
-    protected $table = 'user_withdraw';
+    protected $table = 'user_cash_out';
 
     protected $fillable = [
         'user_id',
         'amount',
-        'status',
+        'status'
     ];
     protected $casts = [
         'status' => CashOutStatuses::class,
@@ -24,9 +24,6 @@ class UserWithdraw extends Model
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo(
-            User::class,
-            'user_id'
-        );
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

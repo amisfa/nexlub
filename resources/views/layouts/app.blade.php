@@ -19,29 +19,31 @@
     <!-- CSS -->
     <link href="{{ asset('black') }}/css/black-dashboard.css?v=1.0.0" rel="stylesheet"/>
     <link href="{{ asset('black') }}/css/theme.css" rel="stylesheet"/>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     @laravelViewsStyles
 </head>
 <body class="{{ $class ?? '' }}">
-<div class="wrapper">
-    <div class="main-panel magicpattern">
-        @include('layouts.navbars.navbar')
+    <div class="flex relative">
         @include('layouts.navbars.sidebar')
-
-        <div class="content">
-            @if(session('warning'))
-                <div class="alert alert-primary" role="alert">{{session('warning')}}</div>
-            @endif
-            @if(session('success'))
-                <div class="alert alert-success" role="alert">{{session('success')}}</div>
-            @endif
-            @if(session('error'))
-                <div class="alert alert-danger" role="alert">{{session('error')}}</div>
-            @endif
-            @yield('content')
+        <div class="wrapper">
+            <div class="main-panel magicpattern">
+                @include('layouts.navbars.navbar')
+                <div class="content">
+                    @if(session('warning'))
+                        <div class="alert alert-primary" role="alert">{{session('warning')}}</div>
+                    @endif
+                    @if(session('success'))
+                        <div class="alert alert-success" role="alert">{{session('success')}}</div>
+                    @endif
+                    @if(session('error'))
+                        <div class="alert alert-danger" role="alert">{{session('error')}}</div>
+                    @endif
+                    @yield('content')
+                </div>
+                @include('layouts.footer')
+            </div>
         </div>
-        @include('layouts.footer')
     </div>
-</div>
 <form id="logout-form" action="{{route('log-out')}}" method="POST" style="display: none;">
     @csrf
 </form>
@@ -50,8 +52,6 @@
 <script src="{{ asset('black') }}/js/core/popper.min.js"></script>
 <script src="{{ asset('black') }}/js/core/bootstrap.min.js"></script>
 <script src="{{ asset('black') }}/js/plugins/bootstrap-notify.js"></script>
-
-<script src="{{ asset('black') }}/js/theme.js"></script>
 
 @stack('js')
 
