@@ -43,6 +43,7 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/success-payment', [InvoiceController::class, 'successPayment']);
     Route::get('/failed-payment', [InvoiceController::class, 'failedPayment']);
     Route::get('/payments', [PaymentController::class, 'create'])->name('payments');
+    Route::get('/usersList', [PaymentController::class, 'create'])->name('usersList');
 
     Route::post('/create-invoice', [InvoiceController::class, 'makeInvoice'])->name('make-invoice');
     Route::get('/deposit', [DepositController::class, 'create'])->name('deposit');

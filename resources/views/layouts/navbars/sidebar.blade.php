@@ -40,6 +40,11 @@
                 <i class='bx bx-grid-alt'></i>
                 <span class="link_name">Withdraw</span>
             </a>
+        </li> <li @if ($pageSlug == 'users') class="active"@endif>
+            <a href="{{route('usersList')}}">
+                <i class='bx bx-grid-alt'></i>
+                <span class="link_name">Users</span>
+            </a>
         </li>
     </ul>
 </div>
