@@ -52,7 +52,7 @@ class Helper
             'Command' => 'LogsAddEvent',
             'Log' => $params['log']
         ]);
-        User::query()->update(['balance' => intval($user->balance) + intval($params['amount'])]);
+        User::query()->update(['balance' => $user->balance + $params['amount']]);
     }
 
     static function decBalance($params): void
@@ -68,7 +68,7 @@ class Helper
             'Command' => 'LogsAddEvent',
             'Log' => $params['log']
         ]);
-        User::query()->update(['balance' => intval($user->balance) - intval($params['amount'])]);
+        User::query()->update(['balance' => $user->balance - $params['amount']]);
     }
 
     static function sendValidationEmail($user): void

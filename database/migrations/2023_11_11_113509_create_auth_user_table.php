@@ -21,7 +21,7 @@ return new class extends Migration {
             $table->unsignedTinyInteger('avatar');
             $table->foreign('referrer_id')->references('id')->on('auth_user');
             $table->string('referral_token')->unique();
-            $table->unsignedDecimal('balance', 18, 2)->default(0);
+            $table->unsignedDecimal('balance', 18)->default(0);
 
             $table->rememberToken();
             $table->timestamps();

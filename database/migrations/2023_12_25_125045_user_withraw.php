@@ -15,8 +15,9 @@ return new class extends Migration {
             $table->id();
             $table->unsignedTinyInteger('status')->default(CashOutStatuses::Waiting);
             $table->unsignedBigInteger('user_id');
-            $table->unsignedDecimal('amount', 18, 2)->default(0);
+            $table->unsignedDecimal('amount', 18)->default(0);
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }

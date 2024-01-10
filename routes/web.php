@@ -13,8 +13,8 @@ use App\Http\Controllers\Dashboard\PaymentController;
 use App\Http\Controllers\Dashboard\PlayController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\SubsetController;
+use App\Http\Controllers\Dashboard\UserWithdrawController;
 use App\Http\Controllers\Dashboard\WalletController;
-use App\Http\Controllers\Dashboard\WithdrawController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,7 +38,8 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/invoices', [InvoiceController::class, 'create'])->name('invoices');
     Route::get('/subset', [SubsetController::class, 'create'])->name('subset');
     Route::get('/create-invoice', [InvoiceController::class, 'createInvoice'])->name('create-invoice');
-    Route::get('/withdraw', [WithdrawController::class, 'create'])->name('withdraw');
+    Route::get('/withdraw', [UserWithdrawController::class, 'create'])->name('withdraw');
+    Route::post('/withdraw', [UserWithdrawController::class, 'makeWithdraw'])->name('make-withdraw');
 
     Route::get('/success-payment', [InvoiceController::class, 'successPayment']);
     Route::get('/failed-payment', [InvoiceController::class, 'failedPayment']);

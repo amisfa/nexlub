@@ -65,16 +65,16 @@ class InvoiceController extends Controller
         }
         $invoice->paid_at = now();
         $invoice->save();
+        Helper::addBalance([
+            'user_id' => $invoice->user_id,
+            'amount' => $invoice->price_amount,
+            'log' => $invoice->price_amount . ' USD Paid by ' . $invoice->user->username
+        ]);
         UserPayment::query()->create([
             'invoice_id' => $invoice->id,
             'user_id' => $invoice->user_id,
             'price_amount' => $invoice->price_amount,
             'status' => 'Paid'
-        ]);
-        Helper::addBalance([
-            'user_id' => $invoice->user_id,
-            'amount' => $invoice->price_amount,
-            'log' => $invoice->price_amount . ' USD Paid by ' . $invoice->user->username
         ]);
         return redirect('dashboard/payments')->with(['success' => 'Payment Paid Successfully']);
     }

@@ -19,8 +19,10 @@
                 <i class='bx bxs-chevron-down arrow'></i>
             </div>
             <ul class="sub-menu">
-                <li @if ($pageSlug == 'invoices') class="active " @endif><a href="{{route('invoices')}}">Create Invoice</a></li>
-                <li @if ($pageSlug == 'payments') class="active " @endif><a href="{{route('payments')}}">Payments</a></li>
+                <li @if ($pageSlug == 'invoices') class="active " @endif><a href="{{route('invoices')}}">Create
+                        Invoice</a></li>
+                <li @if ($pageSlug == 'payments') class="active " @endif><a href="{{route('payments')}}">Payments</a>
+                </li>
             </ul>
         </li>
         <li @if ($pageSlug == 'subset') class="active"@endif>
@@ -36,11 +38,12 @@
             </a>
         </li>
         <li @if ($pageSlug == 'withdraw') class="active"@endif>
-            <a href="">
+            <a href="{{route('withdraw')}}">
                 <i class='bx bx-grid-alt'></i>
                 <span class="link_name">Withdraw</span>
             </a>
-        </li> <li @if ($pageSlug == 'users') class="active"@endif>
+        </li>
+        <li @if ($pageSlug == 'users') class="active"@endif>
             <a href="{{route('usersList')}}">
                 <i class='bx bx-grid-alt'></i>
                 <span class="link_name">Users</span>

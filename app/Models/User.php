@@ -88,7 +88,7 @@ class User extends Authenticatable
         return $this->belongsToMany(Permission::class);
     }
 
-    public function withdraw(): HasMany
+    public function withdraws(): HasMany
     {
         return $this->hasMany(UserWithdraw::class, 'user_id');
     }
