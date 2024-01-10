@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire;
 
-use App\Actions\RejectWithdrawAction;
+use App\Actions\CancelWithdrawAction;
+use App\Enums\CashOutStatuses;
+use App\Filters\WithdrawsFilter;
 use App\Models\UserWithdraw;
 use LaravelViews\Facades\Header;
 use LaravelViews\Views\TableView;
@@ -27,25 +29,37 @@ class UserWithdrawView extends TableView
             'Amount',
             Header::title('Status')->sortBy('status'),
             Header::title('Create At')->sortBy('created_at'),
+            'TX URL'
         ];
     }
 
 
     public function row($model): array
     {
-        return [
+        $data = [
             $model->amount,
             '<p class="' . $this->getStatusColor($model->status->value) . '">' . $this->getWithdrawStatus($model->status->value) . '</p>',
-            $model->created_at->diffforHumans()
+            $model->created_at->diffforHumans(),
         ];
+        if ($model->status === CashOutStatuses::Paid) $data[] = '<a href="' . $model->tx_url . '" target="_blank">Tx Link<i class="bx bx-link-external"></i>';
+        return $data;
     }
+
     /** For actions by item */
     protected function actionsByRow(): array
     {
         return [
-            new RejectWithdrawAction(),
+            new CancelWithdrawAction(),
         ];
     }
+
+    protected function filters()
+    {
+        return [
+            new WithdrawsFilter(),
+        ];
+    }
+
 
     public function getWithdrawStatus($status)
     {

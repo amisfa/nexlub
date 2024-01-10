@@ -20,6 +20,7 @@ class UserWithdraw extends Model
         'user_id',
         'amount',
         'status',
+        'tx_url'
     ];
 
     public function user(): BelongsTo
