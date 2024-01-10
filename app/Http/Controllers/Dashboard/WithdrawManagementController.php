@@ -7,7 +7,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 
-class WithdrawController extends Controller
+class WithdrawManagementController extends Controller
 {
     public function create(): View|\Illuminate\Foundation\Application|Factory|Application
     {

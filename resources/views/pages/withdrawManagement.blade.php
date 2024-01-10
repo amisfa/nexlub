@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card p-3 overflow-auto">
                     <div class="card-header">Withdraw Management</div>
-{{--                    <livewire:user-management-view/>--}}
+                    <livewire:withdraw-management-view/>
                 </div>
             </div>
         </div>

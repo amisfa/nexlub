@@ -16,6 +16,7 @@ use App\Http\Controllers\Dashboard\SubsetController;
 use App\Http\Controllers\Dashboard\UserManagementController;
 use App\Http\Controllers\Dashboard\UserWithdrawController;
 use App\Http\Controllers\Dashboard\WalletController;
+use App\Http\Controllers\Dashboard\WithdrawManagementController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,7 +46,7 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
 //    });
     Route::prefix('admin')->group(function () {
         Route::get('/user-management', [UserManagementController::class, 'create'])->name('user-management');
-        Route::get('/withdraw-management', [UserManagementController::class, 'create'])->name('withdraw-management');
+        Route::get('/withdraw-management', [WithdrawManagementController::class, 'create'])->name('withdraw-management');
     });
 
     Route::get('/success-payment', [InvoiceController::class, 'successPayment']);
