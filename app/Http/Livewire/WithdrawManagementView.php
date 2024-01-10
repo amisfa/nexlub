@@ -2,20 +2,19 @@
 
 namespace App\Http\Livewire;
 
-use App\Actions\CancelWithdrawAction;
-use App\Enums\CashOutStatuses;
+use App\Actions\RejectWithdrawAction;
 use App\Filters\WithdrawsFilter;
 use App\Models\UserWithdraw;
 use LaravelViews\Facades\Header;
 use LaravelViews\Views\TableView;
 
-class WithdrawManagement extends TableView
+class WithdrawManagementView extends TableView
 {
     protected $paginate = 10;
 
     public function repository(): \Illuminate\Database\Eloquent\Builder
     {
-        return UserWithdraw::query()->where('user_id', auth()->id());
+        return UserWithdraw::query();
     }
 
     /**
@@ -26,10 +25,11 @@ class WithdrawManagement extends TableView
     public function headers(): array
     {
         return [
+            'userName',
+            'Wallet',
             'Amount',
             Header::title('Status')->sortBy('status'),
             Header::title('Create At')->sortBy('created_at'),
-            'TX URL'
         ];
     }
 
@@ -37,11 +37,12 @@ class WithdrawManagement extends TableView
     public function row($model): array
     {
         $data = [
+            $model->user->username,
+            $model->user->wallet_no,
             $model->amount,
             '<p class="' . $this->getStatusColor($model->status->value) . '">' . $this->getWithdrawStatus($model->status->value) . '</p>',
             $model->created_at->diffforHumans(),
         ];
-        if ($model->status === CashOutStatuses::Paid) $data[] = '<a href="' . $model->tx_url . '" target="_blank">Tx Link<i class="bx bx-link-external"></i>';
         return $data;
     }
 
@@ -49,7 +50,7 @@ class WithdrawManagement extends TableView
     protected function actionsByRow(): array
     {
         return [
-            new CancelWithdrawAction(),
+            new RejectWithdrawAction(),
         ];
     }
 
