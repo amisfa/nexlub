@@ -13,6 +13,7 @@ use App\Http\Controllers\Dashboard\PaymentController;
 use App\Http\Controllers\Dashboard\PlayController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\SubsetController;
+use App\Http\Controllers\Dashboard\UserManagementController;
 use App\Http\Controllers\Dashboard\UserWithdrawController;
 use App\Http\Controllers\Dashboard\WalletController;
 use Illuminate\Support\Facades\Route;
@@ -40,11 +41,15 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/create-invoice', [InvoiceController::class, 'createInvoice'])->name('create-invoice');
     Route::get('/withdraw', [UserWithdrawController::class, 'create'])->name('withdraw');
     Route::post('/withdraw', [UserWithdrawController::class, 'makeWithdraw'])->name('make-withdraw');
+//    Route::prefix('admin')->middleware(['role:manager'])->group(function () {
+//    });
+    Route::prefix('admin')->group(function () {
+        Route::get('/admin-user-management', [UserManagementController::class, 'create'])->name('user-management');
+    });
 
     Route::get('/success-payment', [InvoiceController::class, 'successPayment']);
     Route::get('/failed-payment', [InvoiceController::class, 'failedPayment']);
     Route::get('/payments', [PaymentController::class, 'create'])->name('payments');
-    Route::get('/usersList', [PaymentController::class, 'create'])->name('usersList');
 
     Route::post('/create-invoice', [InvoiceController::class, 'makeInvoice'])->name('make-invoice');
     Route::get('/deposit', [DepositController::class, 'create'])->name('deposit');

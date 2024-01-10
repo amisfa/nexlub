@@ -2,19 +2,19 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\UserList;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelViews\Facades\Header;
 use LaravelViews\Views\TableView;
 
-class UsersListTableView extends TableView
+class UserManagementView extends TableView
 {
     public $searchBy = ['userName', 'email', 'wallet_no', 'balance'];
     protected $paginate = 10;
 
     public function repository(): Builder
     {
-        return UsersList::query()->load('user_id', auth()->id());
+        return User::query();
     }
 
     /**
@@ -25,10 +25,10 @@ class UsersListTableView extends TableView
     public function headers(): array
     {
         return [
-            'User Name' => 'userName',
-            'Email' => 'email',
-            'Wallet_No' => 'wallet_no',
-            'Balance' => 'balance',
+            'User Name',
+            'Email',
+            'Wallet',
+            'Balance',
             Header::title('Created')->sortBy('created_at'),
         ];
     }
@@ -37,14 +37,11 @@ class UsersListTableView extends TableView
     public function row($model): array
     {
         return [
-            $model->userName . 'name',
-            '<p class="' . $this->getStatusColor($model->status) . '">' . $model->status . '</p>',
+            $model->username,
+            $model->email,
+            $model->wallet_no,
+            $model->balance,
             $model->created_at->diffforHumans()
         ];
-    }
-
-    public static function getStatusColor($status): string
-    {
-        return $status == "Failed" ? "text-danger" : "text-success";
     }
 }

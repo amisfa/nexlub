@@ -44,7 +44,7 @@
             </a>
         </li>
         <li @if ($pageSlug == 'users') class="active"@endif>
-            <a href="{{route('usersList')}}">
+            <a href="{{route('user-management')}}">
                 <i class='bx bx-grid-alt'></i>
                 <span class="link_name">Users</span>
             </a>

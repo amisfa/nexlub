@@ -8,10 +8,10 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Routing\Controller;
 
 
-class UsersListController extends Controller
+class UserManagementController extends Controller
 {
     public function create(): View|\Illuminate\Foundation\Application|Factory|Application
     {
-        return view('pages.UsersList');
+        return view('pages.userManagement');
     }
 }
