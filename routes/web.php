@@ -44,7 +44,8 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
 //    Route::prefix('admin')->middleware(['role:manager'])->group(function () {
 //    });
     Route::prefix('admin')->group(function () {
-        Route::get('/admin-user-management', [UserManagementController::class, 'create'])->name('user-management');
+        Route::get('/user-management', [UserManagementController::class, 'create'])->name('user-management');
+        Route::get('/withdraw-management', [UserManagementController::class, 'create'])->name('withdraw-management');
     });
 
     Route::get('/success-payment', [InvoiceController::class, 'successPayment']);
