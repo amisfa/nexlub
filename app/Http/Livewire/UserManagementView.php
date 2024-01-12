@@ -10,6 +10,10 @@ use LaravelViews\Views\TableView;
 
 class UserManagementView extends TableView
 {
+    protected $listeners = [
+        'render' => '$refresh',
+    ];
+
     public $searchBy = ['username', 'email', 'wallet_no', 'balance'];
     protected $paginate = 10;
 

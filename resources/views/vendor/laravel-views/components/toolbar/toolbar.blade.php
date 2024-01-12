@@ -7,30 +7,30 @@ UI components used:
   - dropdown --}}
 
 <div class="md:flex items-center">
-  {{-- Search input --}}
-  <div class="flex-1">
-    @include('laravel-views::components.toolbar.search')
-  </div>
-
-  {{-- Actions on the left --}}
-  <div class="flex space-x-1 flex-1 justify-end items-center mb-4">
-    <x-lv-loading class="mb-0" wire:loading />
-
-    {{-- Bulk actions --}}
-    <div>
-      @include('laravel-views::components.toolbar.bulk-actions')
+    {{-- Search input --}}
+    <div class="flex-1">
+        @include('laravel-views::components.toolbar.search')
     </div>
 
-    {{-- Sorting --}}
-    @if (isset($sortableBy) && $sortableBy->isNotEmpty())
-      <div>
-        @include('laravel-views::components.toolbar.sorting')
-      </div>
-    @endif
+    {{-- Actions on the left --}}
+    <div class="flex space-x-1 flex-1 justify-end items-center mb-4">
+        <x-lv-loading class="mb-0" wire:loading/>
 
-    {{-- Filters --}}
-    <div>
-      @include('laravel-views::components.toolbar.filters')
+        {{-- Bulk actions --}}
+        <div>
+            @include('laravel-views::components.toolbar.bulk-actions')
+        </div>
+
+        {{-- Sorting --}}
+        @if (isset($sortableBy) && $sortableBy->isNotEmpty())
+            <div>
+                @include('laravel-views::components.toolbar.sorting')
+            </div>
+        @endif
+
+        {{-- Filters --}}
+        <div>
+            @include('laravel-views::components.toolbar.filters')
+        </div>
     </div>
-  </div>
 </div>
