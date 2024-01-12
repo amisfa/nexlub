@@ -10,7 +10,7 @@
                 <span class="link_name">Dashboard</span>
             </a>
         </li>
-        <li @if ($pageSlug == 'invoices' || $pageSlug == 'payments') class="active" @endif>
+        <li @if ($pageSlug == 'invoices' || $pageSlug == 'payments') class="active showMenu" @endif>
             <div class="icon-link">
                 <a>
                     <i class='bx bx-collection'></i>
@@ -43,7 +43,7 @@
                 <span class="link_name">Withdraw</span>
             </a>
         </li>
-        <li @if ($pageSlug == 'userManagement' || $pageSlug == 'withdrawManagement') class="active" @endif>
+        <li @if ($pageSlug == 'userManagement' || $pageSlug == 'withdrawManagement') class="active showMenu" @endif>
             <div class="icon-link">
                 <a>
                     <i class='bx bx-user'></i>
