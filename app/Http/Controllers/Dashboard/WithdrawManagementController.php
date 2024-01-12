@@ -11,6 +11,6 @@ class WithdrawManagementController extends Controller
 {
     public function create(): View|\Illuminate\Foundation\Application|Factory|Application
     {
-        return view('pages.withdrawManagement');
+        return view('pages.withdraw-management');
     }
 }

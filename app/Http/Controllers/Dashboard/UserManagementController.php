@@ -12,6 +12,6 @@ class UserManagementController extends Controller
 {
     public function create(): View|\Illuminate\Foundation\Application|Factory|Application
     {
-        return view('pages.userManagement');
+        return view('pages.user-management');
     }
 }

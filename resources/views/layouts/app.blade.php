@@ -52,10 +52,16 @@
 <script src="{{ asset('black') }}/js/core/popper.min.js"></script>
 <script src="{{ asset('black') }}/js/core/bootstrap.min.js"></script>
 <script src="{{ asset('black') }}/js/plugins/bootstrap-notify.js"></script>
+{{--    <!-- Alpine v3 -->--}}
+{{--    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>--}}
+
+{{--    <!-- Focus plugin -->--}}
+{{--    <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>--}}
 
 @stack('js')
 
 @stack('js')
 @laravelViewsScripts
+    @livewire('livewire-ui-modal')
 </body>
 </html>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Actions\UserDetailAction;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelViews\Facades\Header;
@@ -9,7 +10,7 @@ use LaravelViews\Views\TableView;
 
 class UserManagementView extends TableView
 {
-    public $searchBy = ['userName', 'email', 'wallet_no', 'balance'];
+    public $searchBy = ['username', 'email', 'wallet_no', 'balance'];
     protected $paginate = 10;
 
     public function repository(): Builder
@@ -33,6 +34,12 @@ class UserManagementView extends TableView
         ];
     }
 
+    public function actionsByRow(): array
+    {
+        return [
+            new UserDetailAction()
+        ];
+    }
 
     public function row($model): array
     {
