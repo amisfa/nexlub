@@ -10,12 +10,9 @@ use LaravelViews\Views\TableView;
 
 class UserManagementView extends TableView
 {
-    protected $listeners = [
-        'render' => '$refresh',
-    ];
-
     public $searchBy = ['username', 'email', 'wallet_no', 'balance'];
     protected $paginate = 10;
+    protected $listeners = ['reloadTable' => 'reload'];
 
     public function repository(): Builder
     {
@@ -54,5 +51,11 @@ class UserManagementView extends TableView
             $model->balance,
             $model->created_at->diffforHumans()
         ];
+    }
+
+    public function reload(): void
+    {
+        $this->render();
+        $this->emit('closeModal');
     }
 }
