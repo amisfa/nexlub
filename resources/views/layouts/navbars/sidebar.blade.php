@@ -12,7 +12,7 @@
         </li>
         <li @if ($pageSlug == 'invoices' || $pageSlug == 'payments') class="active" @endif>
             <div class="icon-link">
-                <a href="">
+                <a>
                     <i class='bx bx-collection'></i>
                     <span class="link_name">Deposit</span>
                 </a>
@@ -45,7 +45,7 @@
         </li>
         <li @if ($pageSlug == 'userManagement' || $pageSlug == 'withdrawManagement') class="active" @endif>
             <div class="icon-link">
-                <a href="">
+                <a>
                     <i class='bx bx-user'></i>
                     <span class="link_name">Admin</span>
                 </a>
