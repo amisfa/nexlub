@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Actions\PayWithdrawAction;
 use App\Actions\RejectWithdrawAction;
 use App\Filters\WithdrawCurrencyFilter;
 use App\Filters\WithdrawsStatusFilter;
@@ -54,6 +55,7 @@ class WithdrawManagementView extends TableView
     {
         return [
             new RejectWithdrawAction(),
+            new PayWithdrawAction()
         ];
     }
 
