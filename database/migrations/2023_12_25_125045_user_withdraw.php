@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->unsignedDecimal('amount', 18)->default(0);
             $table->string('tx_url')->nullable();
             $table->string('rejected_comment')->nullable();
+            $table->string('currency')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

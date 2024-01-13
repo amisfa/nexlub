@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Enums\CashOutStatuses;
 use App\Helpers\Helper;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
@@ -14,7 +13,8 @@ class UserWithdrawController extends Controller
 {
     public function create(): View|\Illuminate\Foundation\Application|Factory|Application
     {
-        return view('pages.withdraw');
+        $currencies = Helper::getAvailableCurrencies();
+        return view('pages.withdraw', ['currencies' => $currencies]);
     }
 
     public function makeWithdraw(): \Illuminate\Http\RedirectResponse
@@ -25,10 +25,11 @@ class UserWithdrawController extends Controller
                 Helper::decBalance([
                     'user_id' => auth()->id(),
                     'amount' => request('amount'),
-                    'log' => request('amount') . ' USD Withdraw by ' . auth()->user()->username
+                    'log' => request('amount') . ' ' . request('currency') . ' Withdraw by ' . auth()->user()->username
                 ]);
                 auth()->user()->withdraws()->create([
-                    'amount' => request('amount')
+                    'amount' => request('amount'),
+                    'currency' => request('currency')
                 ]);
                 return back()->with(['success' => 'Withdraw Submitted']);
             }

@@ -23,18 +23,15 @@ class Helper
 
     static function getAvailableCurrencies(): array
     {
-        $response = Http::get('https://plisio.net/api/v1/currencies', ['api_key' => env('PILISIO_SECRET_KEY')]);
+        $response = Http::get('https://plisio.net/api/v1/currencies', ['api_key' => env('PILISIO_SECRET_KEY'), 'hidden' => true]);
         if ($response->status() !== 200) return [];
         $currencies = json_decode($response->body(), true);
         return array_map(function ($coin) {
-            if (isset($coin['hidden']) && !$coin['hidden'])
-                return ['currency' => $coin['currency'], 'name' => $coin['name']];
-        }, array_filter($currencies['data'], function ($coin) {
-            return !$coin['hidden'];
-        }));
+            return ['currency' => $coin['currency'], 'name' => $coin['name']];
+        }, $currencies['data']);
     }
 
-    static function createInvoice($params)
+    static function createInvoice($params): \Illuminate\Http\Client\Response
     {
         $params['api_key'] = env('PILISIO_SECRET_KEY');
         return Http::get('https://plisio.net/api/v1/invoices/new', $params);

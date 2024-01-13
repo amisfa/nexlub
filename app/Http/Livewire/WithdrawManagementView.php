@@ -17,10 +17,6 @@ class WithdrawManagementView extends TableView
         return UserWithdraw::query();
     }
 
-//    protected $listeners = [
-//        'reloadTable' => 'reload',
-//    ];
-
     /**
      * Sets the headers of the table as you want to be displayed
      *
@@ -34,6 +30,7 @@ class WithdrawManagementView extends TableView
             'Amount',
             Header::title('Status')->sortBy('status'),
             Header::title('Create At')->sortBy('created_at'),
+            'Rejected Reason',
         ];
     }
 
@@ -46,6 +43,7 @@ class WithdrawManagementView extends TableView
             $model->amount,
             '<p class="' . $this->getStatusColor($model->status->value) . '">' . $this->getWithdrawStatus($model->status->value) . '</p>',
             $model->created_at->diffforHumans(),
+            $model->rejected_comment,
         ];
         return $data;
     }
@@ -92,16 +90,4 @@ class WithdrawManagementView extends TableView
                 return "text-danger";
         }
     }
-
-//
-//    public function reloadTable($type = null): void
-//    {
-//        $this->render();
-//        $this->emit('closeModal');
-//        if ($type)
-//            $this->emitSelf('notify', [
-//                'message' => 'Withdraw Rejected Failed',
-//                'type' => $type == 'error' ? 'danger' : 'success'
-//            ]);
-//    }
 }
