@@ -13,9 +13,9 @@ class UserProfileView extends DetailView
     public function detail($model)
     {
         return [
-            '<p class="title"> Name </p>' => $model->username,
-            '<p class="title">Email</p>' => '<p class="' . $this->isEmailVerified($model->email_verified_at) . '">' . $model->email . ' (' . $this->getVerifiedText($model->email_verified_at) . ')' . '</p>',
-            '<p class="title"> Wallet.No </p>' => $model->wallet_no,
+            '<p class="title"> Name:</p>' => $model->username,
+            '<p class="title">Email:</p>' => '<p class="' . $this->isEmailVerified($model->email_verified_at) . '">' . $model->email . ' (' . $this->getVerifiedText($model->email_verified_at) . ')' . '</p>',
+            '<p class="title"> Wallet: </p>' => $model->wallet_no,
         ];
     }
 

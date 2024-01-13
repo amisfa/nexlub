@@ -9,7 +9,7 @@
                     <div class="border border-gray-200 " style="max-height: 250px;overflow: auto">
                     <table class="min-w-full">
                         <thead
-                            class="bg-gray-100 text-xs leading-4 font-semibold uppercase tracking-wider text-left">
+                            class="bg-gray-800 text-xs leading-4 font-semibold uppercase tracking-wider text-left">
                         <tr>
                             <th class="px-3 py-3 w-1/2">Currency</th>
                             <th class="px-3 py-3 w-1/5">Balance</th>

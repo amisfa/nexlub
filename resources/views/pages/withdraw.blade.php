@@ -5,13 +5,13 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Withdraw Funds</div>
+                    <div class="card-header">Withdraw</div>
                     <form method="post" action="{{route('make-withdraw')}}">
                         <div class="card-body">
                             @csrf
                             <div class="flex flex-wrap">
                                 <div class="form-group w-full md:w-1/2 p-1">
-                                    <label for="amount">Amount to
+                                    <label for="amount">USD Amount to
                                         Withdraw</label>
                                     <div>
                                         <input type="number" min=0 step="any" class="form-control" name="amount"
@@ -35,8 +35,9 @@
                             </div>
                         </div>
                     </form>
+                    <div class="card-header">Withdraw History</div>
                     <div class="p-3">
-                        <div class="border border-gray-200">
+                        <div class="border" style="border-color: #2b3553!important;">
                             <livewire:user-withdraw-view/>
                         </div>
                     </div>

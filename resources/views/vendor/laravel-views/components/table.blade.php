@@ -10,7 +10,7 @@ props:
 
 <table class="min-w-full">
 
-  <thead class="border-b border-t border-gray-200 bg-gray-100 text-xs leading-4 font-semibold uppercase tracking-wider text-left">
+  <thead class="border-b border-t bg-gray-800 leading-4 font-semibold uppercase tracking-wider text-center" style="border-color: #2b3553">
     <tr>
       @if ($this->hasBulkActions)
         <th class="pl-3">
@@ -21,7 +21,7 @@ props:
       @endif
       {{-- Renders all the headers --}}
       @foreach ($headers as $header)
-        <th class="px-3 py-3" {{ is_object($header) && ! empty($header->width) ? 'width=' . $header->width . '' : '' }}>
+        <th class="px-3 py-3" style="color:#22c9e9!important" {{ is_object($header) && ! empty($header->width) ? 'width=' . $header->width . '' : '' }}>
           @if (is_string($header))
             {{ $header }}
           @else
@@ -51,7 +51,7 @@ props:
 
   <tbody>
     @foreach ($items as $item)
-      <tr class="border-b border-gray-200 text-sm" wire:key="{{ $item->getKey() }}">
+      <tr class="border-b text-white-50 text-sm" wire:key="{{ $item->getKey() }}" style="border-color: #2b3553">
         @if ($this->hasBulkActions)
           <td class="pl-3">
             <span class="flex items-center justify-center">

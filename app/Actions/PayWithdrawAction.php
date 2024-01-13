@@ -56,4 +56,10 @@ class PayWithdrawAction extends Action
             $this->error('Pay Withdraw Failed');
         }
     }
+
+    public function renderIf($model, View $view): bool
+    {
+        return $model->status === CashOutStatuses::Waiting;
+    }
+
 }

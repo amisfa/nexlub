@@ -29,7 +29,7 @@ class UserWithdrawView extends TableView
             'Amount',
             Header::title('Status')->sortBy('status'),
             Header::title('Create At')->sortBy('created_at'),
-            'Rejected Reason',
+            'Rejection Reason',
             'TX URL'
         ];
     }
