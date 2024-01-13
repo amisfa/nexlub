@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Actions\CancelWithdrawAction;
 use App\Enums\CashOutStatuses;
-use App\Filters\WithdrawsFilter;
+use App\Filters\WithdrawsStatusFilter;
 use App\Models\UserWithdraw;
 use LaravelViews\Facades\Header;
 use LaravelViews\Views\TableView;
@@ -38,7 +38,7 @@ class UserWithdrawView extends TableView
     public function row($model): array
     {
         $data = [
-            $model->amount,
+            $model->amount. ' '. $model->currency,
             '<p class="' . $this->getStatusColor($model->status->value) . '">' . $this->getWithdrawStatus($model->status->value) . '</p>',
             $model->created_at->diffforHumans(),
             $model->rejected_comment,
@@ -59,7 +59,7 @@ class UserWithdrawView extends TableView
     protected function filters()
     {
         return [
-            new WithdrawsFilter(),
+            new WithdrawsStatusFilter(),
         ];
     }
 

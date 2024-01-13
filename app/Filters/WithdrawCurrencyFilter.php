@@ -2,11 +2,11 @@
 
 namespace App\Filters;
 
-use App\Enums\CashOutStatuses;
+use App\Helpers\Helper;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelViews\Filters\Filter;
 
-class WithdrawsFilter extends Filter
+class WithdrawCurrencyFilter extends Filter
 {
     /**
      * Modify the current query when the filter is used
@@ -17,7 +17,7 @@ class WithdrawsFilter extends Filter
      */
     public function apply(Builder $query, $value, $request): Builder
     {
-        return $query->where('status', $value);
+        return $query->where('currency', $value);
     }
 
     /**
@@ -27,11 +27,11 @@ class WithdrawsFilter extends Filter
      */
     public function options(): array
     {
-        return [
-            'Paid' => CashOutStatuses::Paid,
-            'Waiting' => CashOutStatuses::Waiting,
-            'Rejected' => CashOutStatuses::Rejected,
-            'Canceled' => CashOutStatuses::Canceled
-        ];
+        $currencies = Helper::getAvailableCurrencies();
+        $pseudoCurrencies = array();
+        foreach ($currencies as $currency) {
+            $pseudoCurrencies[$currency['name']] = $currency['currency'];
+        }
+        return $pseudoCurrencies;
     }
 }

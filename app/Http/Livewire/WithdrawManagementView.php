@@ -3,7 +3,8 @@
 namespace App\Http\Livewire;
 
 use App\Actions\RejectWithdrawAction;
-use App\Filters\WithdrawsFilter;
+use App\Filters\WithdrawCurrencyFilter;
+use App\Filters\WithdrawsStatusFilter;
 use App\Models\UserWithdraw;
 use LaravelViews\Facades\Header;
 use LaravelViews\Views\TableView;
@@ -40,7 +41,7 @@ class WithdrawManagementView extends TableView
         $data = [
             $model->user->username,
             $model->user->wallet_no,
-            $model->amount,
+            $model->amount. ' '. $model->currency,
             '<p class="' . $this->getStatusColor($model->status->value) . '">' . $this->getWithdrawStatus($model->status->value) . '</p>',
             $model->created_at->diffforHumans(),
             $model->rejected_comment,
@@ -59,7 +60,8 @@ class WithdrawManagementView extends TableView
     protected function filters()
     {
         return [
-            new WithdrawsFilter(),
+            new WithdrawsStatusFilter(),
+            new WithdrawCurrencyFilter()
         ];
     }
 
