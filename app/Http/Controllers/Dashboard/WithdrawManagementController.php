@@ -15,7 +15,7 @@ class WithdrawManagementController extends Controller
 {
     public function create(): View|\Illuminate\Foundation\Application|Factory|Application
     {
-        $availableCurrencies = Helper::getAvailableCurrencies(true);
+        $availableCurrencies = Helper::getAvailableCurrencies();
         return view('pages.withdraw-management', ['currencies' => $availableCurrencies]);
     }
 
