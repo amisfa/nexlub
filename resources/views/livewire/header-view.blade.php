@@ -42,7 +42,7 @@
                             <p>${{number_format($user->balance, 2)}}</p>
                         </div>
                     </div>
-                    <b class="caret d-none d-lg-block d-xl-block"></b>
+{{--                    <b class="caret d-none d-lg-block d-xl-block"></b>--}}
                 </a>
                 <ul class="dropdown-menu dropdown-navbar">
                     <li class="nav-link">

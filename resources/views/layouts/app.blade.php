@@ -24,10 +24,12 @@
 </head>
 <body class="{{ $class ?? '' }}">
     <div class="flex relative">
+        @include('layouts.navbars.navbar')
+
         @include('layouts.navbars.sidebar')
         <div class="wrapper">
             <div class="main-panel magicpattern">
-                @include('layouts.navbars.navbar')
+{{--                @include('layouts.navbars.navbar')--}}
                 <div class="content">
                     @if(session('warning'))
                         <div class="alert alert-primary" role="alert">{{session('warning')}}</div>

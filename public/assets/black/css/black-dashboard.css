@@ -666,7 +666,7 @@ pre code {
 
 .container-fluid {
     width: 100%;
-    padding-right: 15px;
+    padding-right: 0px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
@@ -6884,7 +6884,6 @@ button.bg-darker:focus {
     padding-top: 1.5rem !important;
 }
 
-.pr-4,
 .px-4 {
     padding-right: 1.5rem !important;
 
@@ -11578,7 +11577,7 @@ img {
 }
 
 .navbar {
-    padding: 10px 30px 10px 15px;
+    padding: 10px 15px 10px 6px;
     width: 100%;
     z-index: 1050;
     background: #1a1e34;
@@ -11711,7 +11710,7 @@ img {
 }
 
 .navbar-nav li {
-    padding: 0 10px;
+    padding: 0 0px;
 }
 
 .navbar-nav li a {
