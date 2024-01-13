@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('user_id');
             $table->unsignedDecimal('amount', 18)->default(0);
             $table->string('tx_url')->nullable();
+            $table->string('rejected_comment')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

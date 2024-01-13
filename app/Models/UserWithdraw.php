@@ -20,7 +20,8 @@ class UserWithdraw extends Model
         'user_id',
         'amount',
         'status',
-        'tx_url'
+        'tx_url',
+        'rejected_comment'
     ];
 
     public function user(): BelongsTo

@@ -29,6 +29,7 @@ class UserWithdrawView extends TableView
             'Amount',
             Header::title('Status')->sortBy('status'),
             Header::title('Create At')->sortBy('created_at'),
+            'Rejected Reason',
             'TX URL'
         ];
     }
@@ -40,6 +41,8 @@ class UserWithdrawView extends TableView
             $model->amount,
             '<p class="' . $this->getStatusColor($model->status->value) . '">' . $this->getWithdrawStatus($model->status->value) . '</p>',
             $model->created_at->diffforHumans(),
+            $model->rejected_comment,
+
         ];
         if ($model->status === CashOutStatuses::Paid) $data[] = '<a href="' . $model->tx_url . '" target="_blank">Tx Link<i class="bx bx-link-external"></i>';
         return $data;

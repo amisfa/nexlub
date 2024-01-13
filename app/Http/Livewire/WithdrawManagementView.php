@@ -17,6 +17,10 @@ class WithdrawManagementView extends TableView
         return UserWithdraw::query();
     }
 
+//    protected $listeners = [
+//        'reloadTable' => 'reload',
+//    ];
+
     /**
      * Sets the headers of the table as you want to be displayed
      *
@@ -88,4 +92,16 @@ class WithdrawManagementView extends TableView
                 return "text-danger";
         }
     }
+
+//
+//    public function reloadTable($type = null): void
+//    {
+//        $this->render();
+//        $this->emit('closeModal');
+//        if ($type)
+//            $this->emitSelf('notify', [
+//                'message' => 'Withdraw Rejected Failed',
+//                'type' => $type == 'error' ? 'danger' : 'success'
+//            ]);
+//    }
 }

@@ -47,6 +47,7 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::prefix('admin')->group(function () {
         Route::get('/user-management', [UserManagementController::class, 'create'])->name('user-management');
         Route::get('/withdraw-management', [WithdrawManagementController::class, 'create'])->name('withdraw-management');
+        Route::post('/reject-withdraw/{withdraw}', [WithdrawManagementController::class, 'rejectWithdraw'])->name('reject-withdraw');
     });
 
     Route::get('/success-payment', [InvoiceController::class, 'successPayment']);
