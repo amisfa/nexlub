@@ -24,7 +24,7 @@
                                     <select class="form-control" name="currency" required>
                                         <option value="" class="comboBox"></option>
                                         @foreach($currencies as $currency)
-                                            <option value="{{$currency['currency']}}"
+                                            <option  value="{{$currency['currency']}}"
                                                     class="comboBox">{{$currency['name']}}</option>
                                         @endforeach
                                     </select>

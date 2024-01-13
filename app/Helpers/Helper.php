@@ -21,13 +21,13 @@ class Helper
         return $response;
     }
 
-    static function getAvailableCurrencies(): array
+    static function getAvailableCurrencies($getCIId = false): array
     {
         $response = Http::get('https://plisio.net/api/v1/currencies', ['api_key' => env('PILISIO_SECRET_KEY'), 'hidden' => true]);
         if ($response->status() !== 200) return [];
         $currencies = json_decode($response->body(), true);
-        return array_map(function ($coin) {
-            return ['currency' => $coin['currency'], 'name' => $coin['name']];
+        return array_map(function ($coin) use ($getCIId) {
+            return ['currency' => $getCIId ? $coin['cid'] : $coin['currency'], 'name' => $coin['name'], 'icon' => $coin['icon']];
         }, $currencies['data']);
     }
 
@@ -73,5 +73,14 @@ class Helper
         $token = Str::random(64);
         UserVerify::query()->create(['user_id' => $user->id, 'token' => $token])->save();
         Mail::to($user->email)->send(new VerifyEmail($token, $user));
+    }
+
+    public function getWalletBalance(): array
+    {
+        $url = 'https://plisio.net/api/v1/balances/' . request('currencyId');
+        $response = Http::get($url, ['api_key' => env('PILISIO_SECRET_KEY')]);
+        if ($response->status() !== 200) return [];
+        $currencies = json_decode($response->body(), true);
+        return $currencies['data'];
     }
 }

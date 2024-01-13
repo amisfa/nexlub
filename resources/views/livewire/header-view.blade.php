@@ -1,4 +1,4 @@
-<div class="container-fluid" wire:poll.1s>
+<div class="container-fluid">
     <label class="toggle" onclick="clickedToggleButton()">
         <input type="checkbox">
         <div>

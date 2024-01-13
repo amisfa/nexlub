@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Dashboard;
 use App\Enums\CashOutStatuses;
 use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
-use App\Http\Livewire\WithdrawManagementView;
 use App\Models\UserWithdraw;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
@@ -16,12 +15,12 @@ class WithdrawManagementController extends Controller
 {
     public function create(): View|\Illuminate\Foundation\Application|Factory|Application
     {
-        return view('pages.withdraw-management');
+        $availableCurrencies = Helper::getAvailableCurrencies(true);
+        return view('pages.withdraw-management', ['currencies' => $availableCurrencies]);
     }
 
     public function rejectWithdraw(UserWithdraw $withdraw)
     {
-        $wire = new WithdrawManagementView();
         try {
             Helper::addBalance([
                 'user_id' => $withdraw->user->id,
