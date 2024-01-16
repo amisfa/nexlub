@@ -2,7 +2,7 @@
 
 namespace App\Actions;
 
-use App\Enums\CashOutStatuses;
+use App\Enums\WithdrawStatuses;
 use App\Helpers\Helper;
 use Exception;
 use LaravelViews\Actions\Action;
@@ -44,7 +44,7 @@ class CancelWithdrawAction extends Action
                 'amount' => $model->amount,
                 'log' => request('amount') . ' USD Canceled Withdraw by ' . auth()->user()->username
             ]);
-            $model->status = CashOutStatuses::Canceled;
+            $model->status = WithdrawStatuses::Canceled;
             $model->save();
             $this->success('Withdraw Canceled Successfully');
         } catch (Exception $e) {
@@ -54,6 +54,6 @@ class CancelWithdrawAction extends Action
 
     public function renderIf($model, View $view): bool
     {
-        return $model->status === CashOutStatuses::Waiting;
+        return $model->status === WithdrawStatuses::Waiting;
     }
 }

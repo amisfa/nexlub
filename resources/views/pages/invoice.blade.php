@@ -11,7 +11,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="Amount">USD Amount</label>
-                                <input type="number" step="any" class="form-control" id="amount" name="price_amount" required min=0
+                                <input type="number" step="any" class="form-control" id="amount" name="price_amount" required min="50"
                                        placeholder="$100">
                             </div>
                             <div class="d-flex flex-column justify-content-around" style="padding:15px;padding-top:0px;">

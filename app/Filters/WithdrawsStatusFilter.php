@@ -2,7 +2,7 @@
 
 namespace App\Filters;
 
-use App\Enums\CashOutStatuses;
+use App\Enums\WithdrawStatuses;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelViews\Filters\Filter;
 
@@ -28,10 +28,10 @@ class WithdrawsStatusFilter extends Filter
     public function options(): array
     {
         return [
-            'Paid' => CashOutStatuses::Paid,
-            'Waiting' => CashOutStatuses::Waiting,
-            'Rejected' => CashOutStatuses::Rejected,
-            'Canceled' => CashOutStatuses::Canceled
+            'Paid' => WithdrawStatuses::Paid,
+            'Waiting' => WithdrawStatuses::Waiting,
+            'Rejected' => WithdrawStatuses::Rejected,
+            'Canceled' => WithdrawStatuses::Canceled
         ];
     }
 }

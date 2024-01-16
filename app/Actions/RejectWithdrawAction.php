@@ -2,7 +2,7 @@
 
 namespace App\Actions;
 
-use App\Enums\CashOutStatuses;
+use App\Enums\WithdrawStatuses;
 use LaravelViews\Actions\Action;
 use LaravelViews\Views\View;
 
@@ -24,7 +24,7 @@ class RejectWithdrawAction extends Action
 
     public function renderIf($model, View $view): bool
     {
-        return $model->status === CashOutStatuses::Waiting;
+        return $model->status === WithdrawStatuses::Waiting;
     }
 
 }

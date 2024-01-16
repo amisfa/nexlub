@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Enums\CashOutStatuses;
+use App\Enums\WithdrawStatuses;
 use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
 use App\Models\UserWithdraw;
@@ -27,7 +27,7 @@ class WithdrawManagementController extends Controller
                 'amount' => $withdraw->amount,
                 'log' => $withdraw->amount . ' USD Rejected Withdraw by ' . auth()->user()->username . ' ' . request('rejected_reason')
             ]);
-            $withdraw->status = CashOutStatuses::Rejected;
+            $withdraw->status = WithdrawStatuses::Rejected;
             $withdraw->rejected_comment = request('rejected_comment');
             $withdraw->save();
             return back()->with(['success' => 'Withdraw Rejected Successfully']);

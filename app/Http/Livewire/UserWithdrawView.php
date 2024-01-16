@@ -3,7 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Actions\CancelWithdrawAction;
-use App\Enums\CashOutStatuses;
+use App\Enums\WithdrawStatuses;
 use App\Filters\WithdrawsStatusFilter;
 use App\Models\UserWithdraw;
 use LaravelViews\Facades\Header;
@@ -45,7 +45,7 @@ class UserWithdrawView extends TableView
             $model->created_at->diffforHumans(),
             $model->rejected_comment,
         ];
-        if ($model->status === CashOutStatuses::Paid) $data[] = '<a href="' . $model->tx_url . '" target="_blank">Tx Link<i class="bx bx-link-external"></i>';
+        if ($model->status === WithdrawStatuses::Paid) $data[] = '<a href="' . $model->tx_url . '" target="_blank">Tx Link<i class="bx bx-link-external"></i>';
         return $data;
     }
 

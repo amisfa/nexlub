@@ -1,6 +1,6 @@
 <?php
 
-use App\Enums\CashOutStatuses;
+use App\Enums\WithdrawStatuses;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +13,7 @@ return new class extends Migration {
     {
         Schema::create('user_withdraw', function (Blueprint $table) {
             $table->id();
-            $table->unsignedTinyInteger('status')->default(CashOutStatuses::Waiting);
+            $table->unsignedTinyInteger('status')->default(WithdrawStatuses::Waiting);
             $table->unsignedBigInteger('user_id');
             $table->unsignedDecimal('amount', 18)->default(0);
             $table->string('tx_url')->nullable();

@@ -2,7 +2,7 @@
 
 namespace App\Actions;
 
-use App\Enums\CashOutStatuses;
+use App\Enums\WithdrawStatuses;
 use App\Helpers\Helper;
 use App\Models\UserWithdraw;
 use Exception;
@@ -45,7 +45,7 @@ class PayWithdrawAction extends Action
 
             $response = json_decode($response->body(), true);
             $withdraw->tx_url = $response['tx_url'];
-            $withdraw->status = CashOutStatuses::Paid;
+            $withdraw->status = WithdrawStatuses::Paid;
             $withdraw->save();
             Helper::setPokerMavens([
                 'Command' => 'LogsAddEvent',
@@ -59,7 +59,7 @@ class PayWithdrawAction extends Action
 
     public function renderIf($model, View $view): bool
     {
-        return $model->status === CashOutStatuses::Waiting;
+        return $model->status === WithdrawStatuses::Waiting;
     }
 
 }

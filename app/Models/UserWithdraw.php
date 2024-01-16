@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Enums\CashOutStatuses;
+use App\Enums\WithdrawStatuses;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -13,7 +13,7 @@ class UserWithdraw extends Model
 
     protected $table = 'user_withdraw';
     protected $casts = [
-        'status' => CashOutStatuses::class,
+        'status' => WithdrawStatuses::class,
     ];
 
     protected $fillable = [

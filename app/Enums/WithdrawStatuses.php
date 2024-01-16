@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum CashOutStatuses: int
+enum WithdrawStatuses: int
 {
     case Waiting = 1;
     case Paid = 2;
