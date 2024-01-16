@@ -26,8 +26,16 @@ class Helper
         $response = Http::get('https://plisio.net/api/v1/currencies', ['api_key' => env('PILISIO_SECRET_KEY'), 'hidden' => true]);
         if ($response->status() !== 200) return [];
         $currencies = json_decode($response->body(), true);
-        return array_map(function ($coin){
-            return ['currency' => $coin['cid'] , 'name' => $coin['name'], 'icon' => $coin['icon']];
+        $minAmount = [
+            'BTC' => 100,
+        ];
+        return array_map(function ($coin) use ($minAmount) {
+            return [
+                'currency' => $coin['cid'],
+                'name' => $coin['name'],
+                'icon' => $coin['icon'],
+                'min_amount' => isset($minAmount[$coin['cid']]) ? $minAmount[$coin['cid']] : 30
+            ];
         }, $currencies['data']);
     }
 
