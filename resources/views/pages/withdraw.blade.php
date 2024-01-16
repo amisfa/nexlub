@@ -27,7 +27,6 @@
                                         @foreach($currencies as $currency)
                                             <option value="{{$currency['currency']}}"
                                                     class="comboBox"
-                                                    data-thumbnail="{{$currency['icon']}}"
                                                     min_amount="{{$currency['min_amount']}}">
                                                 {{$currency['name']}}
                                             </option>
