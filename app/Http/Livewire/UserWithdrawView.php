@@ -27,6 +27,7 @@ class UserWithdrawView extends TableView
     {
         return [
             'Amount',
+            'Payment Currency',
             Header::title('Status')->sortBy('status'),
             Header::title('Create At')->sortBy('created_at'),
             'Rejection Reason',
@@ -38,11 +39,11 @@ class UserWithdrawView extends TableView
     public function row($model): array
     {
         $data = [
-            $model->amount. ' '. $model->currency,
+            $model->amount . ' USD',
+            $model->currency,
             '<p class="' . $this->getStatusColor($model->status->value) . '">' . $this->getWithdrawStatus($model->status->value) . '</p>',
             $model->created_at->diffforHumans(),
             $model->rejected_comment,
-
         ];
         if ($model->status === CashOutStatuses::Paid) $data[] = '<a href="' . $model->tx_url . '" target="_blank">Tx Link<i class="bx bx-link-external"></i>';
         return $data;

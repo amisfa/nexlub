@@ -10,7 +10,7 @@ props:
 
 <table class="min-w-full">
 
-  <thead class="border-b border-t bg-gray-800 leading-4 font-semibold uppercase tracking-wider text-center" style="border-color: #2b3553">
+  <thead class="border-b border-t bg-gray-800 leading-4 font-semibold uppercase tracking-wider" style="border-color: #2b3553">
     <tr>
       @if ($this->hasBulkActions)
         <th class="pl-3">

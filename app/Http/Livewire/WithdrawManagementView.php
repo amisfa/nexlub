@@ -30,6 +30,7 @@ class WithdrawManagementView extends TableView
             'userName',
             'Wallet',
             'Amount',
+            'Payment Currency',
             Header::title('Status')->sortBy('status'),
             Header::title('Create At')->sortBy('created_at'),
             'Rejected Reason',
@@ -39,15 +40,15 @@ class WithdrawManagementView extends TableView
 
     public function row($model): array
     {
-        $data = [
+        return [
             $model->user->username,
             $model->user->wallet_no,
-            $model->amount. ' '. $model->currency,
+            $model->amount . ' USD',
+            $model->currency,
             '<p class="' . $this->getStatusColor($model->status->value) . '">' . $this->getWithdrawStatus($model->status->value) . '</p>',
             $model->created_at->diffforHumans(),
             $model->rejected_comment,
         ];
-        return $data;
     }
 
     /** For actions by item */

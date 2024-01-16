@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <div class="card p-3 overflow-auto">
+                <div class="card p-3">
                     <div class="card-header">Withdraw Management</div>
                     <div class="border border-gray-200 " style="max-height: 250px;overflow: auto">
                     <table class="min-w-full">
@@ -36,7 +36,12 @@
                     </table>
                     </div>
                     <br/>
-                    <livewire:withdraw-management-view/>
+                    <div class="card-header">Withdraw History</div>
+                    <div class="p-3">
+                        <div class="border" style="border-color: #2b3553!important;">
+                            <livewire:withdraw-management-view/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
