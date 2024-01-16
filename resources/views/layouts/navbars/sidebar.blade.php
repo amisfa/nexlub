@@ -11,9 +11,9 @@
             </a>
         </li>
         <li @if ($pageSlug == 'invoices' || $pageSlug == 'payments') class="active showMenu" @endif>
-            <div class="icon-link">
+            <div class="icon-link cursor-default">
                 <a>
-                    <i class='bx bx-collection'></i>
+                    <i class='bx bx-collection' style="cursor: default!important"></i>
                     <span class="link_name">Deposit</span>
                 </a>
                 <i class='bx bxs-chevron-down arrow'></i>
@@ -44,9 +44,9 @@
             </a>
         </li>
         <li @if ($pageSlug == 'userManagement' || $pageSlug == 'withdrawManagement') class="active showMenu" @endif>
-            <div class="icon-link">
+            <div class="icon-link cursor-default">
                 <a>
-                    <i class='bx bx-user'></i>
+                    <i class='bx bx-user' style="cursor: default!important"></i>
                     <span class="link_name">Admin</span>
                 </a>
                 <i class='bx bxs-chevron-down arrow'></i>
