@@ -25,8 +25,12 @@
                                     <select class="form-control" id="withdraw-currency" name="currency" required>
                                         <option value="" class="comboBox"></option>
                                         @foreach($currencies as $currency)
-                                            <option value="{{$currency['currency']}}" class="comboBox"
-                                                    min_amount="{{$currency['min_amount']}}">{{$currency['name']}}</option>
+                                            <option value="{{$currency['currency']}}"
+                                                    class="comboBox"
+                                                    data-thumbnail="{{$currency['icon']}}"
+                                                    min_amount="{{$currency['min_amount']}}">
+                                                {{$currency['name']}}
+                                            </option>
                                         @endforeach
                                     </select>
                                 </div>
