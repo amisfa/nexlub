@@ -55,7 +55,9 @@
             if (amount < minAmount) {
                 alert('The amount is less than the limit, Currency limit is: ' + minAmount + " USD")
                 return false
-            } else return true
+            } else {
+                return true
+            }
         }
     </script>
 @endpush

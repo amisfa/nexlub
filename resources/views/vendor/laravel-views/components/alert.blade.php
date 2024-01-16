@@ -8,7 +8,6 @@ it could be success, error, warning.
 You can customize the variants classes in config/laravel-views.php
 --}}
 @props(['type' => 'success', 'onClose' => ''])
-
 <div class="fixed z-50 bottom-0 left-0 w-full p-4 md:w-1/2 md:top-1  md:right-0 md:p-8 md:left-auto xl:w-1/3 h-auto rounded">
   <div class="rounded p-4 flex items-center shadow-lg h-auto border-gray-200 border" style="background:#0E1726!important">
     <div class="{{ variants("alerts.{$type}.icon") }} mr-4 rounded-full p-2">
@@ -18,14 +17,13 @@ You can customize the variants classes in config/laravel-views.php
     </div>
 
     <div class="flex-1">
-      <b class="text-gray-900 font-semibold">
+      <b class="text-success font-semibold">
         {{ variants()->alert($type)->title() }}!
       </b>
       <div class="text-sm">
         {{ $slot }}
       </div>
     </div>
-
     {{-- Flush this message from the session --}}
     <button @click.prevent="{{ $onClose ?? ''}}" class="text-gray-400 hover:text-gray-900 transition duration-300 ease-in-out cursor-pointer">
       <i data-feather="x-circle"></i>

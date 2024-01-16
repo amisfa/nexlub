@@ -7,6 +7,7 @@ use Livewire\Component;
 
 class HeaderView extends Component
 {
+    protected $listeners = ['reloadBalance' => 'reload'];
 
     public function render()
     {
@@ -14,5 +15,10 @@ class HeaderView extends Component
         $updatedUser = $user->fresh();
         Auth::setUser($updatedUser);
         return view('livewire.header-view', ['user' => auth()->user()]);
+    }
+
+    public function reload(): void
+    {
+        $this->render();
     }
 }
