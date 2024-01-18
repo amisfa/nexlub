@@ -10,10 +10,11 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('user_mavens_log', function (Blueprint $table) {
+        Schema::create('user_rake_log', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedDecimal('p_rake', 18);
+            $table->timestamp('claim_at')->nullable();
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_mavens_log');
+        Schema::dropIfExists('user_rake_log');
     }
 };
