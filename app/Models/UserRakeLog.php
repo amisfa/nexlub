@@ -18,8 +18,8 @@ class UserRakeLog extends Model
         'claim_at'
     ];
     protected $appends = [
-        'affiliateRake',
-        'userRakeBack'
+        'affiliate_rake',
+        'user_rake_back'
     ];
 
 
@@ -28,12 +28,12 @@ class UserRakeLog extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function getAffiliateRake(): float|int
+    public function getAffiliateRakeAttribute(): float|int
     {
         return ($this->user->affiliate_rake_percentage / 100) * $this->rake;
     }
 
-    public function getUserRakeBack(): float|int
+    public function getUserRakeBackAttribute(): float|int
     {
         return ($this->user->rake_back_percentage / 100) * $this->rake;
     }

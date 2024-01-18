@@ -38,12 +38,6 @@ class User extends Authenticatable
     ];
     protected $table = 'auth_user';
 
-    protected $appends = [
-        'referral_link',
-        'remainRake',
-        'claimedRake'
-    ];
-
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -61,6 +55,16 @@ class User extends Authenticatable
      */
     protected $casts = [
         'password' => 'hashed',
+    ];
+
+    protected $appends = [
+        'referral_link',
+        'remain_rake_back',
+        'claimed_rake_back',
+        'total_rake_back',
+        'remain_affiliate_rake',
+        'claimed_affiliate_rake',
+        'total_affiliate_rake',
     ];
 
     public function referrer(): BelongsTo
@@ -108,7 +112,7 @@ class User extends Authenticatable
         $remainRake = 0;
         if ($this->userRake()->exists()) {
             $query = $this->userRake()->first();
-            $remainRake = number_format($query->userRakeBack) - number_format($query->claimed_rake_back);
+            $remainRake = number_format($query->user_rake_back) - number_format($query->claimed_rake_back);
         }
         return $remainRake;
     }
@@ -128,8 +132,44 @@ class User extends Authenticatable
         $rake = 0;
         if ($this->userRake()->exists()) {
             $query = $this->userRake()->first();
-            $rake = number_format($query->userRakeBack);
+            $rake = number_format($query->user_rake_back);
         }
+        return $rake;
+    }
+
+    public function getRemainAffiliateRakeAttribute(): float|int
+    {
+        $remainRake = 0;
+        $this->referrals()->each(function ($q) use (&$remainRake) {
+            if ($q->userRake()->exists()) {
+                $query = $q->userRake()->first();
+                $remainRake += number_format($query->affiliate_rake) - number_format($query->claimed_rake_affiliate);
+            }
+        });
+        return $remainRake;
+    }
+
+    public function getClaimedAffiliateRakeAttribute(): float|int
+    {
+        $claimedRake = 0;
+        $this->referrals()->each(function ($q) use (&$claimedRake) {
+            if ($q->userRake()->exists()) {
+                $query = $q->userRake()->first();
+                $claimedRake = number_format($query->claimed_rake_affiliate);
+            }
+        });
+        return $claimedRake;
+    }
+
+    public function getTotalAffiliateRakeAttribute(): float|int
+    {
+        $rake = 0;
+        $this->referrals()->each(function ($q) use (&$rake) {
+            if ($q->userRake()->exists()) {
+                $query = $q->userRake()->first();
+                $rake = number_format($query->affiliate_rake);
+            }
+        });
         return $rake;
     }
 }
