@@ -12,13 +12,29 @@ class UserRakeLog extends Model
 
     protected $fillable = [
         'user_id',
-        'p_rake',
+        'rake',
+        'claimed_rake_back',
+        'claimed_rake_affiliate',
         'claim_at'
+    ];
+    protected $appends = [
+        'affiliateRake',
+        'userRakeBack'
     ];
 
 
     public function user(): BelongsTo
     {
-        $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function getAffiliateRake(): float|int
+    {
+        return ($this->user->affiliate_rake_percentage / 100) * $this->rake;
+    }
+
+    public function getUserRakeBack(): float|int
+    {
+        return ($this->user->rake_back_percentage / 100) * $this->rake;
     }
 }

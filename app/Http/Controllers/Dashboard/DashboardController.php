@@ -12,6 +12,7 @@ class DashboardController extends Controller
 {
     public function create(): View|\Illuminate\Foundation\Application|Factory|Application
     {
+//        dd(auth()->user()->remainRake);
         return view('dashboard');
     }
 }

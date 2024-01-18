@@ -14,6 +14,8 @@ return new class extends Migration {
             $table->id();
             $table->string('username')->unique();
             $table->string('email')->unique();
+            $table->unsignedInteger('affiliate_rake_percentage')->default(20);
+            $table->unsignedInteger('rake_back_percentage')->default(5);
             $table->string('password');
             $table->string('wallet_no')->index();
             $table->timestamp('email_verified_at')->nullable();

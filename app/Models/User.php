@@ -24,6 +24,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'email',
+        'affiliate_rake_percentage',
+        'rake_back_percentage',
         'password',
         'username',
         'phone_no',
@@ -36,7 +38,11 @@ class User extends Authenticatable
     ];
     protected $table = 'auth_user';
 
-    protected $appends = ['referral_link'];
+    protected $appends = [
+        'referral_link',
+        'remainRake',
+        'claimedRake'
+    ];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -95,5 +101,35 @@ class User extends Authenticatable
     public function userRake(): HasOne
     {
         return $this->hasOne(UserRakeLog::class, 'user_id');
+    }
+
+    public function getRemainRakeBackAttribute(): int
+    {
+        $remainRake = 0;
+        if ($this->userRake()->exists()) {
+            $query = $this->userRake()->first();
+            $remainRake = number_format($query->userRakeBack) - number_format($query->claimed_rake_back);
+        }
+        return $remainRake;
+    }
+
+    public function getClaimedRakeBackAttribute(): float|int
+    {
+        $claimedRake = 0;
+        if ($this->userRake()->exists()) {
+            $query = $this->userRake()->first();
+            $claimedRake = number_format($query->claimed_rake_back);
+        }
+        return $claimedRake;
+    }
+
+    public function getTotalRakeBackAttribute(): float|int
+    {
+        $rake = 0;
+        if ($this->userRake()->exists()) {
+            $query = $this->userRake()->first();
+            $rake = number_format($query->userRakeBack);
+        }
+        return $rake;
     }
 }

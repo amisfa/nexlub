@@ -13,7 +13,9 @@ return new class extends Migration {
         Schema::create('user_rake_log', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedDecimal('p_rake', 18);
+            $table->unsignedDecimal('rake', 18);
+            $table->unsignedDecimal('claimed_rake_back', 18);
+            $table->unsignedDecimal('claimed_rake_affiliate', 18);
             $table->timestamp('claim_at')->nullable();
             $table->timestamps();
         });

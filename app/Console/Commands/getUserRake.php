@@ -44,13 +44,15 @@ class getUserRake extends Command
                 $hasLog = $query->where('user_id', $user->id)->first();
                 if ($hasLog && $user) {
                     $query->where('user_id', $user->id)->update([
-                        'p_rake' => $response['PRake'][$key],
+                        'rake' => $response['PRake'][$key],
                         'updated_at' => now()
                     ]);
                 } else {
                     $query->create([
                         'user_id' => $user->id,
-                        'p_rake' => $response['PRake'][$key]
+                        'rake' => $response['PRake'][$key],
+                        'claimed_rake_back' => 0,
+                        'claimed_rake_affiliate' => 0
                     ]);
                 }
             }
