@@ -59,5 +59,11 @@
                 </li>
             </ul>
         </li>
+        <li @if ($pageSlug == 'play') class="active"@endif>
+            <a href="{{route('play')}}">
+                <i class='bx bx-play'></i>
+                <span class="link_name">Play</span>
+            </a>
+        </li>
     </ul>
 </div>

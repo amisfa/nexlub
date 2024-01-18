@@ -16,7 +16,6 @@ class UserMavensLogController extends Controller
             "Command" => "AccountsList",
             'Fields' => "Player,Balance,PRake,PWHash"
         ]);
-        dd($response);
         $query = UserMavensLog::query();
         foreach ($response['Player'] as $key => $item) {
             $user = User::query()->where('username', $item)->first();
