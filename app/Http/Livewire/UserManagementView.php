@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Actions\UserDetailAction;
+use App\Actions\UserPercentageAction;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelViews\Facades\Header;
@@ -38,7 +39,8 @@ class UserManagementView extends TableView
     public function actionsByRow(): array
     {
         return [
-            new UserDetailAction()
+            new UserDetailAction(),
+            new UserPercentageAction()
         ];
     }
 
