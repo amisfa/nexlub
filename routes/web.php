@@ -36,7 +36,6 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::put('/edit-user-details', [ProfileController::class, 'editUserDetails'])->name('edit-user-details');
     Route::put('/change-user-password', [ProfileController::class, 'changeUserPassword'])->name('change-user-password');
     Route::get('/wallet', [WalletController::class, 'create'])->name('wallet');
-    Route::get('/play', [PlayController::class, 'create'])->name('play');
     Route::get('/invoices', [InvoiceController::class, 'create'])->name('invoices');
     Route::get('/subset', [SubsetController::class, 'create'])->name('subset');
     Route::get('/create-invoice', [InvoiceController::class, 'createInvoice'])->name('create-invoice');

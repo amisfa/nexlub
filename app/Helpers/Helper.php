@@ -16,8 +16,8 @@ class Helper
         $params['Password'] = env('MAVENS_PW');
         $params['JSON'] = 'Yes';
         $response = Http::asForm()->post(env("MAVENS_URL") . '/api', $params);
-        $response = json_decode($response);
-        if ($response->Result !== 'Ok') return back()->withErrors(['error' => $response->Error]);
+        $response = json_decode($response->body(), true);
+        if ($response['Result'] !== 'Ok') return back()->withErrors(['error' => $response['Error']]);
         return $response;
     }
 

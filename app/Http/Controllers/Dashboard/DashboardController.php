@@ -12,6 +12,7 @@ class DashboardController extends Controller
 {
     public function create(): View|\Illuminate\Foundation\Application|Factory|Application
     {
+//        UserMavensLogController::getData();
         return view('dashboard');
     }
 }
