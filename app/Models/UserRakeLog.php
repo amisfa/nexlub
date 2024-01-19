@@ -15,7 +15,6 @@ class UserRakeLog extends Model
         'rake',
         'claimed_rake_back',
         'claimed_rake_affiliate',
-        'claim_at'
     ];
     protected $appends = [
         'affiliate_rake',

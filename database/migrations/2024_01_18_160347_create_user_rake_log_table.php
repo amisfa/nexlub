@@ -16,7 +16,6 @@ return new class extends Migration {
             $table->unsignedDecimal('rake', 18);
             $table->unsignedDecimal('claimed_rake_back', 18);
             $table->unsignedDecimal('claimed_rake_affiliate', 18);
-            $table->timestamp('claim_at')->nullable();
             $table->timestamps();
         });
     }
