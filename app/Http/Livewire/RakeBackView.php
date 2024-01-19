@@ -7,17 +7,17 @@ use Livewire\Component;
 
 class RakeBackView extends Component
 {
-    public function create()
+    public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         return view('pages.rake-back');
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         return view('livewire.user-rake-back', ['user' => auth()->user()]);
     }
 
-    public function claim()
+    public function claim(): void
     {
         $remainRakeBack = auth()->user()->remain_rake_back;
         $claimedRakeBack = auth()->user()->claimed_rake_back;
