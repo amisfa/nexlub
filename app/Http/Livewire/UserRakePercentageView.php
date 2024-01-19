@@ -14,9 +14,13 @@ class UserRakePercentageView extends ModalComponent
     public function render(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         $model = User::find($this->model['id']);
+        return view('livewire.user-rake-percentage', ['user' => $model]);
+    }
+
+    public function mount(){
+        $model = User::find($this->model['id']);
         $this->rakeBack = $model->rake_back_percentage;
         $this->affiliateRake = $model->affiliate_rake_percentage;
-        return view('livewire.user-rake-percentage', ['user' => $model]);
     }
 
     public function change()
@@ -38,7 +42,7 @@ class UserRakePercentageView extends ModalComponent
         }
         if ($currentAffiliateRake != $this->affiliateRake) {
             $model->affiliate_rake_percentage = $this->affiliateRake;
-            $eachUserRemain = $remainAffiliateRake / $model->referrals()->count();
+            $eachUserRemain = $remainAffiliateRake / ($model->referrals()->count() || 1);
             $model->referrals()->each(function ($q) use ($eachUserRemain) {
                 if ($q->userRake()->exists()) {
                     $q->userRake()->update([
@@ -48,6 +52,8 @@ class UserRakePercentageView extends ModalComponent
                 }
             });
         }
+        $model->save();
+        $this->emit('reloadTable');
         $this->emit('closeModal');
     }
 }
