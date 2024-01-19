@@ -25,6 +25,25 @@
                 </li>
             </ul>
         </li>
+
+        <li @if ($pageSlug == 'rakeBack' || $pageSlug == 'topPlayer') class="active showMenu" @endif>
+            <div class="icon-link cursor-default">
+                <a>
+                    <i class='bx bx-trophy' style="cursor: default!important"></i>
+                    <span class="link_name">Rewards</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li @if ($pageSlug == 'rakeBack') class="active " @endif>
+                    <a href="{{route('rake-back')}}">Rake Back</a></li>
+{{--                <li @if ($pageSlug == 'withdrawManagement') class="active " @endif><a--}}
+{{--                        href="{{route('withdraw-management')}}">Withdraw</a>--}}
+{{--                </li>--}}
+            </ul>
+        </li>
+
+
         <li @if ($pageSlug == 'subset') class="active"@endif>
             <a href="{{route('subset')}}">
                 <i class='bx bxs-user-detail'></i>
