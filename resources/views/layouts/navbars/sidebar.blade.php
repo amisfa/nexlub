@@ -47,12 +47,6 @@
                 <span class="link_name">Subset</span>
             </a>
         </li>
-        <li @if ($pageSlug == 'tickets') class="active"@endif>
-            <a href="{{route('tickets')}}">
-                <i class='bx bxs-message-square-dots'></i>
-                <span class="link_name">Ticket</span>
-            </a>
-        </li>
         <li @if ($pageSlug == 'withdraw') class="active"@endif>
             <a href="{{route('withdraw')}}">
                 <i class='bx bx-dollar'></i>
