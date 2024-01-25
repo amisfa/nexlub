@@ -10,6 +10,7 @@ class UserSubsetView extends TableView
 {
     public $searchBy = ['username'];
     protected $paginate = 10;
+    protected $listeners = ['reloadTable' => 'reload'];
 
     public function repository()
     {
@@ -25,7 +26,7 @@ class UserSubsetView extends TableView
     {
         return [
             'UserName',
-            'Ramin Rake',
+            'Remain Rake',
             'Claimed Rake',
             'total Rake',
             Header::title('SignUp at')->sortBy('created_at'),
@@ -42,5 +43,11 @@ class UserSubsetView extends TableView
             $model->total_affiliate_rake,
             $model->created_at->diffforHumans()
         ];
+    }
+
+    public function reload(): void
+    {
+        $this->emit('reloadBalance');
+        $this->render();
     }
 }

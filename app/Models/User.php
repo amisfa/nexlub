@@ -140,36 +140,30 @@ class User extends Authenticatable
     public function getRemainAffiliateRakeAttribute(): float|int
     {
         $remainRake = 0;
-        $this->referrals()->each(function ($q) use (&$remainRake) {
-            if ($q->userRake()->exists()) {
-                $query = $q->userRake()->first();
-                $remainRake += number_format($query->affiliate_rake) - number_format($query->claimed_rake_affiliate);
-            }
-        });
-        return $remainRake;
+        if ($this->userRake()->exists()) {
+            $query = $this->userRake()->first();
+            $remainRake += $query->affiliate_rake - $query->claimed_rake_affiliate;
+        }
+        return floatval($remainRake);
     }
 
     public function getClaimedAffiliateRakeAttribute(): float|int
     {
         $claimedRake = 0;
-        $this->referrals()->each(function ($q) use (&$claimedRake) {
-            if ($q->userRake()->exists()) {
-                $query = $q->userRake()->first();
-                $claimedRake = number_format($query->claimed_rake_affiliate);
-            }
-        });
+        if ($this->userRake()->exists()) {
+            $query = $this->userRake()->first();
+            $claimedRake = $query->claimed_rake_affiliate;
+        }
         return $claimedRake;
     }
 
     public function getTotalAffiliateRakeAttribute(): float|int
     {
         $rake = 0;
-        $this->referrals()->each(function ($q) use (&$rake) {
-            if ($q->userRake()->exists()) {
-                $query = $q->userRake()->first();
-                $rake = number_format($query->affiliate_rake);
-            }
-        });
+        if ($this->userRake()->exists()) {
+            $query = $this->userRake()->first();
+            $rake = $query->affiliate_rake;
+        }
         return $rake;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\UserRake;
 
 use App\Helpers\Helper;
 use Livewire\Component;
@@ -9,7 +9,7 @@ class RakeBackView extends Component
 {
     public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
-        return view('pages.rake-back');
+        return view('pages.user-rake.rake-back');
     }
 
     public function claim(): void

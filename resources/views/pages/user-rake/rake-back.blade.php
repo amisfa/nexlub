@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => __('Withdraw'), 'pageSlug' => 'withdraw'])
+@extends('layouts.app', ['page' => __('Rake Back'), 'pageSlug' => 'rakeBack'])
 
 @section('content')
     <div class="container">

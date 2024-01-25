@@ -17,7 +17,8 @@ use App\Http\Controllers\Dashboard\UserManagementController;
 use App\Http\Controllers\Dashboard\UserWithdrawController;
 use App\Http\Controllers\Dashboard\WalletController;
 use App\Http\Controllers\Dashboard\WithdrawManagementController;
-use App\Http\Livewire\RakeBackView;
+use App\Http\Livewire\UserRake\AffiliateRakeView;
+use App\Http\Livewire\UserRake\RakeBackView;
 use App\Http\Livewire\UserTicketListView;
 use App\Http\Livewire\UserTicketsView;
 use Illuminate\Support\Facades\Route;
@@ -43,7 +44,7 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/rake-back', [RakeBackView::class, 'create'])->name('rake-back');
     Route::get('/tickets', [UserTicketsView::class, 'create'])->name('tickets');
     Route::get('/invoices', [InvoiceController::class, 'create'])->name('invoices');
-    Route::get('/subset', [SubsetController::class, 'create'])->name('subset');
+    Route::get('/subset', [AffiliateRakeView::class, 'create'])->name('subset');
     Route::get('/create-invoice', [InvoiceController::class, 'createInvoice'])->name('create-invoice');
     Route::get('/withdraw', [UserWithdrawController::class, 'create'])->name('withdraw');
     Route::post('/withdraw', [UserWithdrawController::class, 'makeWithdraw'])->name('make-withdraw');
