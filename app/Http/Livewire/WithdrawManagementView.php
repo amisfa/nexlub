@@ -51,23 +51,18 @@ class WithdrawManagementView extends TableView
         ];
     }
 
-    /** For actions by item */
-    protected function actionsByRow(): array
+    public static function getStatusColor($status)
     {
-        return [
-            new RejectWithdrawAction(),
-            new PayWithdrawAction()
-        ];
+        switch ($status) {
+            case 1:
+                return "text-warning";
+            case 2:
+                return "text-success";
+            case 3:
+            case 4:
+                return "text-danger";
+        }
     }
-
-    protected function filters()
-    {
-        return [
-            new WithdrawsStatusFilter(),
-            new WithdrawCurrencyFilter()
-        ];
-    }
-
 
     public function getWithdrawStatus($status)
     {
@@ -83,16 +78,20 @@ class WithdrawManagementView extends TableView
         }
     }
 
-    public static function getStatusColor($status)
+    /** For actions by item */
+    protected function actionsByRow(): array
     {
-        switch ($status) {
-            case 1:
-                return "text-warning";
-            case 2:
-                return "text-success";
-            case 3:
-            case 4:
-                return "text-danger";
-        }
+        return [
+            new RejectWithdrawAction(),
+            new PayWithdrawAction()
+        ];
+    }
+
+    protected function filters()
+    {
+        return [
+            new WithdrawsStatusFilter(),
+            new WithdrawCurrencyFilter()
+        ];
     }
 }

@@ -37,9 +37,6 @@
             <ul class="sub-menu">
                 <li @if ($pageSlug == 'rakeBack') class="active " @endif>
                     <a href="{{route('rake-back')}}">Rake Back</a></li>
-{{--                <li @if ($pageSlug == 'withdrawManagement') class="active " @endif><a--}}
-{{--                        href="{{route('withdraw-management')}}">Withdraw</a>--}}
-{{--                </li>--}}
             </ul>
         </li>
 
@@ -50,8 +47,8 @@
                 <span class="link_name">Subset</span>
             </a>
         </li>
-        <li @if ($pageSlug == 'ticket') class="active"@endif>
-            <a href="">
+        <li @if ($pageSlug == 'tickets') class="active"@endif>
+            <a href="{{route('tickets')}}">
                 <i class='bx bxs-message-square-dots'></i>
                 <span class="link_name">Ticket</span>
             </a>
@@ -71,9 +68,9 @@
                 <i class='bx bxs-chevron-down arrow'></i>
             </div>
             <ul class="sub-menu">
-                <li @if ($pageSlug == 'userManagement') class="active " @endif>
+                <li @if ($pageSlug == 'userManagement') class="active" @endif>
                     <a href="{{route('user-management')}}">User</a></li>
-                <li @if ($pageSlug == 'withdrawManagement') class="active " @endif><a
+                <li @if ($pageSlug == 'withdrawManagement') class="active" @endif><a
                         href="{{route('withdraw-management')}}">Withdraw</a>
                 </li>
             </ul>

@@ -17,7 +17,8 @@ class UserRakePercentageView extends ModalComponent
         return view('livewire.user-rake-percentage', ['user' => $model]);
     }
 
-    public function mount(){
+    public function mount()
+    {
         $model = User::find($this->model['id']);
         $this->rakeBack = $model->rake_back_percentage;
         $this->affiliateRake = $model->affiliate_rake_percentage;

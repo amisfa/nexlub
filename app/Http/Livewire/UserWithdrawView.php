@@ -49,21 +49,18 @@ class UserWithdrawView extends TableView
         return $data;
     }
 
-    /** For actions by item */
-    protected function actionsByRow(): array
+    public static function getStatusColor($status)
     {
-        return [
-            new CancelWithdrawAction(),
-        ];
+        switch ($status) {
+            case 1:
+                return "text-warning";
+            case 2:
+                return "text-success";
+            case 3:
+            case 4:
+                return "text-danger";
+        }
     }
-
-    protected function filters()
-    {
-        return [
-            new WithdrawsStatusFilter(),
-        ];
-    }
-
 
     public function getWithdrawStatus($status)
     {
@@ -79,16 +76,18 @@ class UserWithdrawView extends TableView
         }
     }
 
-    public static function getStatusColor($status)
+    /** For actions by item */
+    protected function actionsByRow(): array
     {
-        switch ($status) {
-            case 1:
-                return "text-warning";
-            case 2:
-                return "text-success";
-            case 3:
-            case 4:
-                return "text-danger";
-        }
+        return [
+            new CancelWithdrawAction(),
+        ];
+    }
+
+    protected function filters()
+    {
+        return [
+            new WithdrawsStatusFilter(),
+        ];
     }
 }

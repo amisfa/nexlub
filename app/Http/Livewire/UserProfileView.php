@@ -19,6 +19,16 @@ class UserProfileView extends DetailView
         ];
     }
 
+    public static function isEmailVerified($verified_at): string
+    {
+        return $verified_at ? 'text-success' : 'text-danger';
+    }
+
+    public static function getVerifiedText($verified_at): string
+    {
+        return $verified_at ? "Verified" : "Not Verified";
+    }
+
     public function heading($model)
     {
         return [
@@ -30,15 +40,5 @@ class UserProfileView extends DetailView
     public function actions(): array
     {
         return [new UserEditAction()];
-    }
-
-    public static function isEmailVerified($verified_at): string
-    {
-        return $verified_at ? 'text-success' : 'text-danger';
-    }
-
-    public static function getVerifiedText($verified_at): string
-    {
-        return $verified_at ? "Verified" : "Not Verified";
     }
 }

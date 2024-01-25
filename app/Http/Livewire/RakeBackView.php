@@ -12,11 +12,6 @@ class RakeBackView extends Component
         return view('pages.rake-back');
     }
 
-    public function render(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
-    {
-        return view('livewire.user-rake-back', ['user' => auth()->user()]);
-    }
-
     public function claim(): void
     {
         $remainRakeBack = auth()->user()->remain_rake_back;
@@ -31,5 +26,10 @@ class RakeBackView extends Component
         ]);
         $this->emit('reloadBalance');
         $this->render();
+    }
+
+    public function render(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
+    {
+        return view('livewire.user-rake-back', ['user' => auth()->user()]);
     }
 }
