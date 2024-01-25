@@ -11,7 +11,6 @@ class RejectWithdrawView extends ModalComponent
 
     public function render()
     {
-        //define your query
         $model = UserWithdraw::find($this->model['id']);
         return view('livewire.reject-withdraw-view', ['withdraw' => $model]);
     }

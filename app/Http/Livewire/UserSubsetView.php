@@ -25,6 +25,9 @@ class UserSubsetView extends TableView
     {
         return [
             'UserName',
+            'Ramin Rake',
+            'Claimed Rake',
+            'total Rake',
             Header::title('SignUp at')->sortBy('created_at'),
         ];
     }
@@ -34,6 +37,9 @@ class UserSubsetView extends TableView
     {
         return [
             $model->username,
+            $model->remain_affiliate_rake,
+            $model->claimed_affiliate_rake,
+            $model->total_affiliate_rake,
             $model->created_at->diffforHumans()
         ];
     }

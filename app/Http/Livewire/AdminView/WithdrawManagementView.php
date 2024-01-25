@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\AdminView;
 
 use App\Actions\PayWithdrawAction;
 use App\Actions\RejectWithdrawAction;
