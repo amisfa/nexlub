@@ -1,0 +1,15 @@
+{
+    "name": "Nexlub",
+    "short_name": "Nexlub",
+    "icons": [
+        {
+            "src": "/android-chrome-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#0e1726",
+    "background_color": "#0e1726",
+    "start_url": "https://nexlub.com",
+    "display": "standalone"
+}

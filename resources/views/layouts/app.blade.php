@@ -7,7 +7,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Black Dashboard') }}</title>
+    <title>Nexlub</title>
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('black') }}/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('black') }}/img/favicon-32x32.png">
@@ -28,29 +28,28 @@
     @laravelViewsStyles
 </head>
 <body class="{{ $class ?? '' }}">
-    <div class="flex relative">
-        @include('layouts.navbars.navbar')
+<div class="flex relative">
+    @include('layouts.navbars.navbar')
 
-        @include('layouts.navbars.sidebar')
-        <div class="wrapper">
-            <div class="main-panel magicpattern">
-{{--                @include('layouts.navbars.navbar')--}}
-                <div class="content">
-                    @if(session('warning'))
-                        <div class="alert alert-primary" role="alert">{{session('warning')}}</div>
-                    @endif
-                    @if(session('success'))
-                        <div class="alert alert-success" role="alert">{{session('success')}}</div>
-                    @endif
-                    @if(session('error'))
-                        <div class="alert alert-danger" role="alert">{{session('error')}}</div>
-                    @endif
-                    @yield('content')
-                </div>
-                @include('layouts.footer')
+    @include('layouts.navbars.sidebar')
+    <div class="wrapper">
+        <div class="main-panel magicpattern">
+            <div class="content">
+                @if(session('warning'))
+                    <div class="alert alert-primary" role="alert">{{session('warning')}}</div>
+                @endif
+                @if(session('success'))
+                    <div class="alert alert-success" role="alert">{{session('success')}}</div>
+                @endif
+                @if(session('error'))
+                    <div class="alert alert-danger" role="alert">{{session('error')}}</div>
+                @endif
+                @yield('content')
             </div>
+            @include('layouts.footer')
         </div>
     </div>
+</div>
 <form id="logout-form" action="{{route('log-out')}}" method="POST" style="display: none;">
     @csrf
 </form>
@@ -69,6 +68,6 @@
 
 @stack('js')
 @laravelViewsScripts
-    @livewire('livewire-ui-modal')
+@livewire('livewire-ui-modal')
 </body>
 </html>
