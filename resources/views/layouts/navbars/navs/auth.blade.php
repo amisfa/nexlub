@@ -22,7 +22,9 @@
                 </symbol>
             </svg>
             <div class="navbar-wrapper">
-                <a class="navbar-brand" href="#">{{ $page ?? __('Nexlub') }}</a>
+                <a class="navbar-brand" href="{{route('dashboard')}}">
+                    <img src="{{asset('black').'/img/logo.png'}}"/>
+                </a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

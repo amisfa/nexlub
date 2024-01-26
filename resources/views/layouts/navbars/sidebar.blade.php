@@ -1,8 +1,4 @@
 <div class="sidebar close">
-    <div class="logo-details">
-        <i class='bx bx-star'></i>
-        <span class="logo_name">Nexclub</span>
-    </div>
     <ul class="nav-links">
         <li @if ($pageSlug == 'dashboard') class="active"@endif>
             <a href="{{route('dashboard')}}">

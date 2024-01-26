@@ -1,20 +1,15 @@
 <head>
     <base href="../../../"/>
-    <title>MMPK Power Web Site</title>
+    <title>Nexlub</title>
     <meta charset="utf-8"/>
-    <meta name="description"
-          content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free."/>
-    <meta name="keywords"
-          content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta property="og:locale" content="en_US"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:title"
-          content="Metronic - Bootstrap Admin Template, HTML, VueJS, React, Angular. Laravel, Asp.Net Core, Ruby on Rails, Spring Boot, Blazor, Django, Express.js, Node.js, Flask Admin Dashboard Theme & Template"/>
-    <meta property="og:url" content="https://keenthemes.com/metronic"/>
-    <meta property="og:site_name" content="Keenthemes | Metronic"/>
-    <link rel="canonical" href="https://preview.keenthemes.com/metronic8"/>
-    <link rel="shortcut icon" href="assets/media/logos/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('black') }}/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('black') }}/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('black') }}/img/favicon-16x16.png">
+    <link rel="manifest" href="{{ asset('black') }}/img/site.webmanifest">
+    <link rel="mask-icon" href="{{ asset('black') }}/img/safari-pinned-tab.svg" color="#22c9e9">
+    <meta name="msapplication-TileColor" content="#0e1726">
+    <meta name="theme-color" content="#0e1726">
     <link href="assets/auth/css/style.css" rel="stylesheet" type="text/css"/>
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>

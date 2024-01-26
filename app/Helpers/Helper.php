@@ -21,6 +21,77 @@ class Helper
         return $response;
     }
 
+
+    static function getEventLogs()
+    {
+        $params['Password'] = env('MAVENS_PW');
+        $params['JSON'] = 'Yes';
+        $params['Date'] = now()->format('Y-m-d');
+        $params['Command'] = 'LogsHandHistory';
+        $dailyHandHistories = [];
+        $response = Http::asForm()->post(env("MAVENS_URL") . '/api', $params)->body();
+        $tableNames = json_decode($response, true)['Name'];
+        foreach ($tableNames as $name) {
+            $params['Name'] = $name;
+            $response = json_decode(Http::asForm()->post(env("MAVENS_URL") . '/api', $params)->body());
+            if ($response->Result !== 'Error') {
+                $pseudoHand = [];
+                $pseudoData = [];
+                foreach ($response->Data as $key => $item) {
+                    if (str_contains($item, "Hand") && str_contains($item, now()->format('Y-m-d'))) {
+                        $pseudoHand['started_from'] = $key;
+                    };
+                    if (isset($pseudoHand['started_from'])) {
+                        foreach ($response->Data as $key2 => $item2) {
+                            if ($item2 === "" &&
+                                $pseudoHand['started_from'] < $key2
+                                && !isset($pseudoHand['ended_in'])
+                            ) {
+                                $pseudoHand['ended_in'] = $key2 - 1;
+                            };
+                        }
+                    }
+                    if (isset($pseudoHand['started_from']) && isset($pseudoHand['ended_in'])) {
+                        for ($x = $pseudoHand['started_from']; $x <= $pseudoHand['ended_in']; $x++) {
+                            $pseudoData[] = $response->Data[$x];
+                        }
+                        $pseudoHand = [];
+                    }
+                    if (count($pseudoData)) {
+                        if (str_contains($response->Data[0], 'Starting tournament')) {
+                            $pseudoData['is_tour'] = true;
+                        }
+                        $dailyHandHistories[$name][] = $pseudoData;
+                        $pseudoData = [];
+                    }
+                }
+            }
+        }
+        if (count($dailyHandHistories)) {
+            $dailyActivities = [];
+            foreach ($dailyHandHistories as $tableName => $tableData) {
+                if (!str_contains($tableName, "TRN")) {
+                    foreach ($tableData as $hand) {
+                        $summaryKey = array_search('** Summary **', $hand);
+                        $summary = array_slice($hand, $summaryKey);
+                        unset($summary[0]);
+                        unset($summary[1]);
+                        $userSeats = array_values($summary);
+                        foreach ($userSeats as $userSeat) {
+                            $matches = explode(":", $userSeat);
+                            $userName =  str_replace(' ', '', explode(' (', $matches[1])[0]);
+//                            $dailyActivities[$userName]
+                            dd($userName);
+                        }
+                        dd($dailyActivities);
+                    }
+                }
+            }
+        }
+        return $response;
+
+    }
+
     static function getAvailableCurrencies(): array
     {
         $response = Http::get('https://plisio.net/api/v1/currencies', ['api_key' => env('PILISIO_SECRET_KEY'), 'hidden' => true]);

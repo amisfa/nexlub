@@ -667,7 +667,7 @@ pre code {
 .container-fluid {
     width: 100%;
     padding-right: 0px;
-    padding-left: 15px;
+    padding-left: 23px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -14394,7 +14394,7 @@ Copyright (c) 2015 Daniel Eden
 
 .sidebar .nav-links {
     height: 100%;
-    padding: 0px 0 150px 0;
+    padding: 80px 0 150px 0;
     overflow: auto;
 }
 
