@@ -22,11 +22,10 @@ class Helper
     }
 
 
-    static function getHistoryLog()
+    static function getHistoryLog(): array
     {
         $params['Password'] = env('MAVENS_PW');
         $params['JSON'] = 'Yes';
-        $params['Date'] = now()->format('Y-m-d');
         $params['Command'] = 'LogsHandHistory';
         $dailyTableHistories = [];
         $dailyRingGameActivities = [];
@@ -37,6 +36,7 @@ class Helper
             $tableNames = $response['Name'];
             foreach ($tableNames as $name) {
                 $params['Name'] = $name;
+                $params['Date'] = now()->format('Y-m-d');
                 $response = json_decode(Http::asForm()->post(env("MAVENS_URL") . '/api', $params)->body());
                 if ($response->Result !== 'Error') {
                     $pseudoHand = [];
@@ -84,14 +84,50 @@ class Helper
                                     $matches = explode(":", $userSeat);
                                     $userName = str_replace(' ', '', explode(' (', $matches[1])[0]);
                                     if (!isset($dailyRingGameActivities[$userName])) $dailyRingGameActivities[$userName] = [
-                                        'daily_balance' => 0,
+                                        'total_net' => 0,
                                         'hand_count' => 0,
+                                        'win_count' => 0,
+                                        'lose_count' => 0,
+                                        'lose_amount' => 0,
+                                        'win_amount' => 0,
+                                        'folded_on_preflop_count' => 0,
+                                        'won_without_showdown_count' => 0,
+                                        'showdown_count' => 0,
+                                        'folded_on_river_count' => 0,
+                                        'folded_on_flop_count' => 0,
+                                        'folded_on_turn_count' => 0,
                                         'jack_pot_amount' => 0,
                                         'bad_beat_amount' => 0,
                                     ];
                                     preg_match("/(?<=\()(.+)(?=\))/is", $userSeat, $matches);
                                     $balance = $matches[0];
-                                    $dailyRingGameActivities[$userName]['daily_balance'] += floatval($balance);
+                                    if (floatval($balance) < 0) {
+                                        $dailyRingGameActivities[$userName]['lose_count'] += 1;
+                                        $dailyRingGameActivities[$userName]['lose_amount'] += abs(floatval($balance));
+                                    }
+                                    if (floatval($balance) > 0) {
+                                        $dailyRingGameActivities[$userName]['win_count'] += 1;
+                                        $dailyRingGameActivities[$userName]['win_amount'] += abs(floatval($balance));
+                                    }
+                                    if (str_contains($userSeat, 'Folded on PreFlop')) {
+                                        $dailyRingGameActivities[$userName]['folded_on_preflop_count'] += 1;
+                                    }
+                                    if (str_contains($userSeat, 'Won without Showdown')) {
+                                        $dailyRingGameActivities[$userName]['won_without_showdown_count'] += 1;
+                                    }
+                                    if (str_contains($userSeat, 'Showdown with') || !str_contains($userSeat, 'Folded')) {
+                                        $dailyRingGameActivities[$userName]['showdown_count'] += 1;
+                                    }
+                                    if (str_contains($userSeat, 'Folded on River')) {
+                                        $dailyRingGameActivities[$userName]['folded_on_river_count'] += 1;
+                                    }
+                                    if (str_contains($userSeat, 'Folded on Flop')) {
+                                        $dailyRingGameActivities[$userName]['folded_on_flop_count'] += 1;
+                                    }
+                                    if (str_contains($userSeat, 'Folded on Turn')) {
+                                        $dailyRingGameActivities[$userName]['folded_on_turn_count'] += 1;
+                                    }
+                                    $dailyRingGameActivities[$userName]['total_net'] += floatval($balance);
                                     $dailyRingGameActivities[$userName]['hand_count'] += 1;
                                     if (str_contains($userSeat, 'Showdown with a Royal Flush')) {
                                         $badBeatWinners = array_filter($userSeats, function ($x) {

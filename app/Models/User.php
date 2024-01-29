@@ -166,4 +166,14 @@ class User extends Authenticatable
         }
         return $rake;
     }
+
+    public function ringGameStats(): HasMany
+    {
+        return $this->hasMany(UserRingGameStat::class, 'user_id');
+    }
+
+    public function sngStats(): HasMany
+    {
+        return $this->hasMany(UserSNGStat::class, 'user_id');
+    }
 }
