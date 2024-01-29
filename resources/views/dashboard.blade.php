@@ -1,20 +1,21 @@
 @extends('layouts.app', ['pageSlug' => 'dashboard'])
 
 @section('content')
-    <div class="flex justify-center items-center sm:flex-row flex-col w-full">
-        @if($gameStrategy['data'] && count($gameStrategy['data']))
+    <div class="flex justify-center items-center sm:flex-row flex-col w-full flex-wrap">
+        @if($cashGameWinLoseStates['data'] && count($cashGameWinLoseStates['data']))
             <div>
-                <canvas id="gameStrategy"></canvas>
+                <canvas id="cashGameWinLoseStates"></canvas>
             </div>
         @endif
+
         @if($sngStats['data'] && count($sngStats['data']))
             <div>
                 <canvas id="sngStats"></canvas>
             </div>
         @endif
-        @if($cashGameWinLoseStates['data'] && count($cashGameWinLoseStates['data']))
+        @if($gameStrategy['data'] && count($gameStrategy['data']))
             <div>
-                <canvas id="cashGameWinLoseStates"></canvas>
+                <canvas id="gameStrategy"></canvas>
             </div>
         @endif
     </div>
@@ -32,7 +33,7 @@
             options: {
                 plugins: {
                     legend: {
-                        position: 'right',
+                        position: 'bottom',
                         maxWidth: '200',
                     },
                     title: {
@@ -67,7 +68,7 @@
             },
         });
         @endif
-        @if($sngStats['data'] && count($sngStats['data']))
+            @if($sngStats['data'] && count($sngStats['data']))
         if (sngStats) sngStats.destroy();
         var ctx = document.getElementById('sngStats').getContext('2d');
         sngStats = new Chart(ctx, {
@@ -76,7 +77,7 @@
                 responsive: true,
                 plugins: {
                     legend: {
-                        position: 'right',
+                        position: 'bottom',
                         maxWidth: '400',
                     },
                     title: {
@@ -103,7 +104,7 @@
             },
         });
         @endif
-        @if($cashGameWinLoseStates['data'] && count($cashGameWinLoseStates['data']))
+            @if($cashGameWinLoseStates['data'] && count($cashGameWinLoseStates['data']))
         if (cashGameWinLoseStates) cashGameWinLoseStates.destroy();
         var ctx = document.getElementById('cashGameWinLoseStates').getContext('2d');
         cashGameWinLoseStates = new Chart(ctx, {
@@ -112,7 +113,7 @@
                 responsive: true,
                 plugins: {
                     legend: {
-                        position: 'right',
+                        position: 'bottom',
                         maxWidth: '400',
                     },
                     title: {
