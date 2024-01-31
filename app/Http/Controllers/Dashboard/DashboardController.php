@@ -54,8 +54,8 @@ class DashboardController extends Controller
         }
         if ($sngStatsData) {
             $sngTotal['data'] = [
-                $ringGameStatsData->win_count,
-                $ringGameStatsData->lose_count,
+                $sngStatsData->win_count,
+                $sngStatsData->lose_count,
             ];
         }
         return view('dashboard', [
