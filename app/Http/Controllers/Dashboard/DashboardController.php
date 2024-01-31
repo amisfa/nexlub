@@ -30,8 +30,8 @@ class DashboardController extends Controller
         ];
         $cashGameWinLoseStates = [
             'labels' => [
-                'Win Amount',
-                'Lose Amount',
+                'Win Count',
+                'Lose Count',
             ],
             'data' => []
         ];
@@ -48,8 +48,8 @@ class DashboardController extends Controller
 
             ];
             $cashGameWinLoseStates['data'] = [
-                $ringGameStatsData->total_lose_amount,
-                $ringGameStatsData->total_win_amount,
+                $ringGameStatsData->win_count,
+                $ringGameStatsData->lose_count,
             ];
         }
         if ($sngStatsData) {
@@ -62,7 +62,6 @@ class DashboardController extends Controller
             'gameStrategy' => $gameStrategy,
             'sngStats' => $sngTotal,
             'cashGameWinLoseStates' => $cashGameWinLoseStates,
-
         ]);
     }
 }
