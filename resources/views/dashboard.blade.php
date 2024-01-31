@@ -34,12 +34,12 @@
                 plugins: {
                     legend: {
                         position: 'bottom',
-                        maxWidth: '200',
+                        maxWidth: '400',
                     },
                     title: {
                         display: true,
-                        text: 'Played hands stats',
-                        position: 'bottom',
+                        text: 'Played Hands stats',
+                        position: 'top',
                     }
                 },
             },
@@ -48,22 +48,22 @@
                 datasets: [{
                     data: @json($gameStrategy['data']),
                     backgroundColor: [
-                        'rgba(82, 215, 38, 0.7)',
-                        'rgba(255, 236, 0, 0.7)',
-                        'rgba(255, 115, 0, 0.7)',
-                        'rgba(255, 0, 0, 0.7)',
-                        'rgba(0, 126, 214, 0.7)',
-                        'rgba(124, 221, 221, 0.7)',
+                        'rgb(129, 13, 207, 0.1)',
+                        'rgba(239, 43, 189, 0.1)',
+                        'rgba(251, 171, 84, 0.1)',
+                        'rgba(242, 216, 67, 0.1)',
+                        'rgba(27, 196, 68, 0.1)',
+                        'rgba(15, 150, 207, 0.1)',
                     ],
                     borderColor: [
-                        'rgba(82, 215, 38, 1)',
-                        'rgba(255, 236, 0, 1)',
-                        'rgba(255, 0, 0, 1)',
-                        'rgba(255, 115, 0, 1)',
-                        'rgba(0, 126, 214, 1)',
-                        'rgba(124, 221, 221, 1)',
+                        'rgb(129, 13, 207)',
+                        'rgba(239, 43, 189)',
+                        'rgba(251, 171, 84)',
+                        'rgba(242, 216, 67)',
+                        'rgba(27, 196, 68)',
+                        'rgba(15, 150, 207)',
                     ],
-                    borderWidth: 1
+                    borderWidth: 2
                 }]
             },
         });
@@ -83,7 +83,7 @@
                     title: {
                         display: true,
                         text: 'Sit and Go Wins/Losses',
-                        position: 'bottom',
+                        position: 'top',
                     }
                 },
             },
@@ -92,14 +92,14 @@
                 datasets: [{
                     data: @json($sngStats['data']),
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.7)',
-                        'rgba(54, 162, 235, 0.7)',
+                        'rgb(0,255,32, 0.1)',
+                        'rgb(255,0,0, 0.1)',
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
+                        'rgb(0,248,255)',
+                        'rgb(200,0,255)',
                     ],
-                    borderWidth: 1
+                    borderWidth: 2
                 }]
             },
         });
@@ -119,7 +119,7 @@
                     title: {
                         display: true,
                         text: 'Cash Games Wins/Losses',
-                        position: 'bottom',
+                        position: 'top',
                     }
                 },
             },
@@ -128,14 +128,14 @@
                 datasets: [{
                     data: @json($cashGameWinLoseStates['data']),
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.7)',
-                        'rgba(54, 162, 235, 0.7)',
+                        'rgb(0,255,32, 0.1)',
+                        'rgb(255,0,0, 0.1)',
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
+                        'rgb(0,248,255)',
+                        'rgb(200,0,255)',
                     ],
-                    borderWidth: 1
+                    borderWidth: 2
                 }]
             },
         });
