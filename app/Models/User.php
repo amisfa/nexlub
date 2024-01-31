@@ -112,7 +112,7 @@ class User extends Authenticatable
         $remainRake = 0;
         if ($this->userRake()->exists()) {
             $query = $this->userRake()->first();
-            $remainRake = number_format($query->user_rake_back) - number_format($query->claimed_rake_back);
+            $remainRake = floatval($query->user_rake_back) - floatval($query->claimed_rake_back);
         }
         return $remainRake;
     }
@@ -122,7 +122,7 @@ class User extends Authenticatable
         $claimedRake = 0;
         if ($this->userRake()->exists()) {
             $query = $this->userRake()->first();
-            $claimedRake = number_format($query->claimed_rake_back);
+            $claimedRake = floatval($query->claimed_rake_back);
         }
         return $claimedRake;
     }
@@ -132,7 +132,7 @@ class User extends Authenticatable
         $rake = 0;
         if ($this->userRake()->exists()) {
             $query = $this->userRake()->first();
-            $rake = number_format($query->user_rake_back);
+            $rake = floatval($query->user_rake_back);
         }
         return $rake;
     }

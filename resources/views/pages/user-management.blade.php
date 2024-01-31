@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card p-3">
                     <div class="card-header">User Management</div>
-                    <livewire:user-management-view/>
+                    <livewire:admin-view.user-management-view/>
                 </div>
             </div>
         </div>

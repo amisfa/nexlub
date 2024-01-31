@@ -19,7 +19,7 @@ class UserPercentageAction extends Action
      */
     public $icon = "repeat";
 
-    public string $modalView = "user-rake-percentage-view";
+    public string $modalView = "admin-view.user-rake-percentage-view";
 
     /**
      * Execute the action when the user clicked on the button

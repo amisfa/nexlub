@@ -37,7 +37,7 @@
         @include('layouts.navbars.sidebar')
         <div class="wrapper">
             <div class="main-panel magic-pattern">
-                <div @if ($pageSlug == 'homepage') class="content" @else class="home-page-content" @endif>
+                <div @if ($pageSlug == 'homePage')  class="home-page-content" @else class="content" @endif>
                     @if(session('warning'))
                         <div class="alert alert-primary" role="alert">{{session('warning')}}</div>
                     @endif
