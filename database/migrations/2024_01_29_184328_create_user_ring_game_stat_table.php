@@ -17,8 +17,6 @@ return new class extends Migration {
             $table->unsignedBigInteger('hand_count');
             $table->unsignedBigInteger('win_count');
             $table->unsignedBigInteger('lose_count');
-            $table->unsignedDecimal('total_lose_amount', 18)->default(0);
-            $table->unsignedDecimal('total_win_amount', 18)->default(0);
             $table->unsignedBigInteger('folded_on_preflop_count');
             $table->unsignedBigInteger('won_without_showdown_count');
             $table->unsignedBigInteger('showdown_count');

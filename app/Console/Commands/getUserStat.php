@@ -58,8 +58,6 @@ class getUserStat extends Command
                                     "hand_count" => $currentCashGameStat->hand_count + $stat['hand_count'],
                                     "win_count" => $currentCashGameStat->win_count + $stat['win_count'],
                                     "lose_count" => $currentCashGameStat->lose_count + $stat['lose_count'],
-                                    "total_lose_amount" => $currentCashGameStat->total_lose_amount + $stat['lose_amount'],
-                                    "total_win_amount" => $currentCashGameStat->total_win_amount + $stat['win_amount'],
                                     "folded_on_preflop_count" => $currentCashGameStat->folded_on_preflop_count + $stat['folded_on_preflop_count'],
                                     "won_without_showdown_count" => $currentCashGameStat->won_without_showdown_count + $stat['won_without_showdown_count'],
                                     "showdown_count" => $currentCashGameStat->showdown_count + $stat['showdown_count'],

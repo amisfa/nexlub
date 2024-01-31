@@ -17,8 +17,6 @@ class UserRingGameStat extends Model
         "hand_count",
         "win_count",
         "lose_count",
-        "total_lose_amount",
-        "total_win_amount",
         "folded_on_preflop_count",
         "won_without_showdown_count",
         "showdown_count",

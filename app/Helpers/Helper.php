@@ -88,8 +88,6 @@ class Helper
                                         'hand_count' => 0,
                                         'win_count' => 0,
                                         'lose_count' => 0,
-                                        'lose_amount' => 0,
-                                        'win_amount' => 0,
                                         'folded_on_preflop_count' => 0,
                                         'won_without_showdown_count' => 0,
                                         'showdown_count' => 0,
@@ -103,11 +101,9 @@ class Helper
                                     $balance = $matches[0];
                                     if (floatval($balance) < 0) {
                                         $dailyRingGameActivities[$userName]['lose_count'] += 1;
-                                        $dailyRingGameActivities[$userName]['lose_amount'] += abs(floatval($balance));
                                     }
                                     if (floatval($balance) > 0) {
                                         $dailyRingGameActivities[$userName]['win_count'] += 1;
-                                        $dailyRingGameActivities[$userName]['win_amount'] += abs(floatval($balance));
                                     }
                                     if (str_contains($userSeat, 'Folded on PreFlop')) {
                                         $dailyRingGameActivities[$userName]['folded_on_preflop_count'] += 1;

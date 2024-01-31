@@ -8,7 +8,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Nexlub</title>
-    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('black') }}/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('black') }}/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('black') }}/img/favicon-16x16.png">
@@ -16,55 +15,66 @@
     <link rel="mask-icon" href="{{ asset('black') }}/img/safari-pinned-tab.svg" color="#22c9e9">
     <meta name="msapplication-TileColor" content="#0e1726">
     <meta name="theme-color" content="#0e1726">
+    @auth()
+        <!-- CSS -->
+        <link href="{{ asset('black') }}/css/black-dashboard.css" rel="stylesheet"/>
+        <link href="{{ asset('black') }}/css/theme.css" rel="stylesheet"/>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    @endauth
+    @guest()
+        <link href="{{ asset('black') }}/css/guest.css" rel="stylesheet"/>
+    @endguest
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-    <!-- Icons -->
-    <link href="{{ asset('black') }}/css/nucleo-icons.css" rel="stylesheet"/>
-    <!-- CSS -->
-    <link href="{{ asset('black') }}/css/black-dashboard.css?v=1.0.0" rel="stylesheet"/>
-    <link href="{{ asset('black') }}/css/theme.css" rel="stylesheet"/>
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     @laravelViewsStyles
 </head>
 <body class="{{ $class ?? '' }}">
-<div class="flex relative">
-    @include('layouts.navbars.navbar')
-
-    @include('layouts.navbars.sidebar')
+@auth()
+    <div class="flex relative">
+        @include('layouts.navbars.navs.auth')
+        @include('layouts.navbars.sidebar')
+        <div class="wrapper">
+            <div class="main-panel magic-pattern">
+                <div @if ($pageSlug == 'homepage') class="content" @else class="home-page-content" @endif>
+                    @if(session('warning'))
+                        <div class="alert alert-primary" role="alert">{{session('warning')}}</div>
+                    @endif
+                    @if(session('success'))
+                        <div class="alert alert-success" role="alert">{{session('success')}}</div>
+                    @endif
+                    @if(session('error'))
+                        <div class="alert alert-danger" role="alert">{{session('error')}}</div>
+                    @endif
+                    @yield('content')
+                </div>
+                @include('layouts.footer')
+            </div>
+        </div>
+    </div>
+@endauth
+@guest()
+    @include('layouts.navbars.navs.guest')
     <div class="wrapper">
-        <div class="main-panel magicpattern">
+        <div class="main-panel magic-pattern">
             <div class="content">
-                @if(session('warning'))
-                    <div class="alert alert-primary" role="alert">{{session('warning')}}</div>
-                @endif
-                @if(session('success'))
-                    <div class="alert alert-success" role="alert">{{session('success')}}</div>
-                @endif
-                @if(session('error'))
-                    <div class="alert alert-danger" role="alert">{{session('error')}}</div>
-                @endif
                 @yield('content')
             </div>
             @include('layouts.footer')
         </div>
     </div>
-</div>
-<form id="logout-form" action="{{route('log-out')}}" method="POST" style="display: none;">
-    @csrf
-</form>
+@endguest
 
+@auth()
+    <form id="logout-form" action="{{route('log-out')}}" method="POST" style="display: none;">
+        @csrf
+    </form>
+@endauth
 <script src="{{ asset('black') }}/js/core/jquery.min.js"></script>
 <script src="{{ asset('black') }}/js/core/popper.min.js"></script>
 <script src="{{ asset('black') }}/js/core/bootstrap.min.js"></script>
 <script src="{{ asset('black') }}/js/plugins/bootstrap-notify.js"></script>
-{{--    <!-- Alpine v3 -->--}}
-{{--    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>--}}
-
-{{--    <!-- Focus plugin -->--}}
-{{--    <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>--}}
-
 @stack('js')
 
 @stack('js')

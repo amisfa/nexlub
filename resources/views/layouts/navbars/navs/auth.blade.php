@@ -22,7 +22,7 @@
                 </symbol>
             </svg>
             <div class="navbar-wrapper">
-                <a class="navbar-brand" href="{{route('dashboard')}}">
+                <a class="navbar-brand" href="{{route('home-page')}}">
                     <img src="{{asset('black').'/img/logo.png'}}"/>
                 </a>
             </div>

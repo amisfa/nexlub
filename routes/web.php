@@ -31,6 +31,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get("/", function () {return view('home-page');})->name('home-page');
 Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/', [DashboardController::class, 'create'])->name('dashboard');
     Route::get('/profile', [ProfileController::class, 'create'])->name('profile-view');
