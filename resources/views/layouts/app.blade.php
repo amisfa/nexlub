@@ -49,6 +49,7 @@
                     @endif
                     @yield('content')
                 </div>
+
                 @include('layouts.footer')
             </div>
         </div>
