@@ -20,6 +20,7 @@ jobs:
         run: php artisan optimize:clear
 #      - name: Directory Permissions
 #        run: chmod -R 777 storage bootstrap/cache
+
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
         with:
