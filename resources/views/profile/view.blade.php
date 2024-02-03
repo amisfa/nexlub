@@ -40,7 +40,7 @@
         function enableButton(clickedTime) {
             var currentTime = new Date().getTime()
             var diffTime = clickedTime ? humanDiff(clickedTime, currentTime) : null
-            let limitTime = "00:30";
+            let limitTime = "01:00";
             if (diffTime) {
                 var diffLocalTime = new Date();
                 diffLocalTime.setMinutes(diffTime.split(":")[0], diffTime.split(":")[1]);
