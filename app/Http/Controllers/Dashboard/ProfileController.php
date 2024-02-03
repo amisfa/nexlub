@@ -70,7 +70,6 @@ class ProfileController extends Controller
 
     public function resendEmail(User $user): void
     {
-        dd($user);
         Helper::sendValidationEmail($user);
     }
 }
