@@ -84,35 +84,6 @@ h3 {
     position: relative;
     z-index: 1;
 }
-
-.coin-link:hover {
-    fill: white
-}
-
-.coin-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 6rem;
-    height: 6rem;
-    background: #22C9E9;
-    border-radius: 50%;
-    z-index: -1;
-    transform: scale(0);
-    transition: 0.3s cubic-bezier(.95, .32, .37, 1.21);
-}
-
-.coin-link:hover::before {
-    transform: scale(1);
-}
-
-.coin-item div:hover:before {
-    background: #1B92AD;
-}
-
 /*header*/
 .menu {
     display: flex;
