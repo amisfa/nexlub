@@ -1,4 +1,7 @@
 @component('mail::message')
+<a style="width: 100%;margin:auto" href="{{route('home-page')}}">
+<img width="100px" src="{{env('APP_URL') . asset('black').'/img/logo-circle.png'}}"/>
+</a>
 Dear {{ $user->username }},
 
 Please verify your email with bellow link:

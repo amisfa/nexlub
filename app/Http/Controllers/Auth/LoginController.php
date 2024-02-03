@@ -29,7 +29,7 @@ class LoginController extends Controller
         $validator = Validator::make($request->all(), [
             'username' => 'required',
             'password' => 'required|min:8',
-//            'g-recaptcha-response' => 'required|recaptcha'
+            'g-recaptcha-response' => 'required|recaptcha'
         ], $messages);
 
         if ($validator->fails()) {
