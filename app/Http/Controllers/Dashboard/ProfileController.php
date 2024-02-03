@@ -31,6 +31,7 @@ class ProfileController extends Controller
         $user->update($request->all());
         if ($user->wasChanged('email')) {
             $user->email_verified_at = null;
+            $user->save();
             Helper::sendValidationEmail($user);
         }
         if ($user->wasChanged()) {
