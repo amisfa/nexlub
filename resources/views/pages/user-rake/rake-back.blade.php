@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Rake Back</div>
-                    <livewire:rake-back-view/>
+                    <livewire:user-rake.rake-back-view/>
                 </div>
             </div>
         </div>

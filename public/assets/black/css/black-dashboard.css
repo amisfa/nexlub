@@ -437,7 +437,7 @@ h6,
     font-family: inherit;
     font-weight: 400;
     line-height: 1.2;
-    color: #32325d;
+    color: #22C7E7;
 }
 
 h1,
@@ -3254,10 +3254,10 @@ input[type="button"].btn-block {
     padding: 0.5rem 0;
     margin: 0.125rem 0 0;
     font-size: 0.875rem;
-    color: #525f7f;
+    color: #22C7E7;
     text-align: left;
     list-style: none;
-    background-color: #ffffff;
+    background-color: #181818;
     background-clip: padding-box;
     border: 0 solid rgba(34, 42, 66, 0.15);
     border-radius: 0.1428rem;
@@ -3375,7 +3375,7 @@ input[type="button"].btn-block {
     height: 0;
     margin: 0.5rem 0;
     overflow: hidden;
-    border-top: 1px solid #e9ecef;
+    border-top: 1px solid #1e1e1e;
 }
 
 .dropdown-item {
@@ -4625,7 +4625,7 @@ input[type="button"].btn-block {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #1e1e2f;
+    background-color: #181818;
     background-clip: border-box;
     border: 0.0625rem solid rgba(34, 42, 66, 0.05);
     border-radius: 0.2857rem;
@@ -4675,7 +4675,7 @@ input[type="button"].btn-block {
 .card-header {
     padding: 1.25rem 1.5rem;
     margin-bottom: 0;
-    background-color: #1e1e2f;
+    background-color: #181818;
     border-bottom: 0.0625rem solid rgba(34, 42, 66, 0.05);
 }
 
@@ -4689,7 +4689,6 @@ input[type="button"].btn-block {
 
 .card-footer {
     padding: 1.25rem 1.5rem;
-    background-color: #1e1e2f;
     border-top: 0.0625rem solid rgba(34, 42, 66, 0.05);
 }
 
@@ -9520,17 +9519,10 @@ a.text-darker:focus {
     margin: 4px 1px;
     border-radius: 0.4285rem;
     cursor: pointer;
-    background: #344675;
-    background-image: -webkit-linear-gradient(to bottom left, #344675, #263148, #344675);
-    background-image: -o-linear-gradient(to bottom left, #344675, #263148, #344675);
-    background-image: -moz-linear-gradient(to bottom left, #344675, #263148, #344675);
-    background-image: linear-gradient(to bottom left, #344675, #263148, #344675);
-    background-size: 210% 210%;
-    background-position: top right;
-    background-color: #344675;
+    background-color: #22C7E7;
     transition: all 0.15s ease;
     box-shadow: none;
-    color: #ffffff;
+    color: #000000;
 }
 
 .btn.animation-on-hover:hover,
@@ -11017,7 +11009,7 @@ fieldset[disabled] .btn-link.active {
 }
 
 .dropdown-menu .dropdown-divider {
-    background-color: rgba(222, 222, 222, 0.5);
+    background-color: rgba(58, 58, 58, 0.35);
 }
 
 .dropdown-menu .dropdown-header:not([href]):not([tabindex]) {
@@ -11611,7 +11603,7 @@ img {
 }
 
 .navbar.navbar-desktop {
-    background: #303030;
+    background: #181818;
 }
 
 .navbar.bg-navbar .navbar-nav .search-bar.input-group i {
@@ -11834,7 +11826,7 @@ img {
         width: 22px;
         height: 1px;
         border-radius: 1px;
-        background: #ffffff;
+        background: #22C7E7;
     }
 
     .navbar .navbar-toggler-bar.navbar-kebab {
@@ -12230,7 +12222,7 @@ textarea {
 .card h5,
 .card h6,
 .card p {
-    color: rgba(255, 255, 255, 0.8);
+    color: #22C7E7;
 }
 
 h1,
@@ -12240,7 +12232,7 @@ h4,
 h5,
 h6 {
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.8);
+    color: #22C7E7;
 }
 
 a {
@@ -13087,7 +13079,6 @@ table.tablesorter thead tr .headerSortDown {
     background-size: cover;
     background-position: center center;
     background-repeat: repeat;
-    background-color: #0c2646;
 }
 
 
@@ -14194,7 +14185,7 @@ Copyright (c) 2015 Daniel Eden
     width: 47%;
     height: 2px;
     border-radius: 1px;
-    background: #fff;
+    background: #209DB5;
     position: absolute;
     -webkit-backface-visibility: hidden;
     transition: transform 0.5s ease, border-radius 0.3s ease, background 0.4s ease;
@@ -14215,7 +14206,7 @@ Copyright (c) 2015 Daniel Eden
 .toggle input + div svg {
     display: block;
     fill: none;
-    stroke: #fff;
+    stroke: #21B9D6;
     stroke-width: 2px;
     width: 44px;
     height: 44px;
@@ -14241,7 +14232,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .toggle input:checked + div div span:before, .toggle input:checked + div div span:after {
-    background: #fff;
+    background: #21B9D6;
 }
 
 .toggle input:checked + div div span:first-child:before {
@@ -14264,7 +14255,7 @@ Copyright (c) 2015 Daniel Eden
     stroke-dashoffset: 62;
     stroke-dasharray: 0 82.801 62 82.801;
     transform: rotate(90deg);
-    stroke: #fff;
+    stroke: #21BEDC;
 }
 
 .toggle input:checked + div svg:nth-child(3) {
@@ -14351,7 +14342,7 @@ Copyright (c) 2015 Daniel Eden
     left: 0;
     height: 100%;
     width: 260px;
-    background: #0E1726;
+    background: #181818;
     z-index: 100;
     transition: all 0.5s ease;
 }
@@ -14392,7 +14383,7 @@ Copyright (c) 2015 Daniel Eden
 
 .sidebar .nav-links {
     height: 100%;
-    padding: 80px 0 150px 0;
+    padding: 78px 0 150px 0;
     overflow: auto;
 }
 
@@ -14411,9 +14402,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .sidebar .nav-links li:hover, .sidebar .nav-links li.active {
-    background: #1d1b31;
-    transition: text-shadow .2s;
-    text-shadow: 0px 0px 5px #e2ffff;
+    background: #222222;
 }
 
 .sidebar .nav-links li .icon-link {
@@ -14466,7 +14455,7 @@ Copyright (c) 2015 Daniel Eden
 .sidebar .nav-links li .sub-menu {
     padding: 10px 6px 10px 80px;
     margin-top: -10px;
-    background: #1d1b31;
+    background: #222222;
     display: none;
 }
 

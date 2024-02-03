@@ -16,6 +16,6 @@
             <input type="number" class="form-control"
                    wire:model="affiliateRake">
         </div>
-        <button id="submit" type="submit" class="btn btn-primary">Save</button>
+        <button id="submit" type="submit" class="btn">Save</button>
     </form>
 </div>

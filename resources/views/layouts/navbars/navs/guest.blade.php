@@ -7,7 +7,7 @@
             <div class="flex items-center hidden sm:inline-flex">
                 <a href="{{route('login')}}" class="hover:text-white px-2">Login</a>
                 <a href="{{route('signup')}}" class="hover:text-white px-2">Register</a>
-                <a href="#" class="text-gray-500 hover:text-white text-sm px-2">
+                <a href="#" class="hover:text-white text-sm px-2">
                     <i class='bx bxl-telegram'></i>
                 </a>
             </div>

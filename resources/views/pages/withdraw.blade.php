@@ -35,7 +35,7 @@
                                 </div>
                             </div>
                             <div class="form-group row justify-end">
-                                <button type="submit" class="btn btn-primary">Withdraw</button>
+                                <button type="submit" class="btn ">Withdraw</button>
                             </div>
                         </div>
                     </form>

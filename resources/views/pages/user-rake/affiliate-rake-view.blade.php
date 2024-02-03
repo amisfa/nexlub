@@ -12,7 +12,7 @@
             </div>
         </div>
         @if(auth()->user()->referrals()->exists())
-            <button class="btn btn-fill btn-primary mb-0 sm:ml-2"
+            <button class="btn btn-fill mb-0 sm:ml-2"
                     wire:click="$emit('claimAffiliateRakes')">{{ __('Claim Rakes') }}</button>
         @endif
     </div>

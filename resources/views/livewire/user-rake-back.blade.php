@@ -17,7 +17,7 @@
             </div>
             <br/>
             <div class="form-group row justify-end">
-                <button type="submit" class="btn btn-primary" wire:click.prevent="claim">Claim</button>
+                <button type="submit" class="btn" wire:click.prevent="claim">Claim</button>
             </div>
         @else
             <div class="text-danger">You Need to Play More!</div>

@@ -19,7 +19,7 @@
                                 <div id="estimated-price" class="text-primary"></div>
                                 <div class="max-column text-success"></div>
                             </div>
-                            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                            <button id="submit" type="submit" class="btn">Submit</button>
                         </form>
                     </div>
                 </div>
