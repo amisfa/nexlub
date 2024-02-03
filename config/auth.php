@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'nexlub',
         'passwords' => 'users',
     ],
 
@@ -39,6 +39,10 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+        'nexlub' => [
+            'driver' => 'sanctum',
+            'provider' => 'users'
         ],
         'api' => [
             'driver' => 'passport',
