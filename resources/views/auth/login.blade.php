@@ -53,6 +53,9 @@
 </section>
 <div class="auth-page">
     <div class="content">
+        <a href="{{route('home-page')}}">
+            <img width="100px" src="{{asset('black').'/img/logo-circle.png'}}"/>
+        </a>
         <h2>Sign In</h2>
         <form class="form" name="myForm" action="{{ route('login-form') }}" method="post">
             @csrf

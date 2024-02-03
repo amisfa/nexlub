@@ -52,11 +52,13 @@
     <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
 </section>
 <div class="auth-page">
-    <div class="content">
+    <div class="content" style="gap: 15px!important">
+        <a href="{{route('home-page')}}">
+            <img width="100px" src="{{asset('black').'/img/logo-circle.png'}}"/>
+        </a>
         <form class="form" action="{{ route('signup-form') }}" method="post"
               onsubmit="return registerValidation();">
             @csrf
-            <h2 style="text-align: center">Register</h2>
             @if(count($errors->all()))
                 @foreach($errors->all() as $error)
                     <div class="notification-container">

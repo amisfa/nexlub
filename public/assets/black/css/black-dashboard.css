@@ -121,7 +121,7 @@ body {
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.5) !important;
+    color: #22C7E7 !important;
     text-align: left;
     background-color: #1e1e2f;
 }
@@ -11611,7 +11611,7 @@ img {
 }
 
 .navbar.navbar-desktop {
-    background: #0E1726;
+    background: #303030;
 }
 
 .navbar.bg-navbar .navbar-nav .search-bar.input-group i {
@@ -13073,7 +13073,7 @@ table.tablesorter thead tr .headerSortDown {
     width: 100%;
     min-height: 100vh;
     /*background: linear-gradient(#1e1e2f, #1e1e24);*/
-    background: #1e1e2f;
+    background: #202020;
     -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
     -moz-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
     -o-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
