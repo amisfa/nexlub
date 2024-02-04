@@ -195,12 +195,6 @@ h3 {
 }
 
 /*faq*/
-.faq-container {
-    margin: 0 auto;
-    padding: 4rem;
-    width: 48rem;
-}
-
 .accordion .accordion-item {
     border-bottom: 1px solid #676767;
 }
@@ -295,7 +289,7 @@ h3 {
     will-change: opacity, max-height;
 }
 
-.accordion .accordion-content p {
+.accordion .accordion-content div {
     font-size: 1rem;
     font-weight: 300;
     margin: 2em 0;
