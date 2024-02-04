@@ -14642,12 +14642,13 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .coin-link {
-    display: inline-flex;
+    display: flex;
     text-decoration: none;
-    fill: #535c68;
     width: 6rem;
     height: 6rem;
     transition: .5s linear;
     position: relative;
     z-index: 1;
+    align-items: flex-start;
+    justify-content: center;
 }
