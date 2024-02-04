@@ -35,8 +35,9 @@ class LoginController extends Controller
             return redirect('auth/login')->withErrors($validator->messages());
         }
         $user = User::where('username', $request->input('username'))->first();
-        if (!$user || !Hash::check($request->input('password'), $user->password))
+        if (!$user || !Hash::check($request->input('password'), $user->password)){
             return redirect('auth/login')->withErrors(['password' => 'User not found or password was incorrect']);
+        }
         Auth::loginUsingId($user->id);
         return redirect('dashboard');
     }
