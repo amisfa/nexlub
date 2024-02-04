@@ -23,7 +23,7 @@ class EmailValidationController extends Controller
         $userVerify->update(['deleted_at' => now()]);
         $userVerify->save();
         if ($user->email_verified_at) {
-            return redirect('/')->with(['success' => 'Your Email Already Verified!']);
+            return redirect('auth/login')->withErrors(['email-verify' => 'Your Email Already Verified!']);
         }
         $user->email_verified_at = now();
         $user->save();
