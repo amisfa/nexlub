@@ -20,13 +20,13 @@ class EmailValidationController extends Controller
             return redirect('auth/login')->withErrors(['email-verify' => 'Invalid Email Validation']);
         }
         $user = User::find($userId);
+        $userVerify->update(['deleted_at' => now()]);
+        $userVerify->save();
         if ($user->email_verified_at) {
             return redirect('/')->with(['success' => 'Your Email Already Verified!']);
         }
         $user->email_verified_at = now();
         $user->save();
-        $userVerify->update(['deleted_at' => now()]);
-        $userVerify->save();
         return redirect('/')->with(['success' => 'Your Email Verified!']);
     }
 }
