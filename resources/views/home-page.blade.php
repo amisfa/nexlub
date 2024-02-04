@@ -26,35 +26,7 @@
         <h3 class="font-bold">Available Payments</h3>
         <br/>
         <ul class="flex flex-wrap items-center justify-center px-2">
-            <li class="coin-item">
-                <div class="coin-link cursor-default">
-                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
-                         width="50px" height="50px">
-                        <g id="Layer_1-2" data-name="Layer_1">
-                            <g id="_2190483752976" data-name=" 2190483752976">
-                                <circle cx="25" cy="25" r="25" style="fill: #0ac18e;"/>
-                                <path
-                                    d="M32.8,16.6c-1.26-2.84-4.14-3.45-7.68-2.86l-1.14-4.41-2.67,.69,1.11,4.39c-.7,.18-1.42,.34-2.14,.54l-1.12-4.37-2.68,.69,1.14,4.41c-.58,.16-5.41,1.4-5.41,1.4l.74,2.87s1.97-.55,1.95-.51c1.09-.28,1.6,.26,1.84,.78l3.13,12.07c.03,.34-.03,.94-.78,1.14,.05,.03-1.95,.5-1.95,.5l.29,3.35s4.79-1.23,5.42-1.38l1.15,4.45,2.67-.69-1.14-4.49c.73-.17,1.45-.35,2.15-.53l1.14,4.46,2.68-.69-1.15-4.45c4.12-1,7.04-3.6,6.44-7.58-.38-2.4-3-4.37-5.18-4.59,1.34-1.19,2.02-2.92,1.19-5.18,0,0,0-.01,0,0Zm-1.29,10.51c.53,3.94-4.94,4.42-6.75,4.9l-1.57-5.9c1.81-.47,7.42-2.47,8.32,1Zm-3.3-8.03c.57,3.5-4.12,3.91-5.63,4.3l-1.43-5.35c1.51-.38,5.91-2.19,7.06,1.05Z"
-                                    style="fill: #fff;"/>
-                            </g>
-                        </g>
-                    </svg>
-                </div>
-            </li>
-            <li class="coin-item">
-                <div class="coin-link cursor-default">
-                    <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <title>Icons Crypto/Binance coin</title>
-                        <g id="Icons-Crypto/Binance-coin" stroke="none" stroke-width="1" fill="none"
-                           fill-rule="evenodd">
-                            <path
-                                d="M25,0 C38.8071238,0 50,11.1928762 50,25 C50,38.8071238 38.8071238,50 25,50 C11.1928762,50 0,38.8071238 0,25 C0,11.1928762 11.1928762,0 25,0 Z M31.4479161,27.6937417 L25.0041744,34.1374834 L22.7416578,31.8750333 L22.3250133,31.4583222 L18.5312716,27.6937417 L14.7812716,31.4437417 L25.0062383,41.6520639 L35.1979161,31.4437417 L31.4479161,27.6937417 Z M12.0987017,21.2388482 L8.33332224,25.0041611 L12.0987017,28.7695406 L15.8640146,25.0041611 L12.0987017,21.2388482 Z M37.9028695,21.2367044 L34.13749,25.0020839 L37.9028695,28.7674634 L41.6681824,25.0020839 L37.9028695,21.2367044 Z M25.0112051,21.2283822 L21.2458256,24.9937617 L25.0112051,28.7591411 L28.776518,24.9937617 L25.0112051,21.2283822 Z M25.0062184,8.33328895 L14.7812517,18.5416778 L18.5312517,22.3145806 L22.3166711,18.5416778 L23.1146072,17.7437417 L25.0062184,15.8520639 L31.4478961,22.3145806 L35.1978961,18.5416778 L25.0062184,8.33328895 Z"
-                                id="Combined-Shape" fill="#F0B90B"></path>
-                        </g>
-                    </svg>
-                </div>
-            </li>
+            {{--bitcoin--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
@@ -68,37 +40,7 @@
                     </svg>
                 </div>
             </li>
-            <li class="coin-item">
-                <div class="coin-link cursor-default">
-                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
-                         width="50px">
-                        <g id="Layer_1-2" data-name="Layer_1">
-                            <g id="_2155524284960" data-name=" 2155524284960">
-                                <path
-                                    d="M25.6,16.47h-3.57v7.05h5.62v2.95h-5.62v7.04h3.74c.97,0,7.91,.11,7.9-8.2,0-8.3-6.73-8.84-8.07-8.84Z"
-                                    style="fill: #c2a633;"/>
-                                <path
-                                    d="M25,0C11.19,0,0,11.19,0,25s11.19,25,25,25,25-11.19,25-25S38.81,0,25,0Zm.98,38.5h-9.05v-12.03h-3.19v-2.95h3.19V11.48h7.77c1.84,0,14.01-.38,14.01,13.74s-12.73,13.28-12.73,13.28h0Z"
-                                    style="fill: #c2a633;"/>
-                            </g>
-                        </g>
-                    </svg>
-                </div>
-            </li>
-            <li class="coin-item">
-                <div class="coin-link cursor-default">
-                    <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <title>Icons Crypto/Ethereum Classic@2x</title>
-                        <g id="Icons-Crypto/Ethereum-Classic" stroke="none" stroke-width="1" fill="none"
-                           fill-rule="evenodd">
-                            <path
-                                d="M25,0 C38.8071187,0 50,11.1928813 50,25 C50,38.8071187 38.8071187,50 25,50 C11.1928813,50 0,38.8071187 0,25 C0,11.1928813 11.1928813,0 25,0 Z M34.6532258,26.3985709 L25.115962,31.5558463 C23.1214364,30.4835531 20.6958118,29.1813537 18.2130902,27.8511315 L18.2130902,27.8511315 L16.8554638,27.12399 C16.4025328,26.8814921 15.9499622,26.6392813 15.5,26.3985709 C18.3559781,30.6368022 21.9036073,35.8791047 25.115962,40.63 L25.115962,40.63 L25.1201218,40.6238029 L25.1729526,40.5451444 L25.1729526,40.5451444 L25.1985108,40.5074206 C28.1190558,36.1703719 30.7719439,32.2060551 33.845767,27.6062762 C34.1270008,27.1858314 34.3973357,26.7815053 34.6532258,26.3985709 L34.6532258,26.3985709 Z M25.1263889,19.9958971 L15.8668035,24.9732398 L25.1316024,29.9246993 L34.2654444,24.9416047 L34.254,24.942 L34.2654444,24.9367282 L25.1263889,19.9958971 Z M25.0740062,9.38 L15.5,23.5005186 L25.115962,18.4012618 L34.6532258,23.5321537 L25.0740062,9.38 Z"
-                                id="Combined-Shape" fill="#38B238"></path>
-                        </g>
-                    </svg>
-                </div>
-            </li>
+            {{--eth--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
@@ -116,6 +58,71 @@
                     </svg>
                 </div>
             </li>
+            {{--bnb--}}
+            <li class="coin-item">
+                <div class="coin-link cursor-default">
+                    <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <title>Icons Crypto/Binance coin</title>
+                        <g id="Icons-Crypto/Binance-coin" stroke="none" stroke-width="1" fill="none"
+                           fill-rule="evenodd">
+                            <path
+                                d="M25,0 C38.8071238,0 50,11.1928762 50,25 C50,38.8071238 38.8071238,50 25,50 C11.1928762,50 0,38.8071238 0,25 C0,11.1928762 11.1928762,0 25,0 Z M31.4479161,27.6937417 L25.0041744,34.1374834 L22.7416578,31.8750333 L22.3250133,31.4583222 L18.5312716,27.6937417 L14.7812716,31.4437417 L25.0062383,41.6520639 L35.1979161,31.4437417 L31.4479161,27.6937417 Z M12.0987017,21.2388482 L8.33332224,25.0041611 L12.0987017,28.7695406 L15.8640146,25.0041611 L12.0987017,21.2388482 Z M37.9028695,21.2367044 L34.13749,25.0020839 L37.9028695,28.7674634 L41.6681824,25.0020839 L37.9028695,21.2367044 Z M25.0112051,21.2283822 L21.2458256,24.9937617 L25.0112051,28.7591411 L28.776518,24.9937617 L25.0112051,21.2283822 Z M25.0062184,8.33328895 L14.7812517,18.5416778 L18.5312517,22.3145806 L22.3166711,18.5416778 L23.1146072,17.7437417 L25.0062184,15.8520639 L31.4478961,22.3145806 L35.1978961,18.5416778 L25.0062184,8.33328895 Z"
+                                id="Combined-Shape" fill="#F0B90B"></path>
+                        </g>
+                    </svg>
+                </div>
+            </li>
+            {{--bitcoin cash --}}
+            <li class="coin-item">
+                <div class="coin-link cursor-default">
+                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
+                         width="50px" height="50px">
+                        <g id="Layer_1-2" data-name="Layer_1">
+                            <g id="_2190483752976" data-name=" 2190483752976">
+                                <circle cx="25" cy="25" r="25" style="fill: #0ac18e;"/>
+                                <path
+                                    d="M32.8,16.6c-1.26-2.84-4.14-3.45-7.68-2.86l-1.14-4.41-2.67,.69,1.11,4.39c-.7,.18-1.42,.34-2.14,.54l-1.12-4.37-2.68,.69,1.14,4.41c-.58,.16-5.41,1.4-5.41,1.4l.74,2.87s1.97-.55,1.95-.51c1.09-.28,1.6,.26,1.84,.78l3.13,12.07c.03,.34-.03,.94-.78,1.14,.05,.03-1.95,.5-1.95,.5l.29,3.35s4.79-1.23,5.42-1.38l1.15,4.45,2.67-.69-1.14-4.49c.73-.17,1.45-.35,2.15-.53l1.14,4.46,2.68-.69-1.15-4.45c4.12-1,7.04-3.6,6.44-7.58-.38-2.4-3-4.37-5.18-4.59,1.34-1.19,2.02-2.92,1.19-5.18,0,0,0-.01,0,0Zm-1.29,10.51c.53,3.94-4.94,4.42-6.75,4.9l-1.57-5.9c1.81-.47,7.42-2.47,8.32,1Zm-3.3-8.03c.57,3.5-4.12,3.91-5.63,4.3l-1.43-5.35c1.51-.38,5.91-2.19,7.06,1.05Z"
+                                    style="fill: #fff;"/>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+            </li>
+            {{--doge--}}
+            <li class="coin-item">
+                <div class="coin-link cursor-default">
+                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
+                         width="50px">
+                        <g id="Layer_1-2" data-name="Layer_1">
+                            <g id="_2155524284960" data-name=" 2155524284960">
+                                <path
+                                    d="M25.6,16.47h-3.57v7.05h5.62v2.95h-5.62v7.04h3.74c.97,0,7.91,.11,7.9-8.2,0-8.3-6.73-8.84-8.07-8.84Z"
+                                    style="fill: #c2a633;"/>
+                                <path
+                                    d="M25,0C11.19,0,0,11.19,0,25s11.19,25,25,25,25-11.19,25-25S38.81,0,25,0Zm.98,38.5h-9.05v-12.03h-3.19v-2.95h3.19V11.48h7.77c1.84,0,14.01-.38,14.01,13.74s-12.73,13.28-12.73,13.28h0Z"
+                                    style="fill: #c2a633;"/>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+            </li>
+            {{--eth classic --}}
+            <li class="coin-item">
+                <div class="coin-link cursor-default">
+                    <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <title>Icons Crypto/Ethereum Classic@2x</title>
+                        <g id="Icons-Crypto/Ethereum-Classic" stroke="none" stroke-width="1" fill="none"
+                           fill-rule="evenodd">
+                            <path
+                                d="M25,0 C38.8071187,0 50,11.1928813 50,25 C50,38.8071187 38.8071187,50 25,50 C11.1928813,50 0,38.8071187 0,25 C0,11.1928813 11.1928813,0 25,0 Z M34.6532258,26.3985709 L25.115962,31.5558463 C23.1214364,30.4835531 20.6958118,29.1813537 18.2130902,27.8511315 L18.2130902,27.8511315 L16.8554638,27.12399 C16.4025328,26.8814921 15.9499622,26.6392813 15.5,26.3985709 C18.3559781,30.6368022 21.9036073,35.8791047 25.115962,40.63 L25.115962,40.63 L25.1201218,40.6238029 L25.1729526,40.5451444 L25.1729526,40.5451444 L25.1985108,40.5074206 C28.1190558,36.1703719 30.7719439,32.2060551 33.845767,27.6062762 C34.1270008,27.1858314 34.3973357,26.7815053 34.6532258,26.3985709 L34.6532258,26.3985709 Z M25.1263889,19.9958971 L15.8668035,24.9732398 L25.1316024,29.9246993 L34.2654444,24.9416047 L34.254,24.942 L34.2654444,24.9367282 L25.1263889,19.9958971 Z M25.0740062,9.38 L15.5,23.5005186 L25.115962,18.4012618 L34.6532258,23.5321537 L25.0740062,9.38 Z"
+                                id="Combined-Shape" fill="#38B238"></path>
+                        </g>
+                    </svg>
+                </div>
+            </li>
+            {{--light coin--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.5 49.5"
@@ -132,6 +139,7 @@
                     </svg>
                 </div>
             </li>
+            {{-- shiba--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -230,6 +238,7 @@
                     </svg>
                 </div>
             </li>
+            {{--trone--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -243,6 +252,7 @@
                     </svg>
                 </div>
             </li>
+            {{--usdc--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -271,6 +281,7 @@
                     </svg>
                 </div>
             </li>
+            {{--usdtb--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -299,6 +310,7 @@
                     </svg>
                 </div>
             </li>
+            {{--usdtt--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -325,6 +337,7 @@
                     </svg>
                 </div>
             </li>
+            {{--usdte--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -350,6 +363,7 @@
                     </svg>
                 </div>
             </li>
+            {{--xmr--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 49.96"
@@ -375,7 +389,8 @@
                 <div class="accordion-content">
                     <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
-                        viverra suspendisse potenti.</div>
+                        viverra suspendisse potenti.
+                    </div>
                 </div>
             </div>
             <div class="accordion-item">
@@ -385,7 +400,8 @@
                 <div class="accordion-content">
                     <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
-                        viverra suspendisse potenti.</div>
+                        viverra suspendisse potenti.
+                    </div>
                 </div>
             </div>
             <div class="accordion-item">
@@ -394,7 +410,8 @@
                 <div class="accordion-content">
                     <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
-                        viverra suspendisse potenti.</div>
+                        viverra suspendisse potenti.
+                    </div>
                 </div>
             </div>
             <div class="accordion-item">
@@ -423,8 +440,9 @@
 
 @push('js')
     <script>
-        if(!items){
+        if (!items) {
             var items = document.querySelectorAll(".accordion button");
+
             function toggleAccordion() {
                 const itemToggle = this.getAttribute('aria-expanded');
                 for (let i = 0; i < items.length; i++) {
@@ -434,6 +452,7 @@
                     this.setAttribute('aria-expanded', 'true');
                 }
             }
+
             items.forEach(item => item.addEventListener('click', toggleAccordion));
         }
     </script>
