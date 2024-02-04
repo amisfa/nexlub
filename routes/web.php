@@ -8,7 +8,6 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\DepositController;
-use App\Http\Controllers\dashboard\InvoiceController;
 use App\Http\Controllers\Dashboard\PaymentController;
 use App\Http\Controllers\Dashboard\PlayController;
 use App\Http\Controllers\Dashboard\ProfileController;
@@ -40,9 +39,9 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/wallet', [WalletController::class, 'create'])->name('wallet');
     Route::get('/play', [PlayController::class, 'create'])->name('play');
     Route::get('/rake-back', [RakeBackView::class, 'create'])->name('rake-back');
-    Route::get('/invoices', [InvoiceController::class, 'create'])->name('invoices');
+    Route::get('/invoices', [App\Http\Controllers\dashboard\InvoiceController::class, 'create'])->name('invoices');
     Route::get('/subset', [AffiliateRakeView::class, 'create'])->name('subset');
-    Route::get('/create-invoice', [InvoiceController::class, 'createInvoice'])->name('create-invoice');
+    Route::get('/create-invoice', [App\Http\Controllers\dashboard\InvoiceController::class, 'createInvoice'])->name('create-invoice');
     Route::get('/withdraw', [UserWithdrawController::class, 'create'])->name('withdraw');
     Route::post('/withdraw', [UserWithdrawController::class, 'makeWithdraw'])->name('make-withdraw');
 //    Route::prefix('admin')->middleware(['role:manager'])->group(function () {
@@ -53,11 +52,11 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
         Route::post('/reject-withdraw/{withdraw}', [WithdrawManagementController::class, 'rejectWithdraw'])->name('reject-withdraw');
     });
 
-    Route::get('/success-payment', [InvoiceController::class, 'successPayment']);
-    Route::get('/failed-payment', [InvoiceController::class, 'failedPayment']);
+    Route::get('/success-payment', [App\Http\Controllers\dashboard\InvoiceController::class, 'successPayment']);
+    Route::get('/failed-payment', [App\Http\Controllers\dashboard\InvoiceController::class, 'failedPayment']);
     Route::get('/payments', [PaymentController::class, 'create'])->name('payments');
 
-    Route::post('/create-invoice', [InvoiceController::class, 'makeInvoice'])->name('make-invoice');
+    Route::post('/create-invoice', [App\Http\Controllers\dashboard\InvoiceController::class, 'makeInvoice'])->name('make-invoice');
     Route::get('/deposit', [DepositController::class, 'create'])->name('deposit');
 });
 
