@@ -152,8 +152,8 @@ section span:hover {
     pointer-events: none;
 }
 
-.auth-page .content .form .inputBox input:focus ~ i,
-.auth-page .content .form .inputBox input:valid ~ i {
+.auth-page .content .form .inputBox input ~ i,
+.auth-page .content .form .inputBox input ~ i {
     transform: translateY(-7.5px);
     font-size: 0.8em;
     color: #fff;
