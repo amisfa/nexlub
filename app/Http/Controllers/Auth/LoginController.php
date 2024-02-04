@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -35,10 +34,10 @@ class LoginController extends Controller
             return redirect('auth/login')->withErrors($validator->messages());
         }
         $user = User::where('username', $request->input('username'))->first();
-        if (!$user || !Hash::check($request->input('password'), $user->password)){
+        if (!$user || !Hash::check($request->input('password'), $user->password)) {
             return redirect('auth/login')->withErrors(['password' => 'User not found or password was incorrect']);
         }
         Auth::loginUsingId($user->id);
-        return redirect('dashboard');
+        return redirect('home-page');
     }
 }

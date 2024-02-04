@@ -21,7 +21,6 @@
             </div>
         </div>
     </header>
-
     <div class="flex flex-col items-center w-full">
         <br/>
         <h3 class="font-bold">Available Payments</h3>

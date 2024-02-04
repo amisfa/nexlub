@@ -19,3 +19,6 @@ Route::prefix('v1')->middleware('auth:api')->group(function () {
     Route::get('/get-wallet-balance', [Helper::class, 'getWalletBalance'])->name('get-wallet-balance');
     Route::post('/resend-email/{user}', [ProfileController::class, 'resendEmail'])->name('resend-email');
 });
+Route::prefix('v1')->middleware('mavens:api')->group(function () {
+    Route::post('/get-mavens-data', [Helper::class, 'syncWithMavens']);
+});
