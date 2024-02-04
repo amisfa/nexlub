@@ -121,10 +121,13 @@ section span:hover {
 .auth-page .content .form .inputBox input, .auth-page .content .form .inputBox input:-webkit-autofill,
 .auth-page .content .form .inputBox input:-webkit-autofill:hover,
 .auth-page .content .form .inputBox input:-webkit-autofill:focus,
-.auth-page .content .form .inputBox input:-webkit-autofill:active {
+.auth-page .content .form .inputBox input:-webkit-autofill:active, input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
     position: relative;
     width: 100%;
-    background: #333 !important;
+    background: #000 !important;
     border: none;
     outline: none;
     padding: 25px 10px 7.5px;
@@ -132,6 +135,10 @@ section span:hover {
     color: #ffffff !important;
     font-weight: 500;
     font-size: 1em;
+    appearance: unset;
+    -webkit-box-shadow: 0 0 0px 100px #222222 inset;
+    -webkit-text-fill-color: #fff !important;
+    -webkit-border-radius: 4px;
 }
 
 .captcha-container {
@@ -188,7 +195,7 @@ section span:hover {
 
 .auth-page .content .form .inputBox input[type="submit"] {
     padding: 10px;
-    background: #22C7E7 !important;
+    -webkit-box-shadow: 0 0 1000000px inset #22C7E7;
     color: #000 !important;
     font-weight: 600;
     font-size: 1.35em;
@@ -326,5 +333,5 @@ input[type="submit"]:active {
 }
 
 .g-recaptcha > * {
-    margin: -3px -3px -10px;/*remove borders*/
+    margin: -3px -3px -10px; /*remove borders*/
 }
