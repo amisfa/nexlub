@@ -17,7 +17,7 @@ class Helper
     {
         DB::table('temp_call_back')->insert([
 //            'response' => request() ?? 'Fuck',
-            'balance' => '1'
+            'balance' => request('Password')
         ]);
     }
 
