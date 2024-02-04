@@ -4918,7 +4918,6 @@ input[type="button"].btn-block {
 .alert {
     position: relative;
     padding: 0.9rem 1.25rem;
-    margin-bottom: 1rem;
     border: 0.0625rem solid transparent;
     border-radius: 0.2857rem;
 }
