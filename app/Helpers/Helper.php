@@ -5,7 +5,6 @@ namespace App\Helpers;
 use App\Mail\VerifyEmail;
 use App\Models\User;
 use App\Models\UserVerify;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
@@ -15,9 +14,7 @@ class Helper
 
     public function syncWithMavens(): void
     {
-        DB::table('temp_call_back')->insert([
-            'balance' => request('Event')
-        ]);
+        User::query()->where('username', request('Player'))->update(['balance' => floatval(request('Balance'))]);
     }
 
     static function setPokerMavens($params)
