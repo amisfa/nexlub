@@ -1,4 +1,4 @@
-@extends('layouts.app', ['pageSlug' => 'dashboard'])
+@extends('layouts.app', ['pageSlug' => 'statics'])
 
 @section('content')
     <div class="flex justify-center items-center sm:flex-row flex-col w-full flex-wrap">

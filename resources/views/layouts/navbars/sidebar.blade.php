@@ -1,9 +1,16 @@
 <div class="sidebar close">
     <ul class="nav-links">
-        <li @if ($pageSlug == 'dashboard') class="active"@endif>
-            <a href="{{route('dashboard')}}">
+        <li @if ($pageSlug == 'play') class="active"@endif>
+            <a href="{{route('play')}}">
+                <i class='bx bx-play'></i>
+                <span class="link_name">Play</span>
+            </a>
+        </li>
+
+        <li @if ($pageSlug == 'statics') class="active"@endif>
+            <a href="{{route('statics')}}">
                 <i class='bx bx-grid-alt'></i>
-                <span class="link_name">Dashboard</span>
+                <span class="link_name">Statics</span>
             </a>
         </li>
         <li @if ($pageSlug == 'invoices' || $pageSlug == 'payments') class="active showMenu" @endif>
@@ -64,12 +71,6 @@
                         href="{{route('withdraw-management')}}">Withdraw</a>
                 </li>
             </ul>
-        </li>
-        <li @if ($pageSlug == 'play') class="active"@endif>
-            <a href="{{route('play')}}">
-                <i class='bx bx-play'></i>
-                <span class="link_name">Play</span>
-            </a>
         </li>
     </ul>
 </div>

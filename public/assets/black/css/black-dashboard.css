@@ -1,6 +1,6 @@
 /*
  =========================================================
- * Black Dashboard - v1.0.0
+ * Black Statics - v1.0.0
  =========================================================
 
  * Product Page: https://www.creative-tim.com/product/black-dashboard
@@ -14118,7 +14118,7 @@ Copyright (c) 2015 Daniel Eden
     background-color: rgb(128, 128, 128) !important;
 }
 
-/*# sourceMappingURL=dashboard-free.css.map */
+/*# sourceMappingURL=statics-free.css.map */
 .toggle {
     display: block;
     cursor: pointer;
@@ -14240,14 +14240,11 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .toggle input:checked + div svg {
-    stroke-dashoffset: 62;
-    stroke-dasharray: 0 82.801 62 82.801;
-    transform: rotate(90deg);
-    stroke: #21BEDC;
+    display: none;
 }
 
 .toggle input:checked + div svg:nth-child(3) {
-    transform: rotate(270deg);
+    display: none;
 }
 
 .shareLink .permalink {
@@ -14640,6 +14637,7 @@ Copyright (c) 2015 Daniel Eden
     align-items: flex-start;
     justify-content: center;
 }
+
 /*faq*/
 .accordion .accordion-item {
     border-bottom: 1px solid #676767;

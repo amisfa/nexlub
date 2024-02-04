@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Statics;
 
 use App\Models\User;
 use Illuminate\Routing\Controller;
 
 
-class DashboardController extends Controller
+class StaticController extends Controller
 {
     public function create()
     {
@@ -58,7 +58,7 @@ class DashboardController extends Controller
                 $sngStatsData->lose_count,
             ];
         }
-        return view('dashboard', [
+        return view('statics', [
             'gameStrategy' => $gameStrategy,
             'sngStats' => $sngTotal,
             'cashGameWinLoseStates' => $cashGameWinLoseStates,

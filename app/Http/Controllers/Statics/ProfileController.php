@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Statics;
 
 use App\Helpers\Helper;
 use App\Http\Requests\ProfileRequest;
@@ -43,7 +43,7 @@ class ProfileController extends Controller
                 'Avatar' => $request->avatar,
                 'Custom1' => $request->wallet_no,
             ]);
-            return redirect('/dashboard/profile')->withStatus(__('Profile successfully updated.'));
+            return redirect('/statics/profile')->withStatus(__('Profile successfully updated.'));
         } else return back();
     }
 

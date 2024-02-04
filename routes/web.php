@@ -6,16 +6,16 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Http\Controllers\Dashboard\DashboardController;
-use App\Http\Controllers\Dashboard\DepositController;
-use App\Http\Controllers\Dashboard\InvoiceController;
-use App\Http\Controllers\Dashboard\PaymentController;
-use App\Http\Controllers\Dashboard\PlayController;
-use App\Http\Controllers\Dashboard\ProfileController;
-use App\Http\Controllers\Dashboard\UserManagementController;
-use App\Http\Controllers\Dashboard\UserWithdrawController;
-use App\Http\Controllers\Dashboard\WalletController;
-use App\Http\Controllers\Dashboard\WithdrawManagementController;
+use App\Http\Controllers\Statics\StaticController;
+use App\Http\Controllers\Statics\DepositController;
+use App\Http\Controllers\Statics\InvoiceController;
+use App\Http\Controllers\Statics\PaymentController;
+use App\Http\Controllers\Statics\PlayController;
+use App\Http\Controllers\Statics\ProfileController;
+use App\Http\Controllers\Statics\UserManagementController;
+use App\Http\Controllers\Statics\UserWithdrawController;
+use App\Http\Controllers\Statics\WalletController;
+use App\Http\Controllers\Statics\WithdrawManagementController;
 use App\Http\Livewire\UserRake\AffiliateRakeView;
 use App\Http\Livewire\UserRake\RakeBackView;
 use Illuminate\Support\Facades\Route;
@@ -31,8 +31,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get("/", function () {return view('home-page');})->name('home-page');
-Route::prefix('dashboard')->middleware('auth:web')->group(function () {
-    Route::get('/', [DashboardController::class, 'create'])->name('dashboard');
+Route::prefix('statics')->middleware('auth:web')->group(function () {
+    Route::get('/', [StaticController::class, 'create'])->name('statics');
     Route::get('/profile', [ProfileController::class, 'create'])->name('profile-view');
     Route::get('/edit-profile', [ProfileController::class, 'update'])->name('profile-edit');
     Route::put('/edit-user-details', [ProfileController::class, 'editUserDetails'])->name('edit-user-details');
