@@ -27,7 +27,6 @@ class Helper
         return $response;
     }
 
-
     static function getHistoryLog(): array
     {
         $params['Password'] = env('MAVENS_PW');
@@ -215,7 +214,7 @@ class Helper
 
     static function getAvailableCurrencies(): array
     {
-        $response = Http::get('https://plisio.net/api/v1/currencies', ['api_key' => env('PILISIO_SECRET_KEY'), 'hidden' => true]);
+        $response = Http::get('https://plisio.net/api/v1/currencies', ['api_key' => env('PILISIO_SECRET_KEY')]);
         if ($response->status() !== 200) return [];
         $currencies = json_decode($response->body(), true);
         $minAmount = [
@@ -228,7 +227,9 @@ class Helper
                 'icon' => $coin['icon'],
                 'min_amount' => isset($minAmount[$coin['cid']]) ? $minAmount[$coin['cid']] : 30
             ];
-        }, $currencies['data']);
+        }, array_filter($currencies['data'], function($coin){
+            if(!$coin['hidden']) return $coin;
+        }));
     }
 
     static function createInvoice($params): \Illuminate\Http\Client\Response
