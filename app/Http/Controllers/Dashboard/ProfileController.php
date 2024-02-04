@@ -42,7 +42,7 @@ class ProfileController extends Controller
                 'Avatar' => $request->avatar,
                 'Custom1' => $request->wallet_no,
             ]);
-            return back()->withStatus(__('Profile successfully updated.'));
+            return redirect('/profile')->withStatus(__('Profile successfully updated.'));
         } else return back();
     }
 
