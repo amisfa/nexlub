@@ -17,7 +17,7 @@
                             <input type="email" name="email"
                                    class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
                                    placeholder="{{ __('Email address') }}"
-                                   value="{{ old('email', auth()->user()->email) }}">
+                                   value="{{ old('email', $user->email) }}">
                             @include('alerts.feedback', ['field' => 'email'])
                         </div>
                         <div class="form-group">
@@ -25,7 +25,7 @@
                             <input name="wallet_no"
                                    class="form-control{{ $errors->has('wallet_no') ? ' is-invalid' : '' }}"
                                    placeholder="{{ __('Wallet') }}"
-                                   value="{{ old('wallet_no', auth()->user()->wallet_no) }}">
+                                   value="{{ old('wallet_no', $user->wallet_no) }}">
                             @include('alerts.feedback', ['field' => 'wallet_no'])
                         </div>
                         <label>{{ __('Avatar') }}</label>
@@ -35,7 +35,7 @@
                                     <div class="avatar-selection">
                                         <input type="radio" name="avatar" value="{{$i}}" id="radio{{$i}}"
                                                required=""
-                                               {!! auth()->user()->avatar === $i ? "checked" : "" !!} style="display: none">
+                                               {!! $user->avatar === $i ? "checked" : "" !!} style="display: none">
                                         <label for="radio{{$i}}">
                                             <img src="{{ asset('avatars').'/'. $i }}.png" class="grayscale"
                                                  style="display: inline-block; height: 64px"
@@ -76,7 +76,8 @@
                         </div>
                         <div class="form-group">
                             <label>{{ __('Confirm New Password') }}</label>
-                            <input type="password" name="password_confirmation" class="form-control {{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}"
+                            <input type="password" name="password_confirmation"
+                                   class="form-control {{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}"
                                    placeholder="{{ __('Confirm New Password') }}" value="" required>
                             @include('alerts.feedback', ['field' => 'password_confirmation'])
                         </div>

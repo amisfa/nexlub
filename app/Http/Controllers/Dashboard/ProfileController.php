@@ -22,7 +22,8 @@ class ProfileController extends Controller
 
     public function update(): View|\Illuminate\Foundation\Application|Factory|Application
     {
-        return view('profile.edit');
+        $user = User::query()->find(auth()->id());
+        return view('profile.edit', ['user' => $user]);
     }
 
     public function editUserDetails(ProfileRequest $request)
