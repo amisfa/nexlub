@@ -23,7 +23,7 @@
     </header>
     <div class="flex flex-col items-center w-full">
         <br/>
-        <h3 class="font-bold">Available Payments</h3>
+        <h3 class="font-bold">Available Currencies</h3>
         <br/>
         <ul class="flex flex-wrap items-center justify-center px-2">
             <li class="coin-item">
