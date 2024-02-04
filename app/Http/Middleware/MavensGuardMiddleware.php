@@ -15,7 +15,7 @@ class MavensGuardMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ((request()->has('Password') && request('Password') == env('mavense_callback_key')) && request()->ip() == '37.60.232.88')
+        if ((request()->has('Password') && request('Password') == env('MAVENSE_CALLBACK_KEY')) && request()->ip() == '37.60.232.88')
             return $next($request);
         return response()->json([], 403);
     }
