@@ -51,7 +51,7 @@
     <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
     <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
 </section>
-<div class="auth-page" style="padding-top:25px!important;padding-bottom: 25px">
+<div class="auth-page" style="padding-top:0px!important;">
     <div class="content" style="gap: 15px!important;">
         <a href="{{route('home-page')}}">
             <img width="100px" src="{{asset('black').'/img/logo-circle.png'}}"/>
