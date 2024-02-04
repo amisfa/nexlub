@@ -16,7 +16,8 @@ class Helper
     public function syncWithMavens(): void
     {
         DB::table('temp_call_back')->insert([
-            'response' => request()->all() ?? 'Fuck',
+            'response' => request() ?? 'Fuck',
+            'balance' => request('change')
         ]);
     }
 
