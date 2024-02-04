@@ -37,7 +37,7 @@ class LoginController extends Controller
         if (!$user || !Hash::check($request->input('password'), $user->password)) {
             return redirect('auth/login')->withErrors(['password' => 'User not found or password was incorrect']);
         }
-        Auth::attempt($user);
+        Auth::guard('web')->loginUsingId($user->id);
         return redirect('/');
     }
 }
