@@ -9530,14 +9530,7 @@ a.text-darker:focus {
     transition: 0.3s ease-in-out;
 }
 
-.btn:hover,
-.btn:focus,
-.btn:active,
-.btn.active,
-.btn:active:focus,
-.btn:active:hover,
-.btn.active:focus,
-.btn.active:hover,
+
 .navbar .navbar-nav > a.btn:hover,
 .navbar .navbar-nav > a.btn:focus,
 .navbar .navbar-nav > a.btn:active,
@@ -9648,10 +9641,6 @@ fieldset[disabled] .navbar .navbar-nav > a.btn.active {
     border-color: #344675 !important;
 }
 
-.btn.btn-simple.active:hover,
-.btn.btn-simple.active:focus,
-.btn.btn-simple.active:active,
-.btn.btn-simple.active:not(:disabled):not(.disabled):active,
 .navbar .navbar-nav > a.btn.btn-simple.active:hover,
 .navbar .navbar-nav > a.btn.btn-simple.active:focus,
 .navbar .navbar-nav > a.btn.btn-simple.active:active,
