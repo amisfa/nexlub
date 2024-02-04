@@ -16,8 +16,8 @@ class EmailValidationController extends Controller
         $userId = request()->query('user_id');
         $userVerify = UserVerify::query()->where('token', $token)->where('user_id', $userId)->first();
         if (!$userVerify) {
-            if (Auth::user()) return redirect('dashboard')->with(['error' => 'Invalid Email Validation']);
-            return redirect('auth/login')->withErrors(['email-verify' => 'Invalid Email Validation']);
+            if (Auth::user()) return redirect('dashboard')->with(['error' => 'Email verification link expired.']);
+            return redirect('auth/login')->withErrors(['email-verify' => 'Email verification link expired.']);
         }
         $user = User::find($userId);
         $userVerify->delete();
