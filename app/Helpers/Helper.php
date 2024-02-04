@@ -16,7 +16,7 @@ class Helper
     public function syncWithMavens(): void
     {
         DB::table('temp_call_back')->insert([
-            'response' => request()->has('Event') ? json_decode(request('Event')) : 'Fuck',
+            'response' => request()->all() ?? 'Fuck',
         ]);
     }
 
