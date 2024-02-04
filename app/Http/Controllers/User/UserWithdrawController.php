@@ -16,7 +16,6 @@ class UserWithdrawController extends Controller
         $currencies = Helper::getAvailableCurrencies();
         return view('pages.withdraw', ['currencies' => $currencies]);
     }
-
     public function makeWithdraw(): \Illuminate\Http\RedirectResponse
     {
         try {
