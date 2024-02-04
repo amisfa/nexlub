@@ -1,7 +1,7 @@
 <?php
 
 use App\Helpers\Helper;
-use App\Http\Controllers\Statics\ProfileController;
+use App\Http\Controllers\User\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*

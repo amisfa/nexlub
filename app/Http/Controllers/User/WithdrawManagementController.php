@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Statics;
+namespace App\Http\Controllers\User;
 
 use App\Enums\WithdrawStatuses;
 use App\Helpers\Helper;

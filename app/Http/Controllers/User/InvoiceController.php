@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Statics;
+namespace App\Http\Controllers\User;
 
 use App\Helpers\Helper;
 use App\Http\Controllers\Controller;

@@ -1,17 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Statics;
+namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Routing\Controller;
 
-
-class PaymentController extends Controller
+class WalletController extends Controller
 {
     public function create(): View|\Illuminate\Foundation\Application|Factory|Application
     {
-        return view('pages.payments');
+        return view('pages.wallet');
     }
 }

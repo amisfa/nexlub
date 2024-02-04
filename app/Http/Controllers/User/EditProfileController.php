@@ -1,14 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Statics;
+namespace App\Http\Controllers\User;
 
-use App\Models\User;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 
 
 class EditProfileController extends Controller
