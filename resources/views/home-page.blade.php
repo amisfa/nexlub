@@ -26,7 +26,6 @@
         <h3 class="font-bold">Available Payments</h3>
         <br/>
         <ul class="flex flex-wrap items-center justify-center px-2">
-            {{--bitcoin--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
@@ -40,7 +39,6 @@
                     </svg>
                 </div>
             </li>
-            {{--eth--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
@@ -58,7 +56,6 @@
                     </svg>
                 </div>
             </li>
-            {{--bnb--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1"
@@ -73,7 +70,6 @@
                     </svg>
                 </div>
             </li>
-            {{--trone--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +83,6 @@
                     </svg>
                 </div>
             </li>
-            {{--usdtb--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +111,6 @@
                     </svg>
                 </div>
             </li>
-            {{--usdtt--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +137,6 @@
                     </svg>
                 </div>
             </li>
-            {{--usdte--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +162,6 @@
                     </svg>
                 </div>
             </li>
-            {{--usdc--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -198,7 +190,6 @@
                     </svg>
                 </div>
             </li>
-            {{--doge--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
@@ -216,7 +207,6 @@
                     </svg>
                 </div>
             </li>
-            {{-- shiba--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -315,7 +305,6 @@
                     </svg>
                 </div>
             </li>
-            {{--light coin--}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.5 49.5"
@@ -332,7 +321,19 @@
                     </svg>
                 </div>
             </li>
-            {{--bitcoin cash --}}
+            <li class="coin-item">
+                <div class="coin-link cursor-default">
+                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 49.96"
+                         width="50px">
+                        <path
+                            d="M25,0C11.2,0,0,11.23,0,25.08c0,2.69,.43,5.37,1.27,7.92h7.47V11.9L25,28.2,41.25,11.9v21.1h7.47c.85-2.55,1.28-5.23,1.27-7.92C50,11.23,38.8,0,25,0"
+                            style="fill: #fa6800;"/>
+                        <path
+                            d="M21.25,31.82l-7.09-7.09v13.23H3.63c4.39,7.2,12.31,12,21.35,12s16.97-4.81,21.35-12h-10.53v-13.23l-7.09,7.09-3.73,3.73-3.73-3.73h0Z"
+                            style="fill: #4c4c4c;"/>
+                    </svg>
+                </div>
+            </li>
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
@@ -348,7 +349,6 @@
                     </svg>
                 </div>
             </li>
-            {{--eth classic --}}
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -360,20 +360,6 @@
                                 d="M25,0 C38.8071187,0 50,11.1928813 50,25 C50,38.8071187 38.8071187,50 25,50 C11.1928813,50 0,38.8071187 0,25 C0,11.1928813 11.1928813,0 25,0 Z M34.6532258,26.3985709 L25.115962,31.5558463 C23.1214364,30.4835531 20.6958118,29.1813537 18.2130902,27.8511315 L18.2130902,27.8511315 L16.8554638,27.12399 C16.4025328,26.8814921 15.9499622,26.6392813 15.5,26.3985709 C18.3559781,30.6368022 21.9036073,35.8791047 25.115962,40.63 L25.115962,40.63 L25.1201218,40.6238029 L25.1729526,40.5451444 L25.1729526,40.5451444 L25.1985108,40.5074206 C28.1190558,36.1703719 30.7719439,32.2060551 33.845767,27.6062762 C34.1270008,27.1858314 34.3973357,26.7815053 34.6532258,26.3985709 L34.6532258,26.3985709 Z M25.1263889,19.9958971 L15.8668035,24.9732398 L25.1316024,29.9246993 L34.2654444,24.9416047 L34.254,24.942 L34.2654444,24.9367282 L25.1263889,19.9958971 Z M25.0740062,9.38 L15.5,23.5005186 L25.115962,18.4012618 L34.6532258,23.5321537 L25.0740062,9.38 Z"
                                 id="Combined-Shape" fill="#38B238"></path>
                         </g>
-                    </svg>
-                </div>
-            </li>
-            {{--xmr--}}
-            <li class="coin-item">
-                <div class="coin-link cursor-default">
-                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 49.96"
-                         width="50px">
-                        <path
-                            d="M25,0C11.2,0,0,11.23,0,25.08c0,2.69,.43,5.37,1.27,7.92h7.47V11.9L25,28.2,41.25,11.9v21.1h7.47c.85-2.55,1.28-5.23,1.27-7.92C50,11.23,38.8,0,25,0"
-                            style="fill: #fa6800;"/>
-                        <path
-                            d="M21.25,31.82l-7.09-7.09v13.23H3.63c4.39,7.2,12.31,12,21.35,12s16.97-4.81,21.35-12h-10.53v-13.23l-7.09,7.09-3.73,3.73-3.73-3.73h0Z"
-                            style="fill: #4c4c4c;"/>
                     </svg>
                 </div>
             </li>
