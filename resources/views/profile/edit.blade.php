@@ -35,7 +35,7 @@
                                     <div class="avatar-selection">
                                         <input type="radio" name="avatar" value="{{$i}}" id="radio{{$i}}"
                                                required=""
-                                               {!! $user->avatar === $i ? "checked" : "" !!} style="display: none">
+                                               {{ $user->avatar === $i ? "checked" : "" }} style="display: none">
                                         <label for="radio{{$i}}">
                                             <img src="{{ asset('avatars').'/'. $i }}.png" class="grayscale"
                                                  style="display: inline-block; height: 64px"
