@@ -59,6 +59,6 @@ class RegisterController extends Controller
         ]);
         Helper::sendValidationEmail($user);
         Auth::loginUsingId($user->id);
-        return redirect('/')->with(['warning' => 'Please verify your email address.']);
+        return redirect('/')->with(['error' => 'Please verify your email address.']);
     }
 }
