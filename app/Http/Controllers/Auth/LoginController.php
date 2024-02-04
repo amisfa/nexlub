@@ -38,6 +38,6 @@ class LoginController extends Controller
             return redirect('auth/login')->withErrors(['password' => 'User not found or password was incorrect']);
         }
         Auth::loginUsingId($user->id);
-        return redirect('home-page');
+        return redirect('/');
     }
 }
