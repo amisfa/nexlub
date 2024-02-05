@@ -14,7 +14,7 @@ class HeaderView extends Component
         $this->render();
     }
 
-    public function render()
+    public static function render()
     {
         $user = Auth::user();
         $updatedUser = $user->fresh();

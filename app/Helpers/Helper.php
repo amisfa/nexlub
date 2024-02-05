@@ -2,6 +2,7 @@
 
 namespace App\Helpers;
 
+use App\Http\Livewire\HeaderView;
 use App\Mail\VerifyEmail;
 use App\Models\User;
 use App\Models\UserVerify;
@@ -17,6 +18,7 @@ class Helper extends Component
     {
         User::query()->where('username', request('Player'))->update(['balance' => floatval(request('Balance'))]);
         $this->emit('reloadBalance');
+        HeaderView::render();
     }
 
     static function setPokerMavens($params)
