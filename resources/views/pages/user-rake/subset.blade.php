@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => __('Subset'), 'pageSlug' => 'subset'])
+@extends('layouts.app', ['page' => __('Referral'), 'pageSlug' => 'referral'])
 
 @section('content')
     <div class="container">

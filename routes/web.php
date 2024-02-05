@@ -43,7 +43,7 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/rake-back', [RakeBackView::class, 'create'])->name('rake-back');
     Route::get('/deposit', [InvoiceController::class, 'create'])->name('deposit');
     Route::post('/deposit', [InvoiceController::class, 'makeInvoice'])->name('make-invoice');
-    Route::get('/subset', [AffiliateRakeView::class, 'create'])->name('subset');
+    Route::get('/referral', [AffiliateRakeView::class, 'create'])->name('referral');
     Route::get('/create-invoice', [InvoiceController::class, 'createInvoice'])->name('create-invoice');
     Route::get('/withdraw', [UserWithdrawController::class, 'create'])->name('withdraw');
     Route::post('/withdraw', [UserWithdrawController::class, 'makeWithdraw'])->name('make-withdraw');

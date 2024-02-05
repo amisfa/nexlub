@@ -19,6 +19,12 @@
                 <span class="link_name">Deposit</span>
             </a>
         </li>
+        <li @if ($pageSlug == 'withdraw') class="active"@endif>
+            <a href="{{route('withdraw')}}">
+                <i class='bx bx-dollar'></i>
+                <span class="link_name">Withdraw</span>
+            </a>
+        </li>
         <li @if ($pageSlug == 'rakeBack' || $pageSlug == 'topPlayer') class="active showMenu" @endif>
             <div class="icon-link cursor-default">
                 <a>
@@ -32,16 +38,10 @@
                     <a href="{{route('rake-back')}}">Rake Back</a></li>
             </ul>
         </li>
-        <li @if ($pageSlug == 'subset') class="active"@endif>
-            <a href="{{route('subset')}}">
+        <li @if ($pageSlug == 'referral') class="active"@endif>
+            <a href="{{route('referral')}}">
                 <i class='bx bxs-user-detail'></i>
-                <span class="link_name">Subset</span>
-            </a>
-        </li>
-        <li @if ($pageSlug == 'withdraw') class="active"@endif>
-            <a href="{{route('withdraw')}}">
-                <i class='bx bx-dollar'></i>
-                <span class="link_name">Withdraw</span>
+                <span class="link_name">Referral</span>
             </a>
         </li>
         <li @if ($pageSlug == 'userManagement' || $pageSlug == 'withdrawManagement') class="active showMenu" @endif>
