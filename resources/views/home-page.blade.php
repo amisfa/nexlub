@@ -366,7 +366,7 @@
         </ul>
     </div>
     <br/>
-    <div class="w-3/5 px-4 m-auto">
+    <div class="w-5/6 md:w-3/5 px-4 m-auto">
         <h2>Frequently Asked Questions</h2>
         <div class="accordion">
             <div class="accordion-item">

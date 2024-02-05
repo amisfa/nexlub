@@ -3,7 +3,7 @@
 @section('content')
     @if(!count($gameStrategy['data']) && !count($sngStats['data']))
         <div class="text-danger text-center">You Need to Play More!</div>
-    @else
+    @elsec
         <div class="flex justify-center items-center sm:flex-row flex-col w-full flex-wrap">
             @if($cashGameWinLoseStates['data'] && count($cashGameWinLoseStates['data']))
                 <div>
