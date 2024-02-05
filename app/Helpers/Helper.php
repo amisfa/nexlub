@@ -8,13 +8,15 @@ use App\Models\UserVerify;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+use Livewire\Component;
 
-class Helper
+class Helper extends Component
 {
 
     public function syncWithMavens(): void
     {
         User::query()->where('username', request('Player'))->update(['balance' => floatval(request('Balance'))]);
+        $this->emit('reloadBalance');
     }
 
     static function setPokerMavens($params)
@@ -227,8 +229,8 @@ class Helper
                 'icon' => $coin['icon'],
                 'min_amount' => isset($minAmount[$coin['cid']]) ? $minAmount[$coin['cid']] : 30
             ];
-        }, array_filter($currencies['data'], function($coin){
-            if(!$coin['hidden']) return $coin;
+        }, array_filter($currencies['data'], function ($coin) {
+            if (!$coin['hidden']) return $coin;
         }));
     }
 

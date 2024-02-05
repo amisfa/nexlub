@@ -1,7 +1,6 @@
 @extends('layouts.app', ['pageSlug' => 'homePage'])
 @section('content')
     <header>
-        <!-- Hero section with background image, heading, subheading and button -->
         <div
             class="relative overflow-hidden bg-cover bg-no-repeat"
             style="
