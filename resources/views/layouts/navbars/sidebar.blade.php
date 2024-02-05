@@ -1,7 +1,7 @@
 <div class="sidebar close">
     <ul class="nav-links">
         <li @if ($pageSlug == 'play') class="active"@endif>
-            <a href="{{route('play')}}">
+            <a href="{{route('play')}}" target="_blank">
                 <i class='bx bx-play'></i>
                 <span class="link_name">Play</span>
             </a>

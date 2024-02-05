@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class HeaderView extends Component
 {
-    protected $listeners = ['reloadBalance' => 'reloadBalance'];
+    protected $listeners = ['reloadBalance' => 'reload'];
 
     public function reload(): void
     {
