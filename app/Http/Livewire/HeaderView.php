@@ -11,14 +11,14 @@ class HeaderView extends Component
 
     public function reload(): void
     {
+        $user = Auth::user();
+        $updatedUser = $user->fresh();
+        Auth::setUser($updatedUser);
         $this->render();
     }
 
     public static function render()
     {
-        $user = Auth::user();
-        $updatedUser = $user->fresh();
-        Auth::setUser($updatedUser);
         return view('livewire.header-view', ['user' => auth()->user()]);
     }
 }
