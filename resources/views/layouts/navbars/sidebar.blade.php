@@ -13,22 +13,12 @@
                 <span class="link_name">Statics</span>
             </a>
         </li>
-        <li @if ($pageSlug == 'invoices' || $pageSlug == 'payments') class="active showMenu" @endif>
-            <div class="icon-link cursor-default">
-                <a>
-                    <i class='bx bx-collection' style="cursor: default!important"></i>
-                    <span class="link_name">Deposit</span>
-                </a>
-                <i class='bx bxs-chevron-down arrow'></i>
-            </div>
-            <ul class="sub-menu">
-                <li @if ($pageSlug == 'invoices') class="active " @endif><a href="{{route('invoices')}}">Create
-                        Invoice</a></li>
-                <li @if ($pageSlug == 'payments') class="active " @endif><a href="{{route('payments')}}">Payments</a>
-                </li>
-            </ul>
+        <li @if ($pageSlug == 'deposit') class="active"@endif>
+            <a href="{{route('deposit')}}">
+                <i class='bx bx-wallet'></i>
+                <span class="link_name">Deposit</span>
+            </a>
         </li>
-
         <li @if ($pageSlug == 'rakeBack' || $pageSlug == 'topPlayer') class="active showMenu" @endif>
             <div class="icon-link cursor-default">
                 <a>
@@ -42,8 +32,6 @@
                     <a href="{{route('rake-back')}}">Rake Back</a></li>
             </ul>
         </li>
-
-
         <li @if ($pageSlug == 'subset') class="active"@endif>
             <a href="{{route('subset')}}">
                 <i class='bx bxs-user-detail'></i>

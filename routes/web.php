@@ -7,7 +7,6 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Statics\StaticController;
-use App\Http\Controllers\User\DepositController;
 use App\Http\Controllers\User\InvoiceController;
 use App\Http\Controllers\User\PaymentController;
 use App\Http\Controllers\User\PlayController;
@@ -42,7 +41,8 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/wallet', [WalletController::class, 'create'])->name('wallet');
     Route::get('/play', [PlayController::class, 'create'])->name('play');
     Route::get('/rake-back', [RakeBackView::class, 'create'])->name('rake-back');
-    Route::get('/invoices', [InvoiceController::class, 'create'])->name('invoices');
+    Route::get('/deposit', [InvoiceController::class, 'create'])->name('deposit');
+    Route::post('/deposit', [InvoiceController::class, 'makeInvoice'])->name('make-invoice');
     Route::get('/subset', [AffiliateRakeView::class, 'create'])->name('subset');
     Route::get('/create-invoice', [InvoiceController::class, 'createInvoice'])->name('create-invoice');
     Route::get('/withdraw', [UserWithdrawController::class, 'create'])->name('withdraw');
@@ -57,10 +57,7 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
 
     Route::get('/success-payment', [InvoiceController::class, 'successPayment']);
     Route::get('/failed-payment', [InvoiceController::class, 'failedPayment']);
-    Route::get('/payments', [PaymentController::class, 'create'])->name('payments');
 
-    Route::post('/create-invoice', [InvoiceController::class, 'makeInvoice'])->name('make-invoice');
-    Route::get('/deposit', [DepositController::class, 'create'])->name('deposit');
 });
 
 Route::prefix('auth')->group(function () {
