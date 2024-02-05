@@ -16,10 +16,11 @@ class UserWithdrawController extends Controller
         $currencies = Helper::getAvailableCurrencies();
         return view('pages.withdraw', ['currencies' => $currencies]);
     }
+
     public function makeWithdraw(): \Illuminate\Http\RedirectResponse
     {
         try {
-            if (auth()->user()->balance < request('amount')) return back()->with(['error' => 'Withdraw Must Greater or Equal to Your Balance']);
+            if (auth()->user()->balance < request('amount')) return back()->with(['error' => 'Insufficient Balance']);
             else {
                 Helper::decBalance([
                     'user_id' => auth()->id(),
