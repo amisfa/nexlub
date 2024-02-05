@@ -27,6 +27,6 @@ class UserEditAction extends Action
      */
     public function handle($model, View $view)
     {
-        return redirect('statics/edit-profile');
+        return redirect('dashboard/edit-profile');
     }
 }

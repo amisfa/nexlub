@@ -30,8 +30,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get("/", function () {return view('home-page');})->name('home-page');
-Route::prefix('statics')->middleware('auth:web')->group(function () {
+Route::get("/", function () {
+    return view('home-page');
+})->name('home-page');
+Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/', [StaticController::class, 'create'])->name('statics');
     Route::get('/profile', [ProfileController::class, 'create'])->name('profile-view');
     Route::get('/edit-profile', [ProfileController::class, 'update'])->name('profile-edit');

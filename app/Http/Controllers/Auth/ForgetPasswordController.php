@@ -38,7 +38,7 @@ class ForgetPasswordController extends Controller
 
     public function create(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Routing\Redirector|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse
     {
-        if (Auth::user()) return redirect('statics');
+        if (Auth::user()) return redirect('dashboard');
         return view('auth.forget-password');
     }
 }
