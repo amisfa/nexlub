@@ -1,24 +1,28 @@
 @extends('layouts.app', ['pageSlug' => 'statics'])
 
 @section('content')
-    <div class="flex justify-center items-center sm:flex-row flex-col w-full flex-wrap">
-        @if($cashGameWinLoseStates['data'] && count($cashGameWinLoseStates['data']))
-            <div>
-                <canvas id="cashGameWinLoseStates"></canvas>
-            </div>
-        @endif
+    @if(!count($gameStrategy['data']) && !count($sngStats['data']))
+        <div class="text-danger text-center">You Need to Play More!</div>
+    @else
+        <div class="flex justify-center items-center sm:flex-row flex-col w-full flex-wrap">
+            @if($cashGameWinLoseStates['data'] && count($cashGameWinLoseStates['data']))
+                <div>
+                    <canvas id="cashGameWinLoseStates"></canvas>
+                </div>
+            @endif
 
-        @if($sngStats['data'] && count($sngStats['data']))
-            <div>
-                <canvas id="sngStats"></canvas>
-            </div>
-        @endif
-        @if($gameStrategy['data'] && count($gameStrategy['data']))
-            <div>
-                <canvas id="gameStrategy"></canvas>
-            </div>
-        @endif
-    </div>
+            @if($sngStats['data'] && count($sngStats['data']))
+                <div>
+                    <canvas id="sngStats"></canvas>
+                </div>
+            @endif
+            @if($gameStrategy['data'] && count($gameStrategy['data']))
+                <div>
+                    <canvas id="gameStrategy"></canvas>
+                </div>
+            @endif
+        </div>
+    @endif
 @endsection
 @push('js')
     <script>
