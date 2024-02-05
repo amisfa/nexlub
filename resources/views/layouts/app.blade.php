@@ -60,13 +60,13 @@
         <div class="main-panel magic-pattern">
             <div class="content">
                 @if(session('warning'))
-                    <div class="alert alert-primary" role="alert">{{session('warning')}}</div>
+                    <div class="my-2 alert alert-primary" role="alert">{{session('warning')}}</div>
                 @endif
                 @if(session('success'))
-                    <div class="alert alert-success" role="alert">{{session('success')}}</div>
+                    <div class="my-2 alert alert-success" role="alert">{{session('success')}}</div>
                 @endif
                 @if(session('error'))
-                    <div class="alert alert-danger" role="alert">{{session('error')}}</div>
+                    <div class="my-2 alert alert-danger" role="alert">{{session('error')}}</div>
                 @endif
                 @yield('content')
             </div>
@@ -84,20 +84,6 @@
 <script src="{{ asset('black') }}/js/core/popper.min.js"></script>
 <script src="{{ asset('black') }}/js/core/bootstrap.min.js"></script>
 <script src="{{ asset('black') }}/js/plugins/bootstrap-notify.js"></script>
-@auth()
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-        (function () {
-            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/65c0171a0ff6374032c94556/1hlr5kg2j';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
-    </script>
-    <!--End of Tawk.to Script-->
-@endauth
 @stack('js')
 
 @stack('js')
