@@ -34,7 +34,7 @@ Route::get("/", function () {
     return view('home-page');
 })->name('home-page');
 Route::prefix('dashboard')->middleware('auth:web')->group(function () {
-    Route::get('/', [StaticController::class, 'create'])->name('statics');
+    Route::get('/statics', [StaticController::class, 'create'])->name('statics');
     Route::get('/profile', [ProfileController::class, 'create'])->name('profile-view');
     Route::get('/edit-profile', [ProfileController::class, 'update'])->name('profile-edit');
     Route::put('/edit-user-details', [ProfileController::class, 'editUserDetails'])->name('edit-user-details');
