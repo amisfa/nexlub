@@ -84,10 +84,11 @@
 <script src="{{ asset('black') }}/js/core/popper.min.js"></script>
 <script src="{{ asset('black') }}/js/core/bootstrap.min.js"></script>
 <script src="{{ asset('black') }}/js/plugins/bootstrap-notify.js"></script>
+@laravelViewsScripts
+@livewire('livewire-ui-modal')
+
 @stack('js')
 
 @stack('js')
-@laravelViewsScripts
-@livewire('livewire-ui-modal')
 </body>
 </html>

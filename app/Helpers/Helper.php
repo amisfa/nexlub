@@ -2,19 +2,16 @@
 
 namespace App\Helpers;
 
-use App\Events\UserChangedBalance;
 use App\Mail\VerifyEmail;
 use App\Models\User;
 use App\Models\UserVerify;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
-use Livewire\Component;
 
-class Helper extends Component
+class Helper
 {
-
-    public function syncWithMavens(): void
+    public function balanceUpdate(): void
     {
         User::query()->where('username', request('Player'))->update(['balance' => floatval(request('Balance'))]);
     }

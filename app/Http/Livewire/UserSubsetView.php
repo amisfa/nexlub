@@ -47,7 +47,7 @@ class UserSubsetView extends TableView
 
     public function reload(): void
     {
-        $this->emit('reloadBalance');
+//        $this->emit('reloadBalance');
         $this->render();
     }
 }
