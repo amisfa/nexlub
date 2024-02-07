@@ -57,14 +57,10 @@
     <meta name="theme-color" content="#0e1726">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
-<div>
     <div class="mavens">
         <iframe src='{{$url}}'></iframe>
     </div>
-</div>
 <span class="icon-bar">
                 <a href="{{route('home-page')}}" target="_blank" class="home-page"><i class='bx bx-home'></i></a>
 </span>
-</body>
 </html>
