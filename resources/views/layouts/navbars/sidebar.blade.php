@@ -25,6 +25,12 @@
                 <span class="link_name">Withdraw</span>
             </a>
         </li>
+        <li @if ($pageSlug == 'tickets') class="active"@endif>
+            <a href="{{route('tickets')}}">
+                <i class='bx bx-message'></i>
+                <span class="link_name">Tickets</span>
+            </a>
+        </li>
         <li @if ($pageSlug == 'rakeBack' || $pageSlug == 'topPlayer') class="active showMenu" @endif>
             <div class="icon-link cursor-default">
                 <a>

@@ -8,13 +8,13 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Statics\StaticController;
 use App\Http\Controllers\User\InvoiceController;
-use App\Http\Controllers\User\PaymentController;
 use App\Http\Controllers\User\PlayController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\UserManagementController;
 use App\Http\Controllers\User\UserWithdrawController;
 use App\Http\Controllers\User\WalletController;
 use App\Http\Controllers\User\WithdrawManagementController;
+use App\Http\Livewire\Ticket;
 use App\Http\Livewire\UserRake\AffiliateRakeView;
 use App\Http\Livewire\UserRake\RakeBackView;
 use Illuminate\Support\Facades\Route;
@@ -47,6 +47,7 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/create-invoice', [InvoiceController::class, 'createInvoice'])->name('create-invoice');
     Route::get('/withdraw', [UserWithdrawController::class, 'create'])->name('withdraw');
     Route::post('/withdraw', [UserWithdrawController::class, 'makeWithdraw'])->name('make-withdraw');
+    Route::get('/tickets', [Ticket::class, 'render'])->name('tickets');
 //    Route::prefix('admin')->middleware(['role:manager'])->group(function () {
 //    });
     Route::prefix('admin')->group(function () {
