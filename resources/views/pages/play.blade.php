@@ -45,7 +45,7 @@
             color: white;
         }
     </style>
-    <title>Play Poker</title>
+    <title>Play</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('black') }}/img/apple-touch-icon.png">
@@ -58,11 +58,13 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+<div>
     <div class="mavens">
         <iframe src='{{$url}}'></iframe>
     </div>
-    <span class="icon-bar">
+</div>
+<span class="icon-bar">
                 <a href="{{route('home-page')}}" target="_blank" class="home-page"><i class='bx bx-home'></i></a>
-            </span>
+</span>
 </body>
 </html>
