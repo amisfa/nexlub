@@ -2,7 +2,7 @@
 <html>
 <head>
     <style type="text/css">
-        div {
+        .mavens div {
             position: absolute;
             top: 0px;
             right: 0px;
@@ -10,7 +10,7 @@
             bottom: 0px;
         }
 
-        iframe {
+        .mavens iframe, .mavens {
             width: 100%;
             height: 100%;
             border: none;
@@ -58,10 +58,12 @@
 </head>
 <body>
 <div>
-    <iframe src='{{$url}}'></iframe>
+    <div class="mavens">
+        <iframe src='{{$url}}'></iframe>
+    </div>
     <span class="icon-bar">
-            <a href="{{route('home-page')}}" target="_blank" class="home-page"><i class='bx bx-home'></i></a>
-        </span>
+                <a href="{{route('home-page')}}" target="_blank" class="home-page"><i class='bx bx-home'></i></a>
+            </span>
 </div>
 </body>
 </html>
