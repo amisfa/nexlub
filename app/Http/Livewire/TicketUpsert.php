@@ -18,7 +18,7 @@ class TicketUpsert extends ModalComponent
         return view('livewire.ticket-upsert', ['ticket' => $ticket]);
     }
 
-    public function createTicket()
+    public function createTicket(): void
     {
         $ticket = \App\Models\Ticket::query()->create([
             'user_id' => auth()->id(),
@@ -28,6 +28,6 @@ class TicketUpsert extends ModalComponent
             'comment' => $this->comment,
             'user_id' => auth()->id()
         ]);
-        $this->emit('closeModal');
+        $this->emit('reloadUserTickets');
     }
 }

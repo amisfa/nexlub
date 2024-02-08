@@ -16,7 +16,6 @@
     <meta name="msapplication-TileColor" content="#0e1726">
     <meta name="theme-color" content="#0e1726">
     @auth()
-        <!-- CSS -->
         <link href="{{ asset('black') }}/css/black-dashboard.css" rel="stylesheet"/>
         <link href="{{ asset('black') }}/css/theme.css" rel="stylesheet"/>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -26,10 +25,6 @@
     @endguest
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <!-- Fonts -->
-    <!-- Alpine v3 -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <!-- Focus plugin -->
-    <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet"/>
     @laravelViewsStyles
 </head>

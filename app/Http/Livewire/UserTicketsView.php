@@ -2,12 +2,15 @@
 
 namespace App\Http\Livewire;
 
+use App\Actions\ContinueConversationAction;
 use LaravelViews\Views\TableView;
 
 class UserTicketsView extends TableView
 {
     protected $paginate = 10;
     public $searchBy = ['subject'];
+
+    protected $listeners = ['reloadUserTickets' => 'refresh'];
 
     public function repository(): \Illuminate\Database\Eloquent\Builder
     {
@@ -27,6 +30,14 @@ class UserTicketsView extends TableView
         ];
     }
 
+    /** For actions by item */
+    protected function actionsByRow(): array
+    {
+        return [
+            new ContinueConversationAction(),
+        ];
+    }
+
     public function row($model): array
     {
         $data = [
@@ -39,5 +50,10 @@ class UserTicketsView extends TableView
     public static function ticketHasResponse($lastComment): string
     {
         return $lastComment->user->id == auth()->id() ? "Waiting" : "Answered";
+    }
+
+    public function refresh(): void
+    {
+        $this->render();
     }
 }
