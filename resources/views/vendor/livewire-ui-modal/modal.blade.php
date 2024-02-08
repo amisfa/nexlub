@@ -14,7 +14,7 @@
         class="fixed inset-0 z-10 overflow-hidden"
         style="display: none;"
     >
-        <div class="flex items-end justify-center min-h-screen text-center sm:block sm:p-0" style="padding-top: 15px">
+        <div class="flex items-center justify-center min-h-screen text-center sm:block sm:p-0" style="padding-top: 15px">
             <div
                 x-show="show"
                 x-on:click="closeModalOnClickAway()"
