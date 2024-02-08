@@ -1,21 +1,22 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\AdminView;
 
 use App\Actions\ContinueConversationAction;
 use LaravelViews\Facades\Header;
 use LaravelViews\Views\TableView;
 
-class UserTicketsView extends TableView
+class TicketManagementView extends TableView
 {
     protected $paginate = 10;
+
     public $searchBy = ['subject'];
 
     protected $listeners = ['reloadUserTickets' => 'refresh'];
 
     public function repository(): \Illuminate\Database\Eloquent\Builder
     {
-        return \App\Models\Ticket::query()->where('user_id', auth()->id());
+        return \App\Models\Ticket::query();
     }
 
     /**
