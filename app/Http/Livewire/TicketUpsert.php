@@ -34,6 +34,8 @@ class TicketUpsert extends ModalComponent
     public function addComment(): void
     {
         $ticket = \App\Models\Ticket::find($this->model['id']);
+        $ticket->updated_at = now();
+        $ticket->save();
         $ticket->comments()->create([
             'comment' => $this->comment,
             'user_id' => auth()->id()
