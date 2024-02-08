@@ -30,4 +30,14 @@ class TicketUpsert extends ModalComponent
         ]);
         $this->emit('reloadUserTickets');
     }
+
+    public function addComment(): void
+    {
+        $ticket = \App\Models\Ticket::find($this->model['id']);
+        $ticket->comments()->create([
+            'comment' => $this->comment,
+            'user_id' => auth()->id()
+        ]);
+        $this->render();
+    }
 }

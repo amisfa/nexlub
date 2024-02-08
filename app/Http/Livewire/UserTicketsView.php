@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Actions\ContinueConversationAction;
+use LaravelViews\Facades\Header;
 use LaravelViews\Views\TableView;
 
 class UserTicketsView extends TableView
@@ -26,15 +27,9 @@ class UserTicketsView extends TableView
     {
         return [
             'Subject',
-            'Status'
-        ];
-    }
-
-    /** For actions by item */
-    protected function actionsByRow(): array
-    {
-        return [
-            new ContinueConversationAction(),
+            'Status',
+            Header::title('Created')->sortBy('created_at'),
+            Header::title('Updated')->sortBy('created_at'),
         ];
     }
 
@@ -43,8 +38,18 @@ class UserTicketsView extends TableView
         $data = [
             $model->subject,
             $this->ticketHasResponse($model->comments()->latest()->first()),
+            $model->created_at->diffforHumans(),
+            $model->updated_at->diffforHumans(),
         ];
         return $data;
+    }
+
+    /** For actions by item */
+    protected function actionsByRow(): array
+    {
+        return [
+            new ContinueConversationAction(),
+        ];
     }
 
     public static function ticketHasResponse($lastComment): string
