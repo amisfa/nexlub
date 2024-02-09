@@ -2,7 +2,10 @@
 
 namespace App\Http\Livewire\AdminView;
 
+use App\Actions\CloseConversationAction;
 use App\Actions\ContinueConversationAction;
+use App\Actions\OpenConversationAction;
+use Carbon\Carbon;
 use LaravelViews\Facades\Header;
 use LaravelViews\Views\TableView;
 
@@ -31,6 +34,7 @@ class TicketManagementView extends TableView
             'Status',
             Header::title('Created')->sortBy('created_at'),
             Header::title('Updated')->sortBy('updated_at'),
+            Header::title('Closed')->sortBy('closed_at'),
         ];
     }
 
@@ -41,6 +45,7 @@ class TicketManagementView extends TableView
             $this->ticketHasResponse($model->comments()->latest()->first()),
             $model->created_at->diffforHumans(),
             $model->updated_at->diffforHumans(),
+            $model->closed_at ? Carbon::parse($model->closed_at)->diffforHumans() : 'Not Closed',
         ];
         return $data;
     }
@@ -50,6 +55,8 @@ class TicketManagementView extends TableView
     {
         return [
             new ContinueConversationAction(),
+            new CloseConversationAction(),
+            new OpenConversationAction()
         ];
     }
 

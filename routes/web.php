@@ -15,6 +15,7 @@ use App\Http\Controllers\User\UserWithdrawController;
 use App\Http\Controllers\User\WalletController;
 use App\Http\Controllers\User\WithdrawManagementController;
 use App\Http\Livewire\Ticket;
+use App\Http\Livewire\TicketManagement;
 use App\Http\Livewire\UserRake\AffiliateRakeView;
 use App\Http\Livewire\UserRake\RakeBackView;
 use Illuminate\Support\Facades\Route;
@@ -54,6 +55,7 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
         Route::get('/user-management', [UserManagementController::class, 'create'])->name('user-management');
         Route::get('/withdraw-management', [WithdrawManagementController::class, 'create'])->name('withdraw-management');
         Route::post('/reject-withdraw/{withdraw}', [WithdrawManagementController::class, 'rejectWithdraw'])->name('reject-withdraw');
+        Route::get('/ticket-management', [TicketManagement::class, 'render'])->name('ticket-management');
     });
 
     Route::get('/success-payment', [InvoiceController::class, 'successPayment']);

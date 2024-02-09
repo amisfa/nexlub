@@ -50,7 +50,7 @@
                 <span class="link_name">Referral</span>
             </a>
         </li>
-        <li @if ($pageSlug == 'userManagement' || $pageSlug == 'withdrawManagement') class="active showMenu" @endif>
+        <li @if ($pageSlug == 'user-management' || $pageSlug == 'withdraw-management' ||$pageSlug == 'ticket-management' ) class="active showMenu" @endif>
             <div class="icon-link cursor-default">
                 <a>
                     <i class='bx bx-user' style="cursor: default!important"></i>
@@ -59,10 +59,13 @@
                 <i class='bx bxs-chevron-down arrow'></i>
             </div>
             <ul class="sub-menu">
-                <li @if ($pageSlug == 'userManagement') class="active" @endif>
+                <li @if ($pageSlug == 'user-management') class="active" @endif>
                     <a href="{{route('user-management')}}">User</a></li>
-                <li @if ($pageSlug == 'withdrawManagement') class="active" @endif><a
-                        href="{{route('withdraw-management')}}">Withdraw</a>
+                <li @if ($pageSlug == 'withdraw-management') class="active" @endif>
+                    <a href="{{route('withdraw-management')}}">Withdraw</a>
+                </li>
+                <li @if ($pageSlug == 'ticket-management') class="active" @endif>
+                    <a href="{{route('ticket-management')}}">Ticket</a>
                 </li>
             </ul>
         </li>

@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => __('Withdraw Management'), 'pageSlug' => 'withdrawManagement'])
+@extends('layouts.app', ['page' => __('Withdraw Management'), 'pageSlug' => 'withdraw-management'])
 
 @section('content')
     <div class="container">
