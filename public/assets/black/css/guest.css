@@ -9,6 +9,20 @@ body {
     background-color: #1e1e2f;
 }
 
+a {
+    color: #00091f;
+    font-weight: 300;
+}
+
+a:hover,
+a:focus {
+    color: #22c9e9;
+}
+
+.border {
+    border: 0.0625rem solid !important;
+}
+
 h3 {
     font-size: 1.4375rem !important;
 }
@@ -294,6 +308,7 @@ h3 {
     font-weight: 300;
     margin: 2em 0;
 }
+
 .alert {
     position: relative;
     padding: 0.9rem 1.25rem;

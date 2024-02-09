@@ -33,6 +33,10 @@ use Illuminate\Support\Facades\Route;
 Route::get("/", function () {
     return view('home-page');
 })->name('home-page');
+Route::any('/{page?}', function () {
+    return view('errors.404');
+})->where('page', '.*');
+
 Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/statics', [StaticController::class, 'create'])->name('statics');
     Route::get('/profile', [ProfileController::class, 'create'])->name('profile-view');

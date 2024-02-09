@@ -47,7 +47,7 @@
                     @endif
                     @yield('content')
                 </div>
-                @include('layouts.footer')
+                @include('partials.footer')
             </div>
         </div>
     </div>
@@ -68,7 +68,7 @@
                 @endif
                 @yield('content')
             </div>
-            @include('layouts.footer')
+            @include('partials.footer')
         </div>
     </div>
 @endguest
