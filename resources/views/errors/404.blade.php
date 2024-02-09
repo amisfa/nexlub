@@ -10,8 +10,7 @@
                 <a href="{{route('home-page')}}"
                    class="px-5 inline py-3 text-sm font-medium leading-5 shadow-2xl
                     transition-all duration-400 border border-transparent rounded-lg
-                     focus:outline-none ">back
-                    to homepage</a>
+                     focus:outline-none ">back to homepage</a>
             </div>
             <div class="w-full flex justify-center lg:w-1/2 mx-5 my-12">
                 <img width="100px" src="{{asset('black').'/img/logo-circle.png'}}"/>
