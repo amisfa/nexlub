@@ -44,7 +44,7 @@ class TicketManagementView extends TableView
     {
         $data = [
             $model->subject,
-            $this->ticketHasResponse($model->comments()->latest()->first()),
+            $this->ticketHasResponse($model->latestComment()->first()),
             $model->created_at->diffforHumans(),
             $model->updated_at->diffforHumans(),
             $model->closed_at ? Carbon::parse($model->closed_at)->diffforHumans() : 'Not Closed',
