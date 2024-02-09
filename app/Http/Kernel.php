@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\BannedUser;
 use App\Http\Middleware\MavensGuardMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -37,6 +38,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Laravel\Passport\Http\Middleware\CreateFreshApiToken::class,
+            BannedUser::class
         ],
 
         'api' => [

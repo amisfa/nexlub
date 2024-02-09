@@ -44,10 +44,6 @@ class BanUserAction extends Action
                 $model->save();
             }
         }
-        $userToLogout = User::find($model->id);
-        Auth::setUser($userToLogout);
-        Auth::logout();
-
     }
 
     public function renderIf($model, View $view): bool
