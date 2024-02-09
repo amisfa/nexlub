@@ -5,6 +5,7 @@ namespace App\Http\Livewire\AdminView;
 use App\Actions\CloseConversationAction;
 use App\Actions\ContinueConversationAction;
 use App\Actions\OpenConversationAction;
+use App\Filters\TicketFilter;
 use Carbon\Carbon;
 use LaravelViews\Facades\Header;
 use LaravelViews\Views\TableView;
@@ -49,6 +50,14 @@ class TicketManagementView extends TableView
         ];
         return $data;
     }
+
+    protected function filters()
+    {
+        return [
+            new TicketFilter(),
+        ];
+    }
+
 
     /** For actions by item */
     protected function actionsByRow(): array

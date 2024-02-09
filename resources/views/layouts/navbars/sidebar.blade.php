@@ -31,7 +31,7 @@
                 <span class="link_name">Support</span>
             </a>
         </li>
-        <li @if ($pageSlug == 'rakeBack' || $pageSlug == 'topPlayer') class="active showMenu" @endif>
+        <li @if ($pageSlug == 'rakeBack') class="active showMenu" @endif>
             <div class="icon-link cursor-default">
                 <a>
                     <i class='bx bx-trophy' style="cursor: default!important"></i>

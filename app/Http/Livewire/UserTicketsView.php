@@ -3,6 +3,8 @@
 namespace App\Http\Livewire;
 
 use App\Actions\ContinueConversationAction;
+use App\Filters\TicketFilter;
+use Carbon\Carbon;
 use LaravelViews\Facades\Header;
 use LaravelViews\Views\TableView;
 
@@ -30,6 +32,7 @@ class UserTicketsView extends TableView
             'Status',
             Header::title('Created')->sortBy('created_at'),
             Header::title('Updated')->sortBy('updated_at'),
+            Header::title('Closed')->sortBy('closed_at'),
         ];
     }
 
@@ -40,6 +43,7 @@ class UserTicketsView extends TableView
             $this->ticketHasResponse($model->comments()->latest()->first()),
             $model->created_at->diffforHumans(),
             $model->updated_at->diffforHumans(),
+            $model->closed_at ? Carbon::parse($model->closed_at)->diffforHumans() : 'Not Closed',
         ];
         return $data;
     }
@@ -49,6 +53,12 @@ class UserTicketsView extends TableView
     {
         return [
             new ContinueConversationAction(),
+        ];
+    }
+    protected function filters()
+    {
+        return [
+            new TicketFilter(),
         ];
     }
 
