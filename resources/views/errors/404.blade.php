@@ -15,7 +15,6 @@
             <div class="w-full flex justify-center lg:w-1/2 mx-5 my-12">
                 <img width="100px" src="{{asset('black').'/img/logo-circle.png'}}"/>
             </div>
-
         </div>
     </div>
 @endsection
