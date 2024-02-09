@@ -37,6 +37,7 @@ class LoginController extends Controller
         if (!$user || !Hash::check($request->input('password'), $user->password)) {
             return redirect('auth/login')->withErrors(['password' => 'User not found or password was incorrect']);
         }
+        if ($user->banned_id) return redirect('auth/login')->withErrors(['password' => 'User was banned, please contact us']);
         Auth::loginUsingId($user->id);
         return redirect('/');
     }

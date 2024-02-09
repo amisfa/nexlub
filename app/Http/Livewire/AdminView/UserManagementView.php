@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire\AdminView;
 
+use App\Actions\BanUserAction;
+use App\Actions\UnBanUserAction;
 use App\Actions\UserDetailAction;
 use App\Actions\UserPercentageAction;
 use App\Models\User;
@@ -40,7 +42,9 @@ class UserManagementView extends TableView
     {
         return [
             new UserDetailAction(),
-            new UserPercentageAction()
+            new UserPercentageAction(),
+            new BanUserAction(),
+            new UnBanUserAction(),
         ];
     }
 

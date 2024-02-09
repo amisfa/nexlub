@@ -2,22 +2,23 @@
 
 namespace App\Actions;
 
+use App\Helpers\Helper;
 use LaravelViews\Actions\Action;
 use LaravelViews\Views\View;
 
-class OpenConversationAction extends Action
+class UnBanUserAction extends Action
 {
     /**
      * Any title you want to be displayed
      * @var String
      * */
-    public $title = "open";
+    public $title = "Unban";
 
     /**
      * This should be a valid Feather icon string
      * @var String
      */
-    public $icon = "play";
+    public $icon = "user-check";
 
     /**
      * Execute the action when the user clicked on the button
@@ -27,12 +28,16 @@ class OpenConversationAction extends Action
      */
     public function handle($model, View $view)
     {
-        $model->closed_at = null;
+        Helper::setPokerMavens([
+            "Command" => "BlacklistDelete",
+            "ID" => $model->banned_id,
+        ]);
+        $model->banned_id = null;
         $model->save();
     }
 
     public function renderIf($model, View $view): bool
     {
-        return !!$model->closed_at;
+        return $model->banned_id !== null;
     }
 }

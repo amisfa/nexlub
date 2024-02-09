@@ -26,6 +26,7 @@ class ForgetPasswordController extends Controller
             return redirect('auth/forget-password')->withErrors($validator->messages())->withInput();
         }
         $user = User::where('email', $request->email)->first();
+        if ($user->banned_id) return redirect('auth/login')->withErrors(['password' => 'User was banned, please contact us']);
         $token = Str::random(64);
         DB::table('password_resets')->insert([
             'email' => $request->email,

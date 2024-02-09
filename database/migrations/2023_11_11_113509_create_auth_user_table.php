@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->string('password');
             $table->string('wallet_no')->index();
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('banned_id')->nullable();
             $table->unsignedBigInteger('referrer_id')->nullable();
             $table->unsignedTinyInteger('avatar');
             $table->foreign('referrer_id')->references('id')->on('auth_user');

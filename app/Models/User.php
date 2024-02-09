@@ -35,6 +35,7 @@ class User extends Authenticatable
         'email_verified_at',
         'avatar',
         'balance',
+        'banned_id'
     ];
     protected $table = 'auth_user';
 
