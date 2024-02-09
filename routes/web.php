@@ -35,7 +35,7 @@ Route::get("/", function () {
 })->name('home-page');
 Route::any('/{page?}', function () {
     return view('errors.404');
-})->where('page', '.*');
+});
 
 Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/statics', [StaticController::class, 'create'])->name('statics');
