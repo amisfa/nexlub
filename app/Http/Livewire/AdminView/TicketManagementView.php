@@ -5,7 +5,8 @@ namespace App\Http\Livewire\AdminView;
 use App\Actions\CloseConversationAction;
 use App\Actions\ContinueConversationAction;
 use App\Actions\OpenConversationAction;
-use App\Filters\TicketFilter;
+use App\Filters\TicketStatusFilter;
+use App\Filters\TicketTypeFilter;
 use Carbon\Carbon;
 use LaravelViews\Facades\Header;
 use LaravelViews\Views\TableView;
@@ -54,7 +55,8 @@ class TicketManagementView extends TableView
     protected function filters()
     {
         return [
-            new TicketFilter(),
+            new TicketTypeFilter(),
+            new TicketStatusFilter(),
         ];
     }
 

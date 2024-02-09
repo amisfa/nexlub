@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Ticket extends Model
@@ -21,5 +22,10 @@ class Ticket extends Model
     public function comments(): HasMany
     {
         return $this->hasMany(TicketComments::class, 'ticket_id');
+    }
+
+    public function latestComment(): HasOne
+    {
+        return $this->hasOne(TicketComments::class, 'ticket_id')->latest();
     }
 }

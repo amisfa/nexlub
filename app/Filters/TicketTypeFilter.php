@@ -5,7 +5,7 @@ namespace App\Filters;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelViews\Filters\Filter;
 
-class TicketFilter extends Filter
+class TicketTypeFilter extends Filter
 {
     /**
      * Modify the current query when the filter is used
