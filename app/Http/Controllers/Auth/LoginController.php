@@ -14,7 +14,7 @@ class LoginController extends Controller
 {
     public function create(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Routing\Redirector|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse
     {
-        if (Auth::user()) return redirect('dashboard');
+        if (Auth::user()) return redirect('/');
         return view('auth.login');
     }
 
