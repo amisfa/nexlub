@@ -19,6 +19,7 @@ class UserWithdraw extends Model
     protected $fillable = [
         'user_id',
         'amount',
+        'pay_amount',
         'status',
         'tx_url',
         'rejected_comment',

@@ -3,7 +3,9 @@
 namespace App\Actions;
 
 use App\Enums\WithdrawStatuses;
+use App\Helpers\Helper;
 use App\Models\UserWithdraw;
+use Exception;
 use Illuminate\Support\Facades\Http;
 use LaravelViews\Actions\Action;
 use LaravelViews\Views\View;
@@ -30,30 +32,29 @@ class PayWithdrawAction extends Action
      */
     public function handle($model, View $view)
     {
-//        try {
-        $withdraw = UserWithdraw::findOrFail($model->id);
-        $response = Http::get('https://plisio.net/api/v1/operations/withdraw', [
-            'api_key' => env('PILISIO_SECRET_KEY'),
-            'currency' => $withdraw->currency,
-            'source_amount' => $withdraw->amount,
-            'type' => 'cash_out',
-            'to' => $withdraw->user->wallet_no,
-            'feePlan' => 'normal'
-        ]);
-        dd($response->body());
-//            if ($response->status() !== 200) $this->error('Withdraw Failed');
-//            $response = json_decode($response->body(), true);
-//            $withdraw->tx_url = $response['tx_url'];
-//            $withdraw->status = WithdrawStatuses::Paid;
-//            $withdraw->save();
-//            Helper::setPokerMavens([
-//                'Command' => 'LogsAddEvent',
-//                'Log' => 'Paid Withdraw Id' . $withdraw->id
-//            ]);
-//            $this->success('Withdraw Successfully');
-//        } catch (Exception $e) {
-//            $this->error('Withdraw Failed');
-//        }
+        try {
+            $withdraw = UserWithdraw::findOrFail($model->id);
+            $response = Http::get('https://plisio.net/api/v1/operations/withdraw', [
+                'api_key' => env('PILISIO_SECRET_KEY'),
+                'currency' => $withdraw->currency,
+                'amount' => $withdraw->pay_amount,
+                'type' => 'cash_out',
+                'to' => $withdraw->user->wallet_no,
+                'feePlan' => 'normal'
+            ]);
+            if ($response->status() !== 200) $this->error('Withdraw Failed');
+            $response = json_decode($response->body(), true);
+            $withdraw->tx_url = $response['tx_url'];
+            $withdraw->status = WithdrawStatuses::Paid;
+            $withdraw->save();
+            Helper::setPokerMavens([
+                'Command' => 'LogsAddEvent',
+                'Log' => 'Paid Withdraw Id' . $withdraw->id
+            ]);
+            $this->success('Withdraw Successfully');
+        } catch (Exception $e) {
+            $this->error('Withdraw Failed');
+        }
     }
 
     public function renderIf($model, View $view): bool
