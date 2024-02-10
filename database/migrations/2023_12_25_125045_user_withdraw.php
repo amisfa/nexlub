@@ -16,7 +16,6 @@ return new class extends Migration {
             $table->unsignedTinyInteger('status')->default(WithdrawStatuses::Waiting);
             $table->unsignedBigInteger('user_id');
             $table->unsignedDecimal('amount', 18)->default(0);
-            $table->unsignedDecimal('pay_amount', 18)->default(0);
             $table->string('tx_url')->nullable();
             $table->string('rejected_comment')->nullable();
             $table->string('currency')->nullable();

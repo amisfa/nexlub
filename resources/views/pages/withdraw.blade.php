@@ -26,7 +26,7 @@
                                         <option value="" class="comboBox"></option>
                                         @foreach($currencies as $currency)
                                             <option
-                                                value="{{json_encode(['currency'=>['rate_usd' => $currency['rate_usd'], 'cid' => $currency['currency']]])}}"
+                                                value="{{$currency['currency']}}"
                                                 class="comboBox"
                                                 min_amount="{{$currency['min_amount']}}">
                                                 {{$currency['name']}}

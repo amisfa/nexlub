@@ -32,7 +32,6 @@ class WithdrawManagementView extends TableView
             'Wallet',
             'Amount',
             'Payment Currency',
-            'Old Pay Amount',
             'Current Pay Amount',
             Header::title('Status')->sortBy('status'),
             Header::title('Create At')->sortBy('created_at'),
@@ -43,10 +42,10 @@ class WithdrawManagementView extends TableView
 
     public function row($model): array
     {
-        $oldPayAmount = 0;
+        $currentPayAmount = 0;
         if ($this->getWithdrawStatus($model->status->value) == 'Waiting') {
-            array_map(function ($currency) use (&$oldPayAmount, $model) {
-                if ($currency['currency'] == $model->currency) $oldPayAmount = $currency['rate_usd'] * $model->amount;
+            array_map(function ($currency) use (&$currentPayAmount, $model) {
+                if ($currency['currency'] == $model->currency) $currentPayAmount = $currency['rate_usd'] * $model->amount;
             }, Helper::getAvailableCurrencies());
         }
         return [
@@ -54,8 +53,7 @@ class WithdrawManagementView extends TableView
             $model->user->wallet_no,
             $model->amount . ' USD',
             $model->currency,
-            $model->pay_amount,
-            $oldPayAmount,
+            $currentPayAmount,
             '<p class="' . $this->getStatusColor($model->status->value) . '">' . $this->getWithdrawStatus($model->status->value) . '</p>',
             $model->created_at->diffforHumans(),
             $model->rejected_comment,
