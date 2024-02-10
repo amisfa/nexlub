@@ -218,6 +218,7 @@ class Helper
         $currencies = json_decode($response->body(), true);
         $minAmount = [
             'BTC' => 100,
+            'ETH' => 30
         ];
         return array_map(function ($coin) use ($minAmount) {
             return [
@@ -225,7 +226,7 @@ class Helper
                 'rate_usd' => $coin['rate_usd'],
                 'name' => $coin['name'],
                 'icon' => $coin['icon'],
-                'min_amount' => isset($minAmount[$coin['cid']]) ? $minAmount[$coin['cid']] : 30
+                'min_amount' => isset($minAmount[$coin['cid']]) ? $minAmount[$coin['cid']] : 20
             ];
         }, array_filter($currencies['data'], function ($coin) {
             if (!$coin['hidden']) return $coin;
