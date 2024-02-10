@@ -18,13 +18,12 @@ class BannedUser
     public function handle($request, Closure $next)
     {
         $userLogged = Auth::check();
-        if (!$userLogged) {
-            return redirect('auth/login')->withErrors(['session' => 'Your Session Was Expired!']);
-        }
-        $user = Auth::user();
-        if ($user and $user->banned_id) {
-            Auth::logout();
-            return redirect('auth/login')->withErrors(['password' => 'User was banned, please contact us']);
+        if ($userLogged) {
+            $user = Auth::user();
+            if ($user and $user->banned_id) {
+                Auth::logout();
+                return redirect('auth/login')->withErrors(['password' => 'User was banned, please contact us']);
+            }
         }
         return $next($request);
     }
