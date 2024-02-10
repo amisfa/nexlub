@@ -21,7 +21,7 @@ class UserWithdrawController extends Controller
     {
         try {
             if (auth()->user()->balance < request('amount')) return back()->with(['error' => 'Insufficient Balance']);
-            $selectedCurrency = json_decode(request('currency'))['currency'];
+            $selectedCurrency = json_decode(request('currency'), true)['currency'];
             Helper::decBalance([
                 'user_id' => auth()->id(),
                 'amount' => request('amount'),
