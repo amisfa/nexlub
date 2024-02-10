@@ -66,6 +66,8 @@ class User extends Authenticatable
         'remain_affiliate_rake',
         'claimed_affiliate_rake',
         'total_affiliate_rake',
+        'unclaimed_bad_beat',
+        'unclaimed_jack_pot'
     ];
 
     public function referrer(): BelongsTo
@@ -106,6 +108,26 @@ class User extends Authenticatable
     public function userRake(): HasOne
     {
         return $this->hasOne(UserRakeLog::class, 'user_id');
+    }
+
+    public function ringGameStats(): HasMany
+    {
+        return $this->hasMany(UserRingGameStat::class, 'user_id');
+    }
+
+    public function sngStats(): HasMany
+    {
+        return $this->hasMany(UserSNGStat::class, 'user_id');
+    }
+
+    public function badBeatRewards(): HasMany
+    {
+        return $this->hasMany(UserBadBeatReward::class);
+    }
+
+    public function jackPotRewards(): HasMany
+    {
+        return $this->hasMany(UserJackPotReward::class);
     }
 
     public function getRemainRakeBackAttribute(): int
@@ -168,13 +190,13 @@ class User extends Authenticatable
         return $rake;
     }
 
-    public function ringGameStats(): HasMany
+    public function getUnclaimedJackPotAttribute(): int
     {
-        return $this->hasMany(UserRingGameStat::class, 'user_id');
+        return $this->jackPotRewards()->whereNull('claimed_at')->count();
     }
 
-    public function sngStats(): HasMany
+    public function getUnclaimedBadBeatAttribute(): int
     {
-        return $this->hasMany(UserSNGStat::class, 'user_id');
+        return $this->badBeatRewards()->whereNull('claimed_at')->count();
     }
 }
