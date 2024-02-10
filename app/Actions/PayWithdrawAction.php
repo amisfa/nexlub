@@ -37,7 +37,7 @@ class PayWithdrawAction extends Action
             $response = Http::get('https://plisio.net/api/v1/operations/withdraw', [
                 'api_key' => env('PILISIO_SECRET_KEY'),
                 'currency' => $withdraw->currency,
-                'amount' => $withdraw->amount,
+                'source_amount' => $withdraw->amount,
                 'type' => 'cash_out',
                 'to' => $withdraw->user->wallet_no,
                 'feePlan'=>'normal'
