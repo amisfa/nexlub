@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class BannedUser
 {
@@ -18,7 +19,7 @@ class BannedUser
     public function handle($request, Closure $next)
     {
         $userLogged = Auth::check();
-        if ($userLogged) {
+        if ($userLogged && DB::connection()->getDatabaseName()) {
             $user = Auth::user();
             if ($user and $user->banned_id) {
                 Auth::logout();
