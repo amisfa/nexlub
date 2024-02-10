@@ -4,36 +4,8 @@
             <img src="{{asset('black').'/img/logo.png'}}"/>
         </div>
         <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt consequuntur amet culpa cum
-            itaque neque.
+            ©{{now()->format('Y')}} Nexlub.com | All Rights Reserved.
         </p>
-
-        <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
-            <li>
-                <a class="text-gray-700 transition " href="#"> About </a>
-            </li>
-
-            <li>
-                <a class="text-gray-700 transition " href="#"> Careers </a>
-            </li>
-
-            <li>
-                <a class="text-gray-700 transition " href="#"> History </a>
-            </li>
-
-            <li>
-                <a class="text-gray-700 transition " href="#"> Services </a>
-            </li>
-
-            <li>
-                <a class="text-gray-700 transition " href="#"> Projects </a>
-            </li>
-
-            <li>
-                <a class="text-gray-700 transition " href="#"> Blog </a>
-            </li>
-        </ul>
-
         <ul class="mt-12 flex justify-center gap-6 md:gap-8">
             <li>
                 <a
