@@ -39,7 +39,7 @@ class PayWithdrawAction extends Action
                 'currency' => $withdraw->currency,
                 'amount' => $withdraw->amount,
                 'type' => 'cash_out',
-                'to' => $withdraw->user()->wallet_no,
+                'to' => $withdraw->user->wallet_no,
             ]);
             dd($response->body());
 //            if ($response->status() !== 200) $this->error('Pay Withdraw Failed');
