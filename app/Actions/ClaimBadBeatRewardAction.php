@@ -24,8 +24,7 @@ class ClaimBadBeatRewardAction extends Action
             ]);
             $model->claimed_at = now();
             $model->save();
-            $this->success('Claim Bad Beat Failed Successfully');
-        } catch (Exception $e) {
+            $this->success('Claim Bad Beat Successfully');} catch (Exception $e) {
             $this->error('Claim Bad Beat Failed');
         }
     }
