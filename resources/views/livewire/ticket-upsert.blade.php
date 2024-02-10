@@ -41,7 +41,7 @@
                         <label>Comment</label>
                         <textarea class="form-control beauty-scroll" wire:model="comment" required></textarea>
                     </div>
-                    <button id="submit" type="submit" class="btn float-right">Create</button>
+                    <button id="submit" type="submit" class="btn float-right">Send</button>
                 </form>
             </div>
         @else
@@ -59,7 +59,7 @@
                     <label>Comment</label>
                     <textarea class="form-control beauty-scroll" wire:model="comment" required></textarea>
                 </div>
-                <button id="submit" type="submit" class="btn float-right">Create</button>
+                <button id="submit" type="submit" class="btn float-right">Send</button>
             </form>
         </div>
     @endif
