@@ -15,7 +15,7 @@ class CancelWithdrawAction extends Action
 
     public function getConfirmationMessage($item = null): string
     {
-        return 'Are You Sure About Cancel This Item?';
+        return 'Are You Sure?';
     }
 
     /**
