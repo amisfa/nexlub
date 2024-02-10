@@ -10,7 +10,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('user_user_jack_pot_reward', function (Blueprint $table) {
+        Schema::create('user_jack_pot_reward', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedDecimal('amount', 18)->default(0);
@@ -26,6 +26,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_user_jack_pot_reward');
+        Schema::dropIfExists('user_jack_pot_reward');
     }
 };
