@@ -6,6 +6,7 @@ use App\Actions\PayWithdrawAction;
 use App\Actions\RejectWithdrawAction;
 use App\Filters\WithdrawCurrencyFilter;
 use App\Filters\WithdrawsStatusFilter;
+use App\Helpers\Helper;
 use App\Models\UserWithdraw;
 use LaravelViews\Facades\Header;
 use LaravelViews\Views\TableView;
@@ -31,6 +32,8 @@ class WithdrawManagementView extends TableView
             'Wallet',
             'Amount',
             'Payment Currency',
+            'Old Pay Amount',
+            'Current Pay Amount',
             Header::title('Status')->sortBy('status'),
             Header::title('Create At')->sortBy('created_at'),
             'Rejected Reason',
@@ -40,11 +43,19 @@ class WithdrawManagementView extends TableView
 
     public function row($model): array
     {
+        $oldPayAmount = 0;
+        if ($this->getWithdrawStatus($model->status->value) == 'Waiting') {
+            array_map(function ($currency) use (&$oldPayAmount, $model) {
+                if ($currency['cid'] == $model->currency) $oldPayAmount = $currency['rate_usd'] * $model->amount;
+            }, Helper::getAvailableCurrencies());
+        }
         return [
             $model->user->username,
             $model->user->wallet_no,
             $model->amount . ' USD',
             $model->currency,
+            $model->pay_amount,
+            $oldPayAmount,
             '<p class="' . $this->getStatusColor($model->status->value) . '">' . $this->getWithdrawStatus($model->status->value) . '</p>',
             $model->created_at->diffforHumans(),
             $model->rejected_comment,
