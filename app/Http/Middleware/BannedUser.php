@@ -16,14 +16,16 @@ class BannedUser
      * @param string|null $guard
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next): mixed
     {
-        $userLogged = Auth::check();
-        if ($userLogged && DB::connection()->getDatabaseName()) {
-            $user = Auth::user();
-            if ($user and $user->banned_id) {
-                Auth::logout();
-                return redirect('auth/login')->withErrors(['password' => 'User banned, please contact support']);
+        if (DB::connection()->getDatabaseName()) {
+            $userLogged = Auth::check();
+            if ($userLogged) {
+                $user = Auth::user();
+                if ($user and $user->banned_id) {
+                    Auth::logout();
+                    return redirect('auth/login')->withErrors(['password' => 'User banned, please contact support']);
+                }
             }
         }
         return $next($request);
