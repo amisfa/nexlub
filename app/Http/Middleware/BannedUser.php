@@ -22,7 +22,7 @@ class BannedUser
             $user = Auth::user();
             if ($user and $user->banned_id) {
                 Auth::logout();
-                return redirect('auth/login')->withErrors(['password' => 'User was banned, please contact us']);
+                return redirect('auth/login')->withErrors(['password' => 'User banned, please contact support']);
             }
         }
         return $next($request);
