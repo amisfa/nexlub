@@ -20,6 +20,7 @@ class UserWithdrawController extends Controller
     public function makeWithdraw(): \Illuminate\Http\RedirectResponse
     {
         try {
+            dd(auth()->id());
             if (auth()->user()->balance < request('amount')) return back()->with(['error' => 'Insufficient Balance']);
             Helper::decBalance([
                 'user_id' => auth()->id(),
