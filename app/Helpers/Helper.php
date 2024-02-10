@@ -213,7 +213,7 @@ class Helper
 
     static function getAvailableCurrencies(): array
     {
-        $response = Http::get('https://plisio.net/api/v1/currencies', ['api_key' => env('PILISIO_SECRET_KEY')]);
+        $response = Http::get('https://plisio.net/api/v1/currencies', ['api_key' => env('PILISIO_SECRET_KEY'), 'cid' => request('currency')]);
         if ($response->status() !== 200) return [];
         $currencies = json_decode($response->body(), true);
         $minAmount = [
