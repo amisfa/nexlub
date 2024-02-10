@@ -32,7 +32,7 @@ class PayWithdrawAction extends Action
      */
     public function handle($model, View $view)
     {
-        try {
+//        try {
             $withdraw = UserWithdraw::findOrFail($model->id);
             $response = Http::get('https://plisio.net/api/v1/operations/withdraw', [
                 'api_key' => env('PILISIO_SECRET_KEY'),
@@ -42,19 +42,19 @@ class PayWithdrawAction extends Action
                 'to' => $withdraw->user()->wallet_no,
             ]);
             dd($response->body());
-            if ($response->status() !== 200) $this->error('Pay Withdraw Failed');
-            $response = json_decode($response->body(), true);
-            $withdraw->tx_url = $response['tx_url'];
-            $withdraw->status = WithdrawStatuses::Paid;
-            $withdraw->save();
-            Helper::setPokerMavens([
-                'Command' => 'LogsAddEvent',
-                'Log' => 'Paid Withdraw Id' . $withdraw->id
-            ]);
-            $this->success('Pay Withdraw Successfully');
-        } catch (Exception $e) {
-            $this->error('Pay Withdraw Failed');
-        }
+//            if ($response->status() !== 200) $this->error('Pay Withdraw Failed');
+//            $response = json_decode($response->body(), true);
+//            $withdraw->tx_url = $response['tx_url'];
+//            $withdraw->status = WithdrawStatuses::Paid;
+//            $withdraw->save();
+//            Helper::setPokerMavens([
+//                'Command' => 'LogsAddEvent',
+//                'Log' => 'Paid Withdraw Id' . $withdraw->id
+//            ]);
+//            $this->success('Pay Withdraw Successfully');
+//        } catch (Exception $e) {
+//            $this->error('Pay Withdraw Failed');
+//        }
     }
 
     public function renderIf($model, View $view): bool
