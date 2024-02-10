@@ -40,9 +40,17 @@ class PayWithdrawAction extends Action
                 'amount' => $withdraw->amount,
                 'type' => 'cash_out',
                 'to' => $withdraw->user->wallet_no,
+                'feePlan'=>'normal'
             ]);
-            dd($response->body());
-//            if ($response->status() !== 200) $this->error('Pay Withdraw Failed');
+            dd($response->body(),[
+                'api_key' => env('PILISIO_SECRET_KEY'),
+                'currency' => $withdraw->currency,
+                'amount' => $withdraw->amount,
+                'type' => 'cash_out',
+                'to' => $withdraw->user->wallet_no,
+                'feePlan'=>'normal'
+            ]);
+//            if ($response->status() !== 200) $this->error('Withdraw Failed');
 //            $response = json_decode($response->body(), true);
 //            $withdraw->tx_url = $response['tx_url'];
 //            $withdraw->status = WithdrawStatuses::Paid;
@@ -51,9 +59,9 @@ class PayWithdrawAction extends Action
 //                'Command' => 'LogsAddEvent',
 //                'Log' => 'Paid Withdraw Id' . $withdraw->id
 //            ]);
-//            $this->success('Pay Withdraw Successfully');
+//            $this->success('Withdraw Successfully');
 //        } catch (Exception $e) {
-//            $this->error('Pay Withdraw Failed');
+//            $this->error('Withdraw Failed');
 //        }
     }
 
