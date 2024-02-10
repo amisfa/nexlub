@@ -34,12 +34,16 @@
                 <i class='bx bxs-chevron-down arrow'></i>
             </div>
             <ul class="sub-menu">
-                <li @if ($pageSlug == 'rakeBack' || $pageSlug == 'user-jack-pot') class="active" @endif>
+                <li @if ($pageSlug == 'rakeBack' || $pageSlug == 'user-jack-pot' || $pageSlug == 'user-bad-beat') class="active" @endif>
                     <a href="{{route('rake-back')}}">Rake Back</a></li>
             </ul>
             <ul class="sub-menu">
                 <li @if ($pageSlug == 'user-jack-pot') class="active " @endif>
                     <a href="{{route('jack-pot')}}">Jack Pot</a></li>
+            </ul>
+            <ul class="sub-menu">
+                <li @if ($pageSlug == 'user-bad-beat') class="active " @endif>
+                    <a href="{{route('bad-beat')}}">BadBeat</a></li>
             </ul>
         </li>
         <li @if ($pageSlug == 'referral') class="active"@endif>

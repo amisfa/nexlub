@@ -17,6 +17,7 @@ use App\Http\Controllers\User\WithdrawManagementController;
 use App\Http\Livewire\Ticket;
 use App\Http\Livewire\TicketManagement;
 use App\Http\Livewire\UserRake\AffiliateRakeView;
+use App\Http\Livewire\UserRake\BadBeatRewardView;
 use App\Http\Livewire\UserRake\JackPotRewardView;
 use App\Http\Livewire\UserRake\RakeBackView;
 use Illuminate\Support\Facades\Route;
@@ -53,6 +54,7 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/create-invoice', [InvoiceController::class, 'createInvoice'])->name('create-invoice');
     Route::get('/withdraw', [UserWithdrawController::class, 'create'])->name('withdraw');
     Route::get('/jack-pot-reward', [JackPotRewardView::class, 'create'])->name('jack-pot');
+    Route::get('/bad-beat-reward', [BadBeatRewardView::class, 'create'])->name('bad-beat');
     Route::post('/withdraw', [UserWithdrawController::class, 'makeWithdraw'])->name('make-withdraw');
     Route::get('/tickets', [Ticket::class, 'render'])->name('tickets');
 //    Route::prefix('admin')->middleware(['role:manager'])->group(function () {

@@ -2,24 +2,24 @@
 
 namespace App\Http\Livewire\UserRake;
 
-use App\Actions\ClaimJackPotAction;
-use App\Models\UserJackPotReward;
+use App\Actions\ClaimBadBeatRewardAction;
+use App\Models\UserBadBeatReward;
 use Carbon\Carbon;
 use LaravelViews\Facades\Header;
 use LaravelViews\Views\TableView;
 
-class JackPotRewardView extends TableView
+class BadBeatRewardView extends TableView
 {
     public function create()
     {
-        return view('pages.user-rake.user-jack-pot');
+        return view('pages.user-rake.user-bad-beat');
     }
 
     protected $paginate = 10;
 
     public function repository(): \Illuminate\Database\Eloquent\Builder
     {
-        return UserJackPotReward::query()->where('user_id', auth()->id());
+        return UserBadBeatReward::query()->where('user_id', auth()->id());
     }
 
     /**
@@ -49,7 +49,7 @@ class JackPotRewardView extends TableView
     protected function actionsByRow(): array
     {
         return [
-            new ClaimJackPotAction(),
+            new ClaimBadBeatRewardAction(),
         ];
     }
 }
