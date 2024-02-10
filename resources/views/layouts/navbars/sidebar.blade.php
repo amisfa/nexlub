@@ -1,5 +1,6 @@
 <div class="sidebar close">
     <ul class="nav-links">
+        @if(!auth()->user()->hasRole('Administrator'))
         <li @if ($pageSlug == 'play') class="active" @endif >
             <a href="{{route('play')}}" target="_blank">
                 <i class='bx bx-play' tooltip="Play"></i>
@@ -64,30 +65,33 @@
                 <span class="link_name">Referral</span>
             </a>
         </li>
-        <li @if ($pageSlug == 'user-management' || $pageSlug == 'withdraw-management' ||$pageSlug == 'ticket-management' ) class="active showMenu" @endif>
-            <div class="icon-link cursor-default">
-                <a>
-                    <i class='bx bx-user' style="cursor: default!important"></i>
-                    <span class="link_name">Admin</span>
-                </a>
-                <i class='bx bxs-chevron-down arrow'></i>
-            </div>
-            <ul class="sub-menu">
-                <li @if ($pageSlug == 'user-management') class="active" @endif>
-                    <a href="{{route('user-management')}}">User</a></li>
-                <li @if ($pageSlug == 'withdraw-management') class="active" @endif>
-                    <a href="{{route('withdraw-management')}}">Withdraw</a>
-                </li>
-                <li @if ($pageSlug == 'ticket-management') class="active" @endif>
-                    <a href="{{route('ticket-management')}}">Ticket</a>
-                </li>
-            </ul>
-        </li>
         <li @if ($pageSlug == 'tickets') class="active"@endif>
             <a href="{{route('tickets')}}">
                 <i class='bx bx-message'></i>
                 <span class="link_name">Support</span>
             </a>
         </li>
+        @endif
+    @if(auth()->user()->hasRole('Administrator'))
+            <li @if ($pageSlug == 'user-management' || $pageSlug == 'withdraw-management' ||$pageSlug == 'ticket-management' ) class="active showMenu" @endif>
+                <div class="icon-link cursor-default">
+                    <a>
+                        <i class='bx bx-user' style="cursor: default!important"></i>
+                        <span class="link_name">Admin</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li @if ($pageSlug == 'user-management') class="active" @endif>
+                        <a href="{{route('user-management')}}">User</a></li>
+                    <li @if ($pageSlug == 'withdraw-management') class="active" @endif>
+                        <a href="{{route('withdraw-management')}}">Withdraw</a>
+                    </li>
+                    <li @if ($pageSlug == 'ticket-management') class="active" @endif>
+                        <a href="{{route('ticket-management')}}">Ticket</a>
+                    </li>
+                </ul>
+            </li>
+        @endif
     </ul>
 </div>

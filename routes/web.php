@@ -32,6 +32,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get("/", function () {
     return view('home-page');
 })->name('home-page');
@@ -57,9 +58,7 @@ Route::prefix('dashboard')->middleware('auth:web')->group(function () {
     Route::get('/bad-beat-reward', [BadBeatRewardView::class, 'create'])->name('bad-beat');
     Route::post('/withdraw', [UserWithdrawController::class, 'makeWithdraw'])->name('make-withdraw');
     Route::get('/tickets', [Ticket::class, 'render'])->name('tickets');
-//    Route::prefix('admin')->middleware(['role:manager'])->group(function () {
-//    });
-    Route::prefix('admin')->group(function () {
+    Route::prefix('admin')->middleware('role:Administrator')->group(function () {
         Route::get('/user-management', [UserManagementController::class, 'create'])->name('user-management');
         Route::get('/withdraw-management', [WithdrawManagementController::class, 'create'])->name('withdraw-management');
         Route::post('/reject-withdraw/{withdraw}', [WithdrawManagementController::class, 'rejectWithdraw'])->name('reject-withdraw');
