@@ -5,7 +5,9 @@ namespace App\Http\Livewire\AdminView;
 use App\Actions\BanUserAction;
 use App\Actions\UnBanUserAction;
 use App\Actions\UserDetailAction;
+use App\Actions\UserPaymentsAction;
 use App\Actions\UserPercentageAction;
+use App\Actions\UserWithdrawsAction;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelViews\Facades\Header;
@@ -42,6 +44,8 @@ class UserManagementView extends TableView
     {
         return [
             new UserDetailAction(),
+            new UserWithdrawsAction(),
+            new UserPaymentsAction(),
             new UserPercentageAction(),
             new BanUserAction(),
             new UnBanUserAction(),

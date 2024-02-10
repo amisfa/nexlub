@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire\AdminView;
 
-use App\Actions\CancelWithdrawAction;
 use App\Enums\WithdrawStatuses;
 use App\Filters\WithdrawsStatusFilter;
 use App\Models\UserWithdraw;
@@ -75,14 +74,6 @@ class UserWithdrawsView extends TableView
             case 4:
                 return "Rejected";
         }
-    }
-
-    /** For actions by item */
-    protected function actionsByRow(): array
-    {
-        return [
-            new CancelWithdrawAction(),
-        ];
     }
 
     protected function filters()

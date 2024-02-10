@@ -5,21 +5,21 @@ namespace App\Actions;
 use LaravelViews\Actions\Action;
 use LaravelViews\Views\View;
 
-class UserDetailAction extends Action
+class UserPaymentsAction extends Action
 {
     /**
      * Any title you want to be displayed
      * @var String
      * */
-    public $title = "Detail";
+    public $title = "Payments";
 
     /**
      * This should be a valid Feather icon string
      * @var String
      */
-    public $icon = "eye";
+    public $icon = "dollar-sign";
 
-    public string $modalView = "user-modal-detail-view";
+    public string $modalView = "user-modal-payments-view";
 
     /**
      * Execute the action when the user clicked on the button
