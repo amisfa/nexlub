@@ -29,7 +29,7 @@ class UserWithdrawController extends Controller
             ]);
             auth()->user()->withdraws()->create([
                 'amount' => request('amount'),
-                'pay_amount' => $selectedCurrency['rate_usd'],
+                'pay_amount' => $selectedCurrency['rate_usd'] * request('amount'),
                 'currency' => $selectedCurrency['cid']
             ]);
             return back()->with(['success' => 'Withdraw Submitted']);
