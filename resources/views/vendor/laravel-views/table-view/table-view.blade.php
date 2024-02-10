@@ -29,9 +29,10 @@ UI components used:
             @if(str_contains($_SERVER["REQUEST_URI"], 'jack-pot-reward'))
                 <h3>{{ __('You haven\'t won any JackPot reward yet.') }}</h3>
             @elseif(str_contains($_SERVER["REQUEST_URI"], 'bad-beat-reward'))
-                <h3>{{ __('There are no items in this table') }}</h3>
-            @else
                 <h3>{{ __('You haven\'t won any BadBeat reward yet.') }}</h3>
+            @else
+                <h3>{{ __('There are no items in this table') }}</h3>
+
             @endif
 
         </div>
