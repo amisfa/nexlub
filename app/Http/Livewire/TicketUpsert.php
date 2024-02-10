@@ -29,6 +29,7 @@ class TicketUpsert extends ModalComponent
             'user_id' => auth()->id()
         ]);
         $this->emit('reloadUserTickets');
+        $this->emit('closeModal');
     }
 
     public function addComment(): void
@@ -40,6 +41,7 @@ class TicketUpsert extends ModalComponent
             'comment' => $this->comment,
             'user_id' => auth()->id()
         ]);
+        $this->emit('closeModal');
         $this->render();
     }
 }
