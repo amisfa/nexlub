@@ -37,10 +37,13 @@
                 Banned:
             </div>{{$user->banned_id ? 'Yes' : 'No'}}
         </div>
-        <div class="py-3">
-            @if($user->id)
-                <livewire:admin-view.user-subset-view :userId="$user->id"/>
-            @endif
+    </div>
+    <div class="py-3">
+        <div class="text-white font-bold">
+            Referrals:
+        </div>
+        <div class="border" style="border-color: #2b3553!important;">
+            <livewire:admin-view.user-subset-view :userId="$user->id"/>
         </div>
     </div>
 </div>

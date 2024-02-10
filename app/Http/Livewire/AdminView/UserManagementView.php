@@ -53,7 +53,7 @@ class UserManagementView extends TableView
         return [
             $model->username,
             $model->email,
-            $model->wallet_no,
+            substr($model->wallet_no, 0, 6) . '...' . substr($model->wallet_no, -4, strlen($model->wallet_no)),
             $model->balance,
             $model->created_at->diffforHumans()
         ];
