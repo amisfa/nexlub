@@ -41,8 +41,8 @@ class PayWithdrawAction extends Action
                 'type' => 'cash_out',
                 'to' => $withdraw->user()->wallet_no,
             ]);
+            dd($response->body());
             if ($response->status() !== 200) $this->error('Pay Withdraw Failed');
-
             $response = json_decode($response->body(), true);
             $withdraw->tx_url = $response['tx_url'];
             $withdraw->status = WithdrawStatuses::Paid;
