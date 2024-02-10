@@ -38,12 +38,28 @@
                     <a href="{{route('rake-back')}}">Rake Back</a></li>
             </ul>
             <ul class="sub-menu">
-                <li @if ($pageSlug == 'user-jack-pot') class="active " @endif>
-                    <a href="{{route('jack-pot')}}">Jack Pot</a></li>
+                <div class="flex justify-between items-center">
+                    <li @if ($pageSlug == 'user-jack-pot') class="active " @endif>
+                        <a href="{{route('jack-pot')}}">Jack Pot</a></li>
+                    @if(auth()->user()->unclaimed_jack_pot >0)
+                        <span style="background: #22c9e9"
+                              class="text-sm text-dark font-medium me-2 px-2 rounded">
+                        {{auth()->user()->unclaimed_jack_pot}}
+                    </span>
+                    @endif
+                </div>
             </ul>
             <ul class="sub-menu">
-                <li @if ($pageSlug == 'user-bad-beat') class="active " @endif>
-                    <a href="{{route('bad-beat')}}">BadBeat</a></li>
+                <div class="flex justify-between items-center">
+                    <li @if ($pageSlug == 'user-bad-beat') class="active " @endif>
+                        <a href="{{route('bad-beat')}}">BadBeat</a></li>
+                    @if(auth()->user()->unclaimed_bad_beat >0)
+                        <span style="background: #22c9e9"
+                              class="text-sm text-dark font-medium me-2 px-2 rounded">
+                        {{auth()->user()->unclaimed_bad_beat}}
+                    </span>
+                    @endif
+                </div>
             </ul>
         </li>
         <li @if ($pageSlug == 'referral') class="active"@endif>
