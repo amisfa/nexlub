@@ -37,5 +37,10 @@
                 Banned:
             </div>{{$user->banned_id ? 'Yes' : 'No'}}
         </div>
+        <div class="py-3">
+            @if($user->id)
+                <livewire:admin-view.user-subset-view :userId="$user->id"/>
+            @endif
+        </div>
     </div>
 </div>
