@@ -7,13 +7,6 @@
                 <span class="link_name">Play</span>
             </a>
         </li>
-
-        <li @if ($pageSlug == 'statics') class="active"@endif>
-            <a href="{{route('statics')}}">
-                <i class='bx bx-grid-alt'></i>
-                <span class="link_name">Statics</span>
-            </a>
-        </li>
         <li @if ($pageSlug == 'deposit') class="active"@endif>
             <a href="{{route('deposit')}}">
                 <i class='bx bx-wallet'></i>
@@ -65,7 +58,13 @@
                 <span class="link_name">Referral</span>
             </a>
         </li>
-        <li @if ($pageSlug == 'tickets') class="active"@endif>
+            <li @if ($pageSlug == 'statics') class="active"@endif>
+                <a href="{{route('statics')}}">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="link_name">Statics</span>
+                </a>
+            </li>
+            <li @if ($pageSlug == 'tickets') class="active"@endif>
             <a href="{{route('tickets')}}">
                 <i class='bx bx-message'></i>
                 <span class="link_name">Support</span>
