@@ -251,7 +251,8 @@ class Helper
             'Command' => 'LogsAddEvent',
             'Log' => $params['log']
         ]);
-        User::query()->where('id', $params['user_id'])->update(['balance' => $user->balance + $params['amount']]);
+        $user->balance = $user->balance + $params['amount'];
+        $user->save();
     }
 
     static function decBalance($params): void
@@ -267,7 +268,8 @@ class Helper
             'Command' => 'LogsAddEvent',
             'Log' => $params['log']
         ]);
-        User::query()->where('id', $params['user_id'])->update(['balance' => $user->balance - $params['amount']]);
+        $user->balance = $user->balance - $params['amount'];
+        $user->save();
     }
 
     static function sendValidationEmail($user): void
