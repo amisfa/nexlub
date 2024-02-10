@@ -17,22 +17,27 @@ UI components used:
     @include('laravel-views::components.toolbar.toolbar')
   </div>
 
-  @if (count($items))
-    {{-- Content table --}}
-    <div class="overflow-x-scroll lg:overflow-x-visible">
-      @include('laravel-views::components.table')
-    </div>
+    @if (count($items))
+        {{-- Content table --}}
+        <div class="overflow-x-scroll lg:overflow-x-visible">
+            @include('laravel-views::components.table')
+        </div>
 
-  @else
-    {{-- Empty data message --}}
-    <div class="flex justify-center items-center p-4">
-      <h3>{{ __('There are no items in this table') }}</h3>
-    </div>
-  @endif
+    @else
+        {{-- Empty data message --}}
+        <div class="flex justify-center items-center p-4">
+            @if(str_contains($_SERVER["REQUEST_URI"], 'jack-pot-reward'))
+                <h3>{{ __('You haven\'t won any JackPot reward yet.') }}</h3>
+            @else
+                <h3>{{ __('There are no items in this table') }}</h3>
+            @endif
 
-  {{-- Paginator, loading indicator and totals --}}
-  <div class="p-4">
-    {{ $items->links() }}
+        </div>
+    @endif
+
+    {{-- Paginator, loading indicator and totals --}}
+    <div class="p-4">
+        {{ $items->links() }}
   </div>
 </x-lv-layout>
 
