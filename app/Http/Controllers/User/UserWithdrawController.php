@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Helpers\Helper;
+use App\Models\User;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -20,14 +21,14 @@ class UserWithdrawController extends Controller
     public function makeWithdraw(): \Illuminate\Http\RedirectResponse
     {
         try {
-            dd(auth()->id());
-            if (auth()->user()->balance < request('amount')) return back()->with(['error' => 'Insufficient Balance']);
+            $user = User::query()->find(auth()->id());
+            if ($user->balance < request('amount')) return back()->with(['error' => 'Insufficient Balance']);
             Helper::decBalance([
                 'user_id' => auth()->id(),
                 'amount' => request('amount'),
-                'log' => request('amount') . ' ' . request('currency') . ' Withdraw by ' . auth()->user()->username
+                'log' => request('amount') . ' ' . request('currency') . ' Withdraw by ' . $user->username
             ]);
-            auth()->user()->withdraws()->create([
+            $user->withdraws()->create([
                 'amount' => request('amount'),
                 'currency' => request('currency')
             ]);
