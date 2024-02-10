@@ -19,9 +19,10 @@ class UserWithdrawController extends Controller
 
     public function makeWithdraw(): \Illuminate\Http\RedirectResponse
     {
-        try {
+//        try {
             if (auth()->user()->balance < request('amount')) return back()->with(['error' => 'Insufficient Balance']);
             $selectedCurrency = json_decode(request('currency'), true)['currency'];
+            dd($selectedCurrency['rate_usd'] * request('amount'));
             Helper::decBalance([
                 'user_id' => auth()->id(),
                 'amount' => request('amount'),
@@ -33,8 +34,8 @@ class UserWithdrawController extends Controller
                 'currency' => $selectedCurrency['cid']
             ]);
             return back()->with(['success' => 'Withdraw Submitted']);
-        } catch (Exception $e) {
-            return back()->with(['error' => 'Add Withdraw Request Failed']);
-        }
+//        } catch (Exception $e) {
+//            return back()->with(['error' => 'Add Withdraw Request Failed']);
+//        }
     }
 }
