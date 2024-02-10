@@ -50,7 +50,7 @@ class WithdrawManagementView extends TableView
         }
         return [
             $model->user->username,
-            substr($model->user->wallet_no, 0, 8) . '...',
+            substr($model->user->wallet_no, 0, 6) . '...' . substr($model->user->wallet_no, -4, strlen($model->user->wallet_no)),
             $model->amount . ' USD',
             $model->currency,
             $currentPayAmount,
