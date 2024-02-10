@@ -46,7 +46,7 @@ class WithdrawManagementView extends TableView
         $oldPayAmount = 0;
         if ($this->getWithdrawStatus($model->status->value) == 'Waiting') {
             array_map(function ($currency) use (&$oldPayAmount, $model) {
-                if ($currency['cid'] == $model->currency) $oldPayAmount = $currency['rate_usd'] * $model->amount;
+                if ($currency['currency'] == $model->currency) $oldPayAmount = $currency['rate_usd'] * $model->amount;
             }, Helper::getAvailableCurrencies());
         }
         return [
