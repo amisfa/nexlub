@@ -1,8 +1,8 @@
 <div class="sidebar close">
     <ul class="nav-links">
-        <li @if ($pageSlug == 'play') class="active"@endif>
+        <li @if ($pageSlug == 'play') class="active" @endif >
             <a href="{{route('play')}}" target="_blank">
-                <i class='bx bx-play'></i>
+                <i class='bx bx-play' tooltip="Play"></i>
                 <span class="link_name">Play</span>
             </a>
         </li>
@@ -37,7 +37,7 @@
                 <li @if ($pageSlug == 'rakeBack' || $pageSlug == 'user-jack-pot' || $pageSlug == 'user-bad-beat') class="active" @endif>
                     <a href="{{route('rake-back')}}">Rake Back</a></li>
                 <div class="flex justify-between items-center">
-                    <li @if ($pageSlug == 'user-jack-pot') class="active " @endif>
+                    <li @if ($pageSlug == 'user-jack-pot') class="active" @endif>
                         <a href="{{route('jack-pot')}}">Jack Pot</a></li>
                     @if(auth()->user()->unclaimed_jack_pot >0)
                         <span style="background: #22c9e9"
@@ -47,7 +47,7 @@
                     @endif
                 </div>
                 <div class="flex justify-between items-center">
-                    <li @if ($pageSlug == 'user-bad-beat') class="active " @endif>
+                    <li @if ($pageSlug == 'user-bad-beat') class="active" @endif>
                         <a href="{{route('bad-beat')}}">BadBeat</a></li>
                     @if(auth()->user()->unclaimed_bad_beat >0)
                         <span style="background: #22c9e9"
