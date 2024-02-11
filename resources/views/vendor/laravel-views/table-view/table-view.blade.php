@@ -12,14 +12,14 @@ UI components used:
   - components.paginator --}}
 
 <x-lv-layout>
-  {{-- Search input and filters --}}
-  <div class="py-4 px-3 pb-0">
-    @include('laravel-views::components.toolbar.toolbar')
-  </div>
+    {{-- Search input and filters --}}
+    <div class="py-4 px-3 pb-0">
+        @include('laravel-views::components.toolbar.toolbar')
+    </div>
 
     @if (count($items))
         {{-- Content table --}}
-        <div class="overflow-x-scroll lg:overflow-x-visible">
+        <div class="overflow-x-scroll overflow-x-visible beauty-scroll">
             @include('laravel-views::components.table')
         </div>
 
@@ -41,6 +41,6 @@ UI components used:
     {{-- Paginator, loading indicator and totals --}}
     <div class="p-4">
         {{ $items->links() }}
-  </div>
+    </div>
 </x-lv-layout>
 

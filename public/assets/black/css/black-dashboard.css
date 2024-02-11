@@ -4624,6 +4624,7 @@ input[type="button"].btn-block {
     display: flex;
     flex-direction: column;
     min-width: 0;
+    z-index: 0;
     word-wrap: break-word;
     background-color: #181818;
     background-clip: border-box;
@@ -14096,17 +14097,18 @@ Copyright (c) 2015 Daniel Eden
 
 .beauty-scroll::-webkit-scrollbar-track {
     border-radius: 0.125rem !important;
-    background-color: lightgray !important;
+    background-color: #181818 !important;
 }
 
 .beauty-scroll::-webkit-scrollbar {
     width: 0.25rem !important;
+    height: 0.25rem !important;
     border-radius: 0.125rem !important;
 }
 
 .beauty-scroll::-webkit-scrollbar-thumb {
     border-radius: 0.125rem !important;
-    background-color: rgb(128, 128, 128) !important;
+    background-color: #22C7E7 !important;
 }
 
 /*# sourceMappingURL=statics-free.css.map */
@@ -14566,7 +14568,8 @@ Copyright (c) 2015 Daniel Eden
     height: 100vh;
     width: 100%;
     transition: all 0.5s ease;
-    top: 0;}
+    top: 0;
+}
 
 .sidebar.close ~ .wrapper {
     left: 78px;

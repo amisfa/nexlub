@@ -260,17 +260,18 @@ input[type="submit"]:active {
 
 .beauty-scroll::-webkit-scrollbar-track {
     border-radius: 0.125rem !important;
-    background-color: lightgray !important;
+    background-color: #181818 !important;
 }
 
 .beauty-scroll::-webkit-scrollbar {
     width: 0.25rem !important;
+    height: 0.25rem !important;
     border-radius: 0.125rem !important;
 }
 
 .beauty-scroll::-webkit-scrollbar-thumb {
     border-radius: 0.125rem !important;
-    background-color: rgb(128, 128, 128) !important;
+    background-color: #22C7E7 !important;
 }
 
 .grayscale {

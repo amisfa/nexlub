@@ -18,7 +18,6 @@ You can customize all the html and css classes but YOU MUST KEEP THE BLADE AND L
 @endphp
 
 <div
-  class="relative"
   x-data="{ open: false }"
 >
   <span @click="open = true" class="cursor-pointer">

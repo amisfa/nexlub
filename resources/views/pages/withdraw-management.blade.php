@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card p-3">
                     <div class="card-header">Withdraw Management</div>
-                    <div class="border border-gray-200 " style="max-height: 250px;overflow: auto">
+                    <div class="border border-gray-200 beauty-scroll" style="max-height: 250px;overflow: auto">
                         <table class="min-w-full">
                             <thead
                                 class="bg-gray-800 text-xs leading-4 font-semibold uppercase tracking-wider text-left">
@@ -37,10 +37,8 @@
                     </div>
                     <br/>
                     <div class="card-header">Withdraw History</div>
-                    <div class="p-3">
-                        <div class="border" style="border-color: #2b3553!important;">
-                            <livewire:admin-view.withdraw-management-view/>
-                        </div>
+                    <div class="border" style="border-color: #2b3553!important;">
+                        <livewire:admin-view.withdraw-management-view/>
                     </div>
                 </div>
             </div>

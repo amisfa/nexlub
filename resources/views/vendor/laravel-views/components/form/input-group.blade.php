@@ -29,7 +29,7 @@ props:
         @endif
         wire:model="{{ $model ?? '' }}"
     >
-    <div class="absolute right-0 top-0 mt-2 mr-4 text-purple-lighter">
+    <div class="absolute right-0 mr-2 text-purple-lighter" style="top:18%">
         <a wire:click.prevent="{{ $onClick ?? '' }}" href="#" class="text-gray-400 hover:text-blue-600">
             <i data-feather="{{ $icon }}" class="w-4"></i>
         </a>

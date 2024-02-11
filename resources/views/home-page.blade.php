@@ -369,7 +369,7 @@
     <br/>
     <div class="px-2 w-full">
         <div class="flex flex-wrap items-stretch justify-center">
-            <div class="flex flex-col p-4 m-3 rounded-lg" style="background: #181818;">
+            <div class="flex flex-col p-4 m-1 rounded-lg sm:m-3" style="background: #181818;">
                 <img class="pb-1 m-auto" width="64px" src="{{asset('black').'/img/jackpot.png'}}"/>
                 <div class="text-md font-bold text-center">Jack Pot</div>
                 <br/>
@@ -377,7 +377,7 @@
                     Win up to an extra 25% of your pot with a Royal Flush!
                 </div>
             </div>
-            <div class="flex flex-col p-4 m-3 rounded-lg" style="background: #181818;">
+            <div class="flex flex-col p-4 m-1 rounded-lg sm:m-3" style="background: #181818;">
                 <img class="pb-1 m-auto" width="64px" src="{{asset('black').'/img/badbeat.png'}}"/>
                 <div class="text-md font-bold text-center">Bad Beat</div>
                 <br/>
@@ -385,7 +385,7 @@
                     Receive an extra bonus of up to 25% of your pot when you lose to a Royal Flush!
                 </div>
             </div>
-            <div class="flex flex-col p-4 m-3 rounded-lg" style="background: #181818;">
+            <div class="flex flex-col p-4 m-1 rounded-lg sm:m-3" style="background: #181818;">
                 <img class="pb-1 m-auto" width="64px" src="{{asset('black').'/img/rakeback.png'}}"/>
                 <div class="text-md font-bold text-center">Rake Back</div>
                 <br/>
@@ -393,7 +393,7 @@
                     Enjoy a 5% daily rake back, giving back to our players!
                 </div>
             </div>
-            <div class="flex flex-col p-4 m-3 rounded-lg" style="background: #181818;">
+            <div class="flex flex-col p-4 m-1 rounded-lg sm:m-3" style="background: #181818;">
                 <img class="pb-1 m-auto" width="64px" src="{{asset('black').'/img/referral.png'}}"/>
                 <div class="text-md font-bold text-center">Referral</div>
                 <br/>

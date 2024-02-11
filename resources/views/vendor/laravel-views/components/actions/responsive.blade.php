@@ -3,7 +3,7 @@
 <div>
   @if (count($actions))
     {{-- Mobile actions dropdown --}}
-    <div class="lg:hidden text-right relative">
+    <div class="lg:hidden text-right">
       <x-lv-actions.drop-down :actions="$actions" :model="$model" />
     </div>
 

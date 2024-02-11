@@ -15,7 +15,7 @@ class TicketManagementView extends TableView
 {
     protected $paginate = 10;
 
-    public $searchBy = ['subject'];
+    public $searchBy = ['subject', 'user.username'];
 
     protected $listeners = ['reloadUserTickets' => 'refresh'];
 
@@ -32,6 +32,7 @@ class TicketManagementView extends TableView
     public function headers(): array
     {
         return [
+            'userName',
             'Subject',
             'Status',
             Header::title('Created')->sortBy('created_at'),
@@ -43,6 +44,7 @@ class TicketManagementView extends TableView
     public function row($model): array
     {
         $data = [
+            $model->user->username,
             $model->subject,
             $this->ticketHasResponse($model->latestComment()->first()),
             $model->created_at->diffforHumans(),
