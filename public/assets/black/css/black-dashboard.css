@@ -14649,6 +14649,7 @@ Copyright (c) 2015 Daniel Eden
     border: none;
     background: none;
     outline: none;
+    padding-right: 22px;
 }
 
 .accordion button:hover, .accordion button:focus {
@@ -14667,7 +14668,7 @@ Copyright (c) 2015 Daniel Eden
     padding: 1em 1.5em 1em 0;
 }
 
-.accordion button .icon {
+.icon-faq {
     display: inline-block;
     position: absolute;
     top: 18px;
@@ -14678,7 +14679,7 @@ Copyright (c) 2015 Daniel Eden
     border-radius: 22px;
 }
 
-.accordion button .icon::before {
+.icon-faq::before {
     display: block;
     position: absolute;
     content: "";
@@ -14689,7 +14690,7 @@ Copyright (c) 2015 Daniel Eden
     background: currentColor;
 }
 
-.accordion button .icon::after {
+.icon-faq::after {
     display: block;
     position: absolute;
     content: "";
