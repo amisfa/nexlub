@@ -365,8 +365,20 @@
         </ul>
     </div>
     <br/>
+    <div class="px-2">
+        <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
+            <div class="h-32 rounded-lg bg-gray-200"></div>
+            <div class="h-32 rounded-lg bg-gray-200"></div>
+            <div class="h-32 rounded-lg bg-gray-200"></div>
+            <div class="h-32 rounded-lg bg-gray-200"></div>
+        </div>
+    </div>
+    <br/>
+
     <div class="w-5/6 md:w-3/5 px-4 m-auto">
-        <h2>Frequently Asked Questions</h2>
+        <div class="text-center">
+            <div>Frequently Asked Questions</div>
+        </div>
         <div class="accordion">
             <div class="accordion-item">
                 <button id="accordion-button-1" aria-expanded="false">
@@ -478,16 +490,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <br/>
-    <br/>
-    <div class="px-2">
-        <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
-            <div class="h-32 rounded-lg bg-gray-200"></div>
-            <div class="h-32 rounded-lg bg-gray-200"></div>
-            <div class="h-32 rounded-lg bg-gray-200"></div>
-            <div class="h-32 rounded-lg bg-gray-200"></div>
         </div>
     </div>
     <br/>
