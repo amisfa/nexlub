@@ -14732,3 +14732,66 @@ Copyright (c) 2015 Daniel Eden
     font-weight: 300;
     margin: 1em 0;
 }
+
+/*tooltip*/
+
+.sidebar.close .tooltip {
+    position: absolute;
+    z-index: 9999;
+    background: #ffffff;
+    color: #ff0000;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.sidebar.close .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.sidebar.close .first::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.sidebar.close li:hover .tooltip {
+    top: -45px;
+    display: block;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.sidebar.close li:hover .first {
+    left: 80px;
+    top: 8px;
+    display: block;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.sidebar.close li:hover span,
+.sidebar.close li:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.close li:hover .tooltip,
+.sidebar.close li:hover .tooltip::before {
+    background: #22C7E7;
+    color: #ffffff;
+}
+
