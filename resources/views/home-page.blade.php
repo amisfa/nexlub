@@ -373,7 +373,7 @@
                 <img class="pb-1 m-auto" width="64px" src="{{asset('black').'/img/jackpot.png'}}"/>
                 <div class="text-md font-bold text-center">Jack Pot</div>
                 <br/>
-                <div class="text-xs font-bold" style="width: 150px; color: #7288a2!important">
+                <div class="text-xs font-bold" style="width: 150px; color: #7288a2!important;min-height: 75px">
                     Win up to an extra 25% of your pot with a Royal Flush!
                 </div>
             </div>
@@ -381,7 +381,7 @@
                 <img class="pb-1 m-auto" width="64px" src="{{asset('black').'/img/badbeat.png'}}"/>
                 <div class="text-md font-bold text-center">Bad Beat</div>
                 <br/>
-                <div class="text-xs font-bold" style="width: 150px; color: #7288a2!important">
+                <div class="text-xs font-bold" style="width: 150px; color: #7288a2!important;min-height: 75px">
                     Receive an extra bonus of up to 25% of your pot when you lose to a Royal Flush!
                 </div>
             </div>
@@ -389,7 +389,7 @@
                 <img class="pb-1 m-auto" width="64px" src="{{asset('black').'/img/rakeback.png'}}"/>
                 <div class="text-md font-bold text-center">Rake Back</div>
                 <br/>
-                <div class="text-xs font-bold" style="width: 150px; color: #7288a2!important">
+                <div class="text-xs font-bold" style="width: 150px; color: #7288a2!important;min-height: 75px">
                     Enjoy a 5% daily rake back, giving back to our players!
                 </div>
             </div>
@@ -397,7 +397,7 @@
                 <img class="pb-1 m-auto" width="64px" src="{{asset('black').'/img/referral.png'}}"/>
                 <div class="text-md font-bold text-center">Referral</div>
                 <br/>
-                <div class="text-xs font-bold" style="width: 150px; color: #7288a2!important">
+                <div class="text-xs font-bold" style="width: 150px; color: #7288a2!important;min-height: 75px">
                     Invite your friends, have fun together, and also receive an extra 20% from their play!
                 </div>
             </div>
