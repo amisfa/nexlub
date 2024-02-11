@@ -189,6 +189,8 @@
                     </svg>
                 </div>
             </li>
+        </ul>
+        <ul class="flex flex-wrap items-center justify-center px-2">
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
@@ -365,19 +367,47 @@
         </ul>
     </div>
     <br/>
-    <div class="px-2">
-        <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
-            <div class="h-32 rounded-lg bg-gray-200"></div>
-            <div class="h-32 rounded-lg bg-gray-200"></div>
-            <div class="h-32 rounded-lg bg-gray-200"></div>
-            <div class="h-32 rounded-lg bg-gray-200"></div>
+    <div class="px-2 w-full">
+        <div class="flex flex-wrap items-stretch justify-center">
+            <div class="flex flex-col p-4 m-2 rounded-lg" style="background: #181818;">
+                <img class="pb-1 m-auto" width="64px" src="{{asset('black').'/img/jackpot.png'}}"/>
+                <div class="text-md font-bold text-center">Jack Pot</div>
+                <br/>
+                <div class="text-xs font-bold" style="width: 150px; color: #7288a2!important">
+                    Win up to an extra 25% of your pot with a Royal Flush!
+                </div>
+            </div>
+            <div class="flex flex-col p-4 m-2 rounded-lg" style="background: #181818;">
+                <img class="pb-1 m-auto" width="64px" src="{{asset('black').'/img/badbeat.png'}}"/>
+                <div class="text-md font-bold text-center">Bad Beat</div>
+                <br/>
+                <div class="text-xs font-bold" style="width: 150px; color: #7288a2!important">
+                    Receive an extra bonus of up to 25% of your pot when you lose to a Royal Flush!
+                </div>
+            </div>
+            <div class="flex flex-col p-4 m-2 rounded-lg" style="background: #181818;">
+                <img class="pb-1 m-auto" width="64px" src="{{asset('black').'/img/rakeback.png'}}"/>
+                <div class="text-md font-bold text-center">Rake Back</div>
+                <br/>
+                <div class="text-xs font-bold" style="width: 150px; color: #7288a2!important">
+                    Enjoy a 5% daily rake back, giving back to our players!
+                </div>
+            </div>
+            <div class="flex flex-col p-4 m-2 rounded-lg" style="background: #181818;">
+                <img class="pb-1 m-auto" width="64px" src="{{asset('black').'/img/referral.png'}}"/>
+                <div class="text-md font-bold text-center">Referral</div>
+                <br/>
+                <div class="text-xs font-bold" style="width: 150px; color: #7288a2!important">
+                    Invite your friends, have fun together, and also receive an extra 20% from their play!
+                </div>
+            </div>
         </div>
     </div>
     <br/>
 
     <div class="w-5/6 md:w-3/5 px-4 m-auto">
         <div class="text-center">
-            <div>Frequently Asked Questions</div>
+            <h3 class="font-bold">Frequently Asked Questions</h3>
         </div>
         <div class="accordion">
             <div class="accordion-item">
