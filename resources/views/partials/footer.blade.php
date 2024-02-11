@@ -7,8 +7,7 @@
             Nexlub.com is for entertainment purposes only.
         </p>
         <p class="mx-auto max-w-md text-center leading-relaxed text-gray-500">
-            Users are encouraged to gamble responsibly. We are not responsible for any losses incurred while playing on
-            Nexlub.com.
+            Users are encouraged to gamble responsibly. We are not responsible for any losses incurred while playing.
         </p>
 
         <ul class="mt-12 flex justify-center gap-6 md:gap-8">

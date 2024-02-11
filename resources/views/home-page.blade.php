@@ -369,53 +369,112 @@
         <h2>Frequently Asked Questions</h2>
         <div class="accordion">
             <div class="accordion-item">
-                <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Why is the moon sometimes out during the day?</span><span
+                <button id="accordion-button-1" aria-expanded="false">
+                            <span
+                                class="accordion-title">What types of games are available on your poker website?</span><span
                         class="icon" aria-hidden="true"></span></button>
                 <div class="accordion-content">
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
-                        viverra suspendisse potenti.
+                    <div>We offer a variety of games, including Omaha and Texas Hold'em cash games with
+                        different stack sizes and sit-and-go tournaments.
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
-                <button id="accordion-button-2" aria-expanded="false"><span
-                        class="accordion-title">Why is the sky blue?</span><span class="icon" aria-hidden="true"></span>
-                </button>
+                <button id="accordion-button-1" aria-expanded="false">
+                            <span
+                                class="accordion-title">What stack sizes are available for cash games?</span><span
+                        class="icon" aria-hidden="true"></span></button>
                 <div class="accordion-content">
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
-                        viverra suspendisse potenti.
+                    <div>Our poker website provides cash games with various stack sizes to cater to different
+                        player preferences. You can find games with short (10-20 Big Blinds), medium (40-80 Big
+                        Blinds), and deep (100-200 Big Blinds) stack sizes.
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
-                <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">Will we ever discover aliens?</span><span
+                <button id="accordion-button-1" aria-expanded="false">
+                            <span
+                                class="accordion-title">How do I join a cash game?</span><span
                         class="icon" aria-hidden="true"></span></button>
                 <div class="accordion-content">
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
-                        viverra suspendisse potenti.
+                    <div>To join a cash games, Register an account and log in to your account, Deposit with
+                        crypto of your choice, Press Play and select the desired game with your preferred stack
+                        size in ring games tab. Once you have sufficient funds, Double tap/click on the table
+                        name and take a seat.
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
-                <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">How much does the Earth weigh?</span><span
+                <button id="accordion-button-1" aria-expanded="false">
+                            <span
+                                class="accordion-title">Can I reload my stack during a cash game?</span><span
                         class="icon" aria-hidden="true"></span></button>
                 <div class="accordion-content">
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
-                        viverra suspendisse potenti.
+                    <div>Yes, you can reload your stack during a cash game with add more chips option, as long
+                        as you have enough funds in your account this allows you to stay in the game and
+                        continue playing.
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">How do airplanes stay up?</span><span
+                <button id="accordion-button-1" aria-expanded="false">
+                            <span
+                                class="accordion-title">What are sit-and-go tournaments, and how do they work?</span><span
                         class="icon" aria-hidden="true"></span></button>
                 <div class="accordion-content">
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
-                        viverra suspendisse potenti.
+                    <div>Sit-and-go tournaments are smaller-scale events that begin as soon as a predetermined
+                        number of players register. These tournaments usually have a fixed buy-in, and the
+                        blinds increase at set intervals: Regular every 5 minutes, Turbo every 3 minutes, and
+                        Hyper-Turbo every 1 minute
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button id="accordion-button-1" aria-expanded="false">
+                            <span
+                                class="accordion-title">Tell me more about sit-and-go tournaments. How can I participate?</span><span
+                        class="icon" aria-hidden="true"></span></button>
+                <div class="accordion-content">
+                    <div>Sit-and-go tournaments are available on our platform. Simply visit the game lobby by
+                        pressing/tapping on the play menu, find the sit & go tab, and click the 'Register'
+                        button for any tournament you wish to play. Once the required number of players is
+                        reached, the tournament will start.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button id="accordion-button-1" aria-expanded="false">
+                            <span
+                                class="accordion-title">What poker software does Nexlub use?</span><span
+                        class="icon" aria-hidden="true"></span></button>
+                <div class="accordion-content">
+                    <div>Our poker platform is powered by PokerMavens, a reliable and user-friendly software
+                        developed by briggsoft.com.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button id="accordion-button-1" aria-expanded="false">
+                            <span
+                                class="accordion-title">Which cryptocurrencies are accepted for deposits and withdrawals on Nexlub?</span><span
+                        class="icon" aria-hidden="true"></span></button>
+                <div class="accordion-content">
+                    <div>We accept a variety of cryptocurrencies for deposits and withdrawals through
+                        Plisio.net, including but not limited to Bitcoin, Ethereum, BNB, USTD, Litecoin, Doge,
+                        Shiba, and more. Check the Deposit or Withdraw menu for the complete list of supported
+                        cryptocurrencies.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button id="accordion-button-1" aria-expanded="false">
+                            <span
+                                class="accordion-title">How do I edit my profile?</span><span
+                        class="icon" aria-hidden="true"></span></button>
+                <div class="accordion-content">
+                    <div>Login to your account, click or press on your profile picture, go to settings, press
+                        the edit profile icon, and then you can change your wallet address, profile picture, and
+                        password.
                     </div>
                 </div>
             </div>
