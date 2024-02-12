@@ -41,6 +41,7 @@ class InvoiceController extends Controller
             ];
             $response = Helper::createInvoice($data);
             $details = json_decode($response->body(), true);
+            dd($details);
             if ($response->status() !== 200) {
                 $invoice->update(['failed_at' => now()]);
                 return redirect('/')->with(['error' => array_values(json_decode($details['data']['message'], true))[0]]);
