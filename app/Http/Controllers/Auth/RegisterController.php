@@ -53,7 +53,7 @@ class RegisterController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'referrer_id' => $referrer ? $referrer->id : null,
-            'referral_token' => Str::random(16),
+            'referral_token' => Str::random(),
             'wallet_no' => $request->wallet_no,
             'avatar' => $request->avatar,
         ]);
