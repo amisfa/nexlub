@@ -36,7 +36,7 @@ class InvoiceController extends Controller
                 'order_number' => $invoice->id,
                 'order_name' => $invoice->user->username,
                 'success_url' => env('app_url') . 'dashboard/success-payment?token=' . $token . '&id=' . $invoice->id,
-                'fail_url' => env('app_url') . 'dashboard/failed-payment?id=' . $invoice->id,
+                'cancel_url' => env('app_url') . 'dashboard/failed-payment?id=' . $invoice->id,
                 'email' => $invoice->user->email
             ];
             $response = Helper::createInvoice($data);
