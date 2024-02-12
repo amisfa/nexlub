@@ -56,7 +56,7 @@
         <a href="{{route('home-page')}}">
             <img width="100px" src="{{asset('black').'/img/logo-circle.png'}}"/>
         </a>
-        <h2>Sign In</h2>
+        <h2>Login</h2>
         <form class="form" name="myForm" action="{{ route('login-form') }}" method="post">
             @csrf
             <div class="inputBox">
@@ -66,7 +66,7 @@
                 <input type="password" name="password" required> <i>Password</i>
             </div>
             <div class="links"><a href="{{route('forgot-password-view')}}">Forgot Password</a> <a
-                    href="{{route('signup')}}">Signup</a>
+                    href="{{route('signup')}}">Register</a>
             </div>
             @if(config('services.recaptcha.key'))
                 <div class="captcha-container">

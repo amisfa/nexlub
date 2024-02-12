@@ -21,7 +21,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a href="https://t.me/Nexlub"
                    rel="noreferrer"
                    target="_blank"
                    class="text-gray-700 transition text-xl">
