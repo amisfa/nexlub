@@ -7,8 +7,9 @@
             <div class="flex items-center hidden sm:inline-flex">
                 <a href="{{route('login')}}" class="hover:text-white px-2">Login</a>
                 <a href="{{route('signup')}}" class="hover:text-white px-2">Register</a>
-                <a href="#" class="hover:text-white text-sm px-2">
-                    <i class='bx bxl-telegram'></i>
+                <a href="https://t.me/Nexlub" rel="noreferrer" target="_blank" class="text-gray-700 transition text-xl flex items-end">
+                    <span class="sr-only">Telegram</span>
+                    <i class="bx bxl-telegram"></i>
                 </a>
             </div>
             <div class="sm:hidden">
@@ -24,21 +25,14 @@
                         <a href="{{route('signup')}}" class="hover:text-white px-2">Register</a>
                     </li>
                     <li>
-                        <div class="flex flex-col flex-wrap w-full items-center">
-                            <a href="#" class="text-white-50 hover:text-white text-sm px-2">
-                                <i class='bx bxl-telegram'></i>
+                        <div class="flex flex-row w-full items-center content-center justify-center">
+                            <a href="https://t.me/Nexlub" rel="noreferrer" target="_blank" class="text-gray-700 transition text-xl flex items-end mx-2">
+                                <span class="sr-only">Telegram</span>
+                                <i class="bx bxl-telegram"></i>
                             </a>
-                            <a href="#" class="text-white-50 hover:text-white text-sm px-2">
-                                <i class='bx bxl-telegram'></i>
-                            </a>
-                            <a href="#" class="text-white-50 hover:text-white text-sm px-2">
-                                <i class='bx bxl-telegram'></i>
-                            </a>
-                            <a href="#" class="text-white-50 hover:text-white text-sm px-2">
-                                <i class='bx bxl-telegram'></i>
-                            </a>
-                            <a href="#" class="text-white-50 hover:text-white text-sm px-2">
-                                <i class='bx bxl-telegram'></i>
+                            <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition text-xl flex items-end mx-2">
+                                <span class="sr-only">Telegram</span>
+                                <i class="bx bxl-twitter"></i>
                             </a>
                         </div>
                     </li>

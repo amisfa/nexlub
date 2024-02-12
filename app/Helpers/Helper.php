@@ -226,7 +226,7 @@ class Helper
                 'rate_usd' => $coin['rate_usd'],
                 'name' => $coin['name'],
                 'icon' => $coin['icon'],
-                'min_amount' => isset($minAmount[$coin['cid']]) ? $minAmount[$coin['cid']] : 20
+                'min_amount' => isset($minAmount[$coin['cid']]) ? $minAmount[$coin['cid']] : 1
             ];
         }, array_filter($currencies['data'], function ($coin) {
             if (!$coin['hidden']) return $coin;

@@ -88,8 +88,7 @@
                 <i>Wallet(0xabc123...)</i>
             </div>
             <div class="links"><a href="{{route('forgot-password-view')}}">Forgot Password</a> <a
-                    href="{{route('login')}}">Sign
-                    in</a>
+                    href="{{route('login')}}">Login</a>
             </div>
             <div style="overflow-x: scroll;border: solid 2px;min-height: 90px" class="beauty-scroll">
                 <div style="width:100%;display: flex;position: relative">
