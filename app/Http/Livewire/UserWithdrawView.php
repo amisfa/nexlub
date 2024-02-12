@@ -45,7 +45,7 @@ class UserWithdrawView extends TableView
             $model->created_at->diffforHumans(),
             $model->rejected_comment,
         ];
-        if ($model->status === WithdrawStatuses::Paid) $data[] = '<a href="' . $model->tx_url . '" target="_blank">Tx Link<i class="bx bx-link-external"></i>';
+        if ($model->status === WithdrawStatuses::Paid) $data[] = '<a href="' . $model->tx_url . '" target="_blank">TX Link<i class="bx bx-link-external"></i>';
         return $data;
     }
 
