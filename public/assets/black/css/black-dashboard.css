@@ -14798,10 +14798,10 @@ Copyright (c) 2015 Daniel Eden
 }
 .banner-animation {
     color: #22c9e9;
-    -webkit-animation: animate .5s linear infinite;
-    -moz-animation: animate .5s linear infinite;
-    -o-animation: animate .5s linear infinite;
-    animation: animate .5s linear infinite;
+    -webkit-animation: animate 1s cubic-bezier(0.4, 0, 1, 1) infinite;
+    -moz-animation: animate 1s cubic-bezier(0.4, 0, 1, 1) infinite;
+    -o-animation: animate 1s cubic-bezier(0.4, 0, 1, 1) infinite;
+    animation: animate 1s cubic-bezier(0.4, 0, 1, 1) infinite;
 }
 @keyframes animate {
     0%, 100% {
