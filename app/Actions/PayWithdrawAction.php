@@ -46,6 +46,7 @@ class PayWithdrawAction extends Action
                 'to' => $withdraw->user->wallet_no,
                 'feePlan' => 'normal'
             ]);
+            dd(json_decode($response->body(), true));
             if ($response->status() !== 200) $this->error('Withdraw Failed');
             $response = json_decode($response->body(), true);
             $withdraw->tx_url = $response['tx_url'];
