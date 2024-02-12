@@ -31,7 +31,7 @@ class PayWithdrawAction extends Action
      */
     public function handle($model, View $view)
     {
-//        try {
+        try {
         $withdraw = UserWithdraw::findOrFail($model->id);
         $payAmount = 0;
         array_map(function ($currency) use (&$payAmount, $withdraw) {
@@ -47,9 +47,7 @@ class PayWithdrawAction extends Action
         ]);
         if ($response->status() !== 201) $this->error('Withdraw Failed');
         $response = json_decode($response->body(), true);
-        dd($withdraw, $response);
-
-        $withdraw->tx_url = $response['tx_url'];
+        $withdraw->tx_url = $response['data']['tx_url'];
         $withdraw->status = WithdrawStatuses::Paid;
         $withdraw->save();
         Helper::setPokerMavens([
@@ -57,9 +55,9 @@ class PayWithdrawAction extends Action
             'Log' => 'Paid Withdraw Id' . $withdraw->id
         ]);
         $this->success('Withdraw Successfully');
-//        } catch (Exception $e) {
-//            $this->error('Withdraw Failed');
-//        }
+        } catch (Exception $e) {
+            $this->error('Withdraw Failed');
+        }
     }
 
     public function renderIf($model, View $view): bool
