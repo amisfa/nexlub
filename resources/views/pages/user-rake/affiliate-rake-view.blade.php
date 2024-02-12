@@ -7,7 +7,7 @@
                        value="{{auth()->user()->referral_link}}" id="text"
                        readonly="">
                 <span class="copyLink" id="copy" tooltip="Copy to clipboard">
-                                        <i class="fa-regular fa-copy"></i>
+                                        <i class='bx bx-copy'></i>
                                     </span>
             </div>
         </div>

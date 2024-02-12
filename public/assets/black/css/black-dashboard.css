@@ -14247,7 +14247,7 @@ Copyright (c) 2015 Daniel Eden
 
 .shareLink .permalink .textLink {
     text-align: center;
-    padding: 6px 49px 6px 10px;
+    padding: 6px 40px 6px 10px;
     height: 36px;
     width: 400px;
     font-size: 11px;
@@ -14278,8 +14278,8 @@ Copyright (c) 2015 Daniel Eden
 
 .shareLink .permalink .copyLink {
     position: absolute;
-    top: 50%;
-    right: 25px;
+    top: 55%;
+    right: 10px;
     cursor: pointer;
     transform: translateY(-50%);
 }
@@ -14308,8 +14308,8 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .shareLink .permalink .copyLink i {
-    font-size: 20px;
-    color: #00042d;
+    font-size: 25px;
+    color: #22C7E7;
 }
 
 /*sidebar styles*/

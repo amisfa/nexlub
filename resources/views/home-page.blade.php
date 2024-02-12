@@ -13,11 +13,10 @@
                 style="background-color: rgba(0, 0, 0, 80%)">
                 <div class="flex h-full items-center justify-center">
                     <div class="px-2 text-center text-white md:px-12">
-                        <div class="mb-6 font-bold text-left banner-animation text-4xl">Nexlub</div>
                         <div class="mb-8 font-bold text-left ml-3 text-2xl" style="color:#22c9e9">
                             No download online poker where you can bet using crypto.
                             <br/>
-                            <div class="flex justify-start"><span class="strong mr-1">No KYC</span> needed!</div>
+                            <div class="flex justify-start"><span class="strong mr-1 banner-animation">No KYC</span> needed!</div>
                             Daily rake back 5%
                             <br/>
                             Earn on referrals!
