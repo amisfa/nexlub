@@ -1,5 +1,5 @@
 <footer style="background: #181818">
-    <div class="mx-auto max-w-5xl px-4 pt-16 sm:px-6 lg:px-8 pb-1">
+    <div class="mx-auto w-5/6 md:w-3/5 m-auto px-4 pt-16 sm:px-6 lg:px-8 pb-1">
         <div class="flex justify-center text-teal-600">
             <img src="{{asset('black').'/img/logo.png'}}"/>
         </div>

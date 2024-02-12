@@ -13,14 +13,20 @@
                 style="background-color: rgba(0, 0, 0, 0.75)">
                 <div class="flex h-full items-center justify-center">
                     <div class="px-6 text-center text-white md:px-12">
-                        <h1 class="mb-6 text-5xl font-bold">Heading</h1>
-                        <h3 class="mb-8 text-3xl font-bold">Subeading</h3>
+                        <div class="mb-6 font-bold text-left banner-animation text-4xl">Nexlub</div>
+                        <div class="mb-8 font-bold text-left ml-3 text-2xl banner-animation">
+                            No download online poker where you can bet using crypto. No KYC needed!
+                            <br/>
+                            Daily rake 5%
+                            <br/>
+                            Earn on referrals!
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    <div class="flex flex-col items-center w-full">
+    <div class="flex flex-col items-center w-5/6 md:w-3/5 m-auto">
         <br/>
         <h3 class="font-bold">Available Currencies</h3>
         <br/>
@@ -189,8 +195,6 @@
                     </svg>
                 </div>
             </li>
-        </ul>
-        <ul class="flex flex-wrap items-center justify-center px-2">
             <li class="coin-item">
                 <div class="coin-link cursor-default">
                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
@@ -367,7 +371,7 @@
         </ul>
     </div>
     <br/>
-    <div class="px-2 w-full">
+    <div class="px-2 w-5/6 md:w-3/5 m-auto justify-evenly">
         <div class="flex flex-wrap items-stretch justify-center">
             <div class="flex flex-col p-4 m-1 rounded-lg sm:m-3" style="background: #181818;">
                 <img class="pb-1 m-auto" width="64px" src="{{asset('black').'/img/jackpot.png'}}"/>
