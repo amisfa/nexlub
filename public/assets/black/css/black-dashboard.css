@@ -14268,12 +14268,12 @@ Copyright (c) 2015 Daniel Eden
 
 .shareLink .permalink .textLink::-moz-selection {
     color: #fff;
-    background-color: #00042d;
+    background-color: #22C7E7;
 }
 
 .shareLink .permalink .textLink::selection {
     color: #fff;
-    background-color: #00042d;
+    background-color: #22C7E7;
 }
 
 .shareLink .permalink .copyLink {
