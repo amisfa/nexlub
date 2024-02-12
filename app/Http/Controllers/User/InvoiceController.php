@@ -76,7 +76,7 @@ class InvoiceController extends Controller
             'price_amount' => $invoice->price_amount,
             'status' => 'Paid'
         ]);
-        return redirect('//payments')->with(['success' => 'Payment Paid Successfully']);
+        return redirect('/payments')->with(['success' => 'Payment Paid Successfully']);
     }
 
     public function failedPayment(): \Illuminate\Foundation\Application|\Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|Application
