@@ -71,7 +71,7 @@
                 </a>
             </li>
             <li class="{{ $pageSlug == 'tickets' ? 'active relative' : 'relative'  }}">
-                <span class="hidden tooltip">Tickets</span>
+                <span class="hidden tooltip">Support</span>
                 <a href="{{route('tickets')}}">
                     <i class='bx bx-message'></i>
                     <span class="link_name">Support</span>
