@@ -15,7 +15,9 @@
                     <div class="px-2 text-center text-white md:px-12">
                         <div class="mb-6 font-bold text-left banner-animation text-4xl">Nexlub</div>
                         <div class="mb-8 font-bold text-left ml-3 text-2xl" style="color:#22c9e9">
-                            No download online poker where you can bet using crypto. No KYC needed!
+                            No download online poker where you can bet using crypto.
+                            <br/>
+                            <b>No KYC</b> needed!
                             <br/>
                             Daily rake back 5%
                             <br/>
