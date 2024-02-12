@@ -34,15 +34,13 @@
             text-align: center;
             padding: 10px 12px;
             transition: all 0.3s ease;
-            color: #bb0000;
+            color: #22C7E7;
             font-size: 28px;
             border-radius: 4px 0px 0px 4px;
-            box-shadow: 0px 4px 8px #000;
         }
 
         .home-page {
-            background: #fff;
-            color: white;
+            background: linear-gradient(313deg, rgba(24,24,24,1) 11%, rgba(89,89,89,1) 100%);
         }
     </style>
     <title>Play</title>
