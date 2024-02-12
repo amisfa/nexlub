@@ -32,7 +32,7 @@ class PayWithdrawAction extends Action
      */
     public function handle($model, View $view)
     {
-        try {
+//        try {
             $withdraw = UserWithdraw::findOrFail($model->id);
             $payAmount = 0;
             array_map(function ($currency) use (&$payAmount, $withdraw) {
@@ -55,10 +55,11 @@ class PayWithdrawAction extends Action
                 'Command' => 'LogsAddEvent',
                 'Log' => 'Paid Withdraw Id' . $withdraw->id
             ]);
+            dd($withdraw);
             $this->success('Withdraw Successfully');
-        } catch (Exception $e) {
-            $this->error('Withdraw Failed');
-        }
+//        } catch (Exception $e) {
+//            $this->error('Withdraw Failed');
+//        }
     }
 
     public function renderIf($model, View $view): bool
