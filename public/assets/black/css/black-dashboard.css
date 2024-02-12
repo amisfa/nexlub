@@ -14796,6 +14796,7 @@ Copyright (c) 2015 Daniel Eden
     background: #22C7E7;
     color: #ffffff;
 }
+
 .banner-animation {
     color: #22c9e9;
     -webkit-animation: animate 1s cubic-bezier(0.4, 0, 1, 1) infinite;
@@ -14803,6 +14804,7 @@ Copyright (c) 2015 Daniel Eden
     -o-animation: animate 1s cubic-bezier(0.4, 0, 1, 1) infinite;
     animation: animate 1s cubic-bezier(0.4, 0, 1, 1) infinite;
 }
+
 @keyframes animate {
     0%, 100% {
         text-shadow: -1.5px -1.5px 0 rgba(122, 216, 234, 0.52), 2px 2px 0 rgba(8, 47, 54, 0.44);
@@ -14816,4 +14818,19 @@ Copyright (c) 2015 Daniel Eden
     75% {
         text-shadow: -2px 1.5px 0 rgba(122, 216, 234, 0.52), 1.5px -2px 0 rgba(8, 47, 54, 0.44)
     }
+}
+
+.strong::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #22c9e9;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.strong {
+    position: relative;
 }

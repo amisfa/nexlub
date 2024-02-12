@@ -536,3 +536,17 @@ a:hover, a:focus {
         text-shadow: -2px 1.5px 0 rgba(122, 216, 234, 0.52), 1.5px -2px 0 rgba(8, 47, 54, 0.44)
     }
 }
+.strong::after {
+    display: block;
+    content: '';
+    width: 35px;
+    height: 1px;
+    background: #22c9e9;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.strong {
+    position: relative;
+}
