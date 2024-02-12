@@ -12,7 +12,7 @@
                 class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
                 style="background-color: rgba(0, 0, 0, 80%)">
                 <div class="flex h-full items-center justify-center">
-                    <div class="px-0 sm:px-2 text-center text-white md:px-12">
+                    <div class="px-2 text-center text-white md:px-12">
                         <div class="mb-6 font-bold text-left banner-animation text-4xl">Nexlub</div>
                         <div class="mb-8 font-bold text-left ml-3 text-2xl" style="color:#22c9e9">
                             No download online poker where you can bet using crypto. No KYC needed!
