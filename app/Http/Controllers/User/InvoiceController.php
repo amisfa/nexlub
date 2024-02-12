@@ -35,8 +35,8 @@ class InvoiceController extends Controller
                 'source_currency' => 'USD',
                 'order_number' => $invoice->id,
                 'order_name' => $invoice->user->username,
-                'success_callback_url' => env('app_url') . 'statics/success-payment?token=' . $token . '&id=' . $invoice->id,
-                'fail_callback_url' => env('app_url') . 'statics/failed-payment?id=' . $invoice->id,
+                'success_callback_url' => env('app_url') . 'dashboard/success-payment?token=' . $token . '&id=' . $invoice->id,
+                'fail_callback_url' => env('app_url') . 'dashboard/failed-payment?id=' . $invoice->id,
                 'email' => $invoice->user->email
             ];
             $response = Helper::createInvoice($data);
