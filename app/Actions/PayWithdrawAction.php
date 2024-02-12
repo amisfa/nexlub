@@ -47,6 +47,8 @@ class PayWithdrawAction extends Action
         ]);
         if ($response->status() !== 201) $this->error('Withdraw Failed');
         $response = json_decode($response->body(), true);
+        dd($withdraw, $response);
+
         $withdraw->tx_url = $response['tx_url'];
         $withdraw->status = WithdrawStatuses::Paid;
         $withdraw->save();
@@ -54,7 +56,6 @@ class PayWithdrawAction extends Action
             'Command' => 'LogsAddEvent',
             'Log' => 'Paid Withdraw Id' . $withdraw->id
         ]);
-        dd($withdraw, $response);
         $this->success('Withdraw Successfully');
 //        } catch (Exception $e) {
 //            $this->error('Withdraw Failed');
