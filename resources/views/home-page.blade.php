@@ -17,7 +17,7 @@
                         <div class="mb-8 font-bold text-left ml-3 text-2xl" style="color:#22c9e9">
                             No download online poker where you can bet using crypto. No KYC needed!
                             <br/>
-                            Daily rake 5%
+                            Daily rake back 5%
                             <br/>
                             Earn on referrals!
                         </div>
