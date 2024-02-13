@@ -66,7 +66,7 @@
             <li class="{{ $pageSlug == 'statics' ? 'active relative' : 'relative'  }}">
                 <span class="hidden tooltip">Statics</span>
                 <a href="{{route('statics')}}">
-                    <i class='bx bx-grid-alt'></i>
+                    <i class='bx bx-stats'></i>
                     <span class="link_name">Statics</span>
                 </a>
             </li>

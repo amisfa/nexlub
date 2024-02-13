@@ -13,13 +13,17 @@
                 style="background-color: rgba(0, 0, 0, 80%)">
                 <div class="flex h-full items-center justify-center">
                     <div class="px-2 text-center text-white md:px-12">
+                        <div class="font-bold text-left mb-1 text-3xl" style="color:#22c9e9">
+                            Experience the future of <span class="banner-animation">poker with crypto!</span>
+                        </div>
                         <div class="mb-8 font-bold text-left ml-3 text-2xl" style="color:#22c9e9">
-                            No download online poker where you can bet using crypto.
+                            <span class="strong mr-1 banner-animation">No KYC</span>
                             <br/>
-                            <div class="flex justify-start"><span class="strong mr-1 banner-animation">No KYC</span> needed!</div>
-                            Daily rake back 5%
+                            No download.
                             <br/>
-                            Earn on referrals!
+                            Get a 5% daily rake back
+                            <br/>
+                            Earn on referrals and have a great time with friends
                         </div>
                     </div>
                 </div>
