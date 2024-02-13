@@ -30,7 +30,7 @@
                                 <span class="sr-only">Telegram</span>
                                 <i class="bx bxl-telegram"></i>
                             </a>
-                            <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition text-xl flex items-end mx-2">
+                            <a href="https://twitter.com/nexlub" rel="noreferrer" target="_blank" class="text-gray-700 transition text-xl flex items-end mx-2">
                                 <span class="sr-only">Telegram</span>
                                 <i class="bx bxl-twitter"></i>
                             </a>

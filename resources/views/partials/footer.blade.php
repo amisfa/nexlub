@@ -12,7 +12,7 @@
 
         <ul class="mt-12 flex justify-center gap-6 md:gap-8">
             <li>
-                <a href="#"
+                <a href="https://twitter.com/nexlub"
                    rel="noreferrer"
                    target="_blank"
                    class="text-gray-700 transition text-xl">
