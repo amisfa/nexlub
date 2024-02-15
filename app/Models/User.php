@@ -90,12 +90,12 @@ class User extends Authenticatable
         return $this->hasMany(UserInvoice::class, 'user_id');
     }
 
-    public function roles()
+    public function roles(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Role::class);
     }
 
-    public function permissions()
+    public function permissions(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Permission::class);
     }
@@ -163,30 +163,36 @@ class User extends Authenticatable
     public function getRemainAffiliateRakeAttribute(): float|int
     {
         $remainRake = 0;
-        if ($this->userRake()->exists()) {
-            $query = $this->userRake()->first();
-            $remainRake += $query->affiliate_rake - $query->claimed_rake_affiliate;
-        }
-        return floatval($remainRake);
+        $this->referrals()->each(function ($q) use (&$remainRake) {
+            if ($q->userRake()->exists()) {
+                $query = $q->userRake()->first();
+                $remainRake += $query->affiliate_rake - $query->claimed_rake_affiliate;
+            }
+        });
+        return $remainRake;
     }
 
     public function getClaimedAffiliateRakeAttribute(): float|int
     {
         $claimedRake = 0;
-        if ($this->userRake()->exists()) {
-            $query = $this->userRake()->first();
-            $claimedRake = $query->claimed_rake_affiliate;
-        }
+        $this->referrals()->each(function ($q) use (&$claimedRake) {
+            if ($q->userRake()->exists()) {
+                $query = $q->userRake()->first();
+                $claimedRake += $query->claimed_rake_affiliate;
+            }
+        });
         return $claimedRake;
     }
 
     public function getTotalAffiliateRakeAttribute(): float|int
     {
         $rake = 0;
-        if ($this->userRake()->exists()) {
-            $query = $this->userRake()->first();
-            $rake = $query->affiliate_rake;
-        }
+        $this->referrals()->each(function ($q) use (&$rake) {
+            if ($q->userRake()->exists()) {
+                $query = $q->userRake()->first();
+                $rake += $query->affiliate_rake;
+            }
+        });
         return $rake;
     }
 
