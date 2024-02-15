@@ -42,16 +42,14 @@ class UserRakePercentageView extends ModalComponent
         if ($currentAffiliateRake != $this->affiliateRake) {
             $model->affiliate_rake_percentage = $this->affiliateRake;
             $referralUsers = $model->referrals()->get();
-            dd($referralUsers);
             foreach ($referralUsers as $user) {
                 if ($user->userRake()->exists()) {
                     $query = $user->userRake();
-                    $referralUser = $user->first();
-                    $referralUser->affiliate_rake_percentage = $this->affiliateRake;
-                    $referralUser->save();
-                    $remainAffiliateRake = $referralUser->remain_affiliate_rake;
+                    $user->affiliate_rake_percentage = $this->affiliateRake;
+                    $user->save();
+                    $remainAffiliateRake = $user->remain_affiliate_rake;
                     $query->update([
-                        'claimed_rake_affiliate' => (($referralUser->affiliate_rake_percentage / 100) * $user->userRake->rake) - $remainAffiliateRake
+                        'claimed_rake_affiliate' => (($user->affiliate_rake_percentage / 100) * $user->userRake->rake) - $remainAffiliateRake
                     ]);
                 }
             }
