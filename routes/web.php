@@ -35,9 +35,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("/", function () {
-    $logs = Helper::getHistoryLog();
-    dd($logs);
-//    return view('home-page');
+    return view('home-page');
 })->name('home-page');
 Route::any('/{page?}', function () {
     return view('errors.404');
