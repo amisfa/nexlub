@@ -30,7 +30,6 @@ class UserRakePercentageView extends ModalComponent
 
         $currentRakeBack = $model->rake_back_percentage;
         $currentAffiliateRake = $model->affiliate_rake_percentage;
-        $remainAffiliateRake = $model->remain_affiliate_rake;
         if ($currentRakeBack != $this->rakeBack) {
             $model->rake_back_percentage = $this->rakeBack;
             $remainRakeBack = $model->remain_rake_back;
@@ -43,6 +42,7 @@ class UserRakePercentageView extends ModalComponent
         }
         if ($currentAffiliateRake != $this->affiliateRake) {
             $model->affiliate_rake_percentage = $this->affiliateRake;
+            $remainAffiliateRake = $model->remain_affiliate_rake;
             $eachUserRemain = $remainAffiliateRake / ($model->referrals()->count() || 1);
             $model->referrals()->each(function ($q) use ($eachUserRemain) {
                 if ($q->userRake()->exists()) {
