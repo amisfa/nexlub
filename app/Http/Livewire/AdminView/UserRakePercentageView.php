@@ -50,7 +50,7 @@ class UserRakePercentageView extends ModalComponent
                     $referralUser->save();
                     $remainAffiliateRake = $referralUser->remain_affiliate_rake;
                     $query->update([
-                        'claimed_rake_affiliate' => (($this->affiliateRake / 100) * $q->userRake->rake) - $remainAffiliateRake
+                        'claimed_rake_affiliate' => (($this->affiliateRake / 100) * $user->userRake->rake) - $remainAffiliateRake
                     ]);
                 }
 
