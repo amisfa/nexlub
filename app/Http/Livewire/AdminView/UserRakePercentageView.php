@@ -41,10 +41,11 @@ class UserRakePercentageView extends ModalComponent
         }
         if ($currentAffiliateRake != $this->affiliateRake) {
             $model->affiliate_rake_percentage = $this->affiliateRake;
-            $model->referrals()->each(function ($q) {
-                if ($q->userRake()->exists()) {
-                    $query = $q->userRake();
-                    $referralUser = $q->first();
+            $referralUsers = $model->referrals()->get();
+            foreach ($referralUsers as $user){
+                if ($user->userRake()->exists()) {
+                    $query = $user->userRake();
+                    $referralUser = $user->first();
                     $referralUser->affiliate_rake_percentage = $this->affiliateRake;
                     $referralUser->save();
                     $remainAffiliateRake = $referralUser->remain_affiliate_rake;
@@ -52,7 +53,8 @@ class UserRakePercentageView extends ModalComponent
                         'claimed_rake_affiliate' => (($this->affiliateRake / 100) * $q->userRake->rake) - $remainAffiliateRake
                     ]);
                 }
-            });
+
+            }
         }
         $model->save();
         $this->emit('closeModal');
