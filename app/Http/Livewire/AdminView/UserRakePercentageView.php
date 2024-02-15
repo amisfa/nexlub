@@ -9,7 +9,7 @@ class UserRakePercentageView extends ModalComponent
 {
     public array $model;
     public int $rakeBack;
-    public int $affiliateRake;
+    public int|string $affiliateRake;
 
     public function render(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
