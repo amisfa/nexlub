@@ -75,8 +75,6 @@ class getUserStat extends Command
                                 "hand_count" => $stat['hand_count'],
                                 "win_count" => $stat['win_count'],
                                 "lose_count" => $stat['lose_count'],
-                                "total_lose_amount" => $stat['lose_amount'],
-                                "total_win_amount" => $stat['win_amount'],
                                 "folded_on_preflop_count" => $stat['folded_on_preflop_count'],
                                 "won_without_showdown_count" => $stat['won_without_showdown_count'],
                                 "showdown_count" => $stat['showdown_count'],
