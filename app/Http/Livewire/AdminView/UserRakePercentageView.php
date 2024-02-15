@@ -43,7 +43,7 @@ class UserRakePercentageView extends ModalComponent
             $model->referrals()->each(function ($q) {
                 if ($q->userRake()->exists()) {
                     $query = $q->userRake();
-                    $referralUser = $query->first();
+                    $referralUser = $q->first();
                     $referralUser->affiliate_rake_percentage = $this->affiliateRake;
                     $referralUser->save();
                     $remainAffiliateRake = $referralUser->remain_affiliate_rake;
