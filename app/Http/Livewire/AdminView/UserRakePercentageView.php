@@ -30,10 +30,10 @@ class UserRakePercentageView extends ModalComponent
 
         $currentRakeBack = $model->rake_back_percentage;
         $currentAffiliateRake = $model->affiliate_rake_percentage;
-        $remainRakeBack = $model->remain_rake_back;
         $remainAffiliateRake = $model->remain_affiliate_rake;
         if ($currentRakeBack != $this->rakeBack) {
             $model->rake_back_percentage = $this->rakeBack;
+            $remainRakeBack = $model->remain_rake_back;
             if ($model->userRake()->exists()) {
                 $query = $model->userRake();
                 $query->update([

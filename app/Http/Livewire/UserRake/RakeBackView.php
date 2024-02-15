@@ -24,7 +24,7 @@ class RakeBackView extends Component
             'amount' => $remainRakeBack,
             'log' => $remainRakeBack . ' USD Claimed Rake Back by ' . auth()->user()->username
         ]);
-//        $this->emit('reloadBalance');
+        $this->emit('reloadBalance');
         $this->render();
     }
 
