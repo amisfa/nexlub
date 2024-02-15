@@ -40,6 +40,7 @@ class UserRakePercentageView extends ModalComponent
             }
         }
         if ($currentAffiliateRake != $this->affiliateRake) {
+            $model->affiliate_rake_percentage = $this->affiliateRake;
             $model->referrals()->each(function ($q) {
                 if ($q->userRake()->exists()) {
                     $query = $q->userRake();
