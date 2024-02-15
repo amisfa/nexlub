@@ -1,5 +1,6 @@
 <?php
 
+use App\Helpers\Helper;
 use App\Http\Controllers\Auth\EmailValidationController;
 use App\Http\Controllers\Auth\ForgetPasswordController;
 use App\Http\Controllers\Auth\LoginController;
@@ -34,7 +35,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("/", function () {
-    return view('home-page');
+    Helper::getHistoryLog();
+//    return view('home-page');
 })->name('home-page');
 Route::any('/{page?}', function () {
     return view('errors.404');

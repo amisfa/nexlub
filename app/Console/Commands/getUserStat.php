@@ -33,7 +33,6 @@ class getUserStat extends Command
     {
         try {
             $logs = Helper::getHistoryLog();
-            dd($logs);
             if (count($logs)) {
                 foreach ($logs['ring_game'] as $username => $stat) {
                     $user = User::query()->where('username', $username)->first();

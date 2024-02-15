@@ -36,6 +36,7 @@ class Helper
         $dailySNGActivity = [];
         $logs = [];
         $response = json_decode(Http::asForm()->post(env("MAVENS_URL") . '/api', $params)->body(), true);
+        dd($response);
         if ($response['Result'] !== 'Error') {
             $tableNames = $response['Name'];
             foreach ($tableNames as $name) {
