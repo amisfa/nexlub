@@ -9,6 +9,7 @@ use LaravelViews\Views\TableView;
 class UserSubsetView extends TableView
 {
     public $searchBy = ['username'];
+
     protected $paginate = 10;
     protected $listeners = ['reloadTable' => 'reload'];
 
