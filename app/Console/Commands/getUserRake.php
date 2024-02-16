@@ -38,11 +38,10 @@ class getUserRake extends Command
             $response = Http::asForm()->post(env("MAVENS_URL") . '/api', $params);
             $response = json_decode($response->body(), true);
             if ($response['Result'] !== 'Ok') return;
-            $query = UserRakeLog::query();
             foreach ($response['Player'] as $key => $item) {
+                $query = UserRakeLog::query();
                 $user = User::query()->where('username', $item)->first();
-                $hasLog = $query->where('user_id', $user->id)->exists();
-                if ($hasLog) {
+                if (UserRakeLog::query()->where('user_id', $user->id)->exists()) {
                     $query->where('user_id', $user->id)->update([
                         'rake' => $response['PRake'][$key],
                         'updated_at' => now()
