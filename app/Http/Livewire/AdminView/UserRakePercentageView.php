@@ -62,6 +62,7 @@ class UserRakePercentageView extends ModalComponent
             });
         }
         $model->save();
+        $this->emit('reloadTable');
         $this->emit('closeModal');
     }
 }
