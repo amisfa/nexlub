@@ -29,9 +29,9 @@
                             <br/>
                             <a href="{{route('signup')}}">
                                 <button class='glowing-btn'><span class='glowing-txt'>P<span
-                                            class='faulty-letter'>L</span>AY   <span
-                                            class='faulty-letter'>N</span>OW</span><span class='faulty-letter'>!
-                                </button>
+                                            class='faulty-letter'>L</span>AY <span
+                                            class='faulty-letter'>N</span>OW<span
+                                            class='faulty-letter'>!</span></span></button>
                             </a>
                         @endguest
                     </div>
