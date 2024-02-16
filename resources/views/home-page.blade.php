@@ -28,10 +28,9 @@
                         @guest()
                             <br/>
                             <a href="{{route('signup')}}">
-                                <button class='glowing-btn'>
-                                    <span class='glowing-txt'>
-                                        P<span class='faulty-letter'>l</span>ay <span
-                                            class='faulty-letter'>N</span>ow</span>
+                                <button class='glowing-btn'><span class='glowing-txt'>P<span
+                                            class='faulty-letter'>L</span>AY   <span
+                                            class='faulty-letter'>N</span>OW</span><span class='faulty-letter'>!
                                 </button>
                             </a>
                         @endguest
