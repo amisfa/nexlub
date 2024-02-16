@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\AdminView;
 
+use App\Helpers\Helper;
 use App\Models\User;
 use LivewireUI\Modal\ModalComponent;
 
@@ -50,6 +51,13 @@ class UserRakePercentageView extends ModalComponent
                     $query->update([
                         'claimed_rake_affiliate' => $claimedRakeAffiliate > $remainAffiliateRake ? $claimedRakeAffiliate - $remainAffiliateRake : $claimedRakeAffiliate
                     ]);
+                    if ($claimedRakeAffiliate <= $remainAffiliateRake) {
+                        Helper::addBalance([
+                            'user_id' => auth()->id(),
+                            'amount' => $remainAffiliateRake,
+                            'log' => $remainAffiliateRake . ' USD Added in Change percentage ' . $q->username
+                        ]);
+                    }
                 }
             });
         }
