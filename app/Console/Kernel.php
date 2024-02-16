@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command(getUserRake::class)->hourly();
+        $schedule->command(getUserRake::class)->everyFiveMinutes();
         $schedule->command(getUserStat::class)->everyFiveMinutes();
     }
 
