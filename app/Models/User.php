@@ -165,9 +165,9 @@ class User extends Authenticatable
         $remainRake = 0;
         if ($this->userRake()->exists()) {
             $query = $this->userRake()->first();
-            $remainRake += $query->affiliate_rake - $query->claimed_rake_affiliate;
+            $remainRake += floatval($query->affiliate_rake) - floatval($query->claimed_rake_affiliate);
         }
-        return floatval($remainRake);
+        return $remainRake;
     }
 
     public function getClaimedAffiliateRakeAttribute()
@@ -175,7 +175,7 @@ class User extends Authenticatable
         $claimedRake = 0;
         if ($this->userRake()->exists()) {
             $query = $this->userRake()->first();
-            $claimedRake = $query->claimed_rake_affiliate;
+            $claimedRake = floatval($query->claimed_rake_affiliate);
         }
         return $claimedRake;
     }
@@ -185,7 +185,7 @@ class User extends Authenticatable
         $rake = 0;
         if ($this->userRake()->exists()) {
             $query = $this->userRake()->first();
-            $rake = $query->affiliate_rake;
+            $rake = floatval($query->affiliate_rake);
         }
         return $rake;
     }
