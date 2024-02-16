@@ -7,9 +7,13 @@
             <div class="flex items-center hidden sm:inline-flex">
                 <a href="{{route('login')}}" class="hover:text-white px-2">Login</a>
                 <a href="{{route('signup')}}" class="hover:text-white px-2">Register</a>
-                <a href="https://t.me/Nexlub" rel="noreferrer" target="_blank" class="text-gray-700 transition text-xl flex items-end">
+                <a href="https://t.me/Nexlub" rel="noreferrer" target="_blank" class="transition text-xl flex items-end px-1 hover:text-white">
                     <span class="sr-only">Telegram</span>
                     <i class="bx bxl-telegram"></i>
+                </a>
+                <a href="https://twitter.com/nexlub" rel="noreferrer" target="_blank" class="transition text-xl flex items-end px-1 hover:text-white">
+                    <span class="sr-only">Twitter</span>
+                    <i class="bx bxl-twitter"></i>
                 </a>
             </div>
             <div class="sm:hidden">
@@ -31,7 +35,7 @@
                                 <i class="bx bxl-telegram"></i>
                             </a>
                             <a href="https://twitter.com/nexlub" rel="noreferrer" target="_blank" class="text-gray-700 transition text-xl flex items-end mx-2">
-                                <span class="sr-only">Telegram</span>
+                                <span class="sr-only">Twitter</span>
                                 <i class="bx bxl-twitter"></i>
                             </a>
                         </div>
