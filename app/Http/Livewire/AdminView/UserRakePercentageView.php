@@ -52,6 +52,7 @@ class UserRakePercentageView extends ModalComponent
                         'claimed_rake_affiliate' => $claimedRakeAffiliate >= $remainAffiliateRake ? $claimedRakeAffiliate - $remainAffiliateRake : $claimedRakeAffiliate
                     ]);
                     if ($claimedRakeAffiliate < $remainAffiliateRake) {
+                        dd($q->id, floatval($remainAffiliateRake));
                         Helper::addBalance([
                             'user_id' => $q->id,
                             'amount' => floatval($remainAffiliateRake),
