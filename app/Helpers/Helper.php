@@ -5,6 +5,7 @@ namespace App\Helpers;
 use App\Mail\VerifyEmail;
 use App\Models\User;
 use App\Models\UserVerify;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
@@ -40,7 +41,7 @@ class Helper
             $tableNames = $response['Name'];
             foreach ($tableNames as $name) {
                 $params['Name'] = $name;
-                $params['Date'] = now()->format('Y-m-d');
+                $params['Date'] = Carbon::yesterday()->format('Y-m-d');
                 $response = json_decode(Http::asForm()->post(env("MAVENS_URL") . '/api', $params)->body());
                 if ($response->Result !== 'Error') {
                     $pseudoHand = [];
