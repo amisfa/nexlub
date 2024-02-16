@@ -41,7 +41,7 @@ class getUserRake extends Command
             $query = UserRakeLog::query();
             foreach ($response['Player'] as $key => $item) {
                 $user = User::query()->where('username', $item)->first();
-                $hasLog = $query->where('user_id', $user->id)->first();
+                $hasLog = $query->where('user_id', $user->id)->exists();
                 if ($hasLog && $user) {
                     $query->where('user_id', $user->id)->update([
                         'rake' => $response['PRake'][$key],
