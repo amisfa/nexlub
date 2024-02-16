@@ -27,17 +27,17 @@ class UserRakeLog extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function getAffiliateRakeAttribute(): float|int
+    public function getAffiliateRakeAttribute()
     {
         $referrerRakePercentage = 0;
         if ($this->user->referrer()->exists()) {
             $referrerRakePercentage = $this->user->referrer->affiliate_rake_percentage;
         }
-        return ($referrerRakePercentage / 100) * $this->rake;
+        return number_format(($referrerRakePercentage / 100) * $this->rake, 2, '.', '');
     }
 
-    public function getUserRakeBackAttribute(): float|int
+    public function getUserRakeBackAttribute()
     {
-        return ($this->user->rake_back_percentage / 100) * $this->rake;
+        return number_format(($this->user->rake_back_percentage / 100) * $this->rake, 2, '.', '');
     }
 }

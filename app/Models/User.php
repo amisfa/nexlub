@@ -130,17 +130,17 @@ class User extends Authenticatable
         return $this->hasMany(UserJackPotReward::class);
     }
 
-    public function getRemainRakeBackAttribute(): int
+    public function getRemainRakeBackAttribute()
     {
         $remainRake = 0;
         if ($this->userRake()->exists()) {
             $query = $this->userRake()->first();
             $remainRake = floatval($query->user_rake_back) - floatval($query->claimed_rake_back);
         }
-        return $remainRake;
+        return floatval($remainRake);
     }
 
-    public function getClaimedRakeBackAttribute(): float|int
+    public function getClaimedRakeBackAttribute()
     {
         $claimedRake = 0;
         if ($this->userRake()->exists()) {
@@ -150,7 +150,7 @@ class User extends Authenticatable
         return $claimedRake;
     }
 
-    public function getTotalRakeBackAttribute(): float|int
+    public function getTotalRakeBackAttribute()
     {
         $rake = 0;
         if ($this->userRake()->exists()) {
@@ -160,7 +160,7 @@ class User extends Authenticatable
         return $rake;
     }
 
-    public function getRemainAffiliateRakeAttribute(): float|int
+    public function getRemainAffiliateRakeAttribute()
     {
         $remainRake = 0;
         if ($this->userRake()->exists()) {
@@ -170,7 +170,7 @@ class User extends Authenticatable
         return floatval($remainRake);
     }
 
-    public function getClaimedAffiliateRakeAttribute(): float|int
+    public function getClaimedAffiliateRakeAttribute()
     {
         $claimedRake = 0;
         if ($this->userRake()->exists()) {
@@ -180,7 +180,7 @@ class User extends Authenticatable
         return $claimedRake;
     }
 
-    public function getTotalAffiliateRakeAttribute(): float|int
+    public function getTotalAffiliateRakeAttribute()
     {
         $rake = 0;
         if ($this->userRake()->exists()) {
@@ -190,12 +190,12 @@ class User extends Authenticatable
         return $rake;
     }
 
-    public function getUnclaimedJackPotAttribute(): int
+    public function getUnclaimedJackPotAttribute()
     {
         return $this->jackPotRewards()->whereNull('claimed_at')->count();
     }
 
-    public function getUnclaimedBadBeatAttribute(): int
+    public function getUnclaimedBadBeatAttribute()
     {
         return $this->badBeatRewards()->whereNull('claimed_at')->count();
     }
