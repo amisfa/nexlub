@@ -53,8 +53,8 @@ class UserRakePercentageView extends ModalComponent
                     ]);
                     if ($claimedRakeAffiliate <= $remainAffiliateRake) {
                         Helper::addBalance([
-                            'user_id' =>$q->id,
-                            'amount' => $remainAffiliateRake,
+                            'user_id' => $q->id,
+                            'amount' => floatval($remainAffiliateRake),
                             'log' => $remainAffiliateRake . ' USD Added in Change percentage ' . $q->username
                         ]);
                     }
