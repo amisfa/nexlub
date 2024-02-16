@@ -19,21 +19,19 @@ class AffiliateRakeView extends Component
 
     public function claimAffiliateRakes(): void
     {
-        $remainAffiliateRakes = 0;
-        auth()->user()->referrals()->each(function ($q) use (&$remainAffiliateRakes) {
+        auth()->user()->referrals()->each(function ($q) {
             if ($q->userRake()->exists()) {
-                $remainAffiliateRakes += $q->remain_affiliate_rake;
                 $q->userRake()->update([
-                    'claimed_rake_affiliate' => $remainAffiliateRakes + $q->claimed_affiliate_rake
+                    'claimed_rake_affiliate' => $q->remain_affiliate_rake + $q->claimed_affiliate_rake
                 ]);
                 $q->save();
+                Helper::addBalance([
+                    'user_id' => auth()->id(),
+                    'amount' => $q->remain_affiliate_rake,
+                    'log' => $q->remain_affiliate_rake . ' USD Claimed Rake Affiliate by ' . $q->username
+                ]);
             }
         });
-        Helper::addBalance([
-            'user_id' => auth()->id(),
-            'amount' => $remainAffiliateRakes,
-            'log' => $remainAffiliateRakes . ' USD Claimed Rake Affiliate by ' . auth()->user()->username
-        ]);
         $this->emit('reloadTable');
         $this->render();
     }
