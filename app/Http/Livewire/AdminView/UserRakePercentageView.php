@@ -46,8 +46,9 @@ class UserRakePercentageView extends ModalComponent
                 if ($q->userRake()->exists()) {
                     $remainAffiliateRake = $q->remain_affiliate_rake;
                     $query = $q->userRake();
+                    $claimedRakeAffiliate = (($this->affiliateRake / 100) * $q->userRake->rake);
                     $query->update([
-                        'claimed_rake_affiliate' => (($this->affiliateRake / 100) * $q->userRake->rake) - $remainAffiliateRake
+                        'claimed_rake_affiliate' => $claimedRakeAffiliate > $remainAffiliateRake ? $claimedRakeAffiliate - $remainAffiliateRake : $claimedRakeAffiliate
                     ]);
                 }
             });
