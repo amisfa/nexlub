@@ -27,11 +27,13 @@ class UserRakePercentageView extends ModalComponent
     public function change()
     {
         $model = User::find($this->model['id']);
+
         $currentRakeBack = $model->rake_back_percentage;
         $currentAffiliateRake = $model->affiliate_rake_percentage;
+        $remainRakeBack = $model->remain_rake_back;
+        $remainAffiliateRake = $model->remain_affiliate_rake;
         if ($currentRakeBack != $this->rakeBack) {
             $model->rake_back_percentage = $this->rakeBack;
-            $remainRakeBack = $model->remain_rake_back;
             if ($model->userRake()->exists()) {
                 $query = $model->userRake();
                 $query->update([
@@ -40,19 +42,16 @@ class UserRakePercentageView extends ModalComponent
             }
         }
         if ($currentAffiliateRake != $this->affiliateRake) {
+            $eachUserRemain = $remainAffiliateRake / ($model->referrals()->count() || 1);
             $model->affiliate_rake_percentage = $this->affiliateRake;
-            $referralUsers = $model->referrals()->get();
-            foreach ($referralUsers as $user) {
-                if ($user->userRake()->exists()) {
-                    $query = $user->userRake();
-                    $user->affiliate_rake_percentage = $this->affiliateRake;
-                    $user->save();
-                    $remainAffiliateRake = $user->remain_affiliate_rake;
+            $model->referrals()->each(function ($q) use ($eachUserRemain) {
+                if ($q->userRake()->exists()) {
+                    $query = $q->userRake();
                     $query->update([
-                        'claimed_rake_affiliate' => (($user->affiliate_rake_percentage / 100) * $user->userRake->rake) - $remainAffiliateRake
+                        'claimed_rake_affiliate' => (($this->affiliateRake / 100) * $q->userRake->rake) - $eachUserRemain
                     ]);
                 }
-            }
+            });
         }
         $model->save();
         $this->emit('closeModal');

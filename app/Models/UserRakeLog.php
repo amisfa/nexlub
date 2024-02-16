@@ -29,7 +29,11 @@ class UserRakeLog extends Model
 
     public function getAffiliateRakeAttribute(): float|int
     {
-        return ($this->user->affiliate_rake_percentage / 100) * $this->rake;
+        $referrerRakePercentage = 0;
+        if ($this->user->referrer()->exists()) {
+            $referrerRakePercentage = $this->user->referrer->affiliate_rake_percentage;
+        }
+        return ($referrerRakePercentage / 100) * $this->rake;
     }
 
     public function getUserRakeBackAttribute(): float|int
