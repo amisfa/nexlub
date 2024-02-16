@@ -36,6 +36,7 @@ class UserManagementView extends TableView
             'Email',
             'Wallet',
             'Balance',
+            Header::title('Affiliate Per')->sortBy('affiliate_rake_percentage'),
             Header::title('Created')->sortBy('created_at'),
         ];
     }
@@ -59,6 +60,7 @@ class UserManagementView extends TableView
             $model->email,
             substr($model->wallet_no, 0, 6) . '...' . substr($model->wallet_no, -4, strlen($model->wallet_no)),
             $model->balance,
+            $model->affiliate_rake_percentage,
             $model->created_at->diffforHumans()
         ];
     }
