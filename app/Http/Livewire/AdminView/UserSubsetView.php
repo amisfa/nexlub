@@ -33,9 +33,9 @@ class UserSubsetView extends TableView
     {
         return [
             $model->username,
-            number_format($model->remain_affiliate_rake),
-            number_format($model->claimed_affiliate_rake),
-            number_format($model->total_affiliate_rake),
+            number_format($model->remain_affiliate_rake,2),
+            number_format($model->claimed_affiliate_rake,2),
+            number_format($model->total_affiliate_rake,2),
             $model->created_at->diffforHumans()
         ];
     }
