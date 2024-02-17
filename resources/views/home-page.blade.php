@@ -34,6 +34,15 @@
                                             class='faulty-letter'>!</span></span></button>
                             </a>
                         @endguest
+                        @auth()
+                            <br/>
+                            <a href="{{route('play')}}">
+                                <button class='glowing-btn'><span class='glowing-txt'>P<span
+                                            class='faulty-letter'>L</span>AY <span
+                                            class='faulty-letter'>N</span>OW<span
+                                            class='faulty-letter'>!</span></span></button>
+                            </a>
+                        @endauth()
                     </div>
                 </div>
             </div>
