@@ -18,6 +18,7 @@
 /* navbar color */
 
 :root {
+    --glow-color: #22c9e9;
     --blue: #5e72e4;
     --indigo: #5603ad;
     --purple: #8965e0;
