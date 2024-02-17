@@ -42,7 +42,7 @@
                                             class='faulty-letter'>N</span>OW<span
                                             class='faulty-letter'>!</span></span></button>
                             </a>
-                        @endauth()
+                        @endauth
                     </div>
                 </div>
             </div>
