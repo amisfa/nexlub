@@ -4,7 +4,7 @@ body {
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #22C7E7 !important;
+    color: #22C9E9 !important;
     text-align: left;
     background-color: #1e1e2f;
 }
@@ -15,7 +15,7 @@ h4,
 h5,
 h6 {
     font-weight: 400;
-    color: #22C7E7;
+    color: #22C9E9;
 }
 
 :root {
@@ -41,7 +41,7 @@ h6 {
 
 .beauty-scroll::-webkit-scrollbar-thumb {
     border-radius: 0.125rem !important;
-    background-color: #22C7E7 !important;
+    background-color: #22C9E9 !important;
 }
 
 
@@ -159,7 +159,7 @@ a:hover, a:focus {
 .menu-button::before,
 .menu-button::after {
     display: block;
-    background-color: #22C7E7;
+    background-color: #22C9E9;
     position: absolute;
     height: 4px;
     width: 30px;

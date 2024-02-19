@@ -34,7 +34,7 @@
             text-align: center;
             padding: 10px 12px;
             transition: all 0.3s ease;
-            color: #22C7E7;
+            color: #22C9E9;
             font-size: 28px;
             border-radius: 4px 0px 0px 4px;
         }

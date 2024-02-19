@@ -122,7 +122,7 @@ body {
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #22C7E7 !important;
+    color: #22C9E9 !important;
     text-align: left;
     background-color: #1e1e2f;
 }
@@ -438,7 +438,7 @@ h6,
     font-family: inherit;
     font-weight: 400;
     line-height: 1.2;
-    color: #22C7E7;
+    color: #22C9E9;
 }
 
 h1,
@@ -3255,7 +3255,7 @@ input[type="button"].btn-block {
     padding: 0.5rem 0;
     margin: 0.125rem 0 0;
     font-size: 0.875rem;
-    color: #22C7E7;
+    color: #22C9E9;
     text-align: left;
     list-style: none;
     background-color: #181818;
@@ -9520,7 +9520,7 @@ a.text-darker:focus {
     margin: 4px 1px;
     border-radius: 0.4285rem;
     cursor: pointer;
-    background-color: #22C7E7;
+    background-color: #22C9E9;
     transition: all 0.15s ease;
     box-shadow: none;
     color: #000000;
@@ -11816,7 +11816,7 @@ img {
         width: 22px;
         height: 1px;
         border-radius: 1px;
-        background: #22C7E7;
+        background: #22C9E9;
     }
 
     .navbar .navbar-toggler-bar.navbar-kebab {
@@ -12212,7 +12212,7 @@ textarea {
 .card h5,
 .card h6,
 .card p {
-    color: #22C7E7;
+    color: #22C9E9;
 }
 
 h1,
@@ -12222,7 +12222,7 @@ h4,
 h5,
 h6 {
     font-weight: 400;
-    color: #22C7E7;
+    color: #22C9E9;
 }
 
 a {
@@ -14109,7 +14109,7 @@ Copyright (c) 2015 Daniel Eden
 
 .beauty-scroll::-webkit-scrollbar-thumb {
     border-radius: 0.125rem !important;
-    background-color: #22C7E7 !important;
+    background-color: #22C9E9 !important;
 }
 
 /*# sourceMappingURL=statics-free.css.map */
@@ -14269,12 +14269,12 @@ Copyright (c) 2015 Daniel Eden
 
 .shareLink .permalink .textLink::-moz-selection {
     color: #fff;
-    background-color: #22C7E7;
+    background-color: #22C9E9;
 }
 
 .shareLink .permalink .textLink::selection {
     color: #fff;
-    background-color: #22C7E7;
+    background-color: #22C9E9;
 }
 
 .shareLink .permalink .copyLink {
@@ -14310,7 +14310,7 @@ Copyright (c) 2015 Daniel Eden
 
 .shareLink .permalink .copyLink i {
     font-size: 25px;
-    color: #22C7E7;
+    color: #22C9E9;
 }
 
 /*sidebar styles*/
@@ -14793,7 +14793,7 @@ Copyright (c) 2015 Daniel Eden
 
 .sidebar.close li:hover .tooltip,
 .sidebar.close li:hover .tooltip::before {
-    background: #22C7E7;
+    background: #22C9E9;
     color: #ffffff;
 }
 

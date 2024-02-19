@@ -19,7 +19,7 @@
                 <div>Updated At: {{$ticket->updated_at->diffforHumans()}}</div>
             </div>
             <div class="border-solid border-2 rounded p-2 overflow-auto flex flex-col h-full beauty-scroll"
-                 style="border-color: #22C7E7;">
+                 style="border-color: #22C9E9;">
                 @foreach($ticket->comments()->get() as $comment)
                     <div class="flex p-1 flex-col sm:flex-row flex" style="{{
     $comment->user->id == auth()->id() ?
@@ -27,8 +27,8 @@
     "justify-content:start;"
     }}"><div class="p-2" style="{{
     $comment->user->id == auth()->id() ?
-    "border-radius: 10px 0px 10px 10px;float:right;border: 1px solid #22C7E7":
-    "border-radius: 0px 10px 10px 10px;float:left;border: 1px solid #22C7E7"
+    "border-radius: 10px 0px 10px 10px;float:right;border: 1px solid #22C9E9":
+    "border-radius: 0px 10px 10px 10px;float:left;border: 1px solid #22C9E9"
     }}">{{$comment->comment}}</div>
                     </div>
                 @endforeach
