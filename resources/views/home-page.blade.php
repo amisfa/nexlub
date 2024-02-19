@@ -488,10 +488,10 @@
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
                         class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
-                        TRN Wednesdays $100 Hold'em
+                        TRN Wednesday $100 Hold'em
                     </th>
                     <td class="px-6 py-4">
-                        Wednesday 18:00 UTC
+                        Wednesdays 18:00 UTC
                     </td>
                     <td class="px-6 py-4 bg-gray-50">
                         3
