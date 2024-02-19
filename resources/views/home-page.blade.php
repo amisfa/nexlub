@@ -400,7 +400,7 @@
         <div class="relative overflow-x-auto shadow-md beauty-scroll">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 border"
                    style="border-color: #676767!important;">
-                <thead class="text-xs text-gray-700 uppercase">
+                <thead class="text-sm text-gray-700 uppercase">
                 <tr>
                     <th scope="col" class="px-6 py-3 bg-gray-50">
                         Tournament Name
@@ -504,7 +504,7 @@
                         5
                     </td>
                     <td class="px-6 py-4">
-                        $1k
+                        $1000
                     </td>
                 </tr>
                 <tr>
@@ -519,7 +519,7 @@
                         5
                     </td>
                     <td class="px-6 py-4">
-                        $1k
+                        $1000
                     </td>
                 </tr>
                 </tbody>
