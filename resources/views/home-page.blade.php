@@ -417,13 +417,13 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="border-b" style="border-color: #676767!important;">
+                <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
                         class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
                         TRN Monday $100 Hold'em
                     </th>
                     <td class="px-6 py-4">
-                        18:00 UTC
+                        Monday 18:00 UTC
                     </td>
                     <td class="px-6 py-4 bg-gray-50">
                         3
@@ -432,13 +432,13 @@
                         $100
                     </td>
                 </tr>
-                <tr class="border-b" style="border-color: #676767!important;">
+                <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
                         class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
                         TRN Thursday $100 PL Omaha
                     </th>
                     <td class="px-6 py-4">
-                        18:00 UTC
+                        Thursday 18:00 UTC
                     </td>
                     <td class="px-6 py-4 bg-gray-50">
                         3
@@ -447,13 +447,13 @@
                         $100
                     </td>
                 </tr>
-                <tr class="border-b" style="border-color: #676767!important;">
+                <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
                         class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
                         TRN Wednesday $100 Hold'em
                     </th>
                     <td class="px-6 py-4">
-                        18:00 UTC
+                        Wednesday 18:00 UTC
                     </td>
                     <td class="px-6 py-4 bg-gray-50">
                         3
@@ -462,13 +462,13 @@
                         $100
                     </td>
                 </tr>
-                <tr class="border-b" style="border-color: #676767!important;">
+                <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
                         class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
                         TRN Tuesday $100 PL Omaha
                     </th>
                     <td class="px-6 py-4">
-                        18:00 UTC
+                        Tuesday 18:00 UTC
                     </td>
                     <td class="px-6 py-4 bg-gray-50">
                         3
@@ -477,13 +477,13 @@
                         $100
                     </td>
                 </tr>
-                <tr class="border-b" style="border-color: #676767!important;">
+                <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
                         class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
                         TRN Friday $100 Hold'em
                     </th>
                     <td class="px-6 py-4">
-                        18:00 UTC
+                        Friday 18:00 UTC
                     </td>
                     <td class="px-6 py-4 bg-gray-50">
                         3
@@ -492,13 +492,13 @@
                         $100
                     </td>
                 </tr>
-                <tr class="border-b" style="border-color: #676767!important;">
+                <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
                         class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
                         TRN Saturday $1K PL Omaha
                     </th>
                     <td class="px-6 py-4">
-                        18:00 UTC
+                        Saturday 18:00 UTC
                     </td>
                     <td class="px-6 py-4 bg-gray-50">
                         5
@@ -507,13 +507,13 @@
                         $1000
                     </td>
                 </tr>
-                <tr>
+                <tr class="text-xs">
                     <th scope="row"
                         class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
                         TRN Sunday $1K Hold'em
                     </th>
                     <td class="px-6 py-4">
-                        18:00 UTC
+                        Sunday 18:00 UTC
                     </td>
                     <td class="px-6 py-4 bg-gray-50">
                         5
