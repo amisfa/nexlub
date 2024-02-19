@@ -13,11 +13,9 @@
                 style="background-color: rgba(0, 0, 0, 80%)">
                 <div class="flex h-full items-center justify-center">
                     <div class="px-2 text-center text-white md:px-12">
-                        <div class="font-bold text-left mb-1 text-3xl border-b"
-                             style="color:#22c9e9;border-color: #22c9e9;">
+                        <div class="font-bold text-left mb-1 text-3xl" style="color:#22c9e9">
                             Experience the future of <span class="banner-animation">poker with crypto!</span>
                         </div>
-                        <br/>
                         <div class="mb-8 font-bold text-left text-2xl" style="color:#22c9e9">
                             <span class="strong mr-1 banner-animation">No KYC</span>
                             <br/>
@@ -441,7 +439,7 @@
             <table class="w-full text-sm text-center rtl:text-right text-gray-500 border"
                    style="border-color: #676767!important;">
                 <thead class="text-sm text-gray-500 uppercase">
-                <tr>
+                <tr class="border-b" style="border-color: #676767!important;">
                     <th scope="col" class="px-2 py-3 bg-gray-50">
                         Tournament Name
                     </th>
