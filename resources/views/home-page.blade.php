@@ -440,16 +440,16 @@
                    style="border-color: #676767!important;">
                 <thead class="text-sm text-gray-500 uppercase">
                 <tr>
-                    <th scope="col" class="px-6 py-3 bg-gray-50">
+                    <th scope="col" class="px-2 py-3 bg-gray-50">
                         Tournament Name
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-2 py-3">
                         Time
                     </th>
-                    <th scope="col" class="px-6 py-3 bg-gray-50">
+                    <th scope="col" class="px-2 py-3 bg-gray-50">
                         Payouts
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-2 py-3">
                         Prize
                     </th>
                 </tr>
@@ -457,106 +457,106 @@
                 <tbody>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
-                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50">
                         TRN Monday $100 Hold'em
                     </th>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-4">
                         Mondays 18:00 UTC
                     </td>
-                    <td class="px-6 py-4 bg-gray-50">
+                    <td class="px-2 py-4 bg-gray-50">
                         3
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-4">
                         $100
                     </td>
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
-                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50">
                         TRN Thursday $100 PL Omaha
                     </th>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-4">
                         Thursdays 18:00 UTC
                     </td>
-                    <td class="px-6 py-4 bg-gray-50">
+                    <td class="px-2 py-4 bg-gray-50">
                         3
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-4">
                         $100
                     </td>
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
-                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50">
                         TRN Wednesday $100 Hold'em
                     </th>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-4">
                         Wednesdays 18:00 UTC
                     </td>
-                    <td class="px-6 py-4 bg-gray-50">
+                    <td class="px-2 py-4 bg-gray-50">
                         3
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-4">
                         $100
                     </td>
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
-                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50">
                         TRN Tuesday $100 PL Omaha
                     </th>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-4">
                         Tuesdays 18:00 UTC
                     </td>
-                    <td class="px-6 py-4 bg-gray-50">
+                    <td class="px-2 py-4 bg-gray-50">
                         3
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-4">
                         $100
                     </td>
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
-                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50">
                         TRN Friday $100 Hold'em
                     </th>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-4">
                         Fridays 18:00 UTC
                     </td>
-                    <td class="px-6 py-4 bg-gray-50">
+                    <td class="px-2 py-4 bg-gray-50">
                         3
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-4">
                         $100
                     </td>
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
-                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50">
                         TRN Saturday $1K PL Omaha
                     </th>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-4">
                         Saturdays 18:00 UTC
                     </td>
-                    <td class="px-6 py-4 bg-gray-50">
+                    <td class="px-2 py-4 bg-gray-50">
                         5
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-4">
                         $1000
                     </td>
                 </tr>
                 <tr class="text-xs">
                     <th scope="row"
-                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50">
                         TRN Sunday $1K Hold'em
                     </th>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-4">
                         Sundays 18:00 UTC
                     </td>
-                    <td class="px-6 py-4 bg-gray-50">
+                    <td class="px-2 py-4 bg-gray-50">
                         5
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-4">
                         $1000
                     </td>
                 </tr>
@@ -572,7 +572,7 @@
         </div>
         <div class="accordion">
             <div class="accordion-item">
-                <button id="accordion-button-1" aria-expanded="false" class="text-gray-700">
+                <button id="accordion-button-1" aria-expanded="false" class="text-gray-500">
                             <span
                                 class="accordion-title">What types of games are available on your poker website?</span><span
                         class="icon-faq" aria-hidden="true"></span></button>
@@ -583,7 +583,7 @@
                 </div>
             </div>
             <div class="accordion-item">
-                <button id="accordion-button-1" aria-expanded="false" class="text-gray-700">
+                <button id="accordion-button-1" aria-expanded="false" class="text-gray-500">
                             <span
                                 class="accordion-title">What stack sizes are available for cash games?</span>
                     <span class="icon-faq" aria-hidden="true"></span>
@@ -596,7 +596,7 @@
                 </div>
             </div>
             <div class="accordion-item">
-                <button id="accordion-button-1" aria-expanded="false" class="text-gray-700">
+                <button id="accordion-button-1" aria-expanded="false" class="text-gray-500">
                             <span
                                 class="accordion-title">How do I join a cash game?</span><span
                         class="icon-faq" aria-hidden="true"></span></button>
@@ -609,7 +609,7 @@
                 </div>
             </div>
             <div class="accordion-item">
-                <button id="accordion-button-1" aria-expanded="false" class="text-gray-700">
+                <button id="accordion-button-1" aria-expanded="false" class="text-gray-500">
                             <span
                                 class="accordion-title">Can I reload my stack during a cash game?</span><span
                         class="icon-faq" aria-hidden="true"></span></button>
@@ -621,7 +621,7 @@
                 </div>
             </div>
             <div class="accordion-item">
-                <button id="accordion-button-1" aria-expanded="false" class="text-gray-700">
+                <button id="accordion-button-1" aria-expanded="false" class="text-gray-500">
                             <span
                                 class="accordion-title">What are sit-and-go tournaments, and how do they work?</span><span
                         class="icon-faq" aria-hidden="true"></span></button>
@@ -634,7 +634,7 @@
                 </div>
             </div>
             <div class="accordion-item">
-                <button id="accordion-button-1" aria-expanded="false" class="text-gray-700">
+                <button id="accordion-button-1" aria-expanded="false" class="text-gray-500">
                             <span
                                 class="accordion-title">Tell me more about sit-and-go tournaments. How can I participate?</span><span
                         class="icon-faq" aria-hidden="true"></span></button>
@@ -647,7 +647,7 @@
                 </div>
             </div>
             <div class="accordion-item">
-                <button id="accordion-button-1" aria-expanded="false" class="text-gray-700">
+                <button id="accordion-button-1" aria-expanded="false" class="text-gray-500">
                             <span
                                 class="accordion-title">What poker software does Nexlub use?</span><span
                         class="icon-faq" aria-hidden="true"></span></button>
@@ -658,7 +658,7 @@
                 </div>
             </div>
             <div class="accordion-item">
-                <button id="accordion-button-1" aria-expanded="false" class="text-gray-700">
+                <button id="accordion-button-1" aria-expanded="false" class="text-gray-500">
                             <span
                                 class="accordion-title">Which cryptocurrencies are accepted for deposits and withdrawals on Nexlub?</span><span
                         class="icon-faq" aria-hidden="true"></span></button>
@@ -671,7 +671,7 @@
                 </div>
             </div>
             <div class="accordion-item">
-                <button id="accordion-button-1" aria-expanded="false" class="text-gray-700">
+                <button id="accordion-button-1" aria-expanded="false" class="text-gray-500">
                             <span
                                 class="accordion-title">How do I edit my profile?</span><span
                         class="icon-faq" aria-hidden="true"></span></button>
