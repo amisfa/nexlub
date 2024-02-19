@@ -457,7 +457,7 @@
                 <tbody>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
-                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50 font-bold">
                         TRN Monday $100 Hold'em
                     </th>
                     <td class="px-2 py-4">
@@ -472,7 +472,7 @@
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
-                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50 font-bold">
                         TRN Thursday $100 PL Omaha
                     </th>
                     <td class="px-2 py-4">
@@ -487,7 +487,7 @@
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
-                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50 font-bold">
                         TRN Wednesday $100 Hold'em
                     </th>
                     <td class="px-2 py-4">
@@ -502,7 +502,7 @@
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
-                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50 font-bold">
                         TRN Tuesday $100 PL Omaha
                     </th>
                     <td class="px-2 py-4">
@@ -517,7 +517,7 @@
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
-                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50 font-bold">
                         TRN Friday $100 Hold'em
                     </th>
                     <td class="px-2 py-4">
@@ -532,7 +532,7 @@
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
-                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50 font-bold">
                         TRN Saturday $1K PL Omaha
                     </th>
                     <td class="px-2 py-4">
@@ -547,7 +547,7 @@
                 </tr>
                 <tr class="text-xs">
                     <th scope="row"
-                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50 font-bold">
                         TRN Sunday $1K Hold'em
                     </th>
                     <td class="px-2 py-4">
