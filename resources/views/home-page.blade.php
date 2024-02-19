@@ -16,7 +16,7 @@
                         <div class="font-bold text-left mb-1 text-3xl" style="color:#22c9e9">
                             Experience the future of <span class="banner-animation">poker with crypto!</span>
                         </div>
-                        <div class="mb-8 font-bold text-left ml-3 text-2xl" style="color:#22c9e9">
+                        <div class="mb-8 font-bold text-left text-2xl" style="color:#22c9e9">
                             <span class="strong mr-1 banner-animation">No KYC</span>
                             <br/>
                             No download.
@@ -28,7 +28,7 @@
                         @guest()
                             <br/>
                             <a href="{{route('signup')}}">
-                                <button class='glowing-btn'><span class='glowing-txt'>P<span
+                                <button class='glowing-btn'><span class='glowing-txt'>&nbsp;P<span
                                             class='faulty-letter'>L</span>AY <span
                                             class='faulty-letter'>N</span>OW<span
                                             class='faulty-letter'>!</span></span></button>
@@ -37,7 +37,7 @@
                         @auth()
                             <br/>
                             <a href="{{route('play')}}">
-                                <button class='glowing-btn'><span class='glowing-txt'>P<span
+                                <button class='glowing-btn'><span class='glowing-txt'>&nbsp;P<span
                                             class='faulty-letter'>L</span>AY <span
                                             class='faulty-letter'>N</span>OW<span
                                             class='faulty-letter'>!</span></span></button>
@@ -430,7 +430,6 @@
         </div>
     </div>
     <br/>
-
     <div class="w-5/6 md:w-3/5 px-4 m-auto">
         <div class="text-center">
             <h3 class="font-bold">Frequently Asked Questions</h3>
@@ -547,6 +546,141 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="w-5/6 md:w-3/5 px-4 m-auto">
+        <div class="text-center">
+            <h3 class="font-bold">Tournaments</h3>
+        </div>
+        <br/>
+        <div class="relative overflow-x-auto shadow-md beauty-scroll">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 border">
+                <thead class="text-xs text-gray-700 uppercase">
+                <tr>
+                    <th scope="col" class="px-6 py-3 bg-gray-50">
+                        Tournament Name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        18:00 UTC
+                    </th>
+                    <th scope="col" class="px-6 py-3 bg-gray-50">
+                        Payouts
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Prize
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="border-b border-gray-200">
+                    <th scope="row"
+                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        TRN Monday $100 Hold'em
+                    </th>
+                    <td class="px-6 py-4">
+                        18:00 UTC
+                    </td>
+                    <td class="px-6 py-4 bg-gray-50">
+                        3
+                    </td>
+                    <td class="px-6 py-4">
+                        $100
+                    </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <th scope="row"
+                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        TRN Thursday $100 PL Omaha
+                    </th>
+                    <td class="px-6 py-4">
+                        18:00 UTC
+                    </td>
+                    <td class="px-6 py-4 bg-gray-50">
+                        3
+                    </td>
+                    <td class="px-6 py-4">
+                        $100
+                    </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <th scope="row"
+                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        TRN Wednesday $100 Hold'em
+                    </th>
+                    <td class="px-6 py-4">
+                        18:00 UTC
+                    </td>
+                    <td class="px-6 py-4 bg-gray-50">
+                        3
+                    </td>
+                    <td class="px-6 py-4">
+                        $100
+                    </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <th scope="row"
+                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        TRN Tuesday $100 PL Omaha
+                    </th>
+                    <td class="px-6 py-4">
+                        18:00 UTC
+                    </td>
+                    <td class="px-6 py-4 bg-gray-50">
+                        3
+                    </td>
+                    <td class="px-6 py-4">
+                        $100
+                    </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <th scope="row"
+                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        TRN Friday $100 Hold'em
+                    </th>
+                    <td class="px-6 py-4">
+                        18:00 UTC
+                    </td>
+                    <td class="px-6 py-4 bg-gray-50">
+                        3
+                    </td>
+                    <td class="px-6 py-4">
+                        $100
+                    </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <th scope="row"
+                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        TRN Saturday $1K PL Omaha
+                    </th>
+                    <td class="px-6 py-4">
+                        18:00 UTC
+                    </td>
+                    <td class="px-6 py-4 bg-gray-50">
+                        5
+                    </td>
+                    <td class="px-6 py-4">
+                        $1k
+                    </td>
+                </tr>
+                <tr class="border-gray-200">
+                    <th scope="row"
+                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        TRN Sunday $1K Hold'em
+                    </th>
+                    <td class="px-6 py-4">
+                        18:00 UTC
+                    </td>
+                    <td class="px-6 py-4 bg-gray-50">
+                        5
+                    </td>
+                    <td class="px-6 py-4">
+                        $1k
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <br/>

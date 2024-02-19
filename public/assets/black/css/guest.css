@@ -28,15 +28,22 @@ h6 {
     box-sizing: border-box;
 }
 
-/*a {*/
-/*    color: #00091f;*/
-/*    font-weight: 300;*/
-/*}*/
+.beauty-scroll::-webkit-scrollbar-track {
+    border-radius: 0.125rem !important;
+    background-color: #181818 !important;
+}
 
-/*a:hover,*/
-/*a:focus {*/
-/*    color: #22c9e9;*/
-/*}*/
+.beauty-scroll::-webkit-scrollbar {
+    width: 0.25rem !important;
+    height: 0.25rem !important;
+    border-radius: 0.125rem !important;
+}
+
+.beauty-scroll::-webkit-scrollbar-thumb {
+    border-radius: 0.125rem !important;
+    background-color: #22C7E7 !important;
+}
+
 
 .border {
     border: 0.0625rem solid !important;
