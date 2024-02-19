@@ -28,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet"/>
     @laravelViewsStyles
 </head>
-<body class="{{ $class ?? '' }}">
+<body class="beauty-scroll {{ $class ?? '' }}">
 @auth()
     <div class="flex relative">
         @include('layouts.navbars.navs.auth')
