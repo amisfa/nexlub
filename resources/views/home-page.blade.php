@@ -392,141 +392,6 @@
             </li>
         </ul>
     </div>
-    <div class="w-5/6 md:w-3/5 px-4 m-auto">
-        <div class="text-center">
-            <h3 class="font-bold">Tournaments</h3>
-        </div>
-        <br/>
-        <div class="relative overflow-x-auto shadow-md beauty-scroll">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500 border"
-                   style="border-color: #676767!important;">
-                <thead class="text-sm text-gray-700 uppercase">
-                <tr>
-                    <th scope="col" class="px-6 py-3 bg-gray-50">
-                        Tournament Name
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        18:00 UTC
-                    </th>
-                    <th scope="col" class="px-6 py-3 bg-gray-50">
-                        Payouts
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Prize
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="border-b text-xs" style="border-color: #676767!important;">
-                    <th scope="row"
-                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
-                        TRN Monday $100 Hold'em
-                    </th>
-                    <td class="px-6 py-4">
-                        Monday 18:00 UTC
-                    </td>
-                    <td class="px-6 py-4 bg-gray-50">
-                        3
-                    </td>
-                    <td class="px-6 py-4">
-                        $100
-                    </td>
-                </tr>
-                <tr class="border-b text-xs" style="border-color: #676767!important;">
-                    <th scope="row"
-                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
-                        TRN Thursday $100 PL Omaha
-                    </th>
-                    <td class="px-6 py-4">
-                        Thursday 18:00 UTC
-                    </td>
-                    <td class="px-6 py-4 bg-gray-50">
-                        3
-                    </td>
-                    <td class="px-6 py-4">
-                        $100
-                    </td>
-                </tr>
-                <tr class="border-b text-xs" style="border-color: #676767!important;">
-                    <th scope="row"
-                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
-                        TRN Wednesday $100 Hold'em
-                    </th>
-                    <td class="px-6 py-4">
-                        Wednesday 18:00 UTC
-                    </td>
-                    <td class="px-6 py-4 bg-gray-50">
-                        3
-                    </td>
-                    <td class="px-6 py-4">
-                        $100
-                    </td>
-                </tr>
-                <tr class="border-b text-xs" style="border-color: #676767!important;">
-                    <th scope="row"
-                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
-                        TRN Tuesday $100 PL Omaha
-                    </th>
-                    <td class="px-6 py-4">
-                        Tuesday 18:00 UTC
-                    </td>
-                    <td class="px-6 py-4 bg-gray-50">
-                        3
-                    </td>
-                    <td class="px-6 py-4">
-                        $100
-                    </td>
-                </tr>
-                <tr class="border-b text-xs" style="border-color: #676767!important;">
-                    <th scope="row"
-                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
-                        TRN Friday $100 Hold'em
-                    </th>
-                    <td class="px-6 py-4">
-                        Friday 18:00 UTC
-                    </td>
-                    <td class="px-6 py-4 bg-gray-50">
-                        3
-                    </td>
-                    <td class="px-6 py-4">
-                        $100
-                    </td>
-                </tr>
-                <tr class="border-b text-xs" style="border-color: #676767!important;">
-                    <th scope="row"
-                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
-                        TRN Saturday $1K PL Omaha
-                    </th>
-                    <td class="px-6 py-4">
-                        Saturday 18:00 UTC
-                    </td>
-                    <td class="px-6 py-4 bg-gray-50">
-                        5
-                    </td>
-                    <td class="px-6 py-4">
-                        $1000
-                    </td>
-                </tr>
-                <tr class="text-xs">
-                    <th scope="row"
-                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
-                        TRN Sunday $1K Hold'em
-                    </th>
-                    <td class="px-6 py-4">
-                        Sunday 18:00 UTC
-                    </td>
-                    <td class="px-6 py-4 bg-gray-50">
-                        5
-                    </td>
-                    <td class="px-6 py-4">
-                        $1000
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <br/>
     <br/>
     <div class="px-2 w-5/6 md:w-3/5 m-auto justify-evenly">
         <div class="flex flex-wrap items-stretch justify-center">
@@ -562,6 +427,141 @@
                     Invite your friends, have fun together, and also receive an extra 20% from their play!
                 </div>
             </div>
+        </div>
+    </div>
+    <br/>
+    <div class="w-5/6 md:w-3/5 px-4 m-auto">
+        <div class="text-center">
+            <h3 class="font-bold">Tournaments</h3>
+        </div>
+        <br/>
+        <div class="relative overflow-x-auto shadow-md beauty-scroll">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 border"
+                   style="border-color: #676767!important;">
+                <thead class="text-sm text-gray-700 uppercase">
+                <tr>
+                    <th scope="col" class="px-6 py-3 bg-gray-50">
+                        Tournament Name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Time
+                    </th>
+                    <th scope="col" class="px-6 py-3 bg-gray-50">
+                        Payouts
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Prize
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="border-b text-xs" style="border-color: #676767!important;">
+                    <th scope="row"
+                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        TRN Monday $100 Hold'em
+                    </th>
+                    <td class="px-6 py-4">
+                        Mondays 18:00 UTC
+                    </td>
+                    <td class="px-6 py-4 bg-gray-50">
+                        3
+                    </td>
+                    <td class="px-6 py-4">
+                        $100
+                    </td>
+                </tr>
+                <tr class="border-b text-xs" style="border-color: #676767!important;">
+                    <th scope="row"
+                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        TRN Thursday $100 PL Omaha
+                    </th>
+                    <td class="px-6 py-4">
+                        Thursdays 18:00 UTC
+                    </td>
+                    <td class="px-6 py-4 bg-gray-50">
+                        3
+                    </td>
+                    <td class="px-6 py-4">
+                        $100
+                    </td>
+                </tr>
+                <tr class="border-b text-xs" style="border-color: #676767!important;">
+                    <th scope="row"
+                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        TRN Wednesdays $100 Hold'em
+                    </th>
+                    <td class="px-6 py-4">
+                        Wednesday 18:00 UTC
+                    </td>
+                    <td class="px-6 py-4 bg-gray-50">
+                        3
+                    </td>
+                    <td class="px-6 py-4">
+                        $100
+                    </td>
+                </tr>
+                <tr class="border-b text-xs" style="border-color: #676767!important;">
+                    <th scope="row"
+                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        TRN Tuesday $100 PL Omaha
+                    </th>
+                    <td class="px-6 py-4">
+                        Tuesdays 18:00 UTC
+                    </td>
+                    <td class="px-6 py-4 bg-gray-50">
+                        3
+                    </td>
+                    <td class="px-6 py-4">
+                        $100
+                    </td>
+                </tr>
+                <tr class="border-b text-xs" style="border-color: #676767!important;">
+                    <th scope="row"
+                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        TRN Friday $100 Hold'em
+                    </th>
+                    <td class="px-6 py-4">
+                        Fridays 18:00 UTC
+                    </td>
+                    <td class="px-6 py-4 bg-gray-50">
+                        3
+                    </td>
+                    <td class="px-6 py-4">
+                        $100
+                    </td>
+                </tr>
+                <tr class="border-b text-xs" style="border-color: #676767!important;">
+                    <th scope="row"
+                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        TRN Saturday $1K PL Omaha
+                    </th>
+                    <td class="px-6 py-4">
+                        Saturdays 18:00 UTC
+                    </td>
+                    <td class="px-6 py-4 bg-gray-50">
+                        5
+                    </td>
+                    <td class="px-6 py-4">
+                        $1000
+                    </td>
+                </tr>
+                <tr class="text-xs">
+                    <th scope="row"
+                        class="px-6 py-4 font-medium whitespace-nowrap bg-gray-50">
+                        TRN Sunday $1K Hold'em
+                    </th>
+                    <td class="px-6 py-4">
+                        Sundays 18:00 UTC
+                    </td>
+                    <td class="px-6 py-4 bg-gray-50">
+                        5
+                    </td>
+                    <td class="px-6 py-4">
+                        $1000
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <br/>
