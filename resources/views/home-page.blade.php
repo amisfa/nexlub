@@ -28,7 +28,7 @@
                             MARCH 3,2024
                         </div>
 
-                        <img style="width: 250px" class="glitch_img m-auto"
+                        <img style="width: 350px" class="glitch_img m-auto"
                              src="{{asset('black').'/img/cybertrucklogo.svg'}}"/>
                         @guest()
                             <br/>
