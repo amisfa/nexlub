@@ -11,42 +11,46 @@
                 style="background-color: rgba(0, 0, 0, 40%)">
                 <div class="flex h-full items-center justify-center">
                     <div class="px-2 text-center text-white md:px-12">
-                        <div class="mb-2 font-bold text-center text-2xl" style="color:#22c9e9">
+                        <div class="mb-2 font-bold text-center text-xl sm:text-2xl" style="color:#22c9e9">
                             YOU ARE INVITED TO OUR
                         </div>
-                        <div class="font-bold text-center mb-1 text-5xl" style="color:#22c9e9"><span
+                        <div class="font-bold text-center mb-1 text-2xl sm:text-5xl" style="color:#22c9e9"><span
                                 class="banner-animation">
                                 GRAND OPENING
                             </span>
                         </div>
-                        <div class="font-bold text-center mb-1 text-5xl" style="color:#22c9e9"><span
+                        <div class="font-bold text-center mb-1 text-2xl sm:text-5xl" style="color:#22c9e9"><span
                                 class="banner-animation">
                                 TOURNAMENT
                             </span>
                         </div>
-                        <div class="mb-2 font-bold text-center text-xl" style="color:#22c9e9">
+                        <div class="mb-2 font-bold text-center text-xl sm:text-2xl" style="color:#22c9e9">
                             MARCH 3,2024
                         </div>
 
-                        <img style="width: 350px" class="glitch_img m-auto"
+                        <img class="glitch_img m-auto sm:w-5/6 w-3/4"
                              src="{{asset('black').'/img/cybertrucklogo.svg'}}"/>
                         @guest()
                             <br/>
-                            <a class="play-now-btn" href="{{route('signup')}}">
+                        <div class="play-now-btn">
+                            <a href="{{route('signup')}}">
                                 <button class='glowing-btn'><span class='glowing-txt'>&nbsp;P<span
                                             class='faulty-letter'>L</span>AY <span
                                             class='faulty-letter'>N</span>OW<span
                                             class='faulty-letter'>!</span></span></button>
                             </a>
+                        </div>
                         @endguest
                         @auth()
                             <br/>
-                            <a class="play-now-btn" href="{{route('play')}}">
+                            <div class="play-now-btn">
+                            <a href="{{route('play')}}">
                                 <button class='glowing-btn'><span class='glowing-txt'>&nbsp;P<span
                                             class='faulty-letter'>L</span>AY <span
                                             class='faulty-letter'>N</span>OW<span
                                             class='faulty-letter'>!</span></span></button>
                             </a>
+                            </div>
                         @endauth
                     </div>
                 </div>
