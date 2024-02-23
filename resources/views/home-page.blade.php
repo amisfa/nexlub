@@ -11,9 +11,6 @@
                 style="background-color: rgba(0, 0, 0, 40%)">
                 <div class="flex h-full items-center justify-center">
                     <div class="px-2 text-center text-white md:px-12">
-                        <div class="mb-2 font-bold text-center text-xl sm:text-2xl" style="color:#22c9e9">
-                            YOU ARE INVITED TO OUR
-                        </div>
                         <div class="font-bold text-center mb-1 text-2xl sm:text-5xl" style="color:#22c9e9"><span
                                 class="banner-animation">
                                 GRAND OPENING
@@ -26,6 +23,9 @@
                         </div>
                         <div class="mb-2 font-bold text-center text-xl sm:text-2xl" style="color:#22c9e9">
                             MARCH 3,2024
+                        </div>
+                        <div class="mb-2 font-bold text-center text-xl sm:text-2xl" style="color:#22c9e9">
+                            CHANCE TO WIN A
                         </div>
 
                         <img class="glitch_img m-auto sm:w-5/6 w-3/4"

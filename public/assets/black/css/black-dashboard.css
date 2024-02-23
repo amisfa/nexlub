@@ -15018,7 +15018,7 @@ Copyright (c) 2015 Daniel Eden
 }
 .play-now-btn{
     position: absolute;
-    right: 0%;
+    right: 0;
     margin: auto;
     width: 100%;
     bottom: 10%;
