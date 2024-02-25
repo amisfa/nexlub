@@ -476,7 +476,7 @@
                         3
                     </td>
                     <td class="px-2 py-4">
-                        $250 GTD
+                        $250
                     </td>
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
@@ -491,7 +491,7 @@
                         3
                     </td>
                     <td class="px-2 py-4">
-                        $250 GTD
+                        $250
                     </td>
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
@@ -506,7 +506,7 @@
                         3
                     </td>
                     <td class="px-2 py-4">
-                        $250 GTD
+                        $250
                     </td>
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
@@ -521,7 +521,7 @@
                         3
                     </td>
                     <td class="px-2 py-4">
-                        $250 GTD
+                        $250
                     </td>
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
@@ -536,13 +536,13 @@
                         3
                     </td>
                     <td class="px-2 py-4">
-                        $250 GTD
+                        $250
                     </td>
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
                         class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50 font-bold">
-                        TRN Saturday $1K PL Omaha
+                        TRN Saturday $1GTD PL Omaha
                     </th>
                     <td class="px-2 py-4">
                         Saturdays 18:00 UTC
@@ -551,13 +551,13 @@
                         5
                     </td>
                     <td class="px-2 py-4">
-                        $1K GTD
+                        $1K
                     </td>
                 </tr>
                 <tr class="text-xs">
                     <th scope="row"
                         class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50 font-bold">
-                        TRN Sunday $1K Hold'em
+                        TRN Sunday $1GTD Hold'em
                     </th>
                     <td class="px-2 py-4">
                         Sundays 18:00 UTC
@@ -566,7 +566,7 @@
                         5
                     </td>
                     <td class="px-2 py-4">
-                        $1K GTD
+                        $1K
                     </td>
                 </tr>
                 </tbody>
