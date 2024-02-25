@@ -467,7 +467,7 @@
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
                         class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50 font-bold">
-                        TRN Monday $100 Hold'em
+                        TRN Monday $250 Hold'em
                     </th>
                     <td class="px-2 py-4">
                         Mondays 18:00 UTC
@@ -482,7 +482,7 @@
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
                         class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50 font-bold">
-                        TRN Thursday $100 PL Omaha
+                        TRN Thursday $250 PL Omaha
                     </th>
                     <td class="px-2 py-4">
                         Thursdays 18:00 UTC
@@ -497,7 +497,7 @@
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
                         class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50 font-bold">
-                        TRN Wednesday $100 Hold'em
+                        TRN Wednesday $250 Hold'em
                     </th>
                     <td class="px-2 py-4">
                         Wednesdays 18:00 UTC
@@ -512,7 +512,7 @@
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
                         class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50 font-bold">
-                        TRN Tuesday $100 PL Omaha
+                        TRN Tuesday $250 PL Omaha
                     </th>
                     <td class="px-2 py-4">
                         Tuesdays 18:00 UTC
@@ -527,7 +527,7 @@
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
                         class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50 font-bold">
-                        TRN Friday $100 Hold'em
+                        TRN Friday $250 Hold'em
                     </th>
                     <td class="px-2 py-4">
                         Fridays 18:00 UTC
@@ -542,7 +542,7 @@
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
                     <th scope="row"
                         class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50 font-bold">
-                        TRN Saturday $1GTD PL Omaha
+                        TRN Saturday $1k GTD PL Omaha
                     </th>
                     <td class="px-2 py-4">
                         Saturdays 18:00 UTC
@@ -557,7 +557,7 @@
                 <tr class="text-xs">
                     <th scope="row"
                         class="px-2 py-4 font-medium whitespace-nowrap bg-gray-50 font-bold">
-                        TRN Sunday $1GTD Hold'em
+                        TRN Sunday $1k GTD Hold'em
                     </th>
                     <td class="px-2 py-4">
                         Sundays 18:00 UTC
