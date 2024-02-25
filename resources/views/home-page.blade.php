@@ -476,7 +476,7 @@
                         3
                     </td>
                     <td class="px-2 py-4">
-                        $100
+                        $250 GTD
                     </td>
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
@@ -491,7 +491,7 @@
                         3
                     </td>
                     <td class="px-2 py-4">
-                        $100
+                        $250 GTD
                     </td>
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
@@ -506,7 +506,7 @@
                         3
                     </td>
                     <td class="px-2 py-4">
-                        $100
+                        $250 GTD
                     </td>
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
@@ -521,7 +521,7 @@
                         3
                     </td>
                     <td class="px-2 py-4">
-                        $100
+                        $250 GTD
                     </td>
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
@@ -536,7 +536,7 @@
                         3
                     </td>
                     <td class="px-2 py-4">
-                        $100
+                        $250 GTD
                     </td>
                 </tr>
                 <tr class="border-b text-xs" style="border-color: #676767!important;">
@@ -551,7 +551,7 @@
                         5
                     </td>
                     <td class="px-2 py-4">
-                        $1000
+                        $1K GTD
                     </td>
                 </tr>
                 <tr class="text-xs">
@@ -566,7 +566,7 @@
                         5
                     </td>
                     <td class="px-2 py-4">
-                        $1000
+                        $1K GTD
                     </td>
                 </tr>
                 </tbody>
