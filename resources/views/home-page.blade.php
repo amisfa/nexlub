@@ -32,24 +32,24 @@
                              src="{{asset('black').'/img/cybertrucklogo.svg'}}"/>
                         @guest()
                             <br/>
-                        <div class="play-now-btn">
-                            <a href="{{route('signup')}}">
-                                <button class='glowing-btn'><span class='glowing-txt'>&nbsp;P<span
-                                            class='faulty-letter'>L</span>AY <span
-                                            class='faulty-letter'>N</span>OW<span
-                                            class='faulty-letter'>!</span></span></button>
-                            </a>
-                        </div>
+                            <div class="play-now-btn">
+                                <a href="{{route('signup')}}">
+                                    <button class='glowing-btn'><span class='glowing-txt'>&nbsp;P<span
+                                                class='faulty-letter'>L</span>AY <span
+                                                class='faulty-letter'>N</span>OW<span
+                                                class='faulty-letter'>!</span></span></button>
+                                </a>
+                            </div>
                         @endguest
                         @auth()
                             <br/>
                             <div class="play-now-btn">
-                            <a href="{{route('play')}}">
-                                <button class='glowing-btn'><span class='glowing-txt'>&nbsp;P<span
-                                            class='faulty-letter'>L</span>AY <span
-                                            class='faulty-letter'>N</span>OW<span
-                                            class='faulty-letter'>!</span></span></button>
-                            </a>
+                                <a href="{{route('play')}}">
+                                    <button class='glowing-btn'><span class='glowing-txt'>&nbsp;P<span
+                                                class='faulty-letter'>L</span>AY <span
+                                                class='faulty-letter'>N</span>OW<span
+                                                class='faulty-letter'>!</span></span></button>
+                                </a>
                             </div>
                         @endauth
                     </div>
@@ -694,11 +694,46 @@
         </div>
     </div>
     <br/>
+
+
+
+    <div
+        class="justify-center items-center px-4 py-2 fixed bottom-0 left-0 w-full scam-warning hidden"
+        style="z-index: 99">
+        <div class="alert-bg-danger flex justify-between sm:w-5/6 w-full items-center p-3 rounded">
+            <p class="text-sm text-white font-bold">
+                Nexlub is not a crypto token and will never launch one. Be aware of scams or ones using similar names or
+                tickers. Stay safe!
+            </p>
+            <button type="button" onclick="acceptScamWarn()"
+                    class="text-white font-bold
+                     bg-gray-800 hover:bg-gray-900
+                      focus:outline-none focus:ring-4
+                       focus:ring-gray-300 font-medium rounded-lg
+                        text-sm px-5 py-2 me-2 dark:bg-gray-800
+                         dark:hover:bg-gray-700 dark:focus:ring-gray-700
+                          dark:border-gray-700">
+                OK
+            </button>
+        </div>
+    </div>
 @endsection
 
 @push('js')
     <script>
-        //image glitch
+        //check user scam warning
+        if (!localStorage.getItem("scamWarning")) {
+            let scamElement = document.querySelector(".scam-warning");
+            scamElement.classList.remove("hidden");
+            scamElement.classList.add('flex');
+        }
+
+        function acceptScamWarn() {
+            localStorage.setItem("scamWarning", "true");
+            let scamElement = document.querySelector(".scam-warning");
+            scamElement.classList.remove("flex");
+            scamElement.classList.add('hidden');
+        }
 
         //image glitch
         if (!items) {

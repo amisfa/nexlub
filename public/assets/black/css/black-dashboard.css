@@ -5220,6 +5220,9 @@ button.bg-warning:focus {
 .bg-danger {
     background-color: #fd5d93 !important;
 }
+.alert-bg-danger {
+    background-color: #df0003 !important;
+}
 
 a.bg-danger:hover,
 a.bg-danger:focus,
