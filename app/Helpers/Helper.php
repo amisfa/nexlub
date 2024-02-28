@@ -119,7 +119,7 @@ class Helper
         $params['Password'] = env('MAVENS_PW');
         $params['JSON'] = 'Yes';
         $params['Command'] = 'LogsHandHistory';
-        $authUserName = auth()->user()->username;
+        $authUserName = auth()->user->username;
         if ($handName) $params['Hand'] = $handName;
         $dailyTableHistories = [];
         $dailyRingGameActivities = [];
