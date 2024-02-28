@@ -19,9 +19,11 @@ class Helper
     {
         if (request('Event') == 'Balance')
             User::query()->where('username', request('Player'))->update(['balance' => floatval(request('Balance'))]);
-        elseif (request('Event') == 'Hand')
+        elseif (request('Event') == 'Hand'){
             $handName = request('Hand');
-        $logs = Helper::getHistoryLog($handName);
+            $tableName = request('Name');
+            $logs = Helper::getHistoryLog($handName, $tableName);
+        }
         if (count($logs)) {
             foreach ($logs['ring_game'] as $username => $stat) {
                 $user = User::query()->where('username', $username)->first();
@@ -112,7 +114,7 @@ class Helper
         return $response;
     }
 
-    static function getHistoryLog($handName = null): array
+    static function getHistoryLog($handName = null, $table = null): array
     {
         $params['Password'] = env('MAVENS_PW');
         $params['JSON'] = 'Yes';
@@ -123,15 +125,15 @@ class Helper
         $dailySNGActivity = [];
         $logs = [];
         $response = json_decode(Http::asForm()->post(env("MAVENS_URL") . '/api', $params)->body(), true);
-        if ($response->Result !== 'Error') {
+        if ($response['Result'] !== 'Error') {
             $pseudoHand = [];
             $pseudoData = [];
-            foreach ($response->Data as $key => $item) {
+            foreach ($response['Data'] as $key => $item) {
                 if (str_contains($item, "Hand") && str_contains($item, now()->format('Y-m-d'))) {
                     $pseudoHand['started_from'] = $key;
                 };
                 if (isset($pseudoHand['started_from'])) {
-                    foreach ($response->Data as $key2 => $item2) {
+                    foreach ($response['Data'] as $key2 => $item2) {
                         if ($item2 === "" &&
                             $pseudoHand['started_from'] < $key2
                             && !isset($pseudoHand['ended_in'])
@@ -142,12 +144,12 @@ class Helper
                 }
                 if (isset($pseudoHand['started_from']) && isset($pseudoHand['ended_in'])) {
                     for ($x = $pseudoHand['started_from']; $x <= $pseudoHand['ended_in']; $x++) {
-                        $pseudoData[] = $response->Data[$x];
+                        $pseudoData[] = $response['Data'][$x];
                     }
                     $pseudoHand = [];
                 }
                 if (count($pseudoData)) {
-                    $dailyTableHistories[$response->Table][] = $pseudoData;
+                    $dailyTableHistories[$table][] = $pseudoData;
                     $pseudoData = [];
                 }
             }
