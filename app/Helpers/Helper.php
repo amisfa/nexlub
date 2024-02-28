@@ -4,6 +4,10 @@ namespace App\Helpers;
 
 use App\Mail\VerifyEmail;
 use App\Models\User;
+use App\Models\UserBadBeatReward;
+use App\Models\UserJackPotReward;
+use App\Models\UserRingGameStat;
+use App\Models\UserSNGStat;
 use App\Models\UserVerify;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
@@ -12,9 +16,91 @@ use Illuminate\Support\Str;
 
 class Helper
 {
-    public function balanceUpdate(): void
+    public function setMavensData(): void
     {
-        User::query()->where('username', request('Player'))->update(['balance' => floatval(request('Balance'))]);
+        if (request('Event') == 'Balance')
+            User::query()->where('username', request('Player'))->update(['balance' => floatval(request('Balance'))]);
+        elseif (request('Event') == 'Hand')
+            $handName = request('Hand');
+            $logs = Helper::getHistoryLog($handName);
+        if (count($logs)) {
+            foreach ($logs['ring_game'] as $username => $stat) {
+                $user = User::query()->where('username', $username)->first();
+                if ($user) {
+                    if ($stat['jack_pot_amount'] > 0) {
+                        UserJackPotReward::query()->create([
+                            'user_id' => $user->id,
+                            'amount' => $stat['jack_pot_amount']
+                        ]);
+                    }
+                    if ($stat['bad_beat_amount']) {
+                        UserBadBeatReward::query()->create([
+                            'user_id' => $user->id,
+                            'amount' => $stat['bad_beat_amount']
+                        ]);
+                    }
+                    if ($user->ringGameStats()->exists()) {
+                        $userCashGameStat = UserRingGameStat::query()->where('user_id', $user->id);
+                        $currentCashGameStat = $userCashGameStat->first();
+                        $userCashGameStat->update(
+                            [
+                                "total_net" => $currentCashGameStat->total_net + $stat['total_net'],
+                                "hand_count" => $currentCashGameStat->hand_count + $stat['hand_count'],
+                                "win_count" => $currentCashGameStat->win_count + $stat['win_count'],
+                                "lose_count" => $currentCashGameStat->lose_count + $stat['lose_count'],
+                                "folded_on_preflop_count" => $currentCashGameStat->folded_on_preflop_count + $stat['folded_on_preflop_count'],
+                                "won_without_showdown_count" => $currentCashGameStat->won_without_showdown_count + $stat['won_without_showdown_count'],
+                                "showdown_count" => $currentCashGameStat->showdown_count + $stat['showdown_count'],
+                                "folded_on_river_count" => $currentCashGameStat->folded_on_river_count + $stat['folded_on_river_count'],
+                                "folded_on_flop_count" => $currentCashGameStat->folded_on_flop_count + $stat['folded_on_flop_count'],
+                                "folded_on_turn_count" => $currentCashGameStat->folded_on_turn_count + $stat['folded_on_turn_count'],
+                                "total_jack_pot_amount" => $currentCashGameStat->total_jack_pot_amount + $stat['jack_pot_amount'],
+                                "total_bad_beat_amount" => $currentCashGameStat->total_bad_beat_amount + $stat['bad_beat_amount'],
+
+                            ]);
+                    } else {
+                        UserRingGameStat::query()->create([
+                            'user_id' => $user->id,
+                            "total_net" => $stat['total_net'],
+                            "hand_count" => $stat['hand_count'],
+                            "win_count" => $stat['win_count'],
+                            "lose_count" => $stat['lose_count'],
+                            "folded_on_preflop_count" => $stat['folded_on_preflop_count'],
+                            "won_without_showdown_count" => $stat['won_without_showdown_count'],
+                            "showdown_count" => $stat['showdown_count'],
+                            "folded_on_river_count" => $stat['folded_on_river_count'],
+                            "folded_on_flop_count" => $stat['folded_on_flop_count'],
+                            "folded_on_turn_count" => $stat['folded_on_turn_count'],
+                            "total_jack_pot_amount" => $stat['jack_pot_amount'],
+                            "total_bad_beat_amount" => $stat['bad_beat_amount'],
+                        ]);
+                    }
+                }
+            }
+            foreach ($logs['sng'] as $username => $stat) {
+                $user = User::query()->where('username', $username)->first();
+                if ($user) {
+                    if ($user->sngStats()->exists()) {
+                        $userSngStat = UserSNGStat::query()->where('user_id', $user->id);
+                        $currentSngStat = $userSngStat->first();
+                        $userSngStat->update([
+                            [
+                                "win_count" => $currentSngStat->win_count + $stat['win_count'],
+                                "lose_count" => $currentSngStat->lose_count + $stat['lose_count'],
+                                "net_chip" => $currentSngStat->total_net_chip + $stat['net_chip'],
+                            ]
+                        ]);
+                    } else {
+                        UserSNGStat::query()->create([
+                            'user_id' => $user->id,
+                            "win_count" => $stat['win_count'],
+                            "lose_count" => $stat['lose_count'],
+                            "net_chip" => $stat['net_chip'],
+                        ]);
+                    }
+                }
+            }
+        }
     }
 
     static function setPokerMavens($params)
@@ -27,11 +113,12 @@ class Helper
         return $response;
     }
 
-    static function getHistoryLog(): array
+    static function getHistoryLog($handName = null): array
     {
         $params['Password'] = env('MAVENS_PW');
         $params['JSON'] = 'Yes';
         $params['Command'] = 'LogsHandHistory';
+        if ($handName) $params['Hand'] = $handName;
         $dailyTableHistories = [];
         $dailyRingGameActivities = [];
         $dailySNGActivity = [];
