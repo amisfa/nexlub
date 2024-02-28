@@ -19,7 +19,7 @@ class Helper
     {
         if (request('Event') == 'Balance')
             User::query()->where('username', request('Player'))->update(['balance' => floatval(request('Balance'))]);
-        elseif (request('Event') == 'Hand'){
+        elseif (request('Event') == 'Hand') {
             $handName = request('Hand');
             $tableName = request('Name');
             $logs = Helper::getHistoryLog($handName, $tableName);
@@ -119,7 +119,6 @@ class Helper
         $params['Password'] = env('MAVENS_PW');
         $params['JSON'] = 'Yes';
         $params['Command'] = 'LogsHandHistory';
-        $authUserName = auth()->user->username;
         if ($handName) $params['Hand'] = $handName;
         $dailyTableHistories = [];
         $dailyRingGameActivities = [];
@@ -170,62 +169,60 @@ class Helper
                             foreach ($userSeats as $userSeat) {
                                 $matches = explode(":", $userSeat);
                                 $userName = str_replace(' ', '', explode(' (', $matches[1])[0]);
-                                if($authUserName == $authUserName){
-                                    if (!isset($dailyRingGameActivities[$userName])) $dailyRingGameActivities[$userName] = [
-                                        'total_net' => 0,
-                                        'hand_count' => 0,
-                                        'win_count' => 0,
-                                        'lose_count' => 0,
-                                        'folded_on_preflop_count' => 0,
-                                        'won_without_showdown_count' => 0,
-                                        'showdown_count' => 0,
-                                        'folded_on_river_count' => 0,
-                                        'folded_on_flop_count' => 0,
-                                        'folded_on_turn_count' => 0,
-                                        'jack_pot_amount' => 0,
-                                        'bad_beat_amount' => 0,
-                                    ];
-                                    preg_match("/(?<=\()(.+)(?=\))/is", $userSeat, $matches);
-                                    $balance = $matches[0];
-                                    if (floatval($balance) < 0) {
-                                        $dailyRingGameActivities[$userName]['lose_count'] += 1;
-                                    }
-                                    if (floatval($balance) > 0) {
-                                        $dailyRingGameActivities[$userName]['win_count'] += 1;
-                                    }
-                                    if (str_contains($userSeat, 'Folded on PreFlop')) {
-                                        $dailyRingGameActivities[$userName]['folded_on_preflop_count'] += 1;
-                                    }
-                                    if (str_contains($userSeat, 'Won without Showdown')) {
-                                        $dailyRingGameActivities[$userName]['won_without_showdown_count'] += 1;
-                                    }
-                                    if (str_contains($userSeat, 'Showdown with') || !str_contains($userSeat, 'Folded')) {
-                                        $dailyRingGameActivities[$userName]['showdown_count'] += 1;
-                                    }
-                                    if (str_contains($userSeat, 'Folded on River')) {
-                                        $dailyRingGameActivities[$userName]['folded_on_river_count'] += 1;
-                                    }
-                                    if (str_contains($userSeat, 'Folded on Flop')) {
-                                        $dailyRingGameActivities[$userName]['folded_on_flop_count'] += 1;
-                                    }
-                                    if (str_contains($userSeat, 'Folded on Turn')) {
-                                        $dailyRingGameActivities[$userName]['folded_on_turn_count'] += 1;
-                                    }
-                                    $dailyRingGameActivities[$userName]['total_net'] += floatval($balance);
-                                    $dailyRingGameActivities[$userName]['hand_count'] += 1;
-                                    if (str_contains($userSeat, 'Showdown with a Royal Flush')) {
-                                        $badBeatWinners = array_filter($userSeats, function ($x) {
-                                            return str_contains($x, "Four of a Kind");
-                                        });
-                                        if (count($badBeatWinners)) {
-                                            foreach ($badBeatWinners as $badBeatWinner) {
-                                                $matches = explode(":", $badBeatWinner);
-                                                $badBeatWinnerName = str_replace(' ', '', explode(' (', $matches[1])[0]);
-                                                $dailyRingGameActivities[$badBeatWinnerName]['bad_beat_amount'] += (25 / 100) * $pot;
-                                            }
+                                if (!isset($dailyRingGameActivities[$userName])) $dailyRingGameActivities[$userName] = [
+                                    'total_net' => 0,
+                                    'hand_count' => 0,
+                                    'win_count' => 0,
+                                    'lose_count' => 0,
+                                    'folded_on_preflop_count' => 0,
+                                    'won_without_showdown_count' => 0,
+                                    'showdown_count' => 0,
+                                    'folded_on_river_count' => 0,
+                                    'folded_on_flop_count' => 0,
+                                    'folded_on_turn_count' => 0,
+                                    'jack_pot_amount' => 0,
+                                    'bad_beat_amount' => 0,
+                                ];
+                                preg_match("/(?<=\()(.+)(?=\))/is", $userSeat, $matches);
+                                $balance = $matches[0];
+                                if (floatval($balance) < 0) {
+                                    $dailyRingGameActivities[$userName]['lose_count'] += 1;
+                                }
+                                if (floatval($balance) > 0) {
+                                    $dailyRingGameActivities[$userName]['win_count'] += 1;
+                                }
+                                if (str_contains($userSeat, 'Folded on PreFlop')) {
+                                    $dailyRingGameActivities[$userName]['folded_on_preflop_count'] += 1;
+                                }
+                                if (str_contains($userSeat, 'Won without Showdown')) {
+                                    $dailyRingGameActivities[$userName]['won_without_showdown_count'] += 1;
+                                }
+                                if (str_contains($userSeat, 'Showdown with') || !str_contains($userSeat, 'Folded')) {
+                                    $dailyRingGameActivities[$userName]['showdown_count'] += 1;
+                                }
+                                if (str_contains($userSeat, 'Folded on River')) {
+                                    $dailyRingGameActivities[$userName]['folded_on_river_count'] += 1;
+                                }
+                                if (str_contains($userSeat, 'Folded on Flop')) {
+                                    $dailyRingGameActivities[$userName]['folded_on_flop_count'] += 1;
+                                }
+                                if (str_contains($userSeat, 'Folded on Turn')) {
+                                    $dailyRingGameActivities[$userName]['folded_on_turn_count'] += 1;
+                                }
+                                $dailyRingGameActivities[$userName]['total_net'] += floatval($balance);
+                                $dailyRingGameActivities[$userName]['hand_count'] += 1;
+                                if (str_contains($userSeat, 'Showdown with a Royal Flush')) {
+                                    $badBeatWinners = array_filter($userSeats, function ($x) {
+                                        return str_contains($x, "Four of a Kind");
+                                    });
+                                    if (count($badBeatWinners)) {
+                                        foreach ($badBeatWinners as $badBeatWinner) {
+                                            $matches = explode(":", $badBeatWinner);
+                                            $badBeatWinnerName = str_replace(' ', '', explode(' (', $matches[1])[0]);
+                                            $dailyRingGameActivities[$badBeatWinnerName]['bad_beat_amount'] += (25 / 100) * $pot;
                                         }
-                                        $dailyRingGameActivities[$userName]['jack_pot_amount'] += (25 / 100) * $pot;
                                     }
+                                    $dailyRingGameActivities[$userName]['jack_pot_amount'] += (25 / 100) * $pot;
                                 }
                             }
                         } else {
@@ -234,55 +231,53 @@ class Helper
                                 if (str_contains($value, 'finishes tournament in place #1 and wins')) $isLastHand = true;
                             });
                             if ($isLastHand) {
+                                $sngFee = array_values(array_filter($hand, function ($h) {
+                                    return str_contains($h, 'Game: ');
+                                }));
+                                preg_match("/(?<=\()(.+)(?=\))/is", $sngFee[0], $matches);
+                                $sngFee = str_replace("$0+", '', $matches[0]);
                                 $winner = array_values(array_filter($hand, function ($h) {
                                     return str_contains($h, ' finishes tournament in place #1 and wins ');
                                 }));
                                 $winnerName = substr($winner[0], 0, strpos($winner[0], ' '));
-                                if($winnerName == $authUserName){
-                                    $sngFee = array_values(array_filter($hand, function ($h) {
-                                        return str_contains($h, 'Game: ');
-                                    }));
-                                    preg_match("/(?<=\()(.+)(?=\))/is", $sngFee[0], $matches);
-                                    $sngFee = str_replace("$0+", '', $matches[0]);
-                                    $winnerPrize = str_replace('$', '', substr($winner[0], strpos($winner[0], '$'), strlen($winner[0])));
-                                    $secondPlace = array_values(array_filter($hand, function ($h) {
-                                        return str_contains($h, ' finishes tournament in place #2');
-                                    }));
-                                    $thirdPlace = array_values(array_filter($hand, function ($h) {
-                                        return str_contains($h, ' finishes tournament in place #3');
-                                    }));
-                                    $secondPlaceName = str_replace(' finishes tournament in place #2', '', $secondPlace[0]);
-                                    $thirdPlaceName = count($thirdPlace) ? str_replace(' finishes tournament in place #3', '', $thirdPlace[0]) : null;
-                                    if (
-                                        !isset($dailySNGActivity[$winnerName]) ||
-                                        !isset($dailySNGActivity[$secondPlaceName]) ||
-                                        ($thirdPlaceName && !isset($dailySNGActivity[$thirdPlaceName]))
-                                    ) {
-                                        $dailySNGActivity[$winnerName] = [
+                                $winnerPrize = str_replace('$', '', substr($winner[0], strpos($winner[0], '$'), strlen($winner[0])));
+                                $secondPlace = array_values(array_filter($hand, function ($h) {
+                                    return str_contains($h, ' finishes tournament in place #2');
+                                }));
+                                $thirdPlace = array_values(array_filter($hand, function ($h) {
+                                    return str_contains($h, ' finishes tournament in place #3');
+                                }));
+                                $secondPlaceName = str_replace(' finishes tournament in place #2', '', $secondPlace[0]);
+                                $thirdPlaceName = count($thirdPlace) ? str_replace(' finishes tournament in place #3', '', $thirdPlace[0]) : null;
+                                if (
+                                    !isset($dailySNGActivity[$winnerName]) ||
+                                    !isset($dailySNGActivity[$secondPlaceName]) ||
+                                    ($thirdPlaceName && !isset($dailySNGActivity[$thirdPlaceName]))
+                                ) {
+                                    $dailySNGActivity[$winnerName] = [
+                                        'win_count' => 0,
+                                        'lose_count' => 0,
+                                        'net_chip' => 0,
+                                    ];
+                                    $dailySNGActivity[$secondPlaceName] = [
+                                        'win_count' => 0,
+                                        'lose_count' => 0,
+                                        'net_chip' => 0,
+                                    ];
+                                    if ($thirdPlaceName)
+                                        $dailySNGActivity[$thirdPlaceName] = [
                                             'win_count' => 0,
                                             'lose_count' => 0,
                                             'net_chip' => 0,
                                         ];
-                                        $dailySNGActivity[$secondPlaceName] = [
-                                            'win_count' => 0,
-                                            'lose_count' => 0,
-                                            'net_chip' => 0,
-                                        ];
-                                        if ($thirdPlaceName)
-                                            $dailySNGActivity[$thirdPlaceName] = [
-                                                'win_count' => 0,
-                                                'lose_count' => 0,
-                                                'net_chip' => 0,
-                                            ];
-                                    }
-                                    $dailySNGActivity[$winnerName]['win_count'] += 1;
-                                    $dailySNGActivity[$winnerName]['net_chip'] += $winnerPrize - $sngFee;
-                                    $dailySNGActivity[$secondPlaceName]['lose_count'] += 1;
-                                    $dailySNGActivity[$secondPlaceName]['net_chip'] += -$sngFee;
-                                    if ($thirdPlaceName) {
-                                        $dailySNGActivity[$thirdPlaceName]['lose_count'] += 1;
-                                        $dailySNGActivity[$thirdPlaceName]['net_chip'] += -$sngFee;
-                                    }
+                                }
+                                $dailySNGActivity[$winnerName]['win_count'] += 1;
+                                $dailySNGActivity[$winnerName]['net_chip'] += $winnerPrize - $sngFee;
+                                $dailySNGActivity[$secondPlaceName]['lose_count'] += 1;
+                                $dailySNGActivity[$secondPlaceName]['net_chip'] += -$sngFee;
+                                if ($thirdPlaceName) {
+                                    $dailySNGActivity[$thirdPlaceName]['lose_count'] += 1;
+                                    $dailySNGActivity[$thirdPlaceName]['net_chip'] += -$sngFee;
                                 }
                             }
                         }
