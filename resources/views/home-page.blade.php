@@ -702,7 +702,7 @@
         style="z-index: 99">
         <div class="alert-bg-danger flex justify-between sm:w-5/6 w-full items-center p-3 rounded">
             <p class="text-sm text-white font-bold">
-                Nexlub is not a crypto token and will never launch one. Be aware of scams or ones using similar names or
+                Nexlub is not a crypto token and will never launch one. Be aware of scams or the ones using similar names or
                 tickers. Stay safe!
             </p>
             <button type="button" onclick="acceptScamWarn()"
