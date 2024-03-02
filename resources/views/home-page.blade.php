@@ -22,7 +22,7 @@
                             </span>
                         </div>
                         <div class="mb-2 font-bold text-center text-xl sm:text-2xl" style="color:#22c9e9">
-                            MARCH 3,2024
+                            MARCH 10,2024
                         </div>
                         <div class="mb-2 font-bold text-center text-xl sm:text-2xl" style="color:#22c9e9">
                             CHANCE TO WIN A
