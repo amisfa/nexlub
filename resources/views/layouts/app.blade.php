@@ -20,7 +20,6 @@
     <meta name="description"
           content="Play Poker with crypto currency - Instant Cash out - Referral - Rake back - Bonus"/>
     @if ($pageSlug == 'homePage')
-        <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="https://Nexlub.com"/>
         <meta property="og:title" content="Nexlub - Play like a champ"/>
