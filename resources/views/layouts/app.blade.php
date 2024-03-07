@@ -37,23 +37,6 @@
         <meta property="twitter:image" content="{{asset('black').'/img/logo.png'}}"/>
     @endif
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @auth()
         <link href="{{ asset('black') }}/css/black-dashboard.css" rel="stylesheet"/>
         <link href="{{ asset('black') }}/css/theme.css" rel="stylesheet"/>
