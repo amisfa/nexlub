@@ -30,7 +30,7 @@
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image"/>
-        <meta property="twitter:url" content="https://Nexlub.com"/>
+        <meta property="twitter:url" content="https://twitter.com/nexlub"/>
         <meta property="twitter:title" content="Nexlub - Play like a champ"/>
         <meta property="twitter:description"
               content="Play Poker with crypto currency - Instant Cash out - Referral - Rake back - Bonus"/>
