@@ -7,7 +7,6 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Nexlub</title>
     <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('black') }}/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('black') }}/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('black') }}/img/favicon-16x16.png">
@@ -15,6 +14,46 @@
     <link rel="mask-icon" href="{{ asset('black') }}/img/safari-pinned-tab.svg" color="#22c9e9">
     <meta name="msapplication-TileColor" content="#0e1726">
     <meta name="theme-color" content="#0e1726">
+
+    <title>Nexlub - Play like a champ</title>
+    <meta name="title" content="Nexlub - Play like a champ"/>
+    <meta name="description"
+          content="Play Poker with crypto currency - Instant Cash out - Referral - Rake back - Bonus"/>
+    @if ($pageSlug == 'homePage')
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://Nexlub.com"/>
+        <meta property="og:title" content="Nexlub - Play like a champ"/>
+        <meta property="og:description"
+              content="Play Poker with crypto currency - Instant Cash out - Referral - Rake back - Bonus"/>
+        <meta property="og:image" content="{{asset('black').'/img/logo.png'}}"/>
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:url" content="https://Nexlub.com"/>
+        <meta property="twitter:title" content="Nexlub - Play like a champ"/>
+        <meta property="twitter:description"
+              content="Play Poker with crypto currency - Instant Cash out - Referral - Rake back - Bonus"/>
+        <meta property="twitter:image" content="{{asset('black').'/img/logo.png'}}"/>
+    @endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @auth()
         <link href="{{ asset('black') }}/css/black-dashboard.css" rel="stylesheet"/>
         <link href="{{ asset('black') }}/css/theme.css" rel="stylesheet"/>
