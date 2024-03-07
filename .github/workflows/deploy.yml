@@ -13,8 +13,8 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
 
-#      - name: Copy .env
-#        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      #      - name: Copy .env
+      #        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       - name: Install Dependencies
         run: composer install --optimize-autoloader --no-dev
       #      - name: Generate key
