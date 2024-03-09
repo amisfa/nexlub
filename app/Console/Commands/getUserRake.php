@@ -41,15 +41,50 @@ class getUserRake extends Command
             foreach ($response['Player'] as $key => $item) {
                 $query = UserRakeLog::query();
                 $user = User::query()->where('username', $item)->first();
+                $pureRake = $response['PRake'][$key];
+                $level = 1;
                 if (UserRakeLog::query()->where('user_id', $user->id)->exists()) {
+                    switch ($pureRake) {
+                        case $pureRake > 100:
+                            $level = 2;
+                            break;
+                        case $pureRake > 500:
+                            $level = 3;
+                            break;
+                        case $pureRake > 1000:
+                            $level = 4;
+                            break;
+                        case $pureRake > 5000:
+                            $level = 5;
+                            break;
+                        case $pureRake > 10000:
+                            $level = 6;
+                            break;
+                        case $pureRake > 20000:
+                            $level = 7;
+                            break;
+                        case $pureRake > 100000:
+                            $level = 8;
+                            break;
+                        case $pureRake > 500000:
+                            $level = 9;
+                            break;
+                        case $pureRake > 1000000:
+                            $level = 10;
+                            break;
+                    }
+                    if ($level != 1) {
+                        $user->level = $level;
+                        $user->save();
+                    }
                     $query->where('user_id', $user->id)->update([
-                        'rake' => $response['PRake'][$key],
+                        'rake' => $pureRake,
                         'updated_at' => now()
                     ]);
                 } else {
                     $query->create([
                         'user_id' => $user->id,
-                        'rake' => $response['PRake'][$key],
+                        'rake' => $pureRake,
                         'claimed_rake_back' => 0,
                         'claimed_rake_affiliate' => 0
                     ]);
