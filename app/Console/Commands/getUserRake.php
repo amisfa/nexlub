@@ -69,7 +69,7 @@ class getUserRake extends Command
                 if($level !== 0 ){
                     if ($level !== $currentLevel) {
                         $remainRakeBack = $user->remain_rake_back;
-                        $userRakeLogQuery = $user->rakeLog();
+                        $userRakeLogQuery = $user->userRake();
                         $userRakeLogQuery->update([
                             'claimed_rake_back' => (($level / 100) * $user->userRake->rake) - $remainRakeBack
                         ]);
