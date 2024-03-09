@@ -70,8 +70,41 @@ class getUserRake extends Command
                     if ($level !== $currentLevel) {
                         $remainRakeBack = $user->remain_rake_back;
                         $userRakeLogQuery = $user->userRake();
+                        $rakeBackPercentage = 0;
+                        switch ($level) {
+                            case 1:
+                                $rakeBackPercentage = 5;
+                                break;
+                            case 2:
+                                $rakeBackPercentage = 7;
+                                break;
+                            case 3:
+                                $rakeBackPercentage = 10;
+                                break;
+                            case 4:
+                                $rakeBackPercentage = 15;
+                                break;
+                            case 5:
+                                $rakeBackPercentage = 20;
+                                break;
+                            case 6:
+                                $rakeBackPercentage = 25;
+                                break;
+                            case 7:
+                                $rakeBackPercentage = 30;
+                                break;
+                            case 8:
+                                $rakeBackPercentage = 35;
+                                break;
+                            case 9:
+                                $rakeBackPercentage = 40;
+                                break;
+                            case 10:
+                                $rakeBackPercentage = 45;
+                                break;
+                        }
                         $userRakeLogQuery->update([
-                            'claimed_rake_back' => (($level / 100) * $user->userRake->rake) - $remainRakeBack
+                            'claimed_rake_back' => (($rakeBackPercentage / 100) * $user->userRake->rake) - $remainRakeBack
                         ]);
                         $userRakeLogQuery->save();
                     }
