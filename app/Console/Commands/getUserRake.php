@@ -41,10 +41,13 @@ class getUserRake extends Command
             foreach ($response['Player'] as $key => $item) {
                 $query = UserRakeLog::query();
                 $user = User::query()->where('username', $item)->first();
-                $pureRake = floatval($response['PRake'][$key]);
-                $level = 1;
+                $pureRake = $response['PRake'][$key];
+                $level = 0;
                 switch ($pureRake) {
-                    case $pureRake >= 100 && $pureRake < 500:
+                    case $pureRake < 50:
+                        $level = 1;
+                        break;
+                    case $pureRake >= 50 && $pureRake < 500:
                         $level = 2;
                         break;
                     case $pureRake >= 500 && $pureRake < 1000:
@@ -72,7 +75,7 @@ class getUserRake extends Command
                         $level = 10;
                         break;
                 }
-                if ($level != 1) {
+                if ($level != 0) {
                     $user->level = $level;
                     $user->save();
                 }
