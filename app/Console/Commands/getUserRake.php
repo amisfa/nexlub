@@ -65,7 +65,7 @@ class getUserRake extends Command
                 if ($pureRake >= 100000 && $pureRake < 500000) $level = 8;
                 if ($pureRake >= 500000 && $pureRake < 1000000) $level = 9;
                 if ($pureRake >= 1000000) $level = 10;
-                $user->lvel = $level;
+                $user->level = $level;
                 $user->save();
             }
         } catch (\Exception $exception) {
