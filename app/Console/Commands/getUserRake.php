@@ -45,28 +45,28 @@ class getUserRake extends Command
                 $level = 1;
                 if (UserRakeLog::query()->where('user_id', $user->id)->exists()) {
                     switch ($pureRake) {
-                        case $pureRake > 100:
+                        case $pureRake > 100 && $pureRake < 500:
                             $level = 2;
                             break;
-                        case $pureRake > 500:
+                        case $pureRake > 500 && $pureRake < 1000:
                             $level = 3;
                             break;
-                        case $pureRake > 1000:
+                        case $pureRake > 1000 && $pureRake < 5000:
                             $level = 4;
                             break;
-                        case $pureRake > 5000:
+                        case $pureRake > 5000 && $pureRake < 10000:
                             $level = 5;
                             break;
-                        case $pureRake > 10000:
+                        case $pureRake > 10000 && $pureRake < 20000:
                             $level = 6;
                             break;
-                        case $pureRake > 20000:
+                        case $pureRake > 20000 && $pureRake < 100000:
                             $level = 7;
                             break;
-                        case $pureRake > 100000:
+                        case $pureRake > 100000 && $pureRake < 500000:
                             $level = 8;
                             break;
-                        case $pureRake > 500000:
+                        case $pureRake > 500000 && $pureRake < 1000000:
                             $level = 9;
                             break;
                         case $pureRake > 1000000:
