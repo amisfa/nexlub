@@ -43,7 +43,7 @@ class getUserRake extends Command
                 $user = User::query()->where('username', $item)->first();
                 $pureRake = $response['PRake'][$key];
                 $currentLevel = $user->level;
-                $level = 1;
+                $level = 0;
                 if (UserRakeLog::query()->where('user_id', $user->id)->exists()) {
                     $query->where('user_id', $user->id)->update([
                         'rake' => $pureRake,
@@ -66,16 +66,18 @@ class getUserRake extends Command
                 if ($pureRake >= 100000 && $pureRake < 500000) $level = 8;
                 if ($pureRake >= 500000 && $pureRake < 1000000) $level = 9;
                 if ($pureRake >= 1000000) $level = 10;
-                if ($level !== 1 && $level !== $currentLevel) {
-                    $remainRakeBack = $user->remain_rake_back;
-                    $userRakeLogQuery = $user->rakeLog();
-                    $userRakeLogQuery->update([
-                        'claimed_rake_back' => (($level / 100) * $user->userRake->rake) - $remainRakeBack
-                    ]);
-                    $userRakeLogQuery->save();
+                if($level !== 0 ){
+                    if ($level !== $currentLevel) {
+                        $remainRakeBack = $user->remain_rake_back;
+                        $userRakeLogQuery = $user->rakeLog();
+                        $userRakeLogQuery->update([
+                            'claimed_rake_back' => (($level / 100) * $user->userRake->rake) - $remainRakeBack
+                        ]);
+                        $userRakeLogQuery->save();
+                    }
+                    $user->level = $level;
+                    $user->save();
                 }
-                $user->level = $level;
-                $user->save();
             }
         } catch (\Exception $exception) {
             report($exception);
