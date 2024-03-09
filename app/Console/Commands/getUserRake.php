@@ -43,6 +43,19 @@ class getUserRake extends Command
                 $user = User::query()->where('username', $item)->first();
                 $pureRake = floatval($response['PRake'][$key]);
                 $level = 1;
+                if (UserRakeLog::query()->where('user_id', $user->id)->exists()) {
+                    $query->where('user_id', $user->id)->update([
+                        'rake' => $pureRake,
+                        'updated_at' => now()
+                    ]);
+                } else {
+                    $query->create([
+                        'user_id' => $user->id,
+                        'rake' => $pureRake,
+                        'claimed_rake_back' => 0,
+                        'claimed_rake_affiliate' => 0
+                    ]);
+                }
                 switch ($pureRake) {
                     case $pureRake >= 100 && $pureRake < 500:
                         $level = 2;
@@ -74,19 +87,6 @@ class getUserRake extends Command
                 }
                 $user->level = $level;
                 $user->save();
-                if (UserRakeLog::query()->where('user_id', $user->id)->exists()) {
-                    $query->where('user_id', $user->id)->update([
-                        'rake' => $pureRake,
-                        'updated_at' => now()
-                    ]);
-                } else {
-                    $query->create([
-                        'user_id' => $user->id,
-                        'rake' => $pureRake,
-                        'claimed_rake_back' => 0,
-                        'claimed_rake_affiliate' => 0
-                    ]);
-                }
             }
         } catch (\Exception $exception) {
             report($exception);
