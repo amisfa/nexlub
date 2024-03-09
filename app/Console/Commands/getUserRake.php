@@ -43,40 +43,40 @@ class getUserRake extends Command
                 $user = User::query()->where('username', $item)->first();
                 $pureRake = $response['PRake'][$key];
                 $level = 1;
+                switch ($pureRake) {
+                    case $pureRake >= 100 && $pureRake < 500:
+                        $level = 2;
+                        break;
+                    case $pureRake >= 500 && $pureRake < 1000:
+                        $level = 3;
+                        break;
+                    case $pureRake >= 1000 && $pureRake < 5000:
+                        $level = 4;
+                        break;
+                    case $pureRake >= 5000 && $pureRake < 10000:
+                        $level = 5;
+                        break;
+                    case $pureRake >= 10000 && $pureRake < 20000:
+                        $level = 6;
+                        break;
+                    case $pureRake >= 20000 && $pureRake < 100000:
+                        $level = 7;
+                        break;
+                    case $pureRake >= 100000 && $pureRake < 500000:
+                        $level = 8;
+                        break;
+                    case $pureRake >= 500000 && $pureRake < 1000000:
+                        $level = 9;
+                        break;
+                    case $pureRake >= 1000000:
+                        $level = 10;
+                        break;
+                }
+                if ($level != 1) {
+                    $user->level = $level;
+                    $user->save();
+                }
                 if (UserRakeLog::query()->where('user_id', $user->id)->exists()) {
-                    switch ($pureRake) {
-                        case $pureRake >= 100 && $pureRake < 500:
-                            $level = 2;
-                            break;
-                        case $pureRake >= 500 && $pureRake < 1000:
-                            $level = 3;
-                            break;
-                        case $pureRake >= 1000 && $pureRake < 5000:
-                            $level = 4;
-                            break;
-                        case $pureRake >= 5000 && $pureRake < 10000:
-                            $level = 5;
-                            break;
-                        case $pureRake >= 10000 && $pureRake < 20000:
-                            $level = 6;
-                            break;
-                        case $pureRake >= 20000 && $pureRake < 100000:
-                            $level = 7;
-                            break;
-                        case $pureRake >= 100000 && $pureRake < 500000:
-                            $level = 8;
-                            break;
-                        case $pureRake >= 500000 && $pureRake < 1000000:
-                            $level = 9;
-                            break;
-                        case $pureRake >= 1000000:
-                            $level = 10;
-                            break;
-                    }
-                    if ($level != 1) {
-                        $user->level = $level;
-                        $user->save();
-                    }
                     $query->where('user_id', $user->id)->update([
                         'rake' => $pureRake,
                         'updated_at' => now()
