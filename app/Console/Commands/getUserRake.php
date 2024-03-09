@@ -72,10 +72,8 @@ class getUserRake extends Command
                         $level = 10;
                         break;
                 }
-                if ($level != 1) {
-                    $user->level = $level;
-                    $user->save();
-                }
+                $user->level = $level;
+                $user->save();
                 if (UserRakeLog::query()->where('user_id', $user->id)->exists()) {
                     $query->where('user_id', $user->id)->update([
                         'rake' => $pureRake,
