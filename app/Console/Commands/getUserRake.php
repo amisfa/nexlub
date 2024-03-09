@@ -41,7 +41,7 @@ class getUserRake extends Command
             foreach ($response['Player'] as $key => $item) {
                 $query = UserRakeLog::query();
                 $user = User::query()->where('username', $item)->first();
-                $pureRake = floatval($response['PRake'][$key]);
+                $pureRake = $response['PRake'][$key];
                 $level = 1;
                 if (UserRakeLog::query()->where('user_id', $user->id)->exists()) {
                     $query->where('user_id', $user->id)->update([
@@ -56,36 +56,16 @@ class getUserRake extends Command
                         'claimed_rake_affiliate' => 0
                     ]);
                 }
-                switch ($pureRake) {
-                    case $pureRake >= 100 && $pureRake < 500:
-                        $level = 2;
-                        break;
-                    case $pureRake >= 500 && $pureRake < 1000:
-                        $level = 3;
-                        break;
-                    case $pureRake >= 1000 && $pureRake < 5000:
-                        $level = 4;
-                        break;
-                    case $pureRake >= 5000 && $pureRake < 10000:
-                        $level = 5;
-                        break;
-                    case $pureRake >= 10000 && $pureRake < 20000:
-                        $level = 6;
-                        break;
-                    case $pureRake >= 20000 && $pureRake < 100000:
-                        $level = 7;
-                        break;
-                    case $pureRake >= 100000 && $pureRake < 500000:
-                        $level = 8;
-                        break;
-                    case $pureRake >= 500000 && $pureRake < 1000000:
-                        $level = 9;
-                        break;
-                    case $pureRake >= 1000000:
-                        $level = 10;
-                        break;
-                }
-                $user->level = $level;
+                if ($pureRake >= 100 && $pureRake < 500) $level = 2;
+                if ($pureRake >= 500 && $pureRake < 1000) $level = 3;
+                if ($pureRake >= 1000 && $pureRake < 5000) $level = 4;
+                if ($pureRake >= 5000 && $pureRake < 10000) $level = 5;
+                if ($pureRake >= 10000 && $pureRake < 20000) $level = 6;
+                if ($pureRake >= 20000 && $pureRake < 100000) $level = 7;
+                if ($pureRake >= 100000 && $pureRake < 500000) $level = 8;
+                if ($pureRake >= 500000 && $pureRake < 1000000) $level = 9;
+                if ($pureRake >= 1000000) $level = 10;
+                $user->lvel = $level;
                 $user->save();
             }
         } catch (\Exception $exception) {
