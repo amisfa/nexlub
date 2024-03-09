@@ -44,10 +44,10 @@ class getUserRake extends Command
                 $pureRake = $response['PRake'][$key];
                 $level = 0;
                 switch ($pureRake) {
-                    case $pureRake < 50:
+                    case $pureRake < 100:
                         $level = 1;
                         break;
-                    case $pureRake >= 50 && $pureRake < 500:
+                    case $pureRake >= 100 && $pureRake < 500:
                         $level = 2;
                         break;
                     case $pureRake >= 500 && $pureRake < 1000:
