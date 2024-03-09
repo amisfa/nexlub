@@ -38,6 +38,39 @@ class UserRakeLog extends Model
 
     public function getUserRakeBackAttribute()
     {
-        return number_format(($this->user->rake_back_percentage / 100) * $this->rake, 2, '.', '');
+        $rakeBackPercentage = 0;
+        switch ($this->user->level) {
+            case 1:
+                $rakeBackPercentage = 5;
+                break;
+            case 2:
+                $rakeBackPercentage = 7;
+                break;
+            case 3:
+                $rakeBackPercentage = 10;
+                break;
+            case 4:
+                $rakeBackPercentage = 15;
+                break;
+            case 5:
+                $rakeBackPercentage = 20;
+                break;
+            case 6:
+                $rakeBackPercentage = 25;
+                break;
+            case 7:
+                $rakeBackPercentage = 30;
+                break;
+            case 8:
+                $rakeBackPercentage = 35;
+                break;
+            case 9:
+                $rakeBackPercentage = 40;
+                break;
+            case 10:
+                $rakeBackPercentage = 45;
+                break;
+        }
+        return number_format(($rakeBackPercentage / 100) * $this->rake, 2, '.', '');
     }
 }

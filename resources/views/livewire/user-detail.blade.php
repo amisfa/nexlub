@@ -24,8 +24,8 @@
         </div>
         <div class="py-2 flex">
             <div class="text-white font-bold pr-2">
-                Rake Back:
-            </div>{{$user->rake_back_percentage}}%
+                Level:
+            </div>{{$user->level}}
         </div>
         <div class="py-2 flex">
             <div class="text-white font-bold pr-2">

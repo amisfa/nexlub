@@ -7,11 +7,6 @@
     </div>
     <form wire:submit.prevent="change">
         <div class="form-group">
-            <label>Rake back Percentage</label>
-            <input type="number" class="form-control" wire:model="rakeBack"
-                   autocomplete="off">
-        </div>
-        <div class="form-group">
             <label>Affiliate Rake Percentage</label>
             <input type="number" class="form-control"
                    wire:model="affiliateRake">

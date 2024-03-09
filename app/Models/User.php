@@ -25,7 +25,6 @@ class User extends Authenticatable
     protected $fillable = [
         'email',
         'affiliate_rake_percentage',
-        'rake_back_percentage',
         'password',
         'username',
         'phone_no',
