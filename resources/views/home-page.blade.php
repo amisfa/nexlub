@@ -4,32 +4,25 @@
         <div
             class="relative overflow-hidden bg-cover bg-no-repeat"
             style="background-position: center;
-      background-image: url('{{asset('black').'/img/cyber-truck.jpg'}}');
+      background-image: url('{{asset('black').'/img/nexlub-banner.jpg'}}');
       height: 80vh;">
             <div
                 class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
-                style="background-color: rgba(0, 0, 0, 40%)">
+                style="background-color: rgba(0, 0, 0, 80%)">
                 <div class="flex h-full items-center justify-center">
                     <div class="px-2 text-center text-white md:px-12">
-                        <div class="font-bold text-center mb-1 text-2xl sm:text-5xl" style="color:#22c9e9"><span
-                                class="banner-animation">
-                                GRAND OPENING
-                            </span>
+                        <div class="font-bold text-left mb-1 text-3xl" style="color:#22c9e9">
+                            Experience the future of <span class="banner-animation">poker with crypto!</span>
                         </div>
-                        <div class="font-bold text-center mb-1 text-2xl sm:text-5xl" style="color:#22c9e9"><span
-                                class="banner-animation">
-                                TOURNAMENT
-                            </span>
+                        <div class="mb-8 font-bold text-left text-2xl" style="color:#22c9e9">
+                            <span class="strong mr-1 banner-animation">No KYC</span>
+                            <br/>
+                            No download.
+                            <br/>
+                            Get a 5% daily rake back
+                            <br/>
+                            Earn on referrals and have a great time with friends
                         </div>
-                        <div class="mb-2 font-bold text-center text-xl sm:text-2xl" style="color:#22c9e9">
-                            MARCH 10,2024
-                        </div>
-                        <div class="mb-2 font-bold text-center text-xl sm:text-2xl" style="color:#22c9e9">
-                            CHANCE TO WIN A
-                        </div>
-
-                        <img class="glitch_img m-auto sm:w-5/6 w-3/4"
-                             src="{{asset('black').'/img/cybertrucklogo.svg'}}"/>
                         @guest()
                             <br/>
                             <div class="play-now-btn">
