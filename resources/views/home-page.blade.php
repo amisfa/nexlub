@@ -25,25 +25,21 @@
                         </div>
                         @guest()
                             <br/>
-                            <div class="play-now-btn">
-                                <a href="{{route('signup')}}">
-                                    <button class='glowing-btn'><span class='glowing-txt'>&nbsp;P<span
-                                                class='faulty-letter'>L</span>AY <span
-                                                class='faulty-letter'>N</span>OW<span
-                                                class='faulty-letter'>!</span></span></button>
-                                </a>
-                            </div>
+                            <a href="{{route('signup')}}">
+                                <button class='glowing-btn'><span class='glowing-txt'>&nbsp;P<span
+                                            class='faulty-letter'>L</span>AY <span
+                                            class='faulty-letter'>N</span>OW<span
+                                            class='faulty-letter'>!</span></span></button>
+                            </a>
                         @endguest
                         @auth()
                             <br/>
-                            <div class="play-now-btn">
-                                <a href="{{route('play')}}">
-                                    <button class='glowing-btn'><span class='glowing-txt'>&nbsp;P<span
-                                                class='faulty-letter'>L</span>AY <span
-                                                class='faulty-letter'>N</span>OW<span
-                                                class='faulty-letter'>!</span></span></button>
-                                </a>
-                            </div>
+                            <a href="{{route('play')}}">
+                                <button class='glowing-btn'><span class='glowing-txt'>&nbsp;P<span
+                                            class='faulty-letter'>L</span>AY <span
+                                            class='faulty-letter'>N</span>OW<span
+                                            class='faulty-letter'>!</span></span></button>
+                            </a>
                         @endauth
                     </div>
                 </div>
