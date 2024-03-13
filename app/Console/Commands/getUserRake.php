@@ -106,7 +106,6 @@ class getUserRake extends Command
                         $userRakeLogQuery->update([
                             'claimed_rake_back' => (($rakeBackPercentage / 100) * $user->userRake->rake) - $remainRakeBack
                         ]);
-                        $userRakeLogQuery->save();
                     }
                     $user->level = $level;
                     $user->save();
