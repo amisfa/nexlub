@@ -17,14 +17,19 @@ class ClaimBadBeatRewardAction extends Action
     public function handle($model, View $view): void
     {
         try {
-            Helper::addBalance([
-                'user_id' => auth()->id(),
-                'amount' => $model->amount,
-                'log' => $model->amount . ' USD Bad Beat Reward Claimed by ' . auth()->user()->username
-            ]);
-            $model->claimed_at = now();
-            $model->save();
-            $this->success('Claim Bad Beat Successfully');} catch (Exception $e) {
+            if (!$model->claimed_at) {
+                Helper::addBalance([
+                    'user_id' => auth()->id(),
+                    'amount' => $model->amount,
+                    'log' => $model->amount . ' USD Bad Beat Reward Claimed by ' . auth()->user()->username
+                ]);
+                $model->claimed_at = now();
+                $model->save();
+                $this->success('Claim Bad Beat Successfully');
+            }else{
+                $this->error('Claim Bad Beat Failed');
+            }
+        } catch (Exception $e) {
             $this->error('Claim Bad Beat Failed');
         }
     }
