@@ -22,7 +22,7 @@ class UserWithdrawController extends Controller
     {
         try {
             $user = User::query()->find(auth()->id());
-            if ($user->balance < request('amount')) return back()->with(['error' => 'Insufficient Balance']);
+            if (auth()->user()->balance < request('amount')) return back()->with(['error' => 'Insufficient Balance']);
             Helper::decBalance([
                 'user_id' => auth()->id(),
                 'amount' => request('amount'),
