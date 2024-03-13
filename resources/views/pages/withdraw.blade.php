@@ -41,10 +41,10 @@
                         </div>
                     </form>
                     <div class="card-header">Withdraw History</div>
-                </div>
-                <div class="p-3">
-                    <div class="border" style="border-color: #2b3553!important;">
-                        <livewire:user-withdraw-view/>
+                    <div class="p-3">
+                        <div class="border" style="border-color: #2b3553!important;">
+                            <livewire:user-withdraw-view/>
+                        </div>
                     </div>
                 </div>
             </div>
