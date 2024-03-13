@@ -39,14 +39,18 @@ class CancelWithdrawAction extends Action
     public function handle($model, View $view): void
     {
         try {
-            Helper::addBalance([
-                'user_id' => auth()->id(),
-                'amount' => $model->amount,
-                'log' => request('amount') . ' USD Canceled Withdraw by ' . auth()->user()->username
-            ]);
-            $model->status = WithdrawStatuses::Canceled;
-            $model->save();
-            $this->success('Withdraw Canceled Successfully');
+            if($model->status !== WithdrawStatuses::Canceled){
+                Helper::addBalance([
+                    'user_id' => auth()->id(),
+                    'amount' => $model->amount,
+                    'log' => request('amount') . ' USD Canceled Withdraw by ' . auth()->user()->username
+                ]);
+                $model->status = WithdrawStatuses::Canceled;
+                $model->save();
+                $this->success('Withdraw Canceled Successfully');
+            }else{
+                $this->error('Withdraw Cancel Failed');
+            }
         } catch (Exception $e) {
             $this->error('Withdraw Cancel Failed');
         }
