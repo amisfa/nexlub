@@ -37,8 +37,10 @@
                     </div>
                     <br/>
                     <div class="card-header">Withdraw History</div>
-                    <div class="border" style="border-color: #2b3553!important;">
-                        <livewire:admin-view.withdraw-management-view/>
+                    <div class="p-3">
+                        <div class="border" style="border-color: #2b3553!important;">
+                            <livewire:admin-view.withdraw-management-view/>
+                        </div>
                     </div>
                 </div>
             </div>
