@@ -30,7 +30,7 @@ class ClaimBadBeatRewardAction extends Action
                 $this->error('Claim Bad Beat Failed');
             }
         } catch (Exception $e) {
-            $this->error('Claim Bad Beat Failed');
+            $this->error('Bad Beat Already Claimed');
         }
     }
 

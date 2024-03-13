@@ -27,7 +27,7 @@ class ClaimJackPotAction extends Action
                 $model->save();
                 $this->success('Claim Jack Pot Successfully');
             } else {
-                $this->error('Claim Jack Pot Failed');
+                $this->error('Jack Pot Already Claimed');
             }
         } catch (Exception $e) {
             $this->error('Claim Jack Pot Failed');

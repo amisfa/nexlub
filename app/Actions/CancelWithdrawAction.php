@@ -49,7 +49,7 @@ class CancelWithdrawAction extends Action
                 $model->save();
                 $this->success('Withdraw Canceled Successfully');
             }else{
-                $this->error('Withdraw Cancel Failed');
+                $this->error('Withdraw Already Canceled');
             }
         } catch (Exception $e) {
             $this->error('Withdraw Cancel Failed');

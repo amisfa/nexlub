@@ -22,14 +22,18 @@ class WithdrawManagementController extends Controller
     public function rejectWithdraw(UserWithdraw $withdraw)
     {
         try {
-            Helper::addBalance([
-                'user_id' => $withdraw->user->id,
-                'amount' => $withdraw->amount,
-                'log' => $withdraw->amount . ' USD Rejected Withdraw by ' . auth()->user()->username . ' ' . request('rejected_reason')
-            ]);
-            $withdraw->status = WithdrawStatuses::Rejected;
-            $withdraw->rejected_comment = request('rejected_comment');
-            $withdraw->save();
+            if ($withdraw->status !== WithdrawStatuses::Rejected) {
+                Helper::addBalance([
+                    'user_id' => $withdraw->user->id,
+                    'amount' => $withdraw->amount,
+                    'log' => $withdraw->amount . ' USD Rejected Withdraw by ' . auth()->user()->username . ' ' . request('rejected_reason')
+                ]);
+                $withdraw->status = WithdrawStatuses::Rejected;
+                $withdraw->rejected_comment = request('rejected_comment');
+                $withdraw->save();
+            } else {
+                return back()->with(['error' => 'withdraw already rejected']);
+            }
             return back()->with(['success' => 'Withdraw Rejected Successfully']);
         } catch (Exception $e) {
             return back()->with(['error' => 'Withdraw Rejected Failed']);
