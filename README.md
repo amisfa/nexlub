@@ -1,4 +1,4 @@
-##⭐ If you find this project helpful, please consider giving it a star! ⭐
+## ⭐ If you find this project helpful, please consider giving it a star! ⭐
 # Poker Mavens Website
 
 This project is a feature-rich **Poker Mavens** integration designed for an engaging online poker experience. With real-time game statistics, automated jackpots, a rake-based leveling system, and ticket management for users, this platform enhances the traditional poker game with modernized features.
